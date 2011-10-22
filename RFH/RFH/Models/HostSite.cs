@@ -7,6 +7,12 @@ using System.ComponentModel.DataAnnotations;
 namespace RFH.Models {
     public class HostSite {
 
+        public HostSite() {
+
+            this.MetaData = new List<HostSiteMetaData>();
+        }
+
+
         public int Id { get; set; }
 
         public string HostSiteUrl { get; set; }

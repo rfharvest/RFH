@@ -75,6 +75,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\HostSite.cs" />
     <Compile Include="Models\HostSiteMetaData.cs" />
+    <Compile Include="Models\HostSiteMetaDataValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
