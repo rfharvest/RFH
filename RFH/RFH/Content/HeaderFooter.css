@@ -1,0 +1,47 @@
+/******************************************************************************
+ ** HEADER
+ *****************************************************************************/
+
+.header 
+{
+    display: block;
+    width: 100%;
+    margin: 0;
+    background: url('images/bg/cardboard.jpg');
+}
+.header .logo
+{
+    margin: 2em auto;
+    background: url('images/header.png') no-repeat left top
+}
+.header .navBar
+{
+    background: #060;
+    color: white;
+    font-weight: bold;
+}
+.header .navBar li { display: inline-block; }
+
+/******************************************************************************
+ ** FOOTER
+ *****************************************************************************/
+
+.footer 
+{
+    background: #060;
+    width: 100%;
+    color: white;
+    font-size: smaller;
+}
+.footer .credits
+{
+    text-align: right;
+    padding-left: 40%;
+}
+.footer .disclaimer
+{
+    margin-top: 1em;
+    text-align: right;
+    padding-left: 40%;
+    font-size: smaller;
+}
