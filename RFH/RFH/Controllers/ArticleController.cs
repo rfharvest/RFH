@@ -26,8 +26,6 @@ namespace RFH.Controllers
             }
 
 
-
-
             return View(article);
         }
 
