@@ -21,5 +21,8 @@ namespace RFH.Infrastructure {
         public IDbSet<HostSite> HostSites { get; set; }
 
         public IDbSet<HostSiteMetaData> HostSiteMetaData { get; set; }
+
+
+        public IDbSet<ContentData> ContentDatas { get; set; }
     }
 }

@@ -77,6 +77,14 @@ namespace RFH.Infrastructure {
 
 
         
+            // Adding content for ContentData
+            context.ContentDatas.Add(new ContentData {
+                ControllerName="Home",
+                ActionName="Index",
+                Content="Hello from Home!"
+            });
+
+
         }
 
     }
