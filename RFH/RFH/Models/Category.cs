@@ -16,6 +16,5 @@ namespace RFH.Models {
         public string Description { get; set; }
 
         public ICollection<Article> Articles { get; set; }
-
     }
 }

@@ -1,0 +1,8 @@
+﻿@model IEnumerable<RFH.Models.Category>
+
+<h2>Category</h2>
+<ul>    
+@foreach (var item in Model) {
+        <li>@Html.ActionLink(item.Name, "Details", new { id = item.Id })</li>      
+}
+</ul>    
