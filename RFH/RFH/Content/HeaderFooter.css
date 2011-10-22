@@ -37,6 +37,7 @@
     width: 100%;
     color: white;
     font-size: smaller;
+    clear: both;
 }
 .footer .credits
 {
@@ -45,7 +46,6 @@
 }
 .footer .disclaimer
 {
-    margin-top: 1em;
     text-align: right;
     padding-left: 40%;
     font-size: smaller;

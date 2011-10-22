@@ -12,17 +12,19 @@
 <body>
     @Html.Partial("_Header")
 
-<div class="navPaneSection">
-    <div class="categoryNavPane">
-        @Html.Action("ListCategory", "NavigationList")
+    <div class="navPaneSection">
+        <div class="categoryNavPane sidePane">
+            @Html.Action("ListCategory", "NavigationList")
+        </div>
+        <div class="hostSiteNavPane sidePane">
+            @Html.Action("ListSite", "NavigationList")
+        </div>
     </div>
-    <div class="hostSiteNavPane">
-        @Html.Action("ListSite", "NavigationList")
+
+    <div class="contentSection">
+        @RenderBody()
     </div>
-</div>
-<div class="contentSection">
-    @RenderBody()
-</div>
+
     @Html.Partial("_Footer")
 </body>
 </html>
