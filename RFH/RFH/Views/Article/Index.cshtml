@@ -12,8 +12,18 @@
 
 <div style="float:right">
     @Model.HostSite.Name
-
-
+    <div>
+        <ul>
+        @foreach (var metaData in Model.HostSite.MetaData) {
+            <li>@metaData.Type:</li>
+            <ul>
+            @foreach (var metaDataValue in metaData.Values) {
+                <li>@metaDataValue.Value</li>
+            }
+            </ul>
+        }
+        </ul>
+    </div>
 </div>
 
 <div>

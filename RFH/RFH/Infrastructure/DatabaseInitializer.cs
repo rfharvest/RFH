@@ -21,7 +21,21 @@ namespace RFH.Infrastructure {
 
 
             var hostSites = new List<HostSite> {
-                new HostSite {Name="MT Vernon", Description="TBD", HostSiteUrl="http://mtvernon.org", Area="MT Vernon", IsActive=true},
+                new HostSite {
+                    Name="MT Vernon", 
+                    Description="TBD", 
+                    HostSiteUrl="http://mtvernon.org", 
+                    Area="MT Vernon", 
+                    IsActive=true,
+                    MetaData = new List<HostSiteMetaData> {
+                        new HostSiteMetaData {
+                            Type="Organization Type", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="Food Bank"}, new HostSiteMetaDataValue {Value="Non-Profit"} }
+                        },
+                        new HostSiteMetaData {
+                            Type="Agricultural Size", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="Small"} }
+                        },
+                    }
+                },
                 new HostSite {Name="Seattle Lettuce Link", Description="TBD", HostSiteUrl="http://seattlelettuce.org", Area="Seattle", IsActive=true}
             };
 
