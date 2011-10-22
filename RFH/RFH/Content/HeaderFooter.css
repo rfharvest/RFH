@@ -7,12 +7,17 @@
     display: block;
     width: 100%;
     margin: 0;
+    padding: 1ex 0;
     background: url('images/bg/cardboard.jpg');
+    border-bottom: 3px solid #060;
 }
 .header .logo
 {
-    margin: 2em auto;
-    background: url('images/header.png') no-repeat left top
+    margin: 0 auto;
+    width: 636px;
+    height: 146px;
+    background: url('images/header.png') no-repeat left top;
+    text-indent: -9999px; /* hide text from humans, but not bots */
 }
 .header .navBar
 {
