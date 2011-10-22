@@ -35,18 +35,18 @@
 {
     background: #060;
     width: 100%;
-    color: white;
+    color: #ccc;
     font-size: smaller;
     clear: both;
 }
 .footer .credits
 {
     text-align: right;
-    padding-left: 40%;
+    padding: 1ex 1ex 0 50%;
 }
 .footer .disclaimer
 {
+    padding: 1ex 1ex 1ex 50%;
     text-align: right;
-    padding-left: 40%;
     font-size: smaller;
 }

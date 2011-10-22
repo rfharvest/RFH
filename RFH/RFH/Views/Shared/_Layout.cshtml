@@ -12,17 +12,21 @@
 <body>
     @Html.Partial("_Header")
 
-    <div class="navPaneSection">
-        <div class="categoryNavPane sidePane">
-            @Html.Action("ListCategory", "NavigationList")
+    <div class="midsection">
+        <div class="navPaneSection">
+            <div class="categoryNavPane sidePane">
+                @Html.Action("ListCategory", "NavigationList")
+            </div>
+            <div class="hostSiteNavPane sidePane">
+                @Html.Action("ListSite", "NavigationList")
+            </div>
         </div>
-        <div class="hostSiteNavPane sidePane">
-            @Html.Action("ListSite", "NavigationList")
-        </div>
-    </div>
 
-    <div class="contentSection">
-        @RenderBody()
+        <div class="contentSection">
+            @RenderBody()
+        </div>
+
+        <div class="clear"></div>
     </div>
 
     @Html.Partial("_Footer")
