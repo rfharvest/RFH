@@ -1,0 +1,24 @@
+﻿@model RFH.Models.Article
+
+@{
+    ViewBag.Title = Model.ShortDescription;
+}
+
+<div class="breadCrumb">
+    @Html.ActionLink(Model.HostSite.Name, "Index", "Site", new {Id=Model.HostSiteId}, null)
+    &gt;   
+    @Html.ActionLink(Model.Category.Name, "Index", "Category", new {Id=Model.CategoryId}, null)
+</div>
+
+<div style="float:right">
+    @Model.HostSite.Name
+
+
+</div>
+
+<div>
+    @Html.Raw( Model.Content )
+</div>
+<div>
+    @Html.ActionLink(String.Format("Back to {0}", Model.HostSite.Name), "Index", "Site", new {Id=Model.HostSiteId}, null)
+</div>

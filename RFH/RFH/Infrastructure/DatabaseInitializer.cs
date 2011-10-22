@@ -35,10 +35,31 @@ namespace RFH.Infrastructure {
                 HostSite = hostSites[0],
                 Category = categories[0],
                 Content = "Here is the content of article 1",
-                ShortDescription="Article Short Description"
+                ShortDescription="Article Short Description",
+                IsPublished=true
             };
-
             context.Articles.Add(article1);
+
+
+            var article2 = new Article {
+                HostSite = hostSites[0],
+                Category = categories[1],
+                Content = "Here is the content of article 2",
+                ShortDescription = "Article Short Description 2",
+                IsPublished = true
+            };
+            context.Articles.Add(article2);
+
+
+
+            var article3 = new Article {
+                HostSite = hostSites[0],
+                Category = categories[0],
+                Content = "I am not published",
+                ShortDescription = "Article Short Description 3",
+                IsPublished = false
+            };
+            context.Articles.Add(article3);
 
 
         
