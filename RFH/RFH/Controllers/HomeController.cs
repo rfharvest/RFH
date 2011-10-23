@@ -7,21 +7,23 @@ using RFH.Infrastructure;
 
 namespace RFH.Controllers
 {
-    public class HomeController : Controller
-    {
-        //
-        // GET: /Home/
+	public class HomeController : Controller
+	{
+		//
+		// GET: /Home/
 
-        private DataContext _dataContext = new DataContext();
+		private DataContext _dataContext = new DataContext();
 
 
-        public ActionResult Index()
-        {
+		public ActionResult Index()
+		{
+			var contentItem = from content in _dataContext.ContentDatas
+							  where content.ActionName == "Index" &&  
+									content.ControllerName == "Home"
+							  select content;
 
-            var categories = _dataContext.Categories.ToList();
+			return View(contentItem.FirstOrDefault());
+		}
 
-            return View(categories);
-        }
-
-    }
+	}
 }

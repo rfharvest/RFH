@@ -1,13 +1,9 @@
-﻿@model IEnumerable<RFH.Models.Category>
+﻿@model RFH.Models.ContentData
 		   
 @{
 	ViewBag.Title = "Index";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Rotary First Harvest - Home</title>
 	<style type="text/css">
 		#MainWindow
 		{
@@ -17,7 +13,7 @@
 		{
 			float: left;
 			width: 48%;
-			height: 200px;
+			/* height: 200px; */
 			background: #369;
 			color: #FFF;
 			line-height: 200px;
@@ -30,7 +26,7 @@
 		{
 			float: left;
 			width: 48%;
-			height: 200px;
+			/*height: 200px;*/
 			background: #369;
 			color: #FFF;
 			line-height: 200px;
@@ -41,9 +37,8 @@
 		
 		#MainWindowBottom
 		{
-			/* float: left; */
 			width: 96%;
-			height: 200px;
+			/* height: 200px;*/
 			background: #369;
 			color: #FFF;
 			line-height: 200px;
@@ -52,16 +47,15 @@
 			border: 1px solid #036;
 		}
 	</style>
-</head>
 
-<body>
 	<div id="MainWindow">
 		<div id="MainWindowTop">
 			<div id="WelcomeContent">
-				This is where the welcome content will go.. probably data Driven.
+				@Html.Raw( @Model.Content )
 			</div>
+
 			<div id="ImageContent">
-				<img src="@Url.Content("~/Content/images/placeholder.png")" height="200px" width="100%"
+				<img src="@Url.Content("~/Content/images/placeholder.png")" width="100%"
 					 alt="IMAGE WILL GO HERE." />
 			</div>
 		</div>
@@ -74,6 +68,3 @@
 			</div>
 		</div>
 	</div>
-
-</body>
-</html>
