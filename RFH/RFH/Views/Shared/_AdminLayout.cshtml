@@ -9,19 +9,25 @@
     <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 </head>
 
-@Html.ActionLink("[Log Out]", "LogOut", "Account", null, null)
 <body>
 
     <div>
 
-        <h1>Rotary First Harvest &ndash; Admin</h1>
+        <div id="header">
+
+            <h1>Rotary First Harvest &ndash; Admin</h1>
         
-        <ul id="primaryNav">
-            <li>@Html.ActionLink("Manage HostSites", "Index", "ManageHost")</li>
-            <li>@Html.ActionLink("Manage Categories", "Index", "ManageCategory")</li>
-            <li>@Html.ActionLink("Manage ContentData", "Index", "ManageContent")</li>
-            <li>@Html.ActionLink("Manage Metadata", "Index", "ManageHostSiteTag")</li>
-        </ul>
+            <ul id="primaryNav">
+                <li>@Html.ActionLink("Manage HostSites", "Index", "ManageHost")</li>
+                <li>@Html.ActionLink("Manage Categories", "Index", "ManageCategory")</li>
+                <li>@Html.ActionLink("Manage ContentData", "Index", "ManageContent")</li>
+                <li>@Html.ActionLink("Manage Metadata", "Index", "ManageHostSiteTag")</li>
+            </ul>
+        
+            <div id="logout">@Html.ActionLink("[Log Out]", "LogOut", "Account", null, null)</div>
+
+        </div>
+        
 
         <div>
             @RenderBody()

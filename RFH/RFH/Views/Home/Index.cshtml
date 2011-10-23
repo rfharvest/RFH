@@ -4,67 +4,36 @@
 	ViewBag.Title = "Index";
 }
 
-	<style type="text/css">
-		#MainWindow
-		{
-		}
-		
-		#WelcomeContent
-		{
-			float: left;
-			width: 48%;
-			/* height: 200px; */
-			background: #369;
-			color: #FFF;
-			line-height: 200px;
-			vertical-align: middle;
-			text-align: center;
-			/* border: 1px solid #036; */
-		}
-		
-		#ImageContent
-		{
-			float: left;
-			width: 48%;
-			/*height: 200px;*/
-			background: #369;
-			color: #FFF;
-			line-height: 200px;
-			vertical-align: middle;
-			text-align: center;
-			/* border: 1px solid #036; */
-		}
-		
-		#MainWindowBottom
-		{
-			width: 96%;
-			/* height: 200px;*/
-			background: #369;
-			color: #FFF;
-			line-height: 200px;
-			vertical-align: middle;
-			text-align: center;
-			border: 1px solid #036;
-		}
-	</style>
+<style type="text/css">
+	#MainWindow
+	{
+		padding: 15 15 15 15;
+		background: url("/Content/images/placeholder.png");
+	}
+</style>
 
-	<div id="MainWindow">
-		<div id="MainWindowTop">
-			<div id="WelcomeContent">
-				@Html.Raw( @Model.Content )
-			</div>
-
-			<div id="ImageContent">
-				<img src="@Url.Content("~/Content/images/placeholder.png")" width="100%"
-					 alt="IMAGE WILL GO HERE." />
-			</div>
+<div id="MainWindow">
+	<div id="MainWindowTop">
+		<div id="WelcomeContent">
+			@Html.Raw( @Model.Content )
 		</div>
 
-		<div style="clear:both" />
-
-		<div id="MainWindowBottom">
-			<div id="WizardContent">
-				This is where the Wizard might go.
-			</div>
+		@*
+		<div id="ImageContent">
+			<img src="@Url.Content("~/Content/images/placeholder.png")" width="100%"
+					alt="IMAGE WILL GO HERE." />
 		</div>
+		*@
 	</div>
+
+	<div style="clear:both"></div>
+
+	<div id="MainWindowBottom">
+		<h2>Find a Organization</h2>
+		<p>
+			To narrow the list of organizations on the right, select one or more filters below.
+			To view an organization's information and articles, click the organization's name on the right.
+		</p>
+		@Html.Partial("SearchWizard/MockData")
+	</div>
+</div>

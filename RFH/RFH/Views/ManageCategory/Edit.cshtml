@@ -1,11 +1,10 @@
 ﻿@model RFH.Models.Category
 
+<h2>Manage Categories &mdash; Edit</h2>
+
 @using (Html.BeginForm()) {
     
     @Html.ValidationSummary(true)
-    
-    <fieldset>
-        <legend>Category</legend>
     
         @Html.HiddenFor(model => model.Id)
     
@@ -26,9 +25,8 @@
         </div>
     
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Save" class="standardButton" />
         </p>
-    </fieldset>
 }
     
 <div>

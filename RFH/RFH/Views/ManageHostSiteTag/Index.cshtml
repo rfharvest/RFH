@@ -5,13 +5,16 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
-    <tr>
-        <th>
-            Name
-        </th>
-        <th></th>
-    </tr>
+
+<table class="standardTable">
+    <thead>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td></td>
+        </tr>
+    </thead>
 
 @foreach (var item in Model) {
     <tr>

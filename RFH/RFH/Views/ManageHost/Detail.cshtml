@@ -3,111 +3,129 @@
 
 <h2>Manage HostSites</h2>
 
-<table cellpadding="10" cellspacing="1" border="1">
-        
-    <tr>
-            <td>@Html.LabelFor(m => m.HostSite.Name)</td>
-            <td>@Model.HostSite.Name</td>
-    </tr>
+<table border="1" cellpadding="10" cellspacing="0">
+<tr>
+    <td valign="top" width="75%">
+    
+        <h3>HostSite Info</h3>
 
-    <tr>
-            <td>@Html.LabelFor(m => m.HostSite.Area)</td>
-            <td>@Model.HostSite.Area</td>
-    </tr>
+        <table class="twoColumnTable">
+            <tr>
+                    <td>@Html.LabelFor(m => m.HostSite.Name)</td>
+                    <td>@Model.HostSite.Name</td>
+            </tr>
+            <tr>
+                    <td>@Html.LabelFor(m => m.HostSite.Area)</td>
+                    <td>@Model.HostSite.Area</td>
+            </tr>
+            <tr>
+                    <td>@Html.LabelFor(m => m.HostSite.HostSiteUrl)</td>
+                    <td>@Model.HostSite.HostSiteUrl</td>
+            </tr>
+            <tr>
+                    <td>@Html.LabelFor(m => m.HostSite.IsActive)</td>
+                    <td>@Model.HostSite.IsActive</td>
+            </tr>
+            <tr>
+                    <td>@Html.LabelFor(m => m.HostSite.Description)</td>
+                    <td>@Model.HostSite.Description</td>
+            </tr>
+            <tr>
+                    <td>@Html.LabelFor(m => m.HostSite.Area)</td>
+                    <td>@Model.HostSite.Area</td>
+            </tr>
+        </table>
 
-    <tr>
-            <td>@Html.LabelFor(m => m.HostSite.HostSiteUrl)</td>
-            <td>@Model.HostSite.HostSiteUrl</td>
-    </tr>
+        <p id="manageHostDetailTopActions">
+            @Html.ActionLink("Edit", "Edit", new { Model.HostSite.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { Model.HostSite.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
 
-    <tr>
-            <td>@Html.LabelFor(m => m.HostSite.IsActive)</td>
-            <td>@Model.HostSite.IsActive</td>
-    </tr>
+    </td>
+    <td valign="top" rowspan="2" width="25%">
+    
+        <h3>HostSite Metadata</h3>
 
-    <tr>
-            <td>@Html.LabelFor(m => m.HostSite.Description)</td>
-            <td>@Model.HostSite.Description</td>
-    </tr>
-
-    <tr>
-            <td>@Html.LabelFor(m => m.HostSite.Area)</td>
-            <td>@Model.HostSite.Area</td>
-    </tr>
-</table>
-
-<div>
-    <ul>
-        <li>@Html.ActionLink("Edit Primary Info", "Edit", new { Model.HostSite.Id })</li>
-        <li>@Html.ActionLink("Delete", "Delete", new { Model.HostSite.Id })</li>
-        <li>@Html.ActionLink("Back to List", "Index")</li>
-    </ul>
-</div>
-
-<h2>Meta Data</h2>
-
-@foreach (var item in Model.HostSiteTags)
-{
-    <div class="hostSiteTags">
-        <h3>@item.Name</h3>
-                
-        @foreach (var tagValue in Model.HostSiteTagValues.Where(i => i.HostSiteTagId == item.Id))
+        @foreach (var item in Model.HostSiteTags)
         {
-            if(Model.HostSiteToHostSiteTagValues
-                .Any(i => (i.HostSiteId == Model.HostSite.Id)
-                            && (i.HostSiteTagValueId == tagValue.Id)))
-            {
-                <div>
-                    <input type="checkbox" checked data-valueid="@tagValue.Id" /> 
-                    <label>@tagValue.Name</label>
-                </div>
-            }
-            else
-            {
-                <div>
-                    <input type="checkbox" data-valueid="@tagValue.Id" /> 
-                    <label>@tagValue.Name</label>
-                </div>
-            }
+            <div class="hostSiteTags">
+
+                <h4>@item.Name</h4>
+                
+                @foreach (var tagValue in Model.HostSiteTagValues.Where(i => i.HostSiteTagId == item.Id))
+                {
+                    if(Model.HostSiteToHostSiteTagValues
+                        .Any(i => (i.HostSiteId == Model.HostSite.Id)
+                                    && (i.HostSiteTagValueId == tagValue.Id)))
+                    {
+                        <div>
+                            <input type="checkbox" checked data-valueid="@tagValue.Id" /> 
+                            <label>@tagValue.Name</label>
+                        </div>
+                    }
+                    else
+                    {
+                        <div>
+                            <input type="checkbox" data-valueid="@tagValue.Id" /> 
+                            <label>@tagValue.Name</label>
+                        </div>
+                    }
+                }
+
+            </div>
         }
-    </div>
-}
 
 
-<script type="text/javascript">
+        <script type="text/javascript">
 
-    $(function () {
-        $('.hostSiteTags input').click(function () {
+            $(function () {
+                $('.hostSiteTags input').click(function () {
 
-            var hostSiteId = @Model.HostSite.Id;
-            var isChecked = $(this).is(':checked');
-            var hostSiteTagValueId = $(this).attr('data-valueid');
+                    var hostSiteId = @Model.HostSite.Id;
+                    var isChecked = $(this).is(':checked');
+                    var hostSiteTagValueId = $(this).attr('data-valueid');
 
-            var dataValue = 'hostSiteId=' + hostSiteId + '&hostSiteTagValueId=' + hostSiteTagValueId + '&isChecked=' + isChecked;
+                    var dataValue = 'hostSiteId=' + hostSiteId + '&hostSiteTagValueId=' + hostSiteTagValueId + '&isChecked=' + isChecked;
 
-            $.post('/ManageHost/EditTag', dataValue);
-        });
-    });
+                    $.post('/ManageHost/EditTag', dataValue);
+                });
+            });
         
-</script>
+        </script>
 
-<h2>Articles</h2>
+    </td>
+</tr>
+<tr>
+    <td valign="top">
+        
+        <h3>Articles</h3>
 
-<p>@Html.ActionLink("Add New Article", "Create", "ManageArticle")</p>
+        <p>@Html.ActionLink("Add New Article", "Create", "ManageArticle")</p>
 
-<table border="1" cellpadding="10">
-    <tr>
-        <th>Category Title</th>
-        <th></th>
-    </tr>
-@foreach (var item in Model.Articles)
-{
-    <tr>
-        <td>@item.Category.Name</td>
-        <td>
-            @Html.ActionLink("Details", "Detail", "ManageArticle", new {@item.Id}, null) |
-            @Html.ActionLink("Delete", "Delete", "ManageArticle", new {@item.Id}, null)
-        </td>
-    </tr>
-}
+        <table  class="standardTable">
+            <thead>
+                <tr>
+                    <td>Category Title</td>
+                    <td>Is Published</td>
+                    <td></td>
+                </tr>
+            </thead>
+            @foreach (var item in Model.Articles)
+            {
+                <tr>
+                    <td>@item.Category.Name</td>
+                    <td>@item.IsPublished</td>
+                    <td>
+                        @Html.ActionLink("Details", "Detail", "ManageArticle", new { @item.Id }, null) |
+                        @Html.ActionLink("Edit", "Edit", "ManageArticle", new { @item.Id }, null) |
+                        @Html.ActionLink("Delete", "Delete", "ManageArticle", new { @item.Id }, null)
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </td>
+</tr>
 </table>
+
