@@ -21,7 +21,7 @@
 
         <div class="display-label">Content</div>
         <div class="display-field">
-            @Html.DisplayFor(model => model.Article.Content)
+            @Html.Raw(Model.Article.Content)
         </div>
 
         <div class="display-label">ShortDescription</div>

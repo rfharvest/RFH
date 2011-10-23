@@ -880,6 +880,7 @@
     <None Include="Scripts\ckeditor\_samples\php\replaceall.php" />
     <None Include="Scripts\ckeditor\_samples\php\standalone.php" />
     <None Include="Scripts\ckeditor\_samples\sample_posteddata.php" />
+    <Content Include="Views\ManageArticle\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
