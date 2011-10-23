@@ -2,7 +2,7 @@
     <form class="search">
         <h3>Search Filters</h3>
         <div class="question">
-            <p>Host Site Type:</p>
+            <p>Organization Type:</p>
             <select name="orgType">
                 <option selected value="">Any organization</option>
                 <option value="">----</option>
@@ -30,8 +30,9 @@
             <select name="agSize">
                 <option selected value="">Any size</option>
                 <option value="">----</option>
-                <option value="residential">Residential</option>
-                <option value="small">Small Scale</option>
+                <option value="res">Residential</option>
+                <option value="small">Small</option>
+                <option value="mid">Mid-Size</option>
                 <option value="commercial">Large Commercial</option>
             </select>
         </div>
@@ -77,37 +78,102 @@
         var mockHostSites = [
 	        {
 	            id: 1,
-	            name: "Turquoise Falcon",
-	            url: "blah",
+	            name: "MT Vernon",
+	            url: "/Site/Seattle Lettuce Link",
+	            criteria: {
+	                "orgType": "cap",
+	                "regionType": "rural",
+	                "agSize": "mid",
+	                "yearsOld": "short2",
+	                "cropType": "veg",
+	                "numRecipients": "some10to25"
+	            }
+	        },
+	        {
+	            id: 2,
+	            name: "Seattle Lettuce Link",
+	            url: "Site/MT Vernon",
+	            criteria: {
+	                "orgType": "nonprofit",
+	                "regionType": "urban",
+	                "agSize": "res",
+	                "yearsOld": "med2to5",
+	                "cropType": "fruit",
+	                "numRecipients": "some10to25"
+	            }
+	        },
+	        {
+	            id: 3,
+	            name: "South King County",
+	            url: "/Site/Seattle Lettuce Link",
+	            criteria: {
+	                "orgType": "nonprofit",
+	                "regionType": "urban",
+	                "agSize": "small",
+	                "yearsOld": "short2",
+	                "cropType": "veg",
+	                "numRecipients": "one"
+	            }
+	        },
+	        {
+	            id: 4,
+	            name: "Tacoma",
+	            url: "Site/MT Vernon",
+	            criteria: {
+	                "orgType": "coalition",
+	                "regionType": "suburb",
+	                "agSize": "res",
+	                "yearsOld": "short2",
+	                "cropType": "veg",
+	                "numRecipients": "some10to25"
+	            }
+	        },
+	        {
+	            id: 5,
+	            name: "Tacoma",
+	            url: "/Site/Seattle Lettuce Link",
 	            criteria: {
 	                "orgType": "foodbank",
-	                "regionType": "rural",
-	                "agSize": "small",
-	                "yearsOld": "long5",
+	                "regionType": "ruralCity",
+	                "agSize": "res",
+	                "yearsOld": "med2to5",
 	                "cropType": "veg",
 	                "numRecipients": "many25"
 	            }
 	        },
 	        {
-	            id: 2,
-	            name: "Scarlet Piglet",
-	            url: "blah",
+	            id: 6,
+	            name: "Olympia",
+	            url: "Site/MT Vernon",
 	            criteria: {
 	                "orgType": "foodbank",
-	                "regionType": "urban",
-	                "agSize": "commercial",
-	                "yearsOld": "short2",
-	                "cropType": "fruit",
+	                "regionType": "ruralCity",
+	                "agSize": "small",
+	                "yearsOld": "med2to5",
+	                "cropType": "veg",
 	                "numRecipients": "one"
 	            }
 	        },
 	        {
-	            id: 3,
-	            name: "Mauve Komodo Dragon",
-	            url: "blah",
+	            id: 7,
+	            name: "Okanogan",
+	            url: "/Site/Seattle Lettuce Link",
 	            criteria: {
-	                "orgType": "coalition",
-	                "regionType": "suburb",
+	                "orgType": "cap",
+	                "regionType": "rural",
+	                "agSize": "mid",
+	                "yearsOld": "med2to5",
+	                "cropType": "fruit",
+	                "numRecipients": "few2to8"
+	            }
+	        },
+	        {
+	            id: 8,
+	            name: "Yakima",
+	            url: "Site/MT Vernon",
+	            criteria: {
+	                "orgType": "foodbank",
+	                "regionType": "ruralCity",
 	                "agSize": "commercial",
 	                "yearsOld": "med2to5",
 	                "cropType": "fruit",
@@ -115,41 +181,28 @@
 	            }
 	        },
 	        {
-	            id: 4,
-	            name: "Pink Panther",
-	            url: "blah",
-	            criteria: {
-	                "orgType": "nonprofit",
-	                "regionType": "suburb",
-	                "agSize": "small",
-	                "yearsOld": "med2to5",
-	                "cropType": "veg",
-	                "numRecipients": "many25"
-	            }
-	        },
-	        {
-	            id: 5,
-	            name: "Cyan Mustang",
-	            url: "blah",
-	            criteria: {
-	                "orgType": "coalition",
-	                "regionType": "ruralCity",
-	                "agSize": "commercial",
-	                "yearsOld": "long5",
-	                "cropType": "veg",
-	                "numRecipients": "many25"
-	            }
-	        },
-	        {
-	            id: 6,
-	            name: "Purple Cat",
-	            url: "blah",
+	            id: 9,
+	            name: "Spokane",
+	            url: "/Site/Seattle Lettuce Link",
 	            criteria: {
 	                "orgType": "foodbank",
-	                "regionType": "rural",
-	                "agSize": "small",
+	                "regionType": "ruralCity",
+	                "agSize": "res",
 	                "yearsOld": "med2to5",
-	                "cropType": "fruit",
+	                "cropType": "veg",
+	                "numRecipients": "many25"
+	            }
+	        },
+	        {
+	            id: 10,
+	            name: "Tri Cities",
+	            url: "Site/MT Vernon",
+	            criteria: {
+	                "orgType": "foodbank",
+	                "regionType": "ruralCity",
+	                "agSize": "small",
+	                "yearsOld": "short2",
+	                "cropType": "veg",
 	                "numRecipients": "few2to8"
 	            }
 	        }
