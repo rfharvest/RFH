@@ -7,49 +7,53 @@ using System.Web.Routing;
 
 namespace RFH
 {
-    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
-    // visit http://go.microsoft.com/?LinkId=9394801
+	// Note: For instructions on enabling IIS6 or IIS7 classic mode, 
+	// visit http://go.microsoft.com/?LinkId=9394801
 
-    public class MvcApplication : System.Web.HttpApplication
-    {
-        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
-        {
-            filters.Add(new HandleErrorAttribute());
-        }
+	public class MvcApplication : System.Web.HttpApplication
+	{
+		public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+		{
+			filters.Add(new HandleErrorAttribute());
+		}
 
-        public static void RegisterRoutes(RouteCollection routes)
-        {
+		public static void RegisterRoutes(RouteCollection routes)
+		{
 
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                "Category", // Route name
-                "{controller}/{id}", // URL with parameters
-                new { controller = "Category", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-            );
+			routes.MapRoute(
+				"Category", // Route name
+				"Category/{id}", // URL with parameters
+				new { controller = "Category", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+			);
 
             routes.MapRoute(
                 "Article", // Route name
-                "{controller}/{id}", // URL with parameters
+                "Article/{id}", // URL with parameters
                 new { controller = "Article", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-
             );
 
-   
             routes.MapRoute(
-                "Default", // Route name
-                "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-            );
+				"Site", // Route name
+				"Site/{id}", // URL with parameters
+				new { controller = "Site", action = "Details", id = UrlParameter.Optional } // Parameter defaults
+			);
+   
+			routes.MapRoute(
+				"Default", // Route name
+				"{controller}/{action}/{id}", // URL with parameters
+				new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+			);
 
-        }
+		}
 
-        protected void Application_Start()
-        {
-            AreaRegistration.RegisterAllAreas();
+		protected void Application_Start()
+		{
+			AreaRegistration.RegisterAllAreas();
 
-            RegisterGlobalFilters(GlobalFilters.Filters);
-            RegisterRoutes(RouteTable.Routes);
-        }
-    }
+			RegisterGlobalFilters(GlobalFilters.Filters);
+			RegisterRoutes(RouteTable.Routes);
+		}
+	}
 }

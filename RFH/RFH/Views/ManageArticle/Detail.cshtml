@@ -1,16 +1,6 @@
 ﻿@model RFH.Models.ManageArticleDetailViewModel
 
-@{
-    Layout = null;
-}
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>Detail</title>
-</head>
-<body>
     <fieldset>
         <legend>ManageArticleDetailViewModel</legend>
 
@@ -45,5 +35,3 @@
         @Html.ActionLink("Delete", "Delete", new { Model.Article.Id }) |
         @Html.ActionLink("Back to HostSite", "Detail", "ManageHost", new {Model.HostSite.Id}, null)
     </p>
-</body>
-</html>

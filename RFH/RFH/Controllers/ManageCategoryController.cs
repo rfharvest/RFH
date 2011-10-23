@@ -12,6 +12,12 @@ namespace RFH.Controllers
     {
         private DataContext _dataContext = new DataContext();
 
+        public ActionResult Index()
+        {
+            var model = _dataContext.Categories;
+            return View(model);
+        }
+
         public ActionResult Detail(int id)
         {
             var model = _dataContext.Categories.Single(m => m.Id == id);
