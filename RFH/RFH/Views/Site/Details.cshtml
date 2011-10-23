@@ -8,3 +8,6 @@
 <div>
     @Model.Description
 </div>
+<div>Articles
+    @Html.Action("ListArticleInSite", "Article", new { id=Model.Id})
+</div>

@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using RFH.Infrastructure;
 using System.Data.Entity;
+using RFH.Views.Article;
+using RFH.Models;
 
 namespace RFH.Controllers
 {
@@ -13,6 +15,14 @@ namespace RFH.Controllers
 
         private DataContext _dataContext = new DataContext();
 
+        public ActionResult ListArticleInSite(int id) {
+            //id==HostSiteId
+            var article = (from a in _dataContext.Articles.Include(a => a.Category)
+                           where a.HostSiteId == id && a.IsPublished == true
+                           select a).ToList();
+
+            return PartialView("List", article); 
+        }
         public ActionResult Index(int id)
         {
             // Lookup the article by id (only include published articles)
@@ -26,7 +36,20 @@ namespace RFH.Controllers
             }
 
 
-            return View(article);
+            // Get related articles
+            var relatedArticles = (from a in _dataContext.Articles
+                                   where a.CategoryId == article.Category.Id
+                                   && a.Id != article.Id
+                                   && a.IsPublished == true
+                                   select new RelatedArticle { ArticleId = a.Id, HostSiteName = a.HostSite.Name }).ToList();
+
+
+            var vm = new IndexViewModel {
+                Article = article,
+                RelatedArticles = relatedArticles
+            };
+
+            return View(vm);
         }
 
     }

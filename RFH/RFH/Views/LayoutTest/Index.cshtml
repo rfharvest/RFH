@@ -5,12 +5,196 @@
 
 <h2>LayoutTest</h2>
 
-<p>Bacon ipsum dolor sit amet occaecat non sirloin, ball tip dolore hamburger officia tongue biltong id nostrud esse in mollit. Labore t-bone fatback cillum, in jowl sed meatball et mollit ham leberkäse esse. Beef nisi fugiat, adipisicing et cupidatat meatball qui short ribs mollit leberkäse pork chop ut ham. Bresaola non deserunt, frankfurter excepteur cupidatat kielbasa esse commodo. In do labore, spare ribs ball tip culpa jowl. In short ribs meatloaf salami turducken, chuck meatball pancetta et andouille in filet mignon cillum. Reprehenderit nisi short loin, beef ribs chuck cow short ribs enim kielbasa pork chop aute.</p>
+<div class="harryPotter">
+    <form class="search">
+        <div class="question">
+            What kind of organization would you be?
+            <select name="orgType">
+                <option selected value=""></option>
+                <option value="foodbank">Food Bank</option>
+                <option value="nonprofit">Non-Profit</option>
+                <option value="cap">Community Action Program</option>
+                <option value="coalition">Coalition</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            What kind of region are you in?
+            <select name="regionType">
+                <option selected value=""></option>
+                <option value="rural">Rural</option>
+                <option value="urban">Urban</option>
+                <option value="suburb">Suburban</option>
+                <option value="ruralCity">A city, surrouned by rural areas</option>
+            </select>
+        </div>
+        
+        <div class="question">
+            How much agriculture is there?
+            <select name="agSize">
+                <option selected value=""></option>
+                <option value="residential">Residential</option>
+                <option value="small">Small Scale</option>
+                <option value="commercial">Large Commercial</option>
+            </select>
+        </div>
+            
+        <div class="question">
+            How long has your program been running?
+            <select name="yearsOld">
+                <option selected value=""></option>
+                <option value="short2">Less than two years</option>
+                <option value="med2to5">Two to five years</option>
+                <option value="long5">Five or more years</option>
+            </select>
+        </div>
+            
+        <div class="question">
+            What kind of crops are being grown?
+            <select name="cropType">
+                <option selected value=""></option>
+                <option value="veg">Veggie Row Crops</option>
+                <option value="fruit">Tree Fruit</option>
+            </select>
+        </div>
+            
+        <div class="question">
+            How many agencies are receiving the fruits of your labors?
+            <select name="numRecipients">
+                <option selected value=""></option>
+                <option value="one">One (host site)</option>
+                <option value="few2to8">Two to eight agencies</option>
+                <option value="some10to25">ten to twentyfive</option>
+                <option value="many25">more</option>
+            </select>
+        </div>
+    </form>
+    <div class="results" id="hermoine">
+    </div>
+    <div class="clear"></div>
+    
+    <script type="text/javascript">        var chapters = [
+	        {
+	            "id": 1,
+		        chapterName: "Turquoise Falcon",
+		        chapterUrl: "blah",
+		        criteria: {
+                    "orgType": "foodbank",
+                    "regionType": "rural",
+                    "agSize": "small",
+                    "yearsOld": "long5",
+                    "cropType": "veg",
+                    "numRecipients": "many25"
+                }
+	        },
+	        {
+	            "id": 2,
+		        chapterName: "Scarlet Piglet",
+		        chapterUrl: "blah",
+		        criteria: {
+                    "orgType": "foodbank",
+                    "regionType": "urban",
+                    "agSize": "commercial",
+                    "yearsOld": "short2",
+                    "cropType": "fruit",
+                    "numRecipients": "one"
+                }
+	        },
+	        {
+	            "id": 3,
+	            chapterName: "Mauve Komodo Dragon",
+	            chapterUrl: "blah",
+		        criteria: {
+                    "orgType": "coalition",
+                    "regionType": "suburb",
+                    "agSize": "commercial",
+                    "yearsOld": "med2to5",
+                    "cropType": "fruit",
+                    "numRecipients": "some10to25"
+                }
+	        },
+	        {
+	            "id": 4,
+		        chapterName: "Pink Panther",
+		        chapterUrl: "blah",
+		        criteria: {
+                    "orgType": "nonprofit",
+                    "regionType": "suburb",
+                    "agSize": "small",
+                    "yearsOld": "med2to5",
+                    "cropType": "veg",
+                    "numRecipients": "many25"
+                }
+	        },
+	        {
+	            "id": 5,
+		        chapterName: "Cyan Mustang",
+		        chapterUrl: "blah",
+		        criteria: {
+                    "orgType": "coalition",
+                    "regionType": "ruralCity",
+                    "agSize": "commercial",
+                    "yearsOld": "long5",
+                    "cropType": "veg",
+                    "numRecipients": "many25"
+                }
+	        },
+	        {
+	            "id": 6,
+		        chapterName: "Purple Cat",
+		        chapterUrl: "blah",
+		        criteria: {
+                    "orgType": "foodbank",
+                    "regionType": "rural",
+                    "agSize": "small",
+                    "yearsOld": "med2to5",
+                    "cropType": "fruit",
+                    "numRecipients": "few2to8"
+                }
+	        }
+        ];
 
-<p>Pork loin ball tip dolore, strip steak id cupidatat ea esse. Capicola pariatur spare ribs, frankfurter flank sed chuck. Shankle officia culpa, occaecat pancetta boudin ut tenderloin esse tongue jowl. Ex ham laboris chicken, meatball kielbasa et deserunt salami id turkey adipisicing jowl ball tip consectetur. Do culpa cillum, sed boudin occaecat salami ground round. Elit occaecat kielbasa, prosciutto biltong culpa aute brisket veniam commodo. Sed officia boudin aliqua, pork cupidatat laboris ham hock meatball.</p>
+        criteria = {
+            "orgType": "foodbank",
+            "cropType": "fruit"
+	    };
 
-<p>Ex fatback pork loin, ham incididunt brisket turducken capicola qui dolore nisi pancetta. Pork sirloin cupidatat turkey swine eu laborum in, aliqua spare ribs boudin aute. Tri-tip laborum velit, ea qui biltong shankle capicola et tail ground round culpa frankfurter aute. Meatball beef biltong, cow shoulder chuck tempor leberkäse sed commodo exercitation. Ut fatback in, culpa sed veniam officia nostrud labore in ea sint beef. Exercitation shoulder culpa tail occaecat. Corned beef anim flank, short ribs proident magna boudin occaecat quis.</p>
+        var chapterLinks = {};
+        var results = $("#hermoine");
+        for (var i in chapters) {
+            var chapter = chapters[i];
+            var newHtml = "<a href=\"http://" + chapter.chapterUrl + "\">"
+                        + chapter.chapterName
+                        + "</a>";
+            var newHtmlNode = $(newHtml);
+            results.append(newHtmlNode);
+	        chapterLinks[chapter.id] = newHtmlNode;
+	    }
 
-<p>Pig ham hock veniam ullamco, andouille chuck ut commodo consequat tongue leberkäse ham laborum. Salami shoulder pork belly kielbasa labore, prosciutto in tempor eu spare ribs. Consequat boudin salami, spare ribs pork chop fugiat consectetur meatloaf ea meatball ut. Frankfurter aute brisket, salami ground round dolore hamburger quis andouille pork loin magna fatback qui. Jowl mollit t-bone commodo consectetur flank. Sint proident drumstick cupidatat meatloaf spare ribs pig, est pork loin tail reprehenderit chicken turducken. Anim consequat nisi drumstick eu velit.</p>
+	    var applyCriteria = function (criteria, chapters, chapterLinks) {
+	        for (var i in chapters) {
+	            var chapter = chapters[i];
+	            console.log("Looking at chapter: " + chapter.chapterName);
 
-<p>Ad duis tri-tip ut pork chop. Consectetur pork belly ad, shoulder bresaola id turducken. Tail swine duis aute filet mignon, in non do tempor consectetur. Tenderloin shoulder adipisicing incididunt shankle, esse cillum ut ad boudin tail bacon turkey officia. Ut andouille shankle meatball ad. Pork chop hamburger do, spare ribs ground round tenderloin short ribs. Shoulder duis dolore, flank enim dolor beef ribs chicken fugiat shank.</p>
+	            var chapterIsOk = true;
+	            for (var criterion in criteria) {
+	                console.log("Comparing [" + criteria[criterion] + "] to [" + chapter.criteria[criterion] + "]");
+	                if (criteria[criterion] && chapter.criteria[criterion] != criteria[criterion]) {
+	                    console.log("mismatch, break");
+	                    chapterIsOk = false; break;
+	                }
+	            }
+
+	            var chapterNode = chapterLinks[chapter.id];
+	            if (chapterIsOk) {
+	                chapterNode.removeClass("hidden");
+	            } else {
+	                chapterNode.addClass("hidden");
+	            }
+	        }
+	    }
+	    xCrit = criteria;
+	    xChap = chapters;
+	    xLink = chapterLinks;
+	    xFn = applyCriteria;    </script>
+</div>
