@@ -8,78 +8,150 @@ using RFH.Models;
 
 namespace RFH.Controllers
 {
-    public class ManageArticleController : Controller
-    {
-        private DataContext _dataContext = new DataContext();
+	public class ManageArticleController : Controller
+	{
+		private DataContext _dataContext = new DataContext();
 
-        public ActionResult Detail(int id)
-        {
-            var model = new ManageArticleDetailViewModel();
-            model.Article = _dataContext.Articles.Single(m => m.Id == id);
-            model.HostSite = _dataContext.HostSites.Single(m => m.Id == model.Article.HostSiteId);
+		public ActionResult Detail(int id)
+		{
+			var model = new ManageArticleDetailViewModel();
+			model.Article = _dataContext.Articles.Single(m => m.Id == id);
+			model.HostSite = _dataContext.HostSites.Single(m => m.Id == model.Article.HostSiteId);
 
-            return View(model);
-        }
+			return View(model);
+		}
 
 
-        public ActionResult Edit(int id)
-        {
-            var model = _dataContext.Articles.Single(m => m.Id == id);
-            var host = _dataContext.HostSites.Single(m => m.Id == model.HostSiteId);
-            return View(model);
-        }
+		public ActionResult Edit(int id)
+		{
+			ViewBag.HostSites = GetHostSiteListItems(
+				_dataContext.HostSites.ToList());
 
-        [HttpPost]
-        [ValidateInput(false)]
-        public ActionResult Edit(int id, FormCollection form)
-        {
-            var model = _dataContext.Articles.Single(m => m.Id == id);
-            
-            if (TryUpdateModel(model))
-            {
-                _dataContext.SaveChanges();
-                return RedirectToAction("Detail", new {model.Id});
-            }
+			var model = _dataContext.Articles.Single(m => m.Id == id);
+			var host = _dataContext.HostSites.Single(m => m.Id == model.HostSiteId);
 
-            var host = _dataContext.HostSites.Single(m => m.Id == model.HostSiteId);
-            return View(model);
-        }
+			ViewBag.Categories = GetCategoryListItems(
+				_dataContext.Categories.ToList());
 
-        public ActionResult Create() {
-            return View(new Article() { Content="Please enter content"});
-        }
+			return View(model);
+		}
 
-        [HttpPost]
-        [ValidateInput(false)]
-        public ActionResult Create(Article model) {
+		[HttpPost]
+		[ValidateInput(false)]
+		public ActionResult Edit(int id, FormCollection form)
+		{
+			var model = _dataContext.Articles.Single(m => m.Id == id);
+			
+			if (TryUpdateModel(model))
+			{
+				_dataContext.SaveChanges();
+				return RedirectToAction("Detail", new {model.Id});
+			}
 
-            if (ModelState.IsValid) {
-                _dataContext.Articles.Add(model);
-                _dataContext.SaveChanges();
+			var host = _dataContext.HostSites.Single(m => m.Id == model.HostSiteId);
 
-                return RedirectToAction("Detail", new { model.Id });
-            }
+			ViewBag.HostSites = GetHostSiteListItems(
+				_dataContext.HostSites.ToList());
 
-            return View(model);
-        }
+			ViewBag.Categories = GetCategoryListItems(
+				_dataContext.Categories.ToList());
 
-        public ActionResult Delete(int id)
-        {
-            var model = _dataContext.Articles.Single(m => m.Id == id);
-            var host = _dataContext.HostSites.Single(m => m.Id == model.HostSiteId);
-            return View(model);
-        }
+			return View(model);
+		}
 
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection form)
-        {
-            var model = _dataContext.Articles.Single(m => m.Id == id);
 
-            _dataContext.Articles.Remove(model);
-            _dataContext.SaveChanges();
+		public ActionResult Create()
+		{
+			ViewBag.HostSites = GetHostSiteListItems(
+				_dataContext.HostSites.ToList());
 
-            return RedirectToAction("Detail", "ManageHost", new { model.Id });
-        }
+			ViewBag.Categories = GetCategoryListItems(
+				_dataContext.Categories.ToList());
+	
+			var model = new Article()
+				{
+					Content = "Please enter content"
+				};
 
-    }
+			return View(model);
+		}
+
+		[HttpPost]
+		[ValidateInput(false)]
+		public ActionResult Create(Article model) 
+		{
+			if (ModelState.IsValid) {
+				_dataContext.Articles.Add(model);
+				_dataContext.SaveChanges();
+
+				return RedirectToAction("Detail", new { model.Id });
+			}
+
+			ViewBag.HostSites = GetHostSiteListItems(
+				_dataContext.HostSites.ToList());
+
+			ViewBag.Categories = GetCategoryListItems(
+				_dataContext.Categories.ToList());
+
+			return View(model);
+		}
+
+
+		public ActionResult Delete(int id)
+		{
+			var model = _dataContext.Articles.Single(m => m.Id == id);
+			var host = _dataContext.HostSites.Single(m => m.Id == model.HostSiteId);
+			return View(model);
+		}
+
+		[HttpPost]
+		public ActionResult Delete(int id, FormCollection form)
+		{
+			var model = _dataContext.Articles.Single(m => m.Id == id);
+
+			_dataContext.Articles.Remove(model);
+			_dataContext.SaveChanges();
+
+			return RedirectToAction("Detail", "ManageHost", new { model.Id });
+		}
+
+		#region . Query Helpers (DRY!) .
+
+		/// <summary>
+		/// Gets the specified Category items.
+		/// </summary>
+		/// 
+		/// <param name="items">List&lt;Category&gt;</param>
+		/// 
+		/// <returns>IEnumerable&lt;SelectListItem&gt;</returns>
+		/// 
+		protected IEnumerable<SelectListItem> GetCategoryListItems(List<Category> items)
+		{
+			return items.Select(x => new SelectListItem
+				{
+					Text = x.Name,
+					Value = x.Id.ToString()
+				});
+		}
+
+		/// <summary>
+		/// Gets the specified HostSite items.
+		/// </summary>
+		/// 
+		/// <param name="items">List&lt;HostSite&gt;</param>
+		/// 
+		/// <returns>IEnumerable&lt;SelectListItem&gt;</returns>
+		/// 
+		protected IEnumerable<SelectListItem> GetHostSiteListItems(List<HostSite> items)
+		{
+			return items.Select(x => new SelectListItem
+				{
+					Text = x.Name,
+					Value = x.Id.ToString()
+				});
+		}
+
+		#endregion
+
+	}
 }

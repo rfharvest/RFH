@@ -6,8 +6,8 @@ using System.Data.Entity;
 using RFH.Models;
 
 namespace RFH.Infrastructure {
-    public class DatabaseInitializer: DropCreateDatabaseAlways<DataContext> {
-
+    public class DatabaseInitializer : DropCreateDatabaseIfModelChanges<DataContext>
+    {
         protected override void Seed(DataContext context) {
 
 
@@ -93,6 +93,13 @@ namespace RFH.Infrastructure {
                 ControllerName="Home",
                 ActionName="Index",
                 Content="Hello from Home!"
+            });
+
+            context.ContentDatas.Add(new ContentData
+            {
+                ControllerName = "GeneralResource",
+                ActionName = "Index",
+                Content = "<h1>These are general resources!</h1>"
             });
 
             var hostSiteTag1 = new HostSiteTag {Name = "Organization Type"};

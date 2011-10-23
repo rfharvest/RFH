@@ -1,55 +1,57 @@
 ﻿@using RFH.Models
 @model HostSite
 
-        <div>
+<h2>Manage HostSites</h2>
+
+<div>
               
-            <h1>Are you sure you want to delete this?</h1>
+    <h1>Are you sure you want to delete this?</h1>
 
-            <table cellpadding="10" cellspacing="1" border="1">
+    <table cellpadding="10" cellspacing="1" border="1">
         
-                <tr>
-                    <td>@Html.LabelFor(m => m.Name)</td>
-                    <td>@Model.Name</td>
-                </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Name)</td>
+            <td>@Model.Name</td>
+        </tr>
 
-                <tr>
-                    <td>@Html.LabelFor(m => m.Area)</td>
-                    <td>@Model.Area</td>
-                </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Area)</td>
+            <td>@Model.Area</td>
+        </tr>
 
-                <tr>
-                    <td>@Html.LabelFor(m => m.HostSiteUrl)</td>
-                    <td>@Model.HostSiteUrl</td>
-                </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.HostSiteUrl)</td>
+            <td>@Model.HostSiteUrl</td>
+        </tr>
 
-                <tr>
-                    <td>@Html.LabelFor(m => m.IsActive)</td>
-                    <td>@Model.IsActive</td>
-                </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.IsActive)</td>
+            <td>@Model.IsActive</td>
+        </tr>
 
-                <tr>
-                    <td>@Html.LabelFor(m => m.Description)</td>
-                    <td>@Model.Description</td>
-                </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Description)</td>
+            <td>@Model.Description</td>
+        </tr>
 
-                <tr>
-                    <td>@Html.LabelFor(m => m.Area)</td>
-                    <td>@Model.Area</td>
-                </tr>
-            </table>
+        <tr>
+            <td>@Html.LabelFor(m => m.Area)</td>
+            <td>@Model.Area</td>
+        </tr>
+    </table>
 
-            <div>
-                <ul>
-                    <li>@Html.ActionLink("Back to List", "Index", "Admin")</li>
-                </ul>
-            </div>
+    <div>
+        <ul>
+            <li>@Html.ActionLink("Back to List", "Index")</li>
+        </ul>
+    </div>
 
-            @using (Html.BeginForm()) {
+    @using (Html.BeginForm()) {
 
-                @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.Id)
 
-                <p>
-                    <input type="submit" value="Delete" />
-                </p>
-            }
-        </div>
+        <p>
+            <input type="submit" value="Delete" />
+        </p>
+    }
+</div>

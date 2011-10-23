@@ -1,0 +1,36 @@
+/* admin styles */
+
+body
+{
+    margin: 10px;
+    padding: 0;
+    font-family: Arial;
+    color: black;
+}
+
+#primaryNav
+{
+    background: #EEE;
+    padding: 20px;
+}
+    #primaryNav li {
+        display: inline;
+        color: #006699;
+        margin-right: 20px;
+    }
+
+        #primaryNav li a {
+            color: #006699;
+            font: normal normal bold 1em Arial;
+        }
+
+#adminIndexView li {
+    margin-bottom: 20px;
+    
+}
+
+    #adminIndexView li a {
+        font-size: 2em;
+        color: #006699;
+    
+    }
