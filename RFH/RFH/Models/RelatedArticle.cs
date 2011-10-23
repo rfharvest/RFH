@@ -8,7 +8,9 @@ namespace RFH.Models {
 
         public int Id { get; set; }
 
-        public int RelatedArticleId { get; set; }
+        public string HostSiteName { get; set; }
+
+        public int ArticleId { get; set; }
 
     }
 }

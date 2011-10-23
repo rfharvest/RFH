@@ -69,14 +69,22 @@ namespace RFH.Infrastructure {
             var article3 = new Article {
                 HostSite = hostSites[0],
                 Category = categories[0],
-                Content = "I am not published",
+                Content = "I am article 3",
                 ShortDescription = "Article Short Description 3",
-                IsPublished = false,
-                RelatedArticles = new List<RelatedArticle> {
-                    new RelatedArticle {RelatedArticleId=1}, new RelatedArticle {RelatedArticleId=2}
-                }
+                IsPublished = true
             };
             context.Articles.Add(article3);
+
+
+
+            var article4 = new Article {
+                HostSite = hostSites[1],
+                Category = categories[0],
+                Content = "I am article 4",
+                ShortDescription = "Article Short Description 4",
+                IsPublished = true
+            };
+            context.Articles.Add(article4);
 
 
         
