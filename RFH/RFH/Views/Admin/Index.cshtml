@@ -13,25 +13,9 @@
     <div>
         <h1>Admin</h1>
 
-        <h2>Host Sites</h2>
-
-        <ol>
-            @foreach (var item in Model.HostSites)
-            {
-                <li>@Html.ActionLink(item.Name, "Detail", "ManageHost", new { item.Id }, null)</li>
-            }
-            <li>@Html.ActionLink("Add New Host Site", "Create", "ManageHost")</li>
-        </ol>
-
-        <h2>Categories</h2>
-
-        <ol>
-            @foreach (var item in Model.Categories)
-            {
-                <li>@Html.ActionLink(item.Name, "Detail", "ManageCategory", new { item.Id }, null)</li>
-            }
-            <li>@Html.ActionLink("Add New Category", "Create", "ManageCategory")</li>
-        </ol>
+        <p>@Html.ActionLink("Manage HostSites", "Index", "ManageHost")</p>
+        <p>@Html.ActionLink("Manage Categories", "Index", "ManageCategory")</p>
+        <p>@Html.ActionLink("Edit ContentData", "Index", "ManageContent")</p>
 
     </div>
 </body>
