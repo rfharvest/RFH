@@ -30,7 +30,7 @@
     @Html.Raw( Model.Article.Content )
 </div>
 <div>
-    @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Index", "Site", new {Id=Model.Article.HostSiteId}, null)
+    @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Details", "Site", new {Id=Model.Article.HostSiteId}, null)
 </div>
 <div>
     @if (Model.RelatedArticles.Count > 0) {
