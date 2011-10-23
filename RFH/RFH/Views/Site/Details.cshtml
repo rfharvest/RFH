@@ -1,13 +1,28 @@
 ﻿@model RFH.Models.HostSite
 
+<div class="titlePane">
 <h2>@Model.Name</h2>
+<h3>in @Model.Area</h3>
+<h4><a href="@Model.HostSiteUrl">@Model.Name website</a></h4>
+</div>
+
+<div class="sidePane">
 <ul>
-<li> URL : @Model.HostSiteUrl</li>
-<li>City/Area : @Model.Area</li>
+    @foreach (var md in Model.MetaData) {
+        <li>@Html.Label(md.Type)
+        <ul>
+        @foreach (var mdValues in md.Values) { 
+           <li>@Html.Label(mdValues.Value)</li> 
+        }
+        </ul>
+        </li>
+    }
 </ul>
+</div>
+<br />
 <div>
     @Model.Description
 </div>
 <div>Articles
-    @Html.Action("ListArticleInSite", "Article", new { id=Model.Id})
+    @Html.Action("ListArticleInSite", "Article", new { id = Model.Id })
 </div>

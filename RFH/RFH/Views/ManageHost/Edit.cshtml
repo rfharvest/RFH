@@ -6,18 +6,15 @@
 <div>
             
     @using (Html.BeginForm()) {
+        
         @Html.ValidationSummary(true)
-        <fieldset>
-            <legend>Edit Host</legend>
 
-            @Html.HiddenFor(model => model.Id)
-		    @Html.Partial("_CreateOrEdit", Model)
+        @Html.HiddenFor(model => model.Id)
+		@Html.Partial("_CreateOrEdit", Model)
 
-            <p>
-                <input type="submit" value="Save" />
-            </p>
-
-        </fieldset>
+        <p>
+            <input type="submit" value="Save" class="standardButton" />
+        </p>
     }
 
     <div>

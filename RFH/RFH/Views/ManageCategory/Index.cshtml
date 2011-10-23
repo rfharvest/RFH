@@ -6,16 +6,14 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<table>
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            Description
-        </th>
-        <th></th>
-    </tr>
+<table class="standardTable">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td></td>
+        </tr>
+    </thead>
     
 @foreach (var item in Model) {
     <tr>
@@ -35,4 +33,4 @@
     
 </table>
 
-@Html.ActionLink("Back to List", "Index", "Admin")
+<p>@Html.ActionLink("Back to List", "Index", "Admin")</p>
