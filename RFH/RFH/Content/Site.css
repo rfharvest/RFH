@@ -82,6 +82,7 @@ body
     display: block;
     margin-bottom: 1ex;
 }
+.searchWizard .sorry { color: #900; }
 
 /* Styles for basic forms
 -----------------------------------------------------------*/
