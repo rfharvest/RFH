@@ -62,9 +62,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageArticleController.cs" />
+    <Compile Include="Controllers\ManageCategoryController.cs" />
+    <Compile Include="Controllers\ManageHostController.cs" />
     <Compile Include="Controllers\NavigationListController.cs" />
     <Compile Include="Controllers\LayoutTestController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
@@ -73,12 +77,14 @@
     </Compile>
     <Compile Include="Infrastructure\DatabaseInitializer.cs" />
     <Compile Include="Infrastructure\DataContext.cs" />
+    <Compile Include="Models\AdminIndexViewModel.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\ContentData.cs" />
     <Compile Include="Models\HostSite.cs" />
     <Compile Include="Models\HostSiteMetaData.cs" />
     <Compile Include="Models\HostSiteMetaDataValue.cs" />
+    <Compile Include="Models\ManageArticleDetailViewModel.cs" />
     <Compile Include="Models\RelatedArticle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -175,6 +181,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Site\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ManageArticle\Delete.cshtml" />
+    <Content Include="Views\ManageArticle\Detail.cshtml" />
+    <Content Include="Views\ManageArticle\Edit.cshtml" />
+    <Content Include="Views\ManageCategory\Create.cshtml" />
+    <Content Include="Views\ManageCategory\Delete.cshtml" />
+    <Content Include="Views\ManageCategory\Detail.cshtml" />
+    <Content Include="Views\ManageCategory\Edit.cshtml" />
+    <Content Include="Views\ManageHost\Create.cshtml" />
+    <Content Include="Views\ManageHost\Delete.cshtml" />
+    <Content Include="Views\ManageHost\Detail.cshtml" />
+    <Content Include="Views\ManageHost\Edit.cshtml" />
+    <Content Include="Views\ManageHost\_CreateOrEdit.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
