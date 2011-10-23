@@ -21,6 +21,7 @@ namespace RFH.Controllers
             return View(model);
         }
 
+
         public ActionResult Edit(int id)
         {
             var model = _dataContext.Articles.Single(m => m.Id == id);
@@ -29,6 +30,7 @@ namespace RFH.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(int id, FormCollection form)
         {
             var model = _dataContext.Articles.Single(m => m.Id == id);
@@ -40,6 +42,24 @@ namespace RFH.Controllers
             }
 
             var host = _dataContext.HostSites.Single(m => m.Id == model.HostSiteId);
+            return View(model);
+        }
+
+        public ActionResult Create() {
+            return View(new Article() { Content="Please enter content"});
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Create(Article model) {
+
+            if (ModelState.IsValid) {
+                _dataContext.Articles.Add(model);
+                _dataContext.SaveChanges();
+
+                return RedirectToAction("Detail", new { model.Id });
+            }
+
             return View(model);
         }
 

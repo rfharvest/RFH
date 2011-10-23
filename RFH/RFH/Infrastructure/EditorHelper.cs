@@ -8,14 +8,11 @@ using System.Text;
 namespace RFH.Infrastructure {
     public static class EditorHelper {
 
-        const string tag = @"
-   <textarea name=""{0}"" id=""{0}""></textarea>
-        <script type=""text/javascript"">
+//        const string tag = @"
+//   <textarea name=""{0}"" id=""{0}"">{1}</textarea>
+//        <script type=""text/javascript"">CKEDITOR.replace('{0}');</script>";
 
-            CKEDITOR.replace('{0}'); 
-            
-        </script>";
-
+        const string tag = @"<script type=""text/javascript"">CKEDITOR.replace('{0}');</script>";
 
         public static MvcHtmlString CKEditor(this HtmlHelper helper, string id) {
             return MvcHtmlString.Create(String.Format(tag, id));
