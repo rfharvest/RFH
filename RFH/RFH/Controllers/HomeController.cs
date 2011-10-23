@@ -28,8 +28,8 @@ namespace RFH.Controllers
         public ActionResult GeneralResource()
         {
             var contentItem = from content in _dataContext.ContentDatas
-                              where content.ActionName == "Index" &&
-                                    content.ControllerName == "GeneralResource"
+                              where content.ActionName == "GeneralResource" &&
+                                    content.ControllerName == "Home"
                               select content;
 
             return View(contentItem.FirstOrDefault());
