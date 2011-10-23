@@ -8,6 +8,8 @@ using RFH.Models;
 
 namespace RFH.Controllers
 {
+
+    [ValidateInput(false)]
     public class AdminController : Controller
     {
         private DataContext _dataContext = new DataContext();
@@ -22,6 +24,14 @@ namespace RFH.Controllers
 
             return View(model);
         }
+
+
+        [HttpPost]
+        public ActionResult Index(FormCollection collection) {
+
+            return new EmptyResult();
+        }
+
 
     }
 }
