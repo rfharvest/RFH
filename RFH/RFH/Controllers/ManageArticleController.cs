@@ -24,6 +24,13 @@ namespace RFH.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.HostSites = _dataContext.HostSites.ToList()
+                .Select(x => new SelectListItem
+                {
+                    Text = x.Name,
+                    Value = x.Id.ToString()
+                });
+
             var model = _dataContext.Articles.Single(m => m.Id == id);
             var host = _dataContext.HostSites.Single(m => m.Id == model.HostSiteId);
             return View(model);
@@ -42,11 +49,26 @@ namespace RFH.Controllers
             }
 
             var host = _dataContext.HostSites.Single(m => m.Id == model.HostSiteId);
+
+            ViewBag.HostSites = _dataContext.HostSites.ToList()
+                .Select(x => new SelectListItem
+                {
+                    Text = x.Name,
+                    Value = x.Id.ToString()
+                });
+
             return View(model);
         }
 
         public ActionResult Create()
         {
+            ViewBag.HostSites = _dataContext.HostSites.ToList()
+                .Select(x => new SelectListItem
+                {
+                    Text = x.Name,
+                    Value = x.Id.ToString()
+                });
+
             var model = new Article()
                             {
                                 Content = "Please enter content"
@@ -65,6 +87,13 @@ namespace RFH.Controllers
 
                 return RedirectToAction("Detail", new { model.Id });
             }
+
+            ViewBag.HostSites = _dataContext.HostSites.ToList()
+                .Select(x => new SelectListItem
+                {
+                    Text = x.Name,
+                    Value = x.Id.ToString()
+                });
 
             return View(model);
         }

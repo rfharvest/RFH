@@ -37,7 +37,7 @@
             @Html.LabelFor(model => model.HostSiteId)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.HostSiteId)
+            @Html.DropDownListFor(m => m.HostSiteId, (IEnumerable<SelectListItem>)ViewBag.HostSites)
             @Html.ValidationMessageFor(model => model.HostSiteId)
         </div>
 
