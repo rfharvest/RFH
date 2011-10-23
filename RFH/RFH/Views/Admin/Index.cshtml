@@ -1,22 +1,11 @@
 ﻿@model RFH.Models.AdminIndexViewModel
-@{
-    Layout = null;
-}
 
-<!DOCTYPE html>
+<div>
 
-<html>
-<head>
-    <title>Index</title>
-</head>
-<body>
-    <div>
-        <h1>Admin</h1>
+    <h1>Admin</h1>
 
-        <p>@Html.ActionLink("Manage HostSites", "Index", "ManageHost")</p>
-        <p>@Html.ActionLink("Manage Categories", "Index", "ManageCategory")</p>
-        <p>@Html.ActionLink("Edit ContentData", "Index", "ManageContent")</p>
+    <p>@Html.ActionLink("Manage HostSites", "Index", "ManageHost")</p>
+    <p>@Html.ActionLink("Manage Categories", "Index", "ManageCategory")</p>
+    <p>@Html.ActionLink("Edit ContentData", "Index", "ManageContent")</p>
 
-    </div>
-</body>
-</html>
+</div>
