@@ -143,7 +143,14 @@ namespace RFH.Infrastructure {
             context.ContentDatas.Add(new ContentData {
                 ControllerName="Home",
                 ActionName="Index",
-                Content="Hello from Home!"
+                Content=@"<h1>   Welcome</h1>  <p>   &nbsp;<br />   This site contains best practices from Washington state organizations that provide gleaning programs 
+                for their communities. A gleaning program involves obtaining and distributing surplus produce to the hungry. Best practices are provided in the form of 
+            articles and related examples.<br />   &nbsp;<br />   There are several ways to access the articles and related examples:</p>  <p>   &nbsp;</p>  <ul>   <li> 
+            Select a specific category, such as Region Type, under <strong>Category </strong>in the left navigation panel. All articles and related examples matching the 
+            category will be displayed.</li>   <li>    Select a specific organization, such as Northwest Harvest, under <strong>Organization </strong>in the left navigation 
+        panel. All articles and related examples authored by the organization will be displayed.</li>   <li>    <a href='http://asdfasdfasdf'>Find organizations similar to
+    yours</a> that meet specific criteria, including Organization Type and Region Type.</li>  </ul>  <p>   You may also wish to view and print the 2010 publication 
+    (pdf file) <a href='http://sadfasdfasdf'>The Gleaners Resource Guide</a>.</p>  "
             });
 
             context.ContentDatas.Add(new ContentData
