@@ -55,7 +55,8 @@ namespace RFH.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var model = new HostSite {Description = "Content goes here."};
+            return View(model);
         }
 
         [HttpPost]
