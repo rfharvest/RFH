@@ -902,6 +902,7 @@
     <Content Include="Views\ManageHostSiteTag\_ViewStart.cshtml" />
     <Content Include="Views\ManageHostSiteTagValue\_ViewStart.cshtml" />
     <Content Include="Views\Shared\SearchWizard\MockData.cshtml" />
+    <Content Include="Views\Home\GeneralResource.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
