@@ -40,8 +40,21 @@
 	}
 		
 	#MainWindowBottom
-	{}
+<<<<<<< HEAD
+	{
+		width: 96%;
+		/* height: 200px;*/
+		background: #369;
+		color: #FFF;
+		line-height: 200px;
+		vertical-align: middle;
+		text-align: center;
+		border: 1px solid #036;
+	}
 	*@
+=======
+	{}
+>>>>>>> 1188f872c96d2fc455954e0de2608832d7cd6294
 </style>
 
 <div id="MainWindow">
