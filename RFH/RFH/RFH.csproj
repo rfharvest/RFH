@@ -768,6 +768,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\SearchWizard.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -901,6 +902,7 @@
     <Content Include="Views\ManageHostSiteTag\_ViewStart.cshtml" />
     <Content Include="Views\ManageHostSiteTagValue\_ViewStart.cshtml" />
     <Content Include="Views\Home\GeneralResource.cshtml" />
+    <Content Include="Views\Shared\SearchWizard\MockData.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
