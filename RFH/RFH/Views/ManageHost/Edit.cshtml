@@ -1,0 +1,37 @@
+﻿@using RFH.Models
+@model HostSite
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        <div>
+            
+            @using (Html.BeginForm()) {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    <legend>Edit Host</legend>
+
+                    @Html.HiddenFor(model => model.Id)
+		            @Html.Partial("_CreateOrEdit", Model)
+
+                    <p>
+                        <input type="submit" value="Save" />
+                    </p>
+
+                </fieldset>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index", "Admin")
+            </div>
+              
+        </div>
+    </body>
+</html>
