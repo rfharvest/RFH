@@ -95,8 +95,69 @@ namespace RFH.Infrastructure {
                 Content="Hello from Home!"
             });
 
+            var hostSiteTag1 = new HostSiteTag {Name = "Organization Type"};
+            var hostSiteTag2 = new HostSiteTag {Name = "Agricultural Size"};
+            var hostSiteTag3 = new HostSiteTag {Name = "Primary Agriculture Crops"};
+            var hostSiteTag4 = new HostSiteTag {Name = "Region Type"};
+            var hostSiteTag5 = new HostSiteTag {Name = "Years Running A Gleaning Program"};
+            var hostSiteTag6 = new HostSiteTag {Name = "Number of Recipient Agencies"};
 
+            var hostSiteTag1Value1 = new HostSiteTagValue { HostSiteTag = hostSiteTag1, Name = "Food Bank" };
+            var hostSiteTag1Value2 = new HostSiteTagValue { HostSiteTag = hostSiteTag1, Name = "Non-Profit" };
+            var hostSiteTag1Value3 = new HostSiteTagValue { HostSiteTag = hostSiteTag1, Name = "Community Action Program" };
+            var hostSiteTag1Value4 = new HostSiteTagValue { HostSiteTag = hostSiteTag1, Name = "Coalition" };
+
+            var hostSiteTag2Value1 = new HostSiteTagValue { HostSiteTag = hostSiteTag2, Name = "Residential" };
+            var hostSiteTag2Value2 = new HostSiteTagValue { HostSiteTag = hostSiteTag2, Name = "Small Scale" };
+            var hostSiteTag2Value3 = new HostSiteTagValue { HostSiteTag = hostSiteTag2, Name = "Large Commercial" };
+
+            var hostSiteTag3Value1 = new HostSiteTagValue { HostSiteTag = hostSiteTag3, Name = "Veggie Row Crops" };
+            var hostSiteTag3Value2 = new HostSiteTagValue { HostSiteTag = hostSiteTag3, Name = "Tree Fruit" };
+
+            var hostSiteTag4Value1 = new HostSiteTagValue { HostSiteTag = hostSiteTag4, Name = "Rural" };
+            var hostSiteTag4Value2 = new HostSiteTagValue { HostSiteTag = hostSiteTag4, Name = "Urban" };
+            var hostSiteTag4Value3 = new HostSiteTagValue { HostSiteTag = hostSiteTag4, Name = "Suburban" };
+            var hostSiteTag4Value4 = new HostSiteTagValue { HostSiteTag = hostSiteTag4, Name = "City Surrounded By Rural Area" };
+
+            var hostSiteTag5Value1 = new HostSiteTagValue { HostSiteTag = hostSiteTag5, Name = "Less than 2 years" };
+            var hostSiteTag5Value2 = new HostSiteTagValue { HostSiteTag = hostSiteTag5, Name = "2 to 5 years" };
+            var hostSiteTag5Value3 = new HostSiteTagValue { HostSiteTag = hostSiteTag5, Name = "More than 5 years" };
+
+            var hostSiteTag6Value1 = new HostSiteTagValue { HostSiteTag = hostSiteTag6, Name = "One (host site)" };
+            var hostSiteTag6Value2 = new HostSiteTagValue { HostSiteTag = hostSiteTag6, Name = "2-8 Agencies" };
+            var hostSiteTag6Value3 = new HostSiteTagValue { HostSiteTag = hostSiteTag6, Name = "More than 8 agencies" };
+
+            context.HostSiteTags.Add(hostSiteTag1);
+            context.HostSiteTags.Add(hostSiteTag2);
+            context.HostSiteTags.Add(hostSiteTag3);
+            context.HostSiteTags.Add(hostSiteTag4);
+            context.HostSiteTags.Add(hostSiteTag5);
+            context.HostSiteTags.Add(hostSiteTag6);
+
+            context.HostSiteTagValues.Add(hostSiteTag1Value1);
+            context.HostSiteTagValues.Add(hostSiteTag1Value2);
+            context.HostSiteTagValues.Add(hostSiteTag1Value3);
+            context.HostSiteTagValues.Add(hostSiteTag1Value4);
+
+            context.HostSiteTagValues.Add(hostSiteTag2Value1);
+            context.HostSiteTagValues.Add(hostSiteTag2Value2);
+            context.HostSiteTagValues.Add(hostSiteTag2Value3);
+
+            context.HostSiteTagValues.Add(hostSiteTag3Value1);
+            context.HostSiteTagValues.Add(hostSiteTag3Value2);
+
+            context.HostSiteTagValues.Add(hostSiteTag4Value1);
+            context.HostSiteTagValues.Add(hostSiteTag4Value2);
+            context.HostSiteTagValues.Add(hostSiteTag4Value3);
+            context.HostSiteTagValues.Add(hostSiteTag4Value4);
+
+            context.HostSiteTagValues.Add(hostSiteTag5Value1);
+            context.HostSiteTagValues.Add(hostSiteTag5Value2);
+            context.HostSiteTagValues.Add(hostSiteTag5Value3);
+
+            context.HostSiteTagValues.Add(hostSiteTag6Value1);
+            context.HostSiteTagValues.Add(hostSiteTag6Value2);
+            context.HostSiteTagValues.Add(hostSiteTag6Value3);
         }
-
     }
 }
