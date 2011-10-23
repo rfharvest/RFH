@@ -95,6 +95,13 @@ namespace RFH.Infrastructure {
                 Content="Hello from Home!"
             });
 
+            context.ContentDatas.Add(new ContentData
+            {
+                ControllerName = "GeneralResource",
+                ActionName = "Index",
+                Content = "<h1>These are general resources!</h1>"
+            });
+
             var hostSiteTag1 = new HostSiteTag {Name = "Organization Type"};
             var hostSiteTag2 = new HostSiteTag {Name = "Agricultural Size"};
             var hostSiteTag3 = new HostSiteTag {Name = "Primary Agriculture Crops"};
