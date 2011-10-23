@@ -29,7 +29,7 @@
 <div>
     @Html.Raw( Model.Article.Content )
 </div>
-<div>
+<div class="goUp">
     @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Details", "Site", new {Id=Model.Article.HostSite.Name}, null)
 </div>
 <div>

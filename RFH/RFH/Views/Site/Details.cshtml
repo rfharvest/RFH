@@ -1,28 +1,53 @@
 ﻿@model RFH.Models.HostSite
+           
+@{
+    ViewBag.Title = Model.Name;
+}
 
-<div class="titlePane">
-<h2>@Model.Name</h2>
-<h3>in @Model.Area</h3>
-<h4><a href="@Model.HostSiteUrl">@Model.Name website</a></h4>
-</div>
 
-<div class="sidePane">
-<ul>
-    @foreach (var md in Model.MetaData) {
-        <li>@Html.Label(md.Type)
-        <ul>
-        @foreach (var mdValues in md.Values) { 
-           <li>@Html.Label(mdValues.Value)</li> 
-        }
-        </ul>
-        </li>
-    }
-</ul>
-</div>
-<br />
-<div>
-    @Model.Description
-</div>
-<div>Articles
-    @Html.Action("ListArticleInSite", "Article", new { id = Model.Id })
-</div>
+<table>
+    <tr>
+        <td width="60%" valign="top">
+        
+            <div style="padding-right:20px;">
+
+                <div class="titlePane">
+                    <h2>@Model.Name</h2>
+                    <h3>in @Model.Area</h3>
+                    <h4><a href="@Model.HostSiteUrl">@Model.Name website</a></h4>
+                </div>
+
+                <div>
+                    @Model.Description
+                </div>
+
+                <div>
+                    <h3>Articles</h3>
+                    @Html.Action("ListArticleInSite", "Article", new { id = Model.Id })
+                </div>
+
+            </div>
+        
+        </td>
+        <td width="40%" valign="top">
+            
+            <div style="border: 1px solid #DDD;">
+                <ul>
+                    @foreach (var md in Model.MetaData) {
+                        <li>
+                            <h4>@Html.Label(md.Type)</h4>
+                            <ul>
+                                @foreach (var mdValues in md.Values) { 
+                                   <li>@Html.Label(mdValues.Value)</li> 
+                                }
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+        </td>
+    </tr>
+</table>
+
+
