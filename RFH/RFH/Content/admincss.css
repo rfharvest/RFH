@@ -93,3 +93,20 @@ a {
     .editor-field input.checkbox {
         width: auto;
     }
+
+.twoColumnTable td {
+    padding: 10px;
+    vertical-align: top;
+}
+    .twoColumnTable td:first-child {
+        font-weight: bold;
+    }
+    
+.display-label {
+    font-weight: bold;
+    margin-left: 10px;
+}
+.display-field {
+    margin-bottom: 20px;
+    margin-left: 10px;
+}

@@ -2,33 +2,33 @@
 
 <h2>Manage ContentData</h2>
 
-    <table class="standardTable">
-        <thead>
-            <tr>
-                <td>
-                    ControllerName
-                </td>
-                <td>
-                    ActionName
-                </td>
-                <td></td>
-            </tr>
-        </thead>
-    
-    @foreach (var item in Model) {
+<table class="standardTable">
+    <thead>
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ControllerName)
+                ControllerName
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ActionName)
+                ActionName
             </td>
-            
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Detail", new { id=item.Id })
-            </td>
+            <td></td>
         </tr>
-    }
+    </thead>
     
-    </table>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ControllerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActionName)
+        </td>
+            
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Detail", new { id=item.Id })
+        </td>
+    </tr>
+}
+    
+</table>
