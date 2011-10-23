@@ -111,8 +111,8 @@ namespace RFH.Infrastructure {
 
             context.ContentDatas.Add(new ContentData
             {
-                ControllerName = "GeneralResource",
-                ActionName = "Index",
+                ControllerName = "Home",
+                ActionName = "GeneralResource",
                 Content = "<h1>These are general resources!</h1>"
             });
 
