@@ -50,7 +50,7 @@ namespace RFH.Infrastructure {
                         },
                     }
                 },
-                new HostSite {Name="Seattle Lettuce Link", Description="TBD", HostSiteUrl="http://seattlelettuce.org", Area="Seattle", IsActive=true}
+                new HostSite {Name="Seattle Lettuce Link", Description="TBD", HostSiteUrl="http://seattlelettuce.org", Area="Seattle", IsActive=true},
                 new HostSite {Name="Second Harvest Tri-cities", Description=@"The fields of grace focuses on three segments to gather the majority of the food.  The                      primary focus is on gleaning leftover crops, followed by donated first fruits on the tree and vien and farmer's market"
                     , HostSiteUrl="http://SeattleHarvestTri-Cities.org", Area="Tri-cities", IsActive=true}
             };
