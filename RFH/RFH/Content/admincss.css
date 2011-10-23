@@ -61,3 +61,15 @@ a {
         color: #006699;
         margin-right: 20px;
     }
+    
+.standardTable {
+    border: 1px solid #000;
+}
+    .standardTable td {
+        padding: 6px;
+    }
+        .standardTable thead td {
+            font-weight: bold;
+            background: #EEE;
+            color: #000;
+        }
