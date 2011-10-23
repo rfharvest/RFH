@@ -2,7 +2,7 @@
 
 
     <fieldset>
-        <legend>ContentData</legend>
+        <legend>Content Data</legend>
     
         <div class="display-label">ControllerName</div>
         <div class="display-field">
@@ -16,7 +16,7 @@
     
         <div class="display-label">Content</div>
         <div class="display-field">
-            @Html.DisplayFor(model => model.Content)
+            @Html.Raw(Model.Content)
         </div>
     </fieldset>
     <p>
