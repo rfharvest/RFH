@@ -10,6 +10,7 @@ namespace RFH.Controllers
 {
 
     [ValidateInput(false)]
+    [Authorize()]
     public class AdminController : Controller
     {
         private DataContext _dataContext = new DataContext();
