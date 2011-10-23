@@ -39,6 +39,7 @@ namespace RFH.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(int id, FormCollection form)   
         {
             var model = _dataContext.HostSites.Single(h => h.Id == id);
@@ -58,6 +59,7 @@ namespace RFH.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(HostSite model)
         {
             if (ModelState.IsValid)

@@ -31,6 +31,7 @@ namespace RFH.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(int id, ContentData model)
         {
             var contentData = _dataContext.ContentDatas.Single(m => m.Id == id);
