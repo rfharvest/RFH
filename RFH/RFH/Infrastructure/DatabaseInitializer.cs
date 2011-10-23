@@ -6,8 +6,8 @@ using System.Data.Entity;
 using RFH.Models;
 
 namespace RFH.Infrastructure {
-    public class DatabaseInitializer: DropCreateDatabaseAlways<DataContext> {
-
+    public class DatabaseInitializer : DropCreateDatabaseIfModelChanges<DataContext>
+    {
         protected override void Seed(DataContext context) {
 
 
