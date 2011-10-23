@@ -1,6 +1,9 @@
 ﻿@model RFH.Models.AdminIndexViewModel
 @{
     Layout = null;
+    
+    
+    
 }
 
 <!DOCTYPE html>
@@ -8,6 +11,10 @@
 <html>
 <head>
     <title>Index</title>
+
+    <script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")" type="text/javascript"></script>
+
+
 </head>
 <body>
     <div>
@@ -17,6 +24,18 @@
         <p>@Html.ActionLink("Manage Categories", "Index", "ManageCategory")</p>
         <p>@Html.ActionLink("Edit ContentData", "Index", "ManageContent")</p>
 
+
+        @using (Html.BeginForm()) {
+
+          
+            
+            @Html.CKEditor("Editor1")  
+            
+
+            <input type="submit" />
+            
+        }
+            
     </div>
 </body>
 </html>
