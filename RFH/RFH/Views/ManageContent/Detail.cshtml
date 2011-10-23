@@ -1,0 +1,37 @@
+﻿@model RFH.Models.ContentData
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Detail</title>
+</head>
+<body>
+    <fieldset>
+        <legend>ContentData</legend>
+    
+        <div class="display-label">ControllerName</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ControllerName)
+        </div>
+    
+        <div class="display-label">ActionName</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ActionName)
+        </div>
+    
+        <div class="display-label">Content</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Content)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
