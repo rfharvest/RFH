@@ -1,26 +1,34 @@
 ﻿@model RFH.Models.ContentData
 
-<h2>Manage ContentData</h2>
+<h2>Manage Content Data</h2>
 
-    <fieldset>
-        <legend>Content Data</legend>
-    
-        <div class="display-label">ControllerName</div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.ControllerName)
-        </div>
-    
-        <div class="display-label">ActionName</div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.ActionName)
-        </div>
-    
-        <div class="display-label">Content</div>
-        <div class="display-field">
-            @Html.Raw(Model.Content)
-        </div>
-    </fieldset>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+<fieldset>
+	<legend>Content Data</legend>
+
+	<div class="display-label">
+		Controller Name:
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.ControllerName)
+	</div>
+
+	<div class="display-label">
+		Action Name:
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.ActionName)
+	</div>
+	
+	<div class="display-label">
+		Content:
+	</div>
+	<div class="display-field">
+		@Html.Raw(Model.Content)
+	</div>
+</fieldset>
+<p>
+	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+	@Html.ActionLink("Back to List", "Index") |
+	@Html.ActionLink("Launch Public Page", Model.ActionName, Model.ControllerName,
+					 null, new { target = "_blank" })
+</p>
