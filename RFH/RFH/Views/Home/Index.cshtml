@@ -1,39 +1,79 @@
 ﻿@model IEnumerable<RFH.Models.Category>
-
+		   
 @{
-    ViewBag.Title = "Index";
+	ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rotary First Harvest - Home</title>
+	<style type="text/css">
+		#MainWindow
+		{
+		}
+		
+		#WelcomeContent
+		{
+			float: left;
+			width: 48%;
+			height: 200px;
+			background: #369;
+			color: #FFF;
+			line-height: 200px;
+			vertical-align: middle;
+			text-align: center;
+			/* border: 1px solid #036; */
+		}
+		
+		#ImageContent
+		{
+			float: left;
+			width: 48%;
+			height: 200px;
+			background: #369;
+			color: #FFF;
+			line-height: 200px;
+			vertical-align: middle;
+			text-align: center;
+			/* border: 1px solid #036; */
+		}
+		
+		#MainWindowBottom
+		{
+			/* float: left; */
+			width: 96%;
+			height: 200px;
+			background: #369;
+			color: #FFF;
+			line-height: 200px;
+			vertical-align: middle;
+			text-align: center;
+			border: 1px solid #036;
+		}
+	</style>
+</head>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            Description
-        </th>
-        <th></th>
-    </tr>
+<body>
+	<div id="MainWindow">
+		<div id="MainWindowTop">
+			<div id="WelcomeContent">
+				This is where the welcome content will go.. probably data Driven.
+			</div>
+			<div id="ImageContent">
+				<img src="@Url.Content("~/Content/images/placeholder.png")" height="200px" width="100%"
+					 alt="IMAGE WILL GO HERE." />
+			</div>
+		</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+		<div style="clear:both" />
 
-</table>
+		<div id="MainWindowBottom">
+			<div id="WizardContent">
+				This is where the Wizard might go.
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

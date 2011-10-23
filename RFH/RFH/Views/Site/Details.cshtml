@@ -1,0 +1,13 @@
+﻿@model RFH.Models.HostSite
+
+<h2>@Model.Name</h2>
+<ul>
+<li> URL : @Model.HostSiteUrl</li>
+<li>City/Area : @Model.Area</li>
+</ul>
+<div>
+    @Model.Description
+</div>
+<div>Articles
+    @Html.Action("ListArticleInSite", "Article", new { id=Model.Id})
+</div>

@@ -21,7 +21,21 @@ namespace RFH.Infrastructure {
 
 
             var hostSites = new List<HostSite> {
-                new HostSite {Name="MT Vernon", Description="TBD", HostSiteUrl="http://mtvernon.org", Area="MT Vernon", IsActive=true},
+                new HostSite {
+                    Name="MT Vernon", 
+                    Description="TBD", 
+                    HostSiteUrl="http://mtvernon.org", 
+                    Area="MT Vernon", 
+                    IsActive=true,
+                    MetaData = new List<HostSiteMetaData> {
+                        new HostSiteMetaData {
+                            Type="Organization Type", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="Food Bank"}, new HostSiteMetaDataValue {Value="Non-Profit"} }
+                        },
+                        new HostSiteMetaData {
+                            Type="Agricultural Size", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="Small"} }
+                        },
+                    }
+                },
                 new HostSite {Name="Seattle Lettuce Link", Description="TBD", HostSiteUrl="http://seattlelettuce.org", Area="Seattle", IsActive=true}
             };
 
@@ -55,14 +69,33 @@ namespace RFH.Infrastructure {
             var article3 = new Article {
                 HostSite = hostSites[0],
                 Category = categories[0],
-                Content = "I am not published",
+                Content = "I am article 3",
                 ShortDescription = "Article Short Description 3",
-                IsPublished = false
+                IsPublished = true
             };
             context.Articles.Add(article3);
 
 
+
+            var article4 = new Article {
+                HostSite = hostSites[1],
+                Category = categories[0],
+                Content = "I am article 4",
+                ShortDescription = "Article Short Description 4",
+                IsPublished = true
+            };
+            context.Articles.Add(article4);
+
+
         
+            // Adding content for ContentData
+            context.ContentDatas.Add(new ContentData {
+                ControllerName="Home",
+                ActionName="Index",
+                Content="Hello from Home!"
+            });
+
+
         }
 
     }

@@ -8,6 +8,7 @@ namespace RFH.Models {
     public class Article {
 
 
+
         public int Id { get; set; }
 
 
@@ -32,6 +33,7 @@ namespace RFH.Models {
 
 
         public bool IsPublished { get; set; }
+
 
 
     }
