@@ -1,7 +1,0 @@
-C:\Users\Stephen\Documents\Repos\GiveCamp\RFH\RFH\RFH\bin\RFH.dll
-C:\Users\Stephen\Documents\Repos\GiveCamp\RFH\RFH\RFH\bin\RFH.pdb
-C:\Users\Stephen\Documents\Repos\GiveCamp\RFH\RFH\RFH\bin\EntityFramework.dll
-C:\Users\Stephen\Documents\Repos\GiveCamp\RFH\RFH\RFH\bin\EntityFramework.xml
-C:\Users\Stephen\Documents\Repos\GiveCamp\RFH\RFH\RFH\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Stephen\Documents\Repos\GiveCamp\RFH\RFH\RFH\obj\Debug\RFH.dll
-C:\Users\Stephen\Documents\Repos\GiveCamp\RFH\RFH\RFH\obj\Debug\RFH.pdb

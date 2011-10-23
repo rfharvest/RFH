@@ -60,10 +60,19 @@ body
     margin-left: 150px;
 }
 
-.harryPotter .search { float: left; width: 50% };
-.harryPotter .search select { display: block; }
-.harryPotter .results { border: 2px solid #060; background: #ccc; padding: 1em; float: left; width: 40%; }
-.harryPotter .results a 
+.searchWizard .search { float: left; width: 60%; position: relative; }
+.searchWizard .search .question { clear: both; margin-bottom: 1em;}
+.searchWizard .search .question p {float: left; margin: 0; padding: 0; width: 18em; }
+.searchWizard .search select { width: 18em; margin-left: 1em;}
+.searchWizard .results 
+{
+    float: left;
+    width: 30%;
+    padding: 1em;
+    background: #ccc;
+    border: 2px solid #060;
+}
+.searchWizard .results > * 
 {
     display: block;
     margin-bottom: 1ex;
