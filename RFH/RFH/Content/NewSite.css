@@ -61,6 +61,13 @@ a:active { color: #262; text-decoration: underline; }
     min-height: 450px;
 }
 
+/* Page styles
+-----------------------------------------------------------*/
+
+.goUp { font-size: smaller; font-style: italic; margin: 1em 0;}
+.breadCrumb { font-size: smaller; font-style: italic; margin-bottom: 1em;}
+
+
 /* Search wizard
 -----------------------------------------------------------*/
 
