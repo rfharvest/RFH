@@ -8,66 +8,32 @@
 	#MainWindow
 	{
 		padding: 15 15 15 15;
-		/* background:url(smiley.gif) top left no-repeat, */
-		background: url("/Content/images/placeholder.png") 
+		background: url("/Content/images/placeholder.png");
 	}
-		
-@*	
-	#WelcomeContent
-	{
-		float: left;
-		width: 48%;
-		/* height: 200px; */
-		background: #369;
-		color: #FFF;
-		line-height: 200px;
-		vertical-align: middle;
-		text-align: center;
-		/* border: 1px solid #036; */
-	}
-		
-	#ImageContent
-	{
-		float: left;
-		width: 48%;
-		/*height: 200px;*/
-		background: #369;
-		color: #FFF;
-		line-height: 200px;
-		vertical-align: middle;
-		text-align: center;
-		/* border: 1px solid #036; */
-	}
-		
-	#MainWindowBottom
-	{}
-	*@
 </style>
 
 <div id="MainWindow">
-	@Html.Raw( @Model.Content )
-
-	@*	
 	<div id="MainWindowTop">
 		<div id="WelcomeContent">
 			@Html.Raw( @Model.Content )
 		</div>
 
+		@*
 		<div id="ImageContent">
 			<img src="@Url.Content("~/Content/images/placeholder.png")" width="100%"
 					alt="IMAGE WILL GO HERE." />
 		</div>
+		*@
 	</div>
 
 	<div style="clear:both"></div>
 
 	<div id="MainWindowBottom">
-        <h2>Find a Organization</h2>
-        <p>
-            To narrow the list of organizations on the right, select one or more filters below.
-            To view an organization's information and articles, click the organization's name on the right.
-        </p>
+		<h2>Find a Organization</h2>
+		<p>
+			To narrow the list of organizations on the right, select one or more filters below.
+			To view an organization's information and articles, click the organization's name on the right.
+		</p>
 		@Html.Partial("SearchWizard/MockData")
 	</div>
-	*@
 </div>
