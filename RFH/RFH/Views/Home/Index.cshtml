@@ -40,16 +40,7 @@
 	}
 		
 	#MainWindowBottom
-	{
-		width: 96%;
-		/* height: 200px;*/
-		background: #369;
-		color: #FFF;
-		line-height: 200px;
-		vertical-align: middle;
-		text-align: center;
-		border: 1px solid #036;
-	}
+	{}
 	*@
 </style>
 
@@ -71,9 +62,12 @@
 	<div style="clear:both"></div>
 
 	<div id="MainWindowBottom">
-		<div id="WizardContent">
-			This is where the Wizard might go.
-		</div>
+        <h2>Find a Organization</h2>
+        <p>
+            To narrow the list of organizations on the right, select one or more filters below.
+            To view an organization's information and articles, click the organization's name on the right.
+        </p>
+		@Html.Partial("SearchWizard/MockData")
 	</div>
 	*@
 </div>
