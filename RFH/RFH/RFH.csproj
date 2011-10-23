@@ -71,6 +71,8 @@
     <Compile Include="Controllers\ManageCategoryController.cs" />
     <Compile Include="Controllers\ManageContentController.cs" />
     <Compile Include="Controllers\ManageHostController.cs" />
+    <Compile Include="Controllers\ManageHostSiteTagController.cs" />
+    <Compile Include="Controllers\ManageHostSiteTagValueController.cs" />
     <Compile Include="Controllers\NavigationListController.cs" />
     <Compile Include="Controllers\LayoutTestController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Models\HostSiteToHostSiteTagValue.cs" />
     <Compile Include="Models\ManageArticleDetailViewModel.cs" />
     <Compile Include="Models\ManageHostDetailViewModel.cs" />
+    <Compile Include="Models\ManageHostSiteTagDetailViewModel.cs" />
     <Compile Include="Models\RelatedArticle.cs" />
     <Compile Include="Models\UserCredentials.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -885,6 +888,17 @@
     <None Include="Scripts\ckeditor\_samples\sample_posteddata.php" />
     <Content Include="Views\ManageArticle\Create.cshtml" />
     <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\ManageHostSiteTagValue\Create.cshtml" />
+    <Content Include="Views\ManageHostSiteTagValue\Delete.cshtml" />
+    <Content Include="Views\ManageHostSiteTagValue\Details.cshtml" />
+    <Content Include="Views\ManageHostSiteTagValue\Edit.cshtml" />
+    <Content Include="Views\ManageHostSiteTag\Create.cshtml" />
+    <Content Include="Views\ManageHostSiteTag\Delete.cshtml" />
+    <Content Include="Views\ManageHostSiteTag\Details.cshtml" />
+    <Content Include="Views\ManageHostSiteTag\Edit.cshtml" />
+    <Content Include="Views\ManageHostSiteTag\Index.cshtml" />
+    <Content Include="Views\ManageHostSiteTag\_ViewStart.cshtml" />
+    <Content Include="Views\ManageHostSiteTagValue\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
