@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -23,6 +24,7 @@ namespace RFH.Controllers
             var model = new ManageHostDetailViewModel();
 
             model.HostSite = _dataContext.HostSites.Single(h => h.Id == id);
+            model.Articles = _dataContext.Articles.Include(i => i.Category).Where(m => m.HostSiteId == id).ToList();
             model.HostSiteTags = _dataContext.HostSiteTags.ToList();
             model.HostSiteTagValues = _dataContext.HostSiteTagValues.ToList();
             model.HostSiteToHostSiteTagValues = _dataContext.HostSiteToHostSiteTagValues.Where(m => m.HostSiteId == model.HostSite.Id).ToList();

@@ -43,6 +43,8 @@
             </ul>
         </div>
 
+        <h2>Meta Data</h2>
+
         @foreach (var item in Model.HostSiteTags)
         {
             <div class="hostSiteTags">
@@ -87,3 +89,24 @@
             });
         
         </script>
+
+        <h2>Articles</h2>
+
+        <p>@Html.ActionLink("Add New Article", "Create", "ManageArticle")</p>
+
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>Category Title</th>
+                <th></th>
+            </tr>
+        @foreach (var item in Model.Articles)
+        {
+            <tr>
+                <td>@item.Category.Name</td>
+                <td>
+                    @Html.ActionLink("Details", "Detail", "ManageArticle", new {@item.Id}, null) |
+                    @Html.ActionLink("Delete", "Delete", "ManageArticle", new {@item.Id}, null)
+                </td>
+            </tr>
+        }
+        </table>
