@@ -5,9 +5,9 @@
 }
 
 <div class="breadCrumb">
-    @Html.ActionLink(Model.Article.HostSite.Name, "Index", "Site", new {Id=Model.Article.HostSiteId}, null)
+    @Html.ActionLink(Model.Article.HostSite.Name, "Details", "Site", new {Id=Model.Article.HostSiteId}, null)
     &gt;   
-    @Html.ActionLink(Model.Article.Category.Name, "Index", "Category", new {Id=Model.Article.CategoryId}, null)
+    @Html.ActionLink(Model.Article.Category.Name, "Index", "Category", new {Id=Model.Article.Category.Name}, null)
 </div>
 
 <div style="float:right">
@@ -30,7 +30,7 @@
     @Html.Raw( Model.Article.Content )
 </div>
 <div>
-    @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Index", "Site", new {Id=Model.Article.HostSiteId}, null)
+    @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Details", "Site", new {Id=Model.Article.HostSiteId}, null)
 </div>
 <div>
     @if (Model.RelatedArticles.Count > 0) {

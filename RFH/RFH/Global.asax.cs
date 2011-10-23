@@ -32,8 +32,10 @@ namespace RFH
                 "Article", // Route name
                 "{controller}/{id}", // URL with parameters
                 new { controller = "Article", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+
             );
 
+   
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
