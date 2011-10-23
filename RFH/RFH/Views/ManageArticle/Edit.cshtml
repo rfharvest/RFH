@@ -1,0 +1,83 @@
+﻿@model RFH.Models.Article
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Edit</title>
+</head>
+<body>
+    <script src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+    
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>Article</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.HostSite.Name)
+            </div>
+            <div class="editor-field">
+                @Model.HostSite.Name
+            </div>
+
+    
+            @Html.HiddenFor(model => model.Id)
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Content)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Content)
+                @Html.ValidationMessageFor(model => model.Content)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ShortDescription)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ShortDescription)
+                @Html.ValidationMessageFor(model => model.ShortDescription)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.HostSiteId)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.HostSiteId)
+                @Html.ValidationMessageFor(model => model.HostSiteId)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CategoryId)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CategoryId)
+                @Html.ValidationMessageFor(model => model.CategoryId)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.IsPublished)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IsPublished)
+                @Html.ValidationMessageFor(model => model.IsPublished)
+            </div>
+    
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to HostSite", "Detail", new {Model.Id})
+    </div>
+</body>
+</html>
