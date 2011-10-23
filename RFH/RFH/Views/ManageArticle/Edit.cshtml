@@ -49,7 +49,7 @@
             @Html.LabelFor(model => model.CategoryId)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CategoryId)
+            @Html.DropDownListFor(model => model.CategoryId, (IEnumerable<SelectListItem>)ViewBag.Categories)
             @Html.ValidationMessageFor(model => model.CategoryId)
         </div>
     
