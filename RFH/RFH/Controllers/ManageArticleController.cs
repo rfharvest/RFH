@@ -45,8 +45,14 @@ namespace RFH.Controllers
             return View(model);
         }
 
-        public ActionResult Create() {
-            return View(new Article() { Content="Please enter content"});
+        public ActionResult Create()
+        {
+            var model = new Article()
+                            {
+                                Content = "Please enter content"
+                            };
+            
+            return View(model);
         }
 
         [HttpPost]
