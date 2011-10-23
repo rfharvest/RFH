@@ -20,8 +20,14 @@ namespace RFH.Controllers
 
         public ActionResult Detail(int id)
         {
-            var host = _dataContext.HostSites.Single(h => h.Id == id);
-            return View(host);
+            var model = new ManageHostDetailViewModel();
+
+            model.HostSite = _dataContext.HostSites.Single(h => h.Id == id);
+            model.HostSiteTags = _dataContext.HostSiteTags.ToList();
+            model.HostSiteTagValues = _dataContext.HostSiteTagValues.ToList();
+            model.HostSiteToHostSiteTagValues = _dataContext.HostSiteToHostSiteTagValues.Where(m => m.HostSiteId == model.HostSite.Id).ToList();
+
+            return View(model);
         }
 
         public ActionResult Edit(int id)
@@ -78,6 +84,39 @@ namespace RFH.Controllers
             _dataContext.SaveChanges();
 
             return RedirectToAction("Index", "Admin");
+        }
+
+        public string EditTag(int hostSiteId, int hostSiteTagValueId, bool isChecked)
+        {
+            HostSiteToHostSiteTagValue value = _dataContext.HostSiteToHostSiteTagValues
+                .Where(m => m.HostSiteId == hostSiteId)
+                .Where(m => m.HostSiteTagValueId == hostSiteTagValueId)
+                .SingleOrDefault();
+
+            if (isChecked)
+            {
+                if (value == null)
+                {
+                    value = new HostSiteToHostSiteTagValue
+                                {
+                                    HostSiteId = hostSiteId,
+                                    HostSiteTagValueId = hostSiteTagValueId
+                                };
+                    _dataContext.HostSiteToHostSiteTagValues.Add(value);
+                }
+            }
+            else
+            {
+                if (value != null)
+                {
+                    _dataContext.HostSiteToHostSiteTagValues.Remove(value);
+                }
+            }
+
+            _dataContext.SaveChanges();
+
+            return string.Format("hostSiteId='{0}', hostSiteTagValueId='{1}', isChecked='{2}'",
+                                 hostSiteId, hostSiteTagValueId, isChecked);
         }
     }
 }

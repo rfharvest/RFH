@@ -89,6 +89,7 @@
     <Compile Include="Models\HostSiteTag.cs" />
     <Compile Include="Models\HostSiteToHostSiteTagValue.cs" />
     <Compile Include="Models\ManageArticleDetailViewModel.cs" />
+    <Compile Include="Models\ManageHostDetailViewModel.cs" />
     <Compile Include="Models\RelatedArticle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Article\IndexViewModel.cs" />
