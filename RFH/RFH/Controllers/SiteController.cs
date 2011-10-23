@@ -10,10 +10,10 @@ namespace RFH.Controllers
     public class SiteController : Controller
     {
         private DataContext _dataContext = new DataContext();
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
                 var siteQuery = from s in _dataContext.HostSites
-                                  where s.Id == id
+                                  where s.Name == id
                                   select s;
                 return View(siteQuery.FirstOrDefault());
         }

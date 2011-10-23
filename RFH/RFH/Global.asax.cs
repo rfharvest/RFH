@@ -28,10 +28,16 @@ namespace RFH
 				new { controller = "Category", action = "Index", id = UrlParameter.Optional } // Parameter defaults
 			);
 
-			routes.MapRoute(
-				"Article", // Route name
-				"Article/{id}", // URL with parameters
-				new { controller = "Article", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            routes.MapRoute(
+                "Article", // Route name
+                "Article/{id}", // URL with parameters
+                new { controller = "Article", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
+
+            routes.MapRoute(
+				"Site", // Route name
+				"Site/{id}", // URL with parameters
+				new { controller = "Site", action = "Details", id = UrlParameter.Optional } // Parameter defaults
 			);
    
 			routes.MapRoute(

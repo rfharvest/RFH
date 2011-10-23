@@ -3,6 +3,6 @@
 <h2>Host Site</h2>
 <ul>    
 @foreach (var item in Model) {
-        <li>@Html.ActionLink(item.Name, "Details", "Site", new { id = item.Id }, null)</li>      
+        <li>@Html.ActionLink(item.Name, "Details", "Site", new { id = item.Name }, null)</li>      
 }
 </ul>    
