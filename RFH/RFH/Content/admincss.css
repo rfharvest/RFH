@@ -8,29 +8,56 @@ body
     color: black;
 }
 
-#primaryNav
-{
-    background: #EEE;
-    padding: 20px;
+h1 {
+    color: #CCC;
+    font-size: 1.3em;
 }
-    #primaryNav li {
-        display: inline;
-        color: #006699;
-        margin-right: 20px;
-    }
 
-        #primaryNav li a {
-            color: #006699;
-            font: normal normal bold 1em Arial;
+h2 {
+    color: #666;
+    font: normal normal normal 1.2em Arial;
+}
+
+a {
+    color: #006699;
+}
+
+#header {
+    position: relative;
+}
+    #header #primaryNav
+    {
+        background: #EEE;
+        padding: 10px;
+    }
+        #header #logout {
+            position: absolute;
+            top: 0;
+            right: 0;
         }
+        #header #primaryNav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+            #header #primaryNav li a {
+                font: normal normal bold 1em Arial;
+            }
 
 #adminIndexView li {
     margin-bottom: 20px;
-    
 }
 
     #adminIndexView li a {
         font-size: 2em;
+    }
+ 
+#manageHostDetailTopActions {
+    width: 500px;
+    padding: 6px 0; 
+}   
+    #manageHostDetailTopActions li {
+        display: inline;
         color: #006699;
-    
+        margin-right: 20px;
     }
