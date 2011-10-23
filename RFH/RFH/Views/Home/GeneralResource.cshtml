@@ -1,0 +1,45 @@
+﻿@model RFH.Models.ContentData
+		   
+@{
+	ViewBag.Title = "General Resources";
+}
+
+	<style type="text/css">
+		#MainWindow
+		{
+		}
+		
+		#WelcomeContent
+		{
+			float: left;
+			width: 98%;
+			/* height: 200px; */
+			background: #369;
+			color: #FFF;
+			line-height: 200px;
+			vertical-align: middle;
+			text-align: center;
+			/* border: 1px solid #036; */
+		}
+
+		
+		#MainWindowBottom
+		{
+			width: 96%;
+			/* height: 200px;*/
+			background: #369;
+			color: #FFF;
+			line-height: 200px;
+			vertical-align: middle;
+			text-align: center;
+			border: 1px solid #036;
+		}
+	</style>
+
+	<div id="MainWindow">
+		<div id="MainWindowTop">
+			<div id="WelcomeContent">
+				@Html.Raw( @Model.Content )
+			</div>
+		</div>
+	</div>
