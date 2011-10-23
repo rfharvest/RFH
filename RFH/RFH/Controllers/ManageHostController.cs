@@ -12,6 +12,12 @@ namespace RFH.Controllers
     {
         private DataContext _dataContext = new DataContext();
 
+        public ActionResult Index()
+        {
+            var host = _dataContext.HostSites;
+            return View(host);
+        }
+
         public ActionResult Detail(int id)
         {
             var host = _dataContext.HostSites.Single(h => h.Id == id);
