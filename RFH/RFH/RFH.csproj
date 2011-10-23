@@ -75,9 +75,11 @@
     <Compile Include="Infrastructure\DataContext.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\ContentData.cs" />
     <Compile Include="Models\HostSite.cs" />
     <Compile Include="Models\HostSiteMetaData.cs" />
     <Compile Include="Models\HostSiteMetaDataValue.cs" />
+    <Compile Include="Models\RelatedArticle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

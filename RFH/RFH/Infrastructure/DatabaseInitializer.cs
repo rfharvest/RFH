@@ -71,12 +71,23 @@ namespace RFH.Infrastructure {
                 Category = categories[0],
                 Content = "I am not published",
                 ShortDescription = "Article Short Description 3",
-                IsPublished = false
+                IsPublished = false,
+                RelatedArticles = new List<RelatedArticle> {
+                    new RelatedArticle {RelatedArticleId=1}, new RelatedArticle {RelatedArticleId=2}
+                }
             };
             context.Articles.Add(article3);
 
 
         
+            // Adding content for ContentData
+            context.ContentDatas.Add(new ContentData {
+                ControllerName="Home",
+                ActionName="Index",
+                Content="Hello from Home!"
+            });
+
+
         }
 
     }
