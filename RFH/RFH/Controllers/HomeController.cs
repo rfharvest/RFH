@@ -9,26 +9,21 @@ namespace RFH.Controllers
 {
 	public class HomeController : Controller
 	{
+		//
+		// GET: /Home/
+
 		private DataContext _dataContext = new DataContext();
 
-        public ActionResult Index()
+
+		public ActionResult Index()
 		{
-            var contentItem = from content in _dataContext.ContentDatas
-                              where content.ActionName == "Index" &&
-                                    content.ControllerName == "Home"
-                              select content;
+			var contentItem = from content in _dataContext.ContentDatas
+							  where content.ActionName == "Index" &&  
+									content.ControllerName == "Home"
+							  select content;
 
 			return View(contentItem.FirstOrDefault());
 		}
 
-        public ActionResult GeneralResource()
-        {
-            var contentItem = from content in _dataContext.ContentDatas
-                              where content.ActionName == "Index" &&
-                                    content.ControllerName == "GeneralResource"
-                              select content;
-
-            return View(contentItem.FirstOrDefault());
-        }
 	}
 }
