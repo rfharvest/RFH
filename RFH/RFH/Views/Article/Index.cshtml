@@ -1,20 +1,20 @@
-﻿@model RFH.Models.Article
+﻿@model RFH.Views.Article.IndexViewModel
 
 @{
-    ViewBag.Title = Model.ShortDescription;
+    ViewBag.Title = Model.Article.ShortDescription;
 }
 
 <div class="breadCrumb">
-    @Html.ActionLink(Model.HostSite.Name, "Details", "Site", new {Id=Model.HostSiteId}, null)
+    @Html.ActionLink(Model.Article.HostSite.Name, "Index", "Site", new {Id=Model.Article.HostSiteId}, null)
     &gt;   
-    @Html.ActionLink(Model.Category.Name, "Index", "Category", new {Id=Model.Category.Name}, null)
+    @Html.ActionLink(Model.Article.Category.Name, "Index", "Category", new {Id=Model.Article.CategoryId}, null)
 </div>
 
 <div style="float:right">
-    @Model.HostSite.Name
+    @Model.Article.HostSite.Name
     <div>
         <ul>
-        @foreach (var metaData in Model.HostSite.MetaData) {
+        @foreach (var metaData in Model.Article.HostSite.MetaData) {
             <li>@metaData.Type:</li>
             <ul>
             @foreach (var metaDataValue in metaData.Values) {
@@ -27,8 +27,21 @@
 </div>
 
 <div>
-    @Html.Raw( Model.Content )
+    @Html.Raw( Model.Article.Content )
 </div>
 <div>
-    @Html.ActionLink(String.Format("Back to {0}", Model.HostSite.Name), "Details", "Site", new {Id=Model.HostSiteId}, null)
+    @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Index", "Site", new {Id=Model.Article.HostSiteId}, null)
+</div>
+<div>
+    @if (Model.RelatedArticles.Count > 0) {
+        <h1>Related Articles</h1>
+        <ul>
+            @foreach (var relatedArticle in Model.RelatedArticles) {
+                <li>
+                    @Html.ActionLink(String.Format("{0}@{1}", Model.Article.Category.Name, relatedArticle.HostSiteName), "Index", "Article", new {id = relatedArticle.ArticleId}, null)
+                </li>
+            }   
+        </ul>
+    }
+
 </div>
