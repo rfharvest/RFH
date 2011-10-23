@@ -112,7 +112,7 @@ namespace RFH.Controllers
 			_dataContext.Articles.Remove(model);
 			_dataContext.SaveChanges();
 
-			return RedirectToAction("Detail", "ManageHost", new { model.Id });
+			return RedirectToAction("Detail", "ManageHost", new { Id = model.HostSiteId });
 		}
 
 		#region . Query Helpers (DRY!) .
