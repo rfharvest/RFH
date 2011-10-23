@@ -1,0 +1,60 @@
+﻿@using RFH.Models
+@model HostSite
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+
+        <h1>Host Details</h1>
+
+        <table cellpadding="10" cellspacing="1" border="1">
+        
+            <tr>
+                  <td>@Html.LabelFor(m => m.Name)</td>
+                  <td>@Model.Name</td>
+            </tr>
+
+            <tr>
+                  <td>@Html.LabelFor(m => m.Area)</td>
+                  <td>@Model.Area</td>
+            </tr>
+
+            <tr>
+                  <td>@Html.LabelFor(m => m.HostSiteUrl)</td>
+                  <td>@Model.HostSiteUrl</td>
+            </tr>
+
+            <tr>
+                  <td>@Html.LabelFor(m => m.IsActive)</td>
+                  <td>@Model.IsActive</td>
+            </tr>
+
+            <tr>
+                  <td>@Html.LabelFor(m => m.Description)</td>
+                  <td>@Model.Description</td>
+            </tr>
+
+            <tr>
+                  <td>@Html.LabelFor(m => m.Area)</td>
+                  <td>@Model.Area</td>
+            </tr>
+        </table>
+
+        <div>
+            <ul>
+                <li>@Html.ActionLink("Edit", "Edit", new {Model.Id})</li>
+                <li>@Html.ActionLink("Delete", "Delete", new {Model.Id})</li>
+                <li>@Html.ActionLink("Back to List", "Index", "Admin")</li>
+            </ul>
+        </div>
+
+    </body>
+</html>
