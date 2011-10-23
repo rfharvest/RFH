@@ -78,13 +78,13 @@
     <Compile Include="Models\HostSite.cs" />
     <Compile Include="Models\HostSiteMetaData.cs" />
     <Compile Include="Models\HostSiteMetaDataValue.cs" />
-    <Compile Include="Models\RelatedArticle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\HeaderFooter.css" />
     <Content Include="Content\images\bg\cardboard.jpg" />
     <Content Include="Content\images\header.png" />
+    <Content Include="Content\images\placeholder.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
