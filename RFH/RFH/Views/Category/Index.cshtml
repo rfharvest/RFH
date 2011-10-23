@@ -15,7 +15,7 @@
     
     <ul>
         <li class="hostSite">@item.HostSite.Area</li>
-        <li class="shortDescription">@item.ShortDescription &nbsp;@Html.ActionLink("...", null, "Article", new { id = item.Id}, null)</li>
+        <li class="shortDescription">@item.ShortDescription &nbsp;@Html.ActionLink("...", "Index", "Article", new { id = item.Id}, null)</li>
     </ul>
    
 }

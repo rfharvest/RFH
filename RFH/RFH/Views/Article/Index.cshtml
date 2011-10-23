@@ -5,9 +5,9 @@
 }
 
 <div class="breadCrumb">
-    @Html.ActionLink(Model.HostSite.Name, "Index", "Site", new {Id=Model.HostSiteId}, null)
+    @Html.ActionLink(Model.HostSite.Name, "Details", "Site", new {Id=Model.HostSiteId}, null)
     &gt;   
-    @Html.ActionLink(Model.Category.Name, "Index", "Category", new {Id=Model.CategoryId}, null)
+    @Html.ActionLink(Model.Category.Name, "Index", "Category", new {Id=Model.Category.Name}, null)
 </div>
 
 <div style="float:right">
@@ -30,5 +30,5 @@
     @Html.Raw( Model.Content )
 </div>
 <div>
-    @Html.ActionLink(String.Format("Back to {0}", Model.HostSite.Name), "Index", "Site", new {Id=Model.HostSiteId}, null)
+    @Html.ActionLink(String.Format("Back to {0}", Model.HostSite.Name), "Details", "Site", new {Id=Model.HostSiteId}, null)
 </div>
