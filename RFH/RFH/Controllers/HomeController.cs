@@ -25,5 +25,15 @@ namespace RFH.Controllers
 			return View(contentItem.FirstOrDefault());
 		}
 
+        public ActionResult GeneralResource()
+        {
+            var contentItem = from content in _dataContext.ContentDatas
+                              where content.ActionName == "GeneralResource" &&
+                                    content.ControllerName == "Home"
+                              select content;
+
+            return View(contentItem.FirstOrDefault());
+        }
+
 	}
 }

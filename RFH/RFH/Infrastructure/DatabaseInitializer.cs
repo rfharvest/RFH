@@ -50,7 +50,9 @@ namespace RFH.Infrastructure {
                         },
                     }
                 },
-                new HostSite {Name="Seattle Lettuce Link", Description="TBD", HostSiteUrl="http://seattlelettuce.org", Area="Seattle", IsActive=true}
+                new HostSite {Name="Seattle Lettuce Link", Description="TBD", HostSiteUrl="http://seattlelettuce.org", Area="Seattle", IsActive=true},
+                new HostSite {Name="Second Harvest Tri-cities", Description=@"The fields of grace focuses on three segments to gather the majority of the food.  The                      primary focus is on gleaning leftover crops, followed by donated first fruits on the tree and vien and farmer's market"
+                    , HostSiteUrl="http://SeattleHarvestTri-Cities.org", Area="Tri-cities", IsActive=true}
             };
 
             hostSites.ForEach(h => context.HostSites.Add(h));
@@ -101,18 +103,27 @@ namespace RFH.Infrastructure {
             context.Articles.Add(article4);
 
 
+            var article5 = new Article {
+                HostSite = hostSites[2],
+                Category = categories[0],
+                Content = "<p>The project is managed by volunteer staff and board of directors, bu that model won't last long.  Fields of Grace is currently deliberating over a salary                   for one part-time staff person to manage the program in a consulting and fundraising role.  This position could grow to full time if Fields of Grace were able                   to expand its full operational footprint or offer additional Services</p><p>Fields of Grace is currently limited to a 45 minute drive time range                  imposed by the director. Fields of Grace asked this question on its annual survey to its volunteers this year and found that the average response to the question                  about maximum drive times was just above 44 minutes.  Most of the agricultural activity in this range lies either in Benton or Franklin Counties.</p>",
+                ShortDescription = "Some description for gleaning",
+                IsPublished = true
+            };
+            context.Articles.Add(article4);
+
         
             // Adding content for ContentData
             context.ContentDatas.Add(new ContentData {
                 ControllerName="Home",
                 ActionName="Index",
-                Content="Hello from Home!"
+                Content="<h1>   Welcome</h1>  <p>   &nbsp;<br />   This site contains best practices from Washington state organizations that provide gleaning programs for their communities. A gleaning program involves obtaining and distributing surplus produce to the hungry. Best practices are provided in the form of articles and related examples.<br />   &nbsp;<br />   There are several ways to access the articles and related examples:</p>  <p>   &nbsp;</p>  <ul>   <li>    Select a specific category, such as Region Type, under <strong>Category </strong>in the left navigation panel. All articles and related examples matching the category will be displayed.</li>   <li>    Select a specific organization, such as Northwest Harvest, under <strong>Organization </strong>in the left navigation panel. All articles and related examples authored by the organization will be displayed.</li>   <li>    <a href='http://asdfasdfasdf'>Find organizations similar to yours</a> that meet specific criteria, including Organization Type and Region Type.</li>  </ul>  <p>   You may also wish to view and print the 2010 publication (pdf file) <a href='http://sadfasdfasdf'>The Gleaners Resource Guide</a>.</p>  !"
             });
 
             context.ContentDatas.Add(new ContentData
             {
-                ControllerName = "GeneralResource",
-                ActionName = "Index",
+                ControllerName = "Home",
+                ActionName = "GeneralResource",
                 Content = "<h1>These are general resources!</h1>"
             });
 

@@ -905,6 +905,7 @@
     <Content Include="Views\ManageHostSiteTag\Index.cshtml" />
     <Content Include="Views\ManageHostSiteTag\_ViewStart.cshtml" />
     <Content Include="Views\ManageHostSiteTagValue\_ViewStart.cshtml" />
+    <Content Include="Views\Home\GeneralResource.cshtml" />
     <Content Include="Views\Shared\NewUi\_Footer.cshtml" />
     <Content Include="Views\Shared\NewUi\_Header.cshtml" />
   </ItemGroup>
