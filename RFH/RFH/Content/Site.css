@@ -1,16 +1,63 @@
 body
 {
-    font-size: .85em;
-    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-    color: #232323;
-    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, Sans-Serif;
+    color: black;
+    background-color: #060;
 }
 
-header,
-footer,
-nav,
-section {
-    display: block;
+.midsection
+{
+    width: 100%;
+    min-height: 420px;
+    margin: 0;
+    padding: 1ex 0;
+    background-color: White;
+}
+
+.navPaneSection
+{
+    float: left;
+    clear: left;
+    width: 120px;
+    margin: 5px 12px;
+}
+
+.navPaneSection .sidePane 
+{
+    border: 2px solid #060;
+    margin: 1ex 0 1em;
+}
+
+.navPaneSection .sidePane h2
+{
+    margin: 0;
+    padding: 2px 0;
+    font-size: medium;
+    text-align: center;
+    background: #060;
+    color: White;
+}
+
+.navPaneSection .sidePane ul 
+{
+    margin: 0.5ex 1ex;
+    padding: 0;
+    list-style-type: none;
+    font-size: smaller;
+}
+
+.navPaneSection .sidePane ul li
+{
+    margin: 0 0 3px;
+}
+
+.contentSection
+{
+    position: relative;
+    margin: 5px;
+    margin-left: 150px;
 }
 
 /* Styles for basic forms
@@ -73,3 +120,8 @@ textarea
 {
     display: none;
 }
+
+/* utility crap */
+
+.hidden { display: none; }
+.clear {clear: both;}

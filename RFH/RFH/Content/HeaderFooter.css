@@ -7,12 +7,17 @@
     display: block;
     width: 100%;
     margin: 0;
+    padding: 1ex 0;
     background: url('images/bg/cardboard.jpg');
+    border-bottom: 3px solid #060;
 }
 .header .logo
 {
-    margin: 2em auto;
-    background: url('images/header.png') no-repeat left top
+    margin: 0 auto;
+    width: 636px;
+    height: 146px;
+    background: url('images/header.png') no-repeat left top;
+    text-indent: -9999px; /* hide text from humans, but not bots */
 }
 .header .navBar
 {
@@ -30,18 +35,18 @@
 {
     background: #060;
     width: 100%;
-    color: white;
+    color: #ccc;
     font-size: smaller;
+    clear: both;
 }
 .footer .credits
 {
     text-align: right;
-    padding-left: 40%;
+    padding: 1ex 1ex 0 50%;
 }
 .footer .disclaimer
 {
-    margin-top: 1em;
+    padding: 1ex 1ex 1ex 50%;
     text-align: right;
-    padding-left: 40%;
     font-size: smaller;
 }

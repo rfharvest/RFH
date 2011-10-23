@@ -8,6 +8,10 @@ namespace RFH.Models {
     public class Article {
 
 
+        public Article() {
+            this.RelatedArticles = new List<RelatedArticle>();
+        }
+
         public int Id { get; set; }
 
 
@@ -32,6 +36,10 @@ namespace RFH.Models {
 
 
         public bool IsPublished { get; set; }
+
+
+        public ICollection<RelatedArticle> RelatedArticles { get; set; }
+
 
 
     }

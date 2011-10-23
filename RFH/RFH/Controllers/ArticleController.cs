@@ -16,7 +16,7 @@ namespace RFH.Controllers
         public ActionResult Index(int id)
         {
             // Lookup the article by id (only include published articles)
-            var article = (from a in _dataContext.Articles.Include(a => a.HostSite).Include(a=>a.Category)
+            var article = (from a in _dataContext.Articles.Include(a => a.HostSite).Include(a=>a.Category).Include(a=>a.HostSite.MetaData.Select(m => m.Values))
                            where a.Id == id && a.IsPublished == true
                            select a).FirstOrDefault();
 
@@ -24,6 +24,7 @@ namespace RFH.Controllers
             if (article == null) {
                 return RedirectToAction("Index", "Home");
             }
+
 
             return View(article);
         }

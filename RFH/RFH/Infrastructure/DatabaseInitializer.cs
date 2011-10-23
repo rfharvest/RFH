@@ -21,7 +21,21 @@ namespace RFH.Infrastructure {
 
 
             var hostSites = new List<HostSite> {
-                new HostSite {Name="MT Vernon", Description="TBD", HostSiteUrl="http://mtvernon.org", Area="MT Vernon", IsActive=true},
+                new HostSite {
+                    Name="MT Vernon", 
+                    Description="TBD", 
+                    HostSiteUrl="http://mtvernon.org", 
+                    Area="MT Vernon", 
+                    IsActive=true,
+                    MetaData = new List<HostSiteMetaData> {
+                        new HostSiteMetaData {
+                            Type="Organization Type", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="Food Bank"}, new HostSiteMetaDataValue {Value="Non-Profit"} }
+                        },
+                        new HostSiteMetaData {
+                            Type="Agricultural Size", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="Small"} }
+                        },
+                    }
+                },
                 new HostSite {Name="Seattle Lettuce Link", Description="TBD", HostSiteUrl="http://seattlelettuce.org", Area="Seattle", IsActive=true}
             };
 
@@ -35,13 +49,45 @@ namespace RFH.Infrastructure {
                 HostSite = hostSites[0],
                 Category = categories[0],
                 Content = "Here is the content of article 1",
-                ShortDescription="Article Short Description"
+                ShortDescription="Article Short Description",
+                IsPublished=true
             };
-
             context.Articles.Add(article1);
 
 
+            var article2 = new Article {
+                HostSite = hostSites[0],
+                Category = categories[1],
+                Content = "Here is the content of article 2",
+                ShortDescription = "Article Short Description 2",
+                IsPublished = true
+            };
+            context.Articles.Add(article2);
+
+
+
+            var article3 = new Article {
+                HostSite = hostSites[0],
+                Category = categories[0],
+                Content = "I am not published",
+                ShortDescription = "Article Short Description 3",
+                IsPublished = false,
+                RelatedArticles = new List<RelatedArticle> {
+                    new RelatedArticle {RelatedArticleId=1}, new RelatedArticle {RelatedArticleId=2}
+                }
+            };
+            context.Articles.Add(article3);
+
+
         
+            // Adding content for ContentData
+            context.ContentDatas.Add(new ContentData {
+                ControllerName="Home",
+                ActionName="Index",
+                Content="Hello from Home!"
+            });
+
+
         }
 
     }

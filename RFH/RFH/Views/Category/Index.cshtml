@@ -1,0 +1,18 @@
+﻿@model IEnumerable<RFH.Models.Article>
+@{
+}
+<style type="text/css">
+    ul { list-style: none;} 
+    .hostSite { font-size: 1.0em; font-weight: bold;}
+    .shortDescription { font-size: 0.9em; font-color: #121212; }
+</style>
+<h2>Category: @ViewBag.Title</h2>
+@foreach (var item in Model)
+{
+    
+    <ul>
+        <li class="hostSite">@item.HostSite.Area</li>
+        <li class="shortDescription">@item.ShortDescription &nbsp;@Html.ActionLink("...", null, "Article", new { id = item.Id}, null)</li>
+    </ul>
+   
+}
