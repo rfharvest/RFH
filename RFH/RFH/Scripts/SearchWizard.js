@@ -1,4 +1,4 @@
-?function SearchWizard(queryForm, searchResultsWidget) {
+function SearchWizard(queryForm, searchResultsWidget) {
     this.queryForm = queryForm;
     this.searchResultsWidget = searchResultsWidget;
 

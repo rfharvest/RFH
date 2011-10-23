@@ -105,7 +105,10 @@
     <Content Include="Content\HeaderFooter.css" />
     <Content Include="Content\images\bg\cardboard.jpg" />
     <Content Include="Content\images\header.png" />
+    <Content Include="Content\images\newHeader.png" />
     <Content Include="Content\images\placeholder.png" />
+    <Content Include="Content\NewHeaderFooter.css" />
+    <Content Include="Content\NewSite.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -769,6 +772,7 @@
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Scripts\SearchWizard.js" />
+    <None Include="Views\Shared\SearchWizard\MockData.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -903,6 +907,8 @@
     <Content Include="Views\ManageHostSiteTagValue\_ViewStart.cshtml" />
     <Content Include="Views\Home\GeneralResource.cshtml" />
     <Content Include="Views\Shared\SearchWizard\MockData.cshtml" />
+    <Content Include="Views\Shared\NewUi\_Footer.cshtml" />
+    <Content Include="Views\Shared\NewUi\_Header.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

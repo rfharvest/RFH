@@ -4,7 +4,7 @@ body
     padding: 0;
     font-family: Helvetica, Arial, Sans-Serif;
     color: black;
-    background-color: #eee;
+    background-color: #060;
 }
 
 a:link { color: #030; text-decoration: underline; }
@@ -14,10 +14,6 @@ a:active { color: #262; text-decoration: underline; }
 
 .midsection
 {
-    width: 980px;
-    min-height: 420px;
-    margin: 0 auto;
-    padding: 1em 0;
     background-color: White;
 }
 
@@ -25,29 +21,27 @@ a:active { color: #262; text-decoration: underline; }
 {
     float: left;
     clear: left;
-    width: 180px;
-    margin: 0px 10px;
+    width: 250px;
+    margin: 0;
+    background-color: white;
 }
 
 .navPaneSection .sidePane
 {
-    border: 2px solid #060;
-    margin-bottom: 1em;
+    border-bottom: 1px solid #060;
+    padding: 5px 0px;
+    margin: 0px 20px;
 }
 
-.navPaneSection .sidePane h2, .navPaneSection .sidePane h2
+.navPaneSection .sidePane h2, .navPaneSection .sidePane h3
 {
     margin: 0;
-    padding: 2px 0;
     font-size: medium;
-    text-align: center;
-    background: #060;
-    color: White;
+    color: #363636;
 }
 
 .navPaneSection .sidePane ul 
 {
-    margin: 0.5ex 1ex;
     padding: 0;
     list-style-type: none;
     font-size: smaller;
@@ -55,32 +49,42 @@ a:active { color: #262; text-decoration: underline; }
 
 .navPaneSection .sidePane ul li
 {
-    margin: 0 0 3px;
+    margin: 0 30px 5px;
 }
 
 .contentSection
 {
     position: relative;
-    margin: 0 1em 0 200px;
+    margin: 0 0 0 250px;
+    padding: 1em;
+    background-color: #e5dcd1;
+    min-height: 450px;
 }
 
-.searchWizard .search { float: left; width: 60%; position: relative; }
-.searchWizard .search .question { clear: both; margin-bottom: 1em;}
-.searchWizard .search .question p {float: left; margin: 0; padding: 0; width: 18em; }
-.searchWizard .search select { width: 18em; margin-left: 1em;}
-.searchWizard .results 
+/* Search wizard
+-----------------------------------------------------------*/
+
+.searchWizard .results, .searchWizard .search 
 {
+    position: relative;
     float: left;
-    width: 30%;
+    width: 40%;
+    margin-right: 1ex;
     padding: 1em;
-    background: #ccc;
+    background: #eee;
     border: 2px solid #060;
 }
+.searchWizard h3 { margin: 0 0 1em; }
+.searchWizard .search .question { clear: both; margin-bottom: 1em;}
+.searchWizard p { margin: 0; }
+.searchWizard .search .question p {float: left; margin: 0; padding: 0; width: 50%; }
+.searchWizard .search .question select { width: 50%;}
 .searchWizard .results > * 
 {
     display: block;
     margin-bottom: 1ex;
 }
+.searchWizard .sorry { color: #900; }
 
 /* Styles for basic forms
 -----------------------------------------------------------*/
