@@ -1,0 +1,33 @@
+﻿@model RFH.Models.Category
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Detail</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Category</legend>
+    
+        <div class="display-label">Name</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+    
+        <div class="display-label">Description</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id=Model.Id }) |
+        @Html.ActionLink("Back to List", "Index", "Admin")
+    </p>
+</body>
+</html>

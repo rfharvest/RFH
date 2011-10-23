@@ -18,10 +18,17 @@ namespace RFH.Controllers
         {
             ViewBag.Title = id;
 
+
             var articles = _dataContext.Articles
                                 .Include(h => h.HostSite)
+                                .Include(c => c.Category)
                                 .Where(a => a.Category.Name == id)
                                 .Where(a => a.IsPublished == true).ToList();
+
+            if (articles.Count() > 0)
+            {
+                ViewBag.Description = articles[0].Category.Description;
+            }
 
             return View(articles);
         }

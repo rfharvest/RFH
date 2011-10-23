@@ -2,17 +2,20 @@
 @{
 }
 <style type="text/css">
-    ul { list-style: none;} 
-    .hostSite { font-size: 1.0em; font-weight: bold;}
-    .shortDescription { font-size: 0.9em; font-color: #121212; }
+    ul { list-style: none;}     
+    .categoryTitle{ font-size: 1.8em; font-color: #121212; font-weight: bold; }
+    .categoryDescription{ font-size: 1.0em; font-color: #121212; }
+    .hostSite { font-size: 0.9em; font-weight: bold;}
+    .shortDescription { font-size: 0.8em; font-color: #121212; }
 </style>
-<h2>Category: @ViewBag.Title</h2>
+<div class="categoryTitle">@ViewBag.Title</div>
+<div calss="categoryDescription">@ViewBag.Description</div>
 @foreach (var item in Model)
 {
     
     <ul>
         <li class="hostSite">@item.HostSite.Area</li>
-        <li class="shortDescription">@item.ShortDescription &nbsp;@Html.ActionLink("...", "Index", "Article", new { id = item.Id}, null)</li>
+        <li class="shortDescription">@item.ShortDescription &nbsp;@Html.ActionLink("...", null, "Article", new { id = item.Id}, null)</li>
     </ul>
    
 }

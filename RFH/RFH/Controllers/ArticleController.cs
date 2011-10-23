@@ -15,6 +15,14 @@ namespace RFH.Controllers
 
         private DataContext _dataContext = new DataContext();
 
+        public ActionResult ListArticleInSite(int id) {
+            //id==HostSiteId
+            var article = (from a in _dataContext.Articles.Include(a => a.Category)
+                           where a.HostSiteId == id && a.IsPublished == true
+                           select a).ToList();
+
+            return PartialView("List", article); 
+        }
         public ActionResult Index(int id)
         {
             // Lookup the article by id (only include published articles)

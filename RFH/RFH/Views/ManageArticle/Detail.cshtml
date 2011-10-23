@@ -1,0 +1,49 @@
+﻿@model RFH.Models.ManageArticleDetailViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Detail</title>
+</head>
+<body>
+    <fieldset>
+        <legend>ManageArticleDetailViewModel</legend>
+
+        <div class="display-label">HostSite</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.HostSite.Name)
+        </div>
+
+        <div class="display-label">Category</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Article.Category.Name)
+        </div>
+
+        <div class="display-label">IsPublished</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Article.IsPublished)
+        </div>
+
+        <div class="display-label">Content</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Article.Content)
+        </div>
+
+        <div class="display-label">ShortDescription</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Article.ShortDescription)
+        </div>
+
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { Model.Article.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { Model.Article.Id }) |
+        @Html.ActionLink("Back to HostSite", "Detail", "ManageHost", new {Model.HostSite.Id}, null)
+    </p>
+</body>
+</html>
