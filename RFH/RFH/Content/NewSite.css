@@ -37,6 +37,7 @@ a:active { color: #262; text-decoration: underline; }
 {
     margin: 0;
     font-size: medium;
+    color: #363636;
 }
 
 .navPaneSection .sidePane ul 
