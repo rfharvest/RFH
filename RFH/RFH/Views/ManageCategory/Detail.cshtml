@@ -1,33 +1,23 @@
 ﻿@model RFH.Models.Category
 
-@{
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+<h2>Manage Categories</h2>
 
-<!DOCTYPE html>
+<fieldset>
+    <legend>Category</legend>
+    
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+    
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
 
-<html>
-<head>
-    <title>Detail</title>
-</head>
-<body>
-    <fieldset>
-        <legend>Category</legend>
-    
-        <div class="display-label">Name</div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Name)
-        </div>
-    
-        <div class="display-label">Description</div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Description)
-        </div>
-    </fieldset>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id=Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Delete", "Delete", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
