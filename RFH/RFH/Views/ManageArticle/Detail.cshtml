@@ -1,9 +1,6 @@
 ﻿@model RFH.Models.ManageArticleDetailViewModel
 
 
-    <fieldset>
-        <legend>ManageArticleDetailViewModel</legend>
-
         <div class="display-label">HostSite</div>
         <div class="display-field">
             @Html.DisplayFor(model => model.HostSite.Name)
@@ -29,7 +26,6 @@
             @Html.DisplayFor(model => model.Article.ShortDescription)
         </div>
 
-    </fieldset>
     <p>
         @Html.ActionLink("Edit", "Edit", new { Model.Article.Id }) |
         @Html.ActionLink("Delete", "Delete", new { Model.Article.Id }) |
