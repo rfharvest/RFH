@@ -31,7 +31,7 @@
 
         <tr>
             <td>@Html.LabelFor(m => m.Description)</td>
-            <td>@Model.Description</td>
+            <td>@Html.Raw(@Model.Description)</td>
         </tr>
 
         <tr>
@@ -40,18 +40,17 @@
         </tr>
     </table>
 
-    <div>
-        <ul>
-            <li>@Html.ActionLink("Back to List", "Index")</li>
-        </ul>
-    </div>
-
     @using (Html.BeginForm()) {
 
         @Html.HiddenFor(model => model.Id)
 
         <p>
-            <input type="submit" value="Delete" />
+            <input type="submit" value="Delete" class="standardButton" />
         </p>
     }
+
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
 </div>

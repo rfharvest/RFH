@@ -7,55 +7,52 @@
 <div>
             
     @using (Html.BeginForm()) {
+        
         @Html.ValidationSummary(true)
-        <fieldset>
-            <legend>Create Host</legend>
 
-		    <div class="editor-label">
-                @Html.LabelFor(model => model.HostSiteUrl)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.HostSiteUrl)
-                @Html.ValidationMessageFor(model => model.HostSiteUrl)
-            </div>
+		<div class="editor-label">
+            @Html.LabelFor(model => model.HostSiteUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HostSiteUrl)
+            @Html.ValidationMessageFor(model => model.HostSiteUrl)
+        </div>
 
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Name)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Name)
-                @Html.ValidationMessageFor(model => model.Name)
-            </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
 
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Description)
-            </div>
-            <div class="editor-field">
-                        @Html.CKEditor("Description", Model.Description)
-                @Html.ValidationMessageFor(model => model.Description)
-            </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+                    @Html.CKEditor("Description", Model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
 
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Area)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Area)
-                @Html.ValidationMessageFor(model => model.Area)
-            </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Area)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Area)
+            @Html.ValidationMessageFor(model => model.Area)
+        </div>
 
-            <div class="editor-label">
-                @Html.LabelFor(model => model.IsActive)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.IsActive)
-                @Html.ValidationMessageFor(model => model.IsActive)
-            </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.IsActive, new { Class = "checkbox" })
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
 
-            <p>
-                <input type="submit" value="Create" />
-            </p>
-
-        </fieldset>
+        <p>
+            <input type="submit" value="Create" class="standardButton" />
+        </p>
     }
 
     <div>

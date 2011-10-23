@@ -61,7 +61,12 @@ a {
         color: #006699;
         margin-right: 20px;
     }
-    
+
+.standardButton {
+    font-size: 1.4em;
+    padding: 4px 20px;
+}
+
 .standardTable {
     border: 1px solid #000;
 }
@@ -73,3 +78,18 @@ a {
             background: #EEE;
             color: #000;
         }
+        
+.editor-label {
+    font-weight: bold;
+    margin: 4px;
+}
+
+.editor-field {
+    margin-bottom: 20px;
+}
+    .editor-field input {
+        width: 400px;
+    }
+    .editor-field input.checkbox {
+        width: auto;
+    }

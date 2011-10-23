@@ -22,8 +22,10 @@ namespace RFH.Infrastructure {
 
             var hostSites = new List<HostSite> {
                 new HostSite {
-                    Name="MT Vernon", 
-                    Description="TBD", 
+                    Name="MT Vernon Food Bank", 
+                    Description=@"The following information describes how the gleaning coordinator organize a food recovery program in this region- including collection of surplus
+                    produce from farms, home gardens, and farmers markets.  Because the program is new and still growing, information reflects the gleaning coordinator's experience in starting a program essentially from scratch.
+                    Goals for the future of the program are described as well", 
                     HostSiteUrl="http://mtvernon.org", 
                     Area="MT Vernon", 
                     IsActive=true,
@@ -32,7 +34,19 @@ namespace RFH.Infrastructure {
                             Type="Organization Type", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="Food Bank"}, new HostSiteMetaDataValue {Value="Non-Profit"} }
                         },
                         new HostSiteMetaData {
-                            Type="Agricultural Size", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="Small"} }
+                            Type="Agricultural Size", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="Small scale"}, new HostSiteMetaDataValue{Value="residential"} }
+                        },
+                        new HostSiteMetaData {
+                            Type="Type of region", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="city surrounded"}, new HostSiteMetaDataValue{Value="by rural area"}, new HostSiteMetaDataValue{Value="suburban"} }
+                        },
+                        new HostSiteMetaData {
+                            Type="Years running a gleaning program", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="less than 2 years"} }
+                        },
+                        new HostSiteMetaData {
+                            Type="Primary agriculture crops", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="vegetable row crops (95%)"}, new HostSiteMetaDataValue {Value="tree fruit (5%)"} }
+                        },
+                        new HostSiteMetaData {
+                            Type="Number of recipient agencies", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="more than 8 agencies"} }
                         },
                     }
                 },
