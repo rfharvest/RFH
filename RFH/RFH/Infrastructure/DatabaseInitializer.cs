@@ -50,7 +50,32 @@ namespace RFH.Infrastructure {
                         },
                     }
                 },
-                new HostSite {Name="Seattle Lettuce Link", Description="TBD", HostSiteUrl="http://seattlelettuce.org", Area="Seattle", IsActive=true}
+                new HostSite {Name="Seattle Lettuce Link", Description="TBD", HostSiteUrl="http://seattlelettuce.org", Area="Seattle", IsActive=true},
+                new HostSite {Name="Second Harvest Tri-cities", Description=@"The fields of grace focuses on three segments to gather the majority of the food.  The
+                    primary focus is on gleaning leftover crops, followed by donated first fruits on the tree and vien and farmer's market",
+                    Area="Tri-cities",
+                    IsActive=true,
+                    MetaData = new List<HostSiteMetaData> {
+                        new HostSiteMetaData {
+                            Type="Organization Type", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="Food Bank"}, new HostSiteMetaDataValue {Value="Non-Profit"} }
+                        },
+                        new HostSiteMetaData {
+                            Type="Agricultural Size", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="Small scale"}, new HostSiteMetaDataValue{Value="residential"} }
+                        },
+                        new HostSiteMetaData {
+                            Type="Type of region", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="city surrounded"}, new HostSiteMetaDataValue{Value="by rural area"}, new HostSiteMetaDataValue{Value="suburban"} }
+                        },
+                        new HostSiteMetaData {
+                            Type="Years running a gleaning program", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="2-5 years"} }
+                        },
+                        new HostSiteMetaData {
+                            Type="Primary agriculture crops", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="vegetable row crops (95%)"}, new HostSiteMetaDataValue {Value="tree fruit (5%)"} }
+                        },
+                        new HostSiteMetaData {
+                            Type="Number of recipient agencies", Values= new List<HostSiteMetaDataValue> {new HostSiteMetaDataValue {Value="more than 8 agencies"} }
+                        },
+                    }
+                }
             };
 
             hostSites.ForEach(h => context.HostSites.Add(h));
@@ -62,7 +87,7 @@ namespace RFH.Infrastructure {
             var article1 = new Article {
                 HostSite = hostSites[0],
                 Category = categories[0],
-                Content = "Here is the content of article 1",
+                Content = "Below ",
                 ShortDescription="Article Short Description",
                 IsPublished=true
             };
@@ -78,7 +103,7 @@ namespace RFH.Infrastructure {
             };
             context.Articles.Add(article2);
 
-
+            
 
             var article3 = new Article {
                 HostSite = hostSites[0],
@@ -100,6 +125,18 @@ namespace RFH.Infrastructure {
             };
             context.Articles.Add(article4);
 
+            var article5= new Article {
+                HostSite = hostSites[2],
+                Category = categories[0],
+                Content = @"<p>The project is managed by volunteer staff and board of directors, bu that model won't last long.  Fields of Grace is currently deliberating over a salary
+                 for one part-time staff person to manage the program in a consulting and fundraising role.  This position could grow to full time if Fields of Grace were able
+                 to expand its full operational footprint or offer additional Services</p><p>Fields of Grace is currently limited to a 45 minute drive time range
+                imposed by the director. Fields of Grace asked this question on its annual survey to its volunteers this year and found that the average response to the question
+                about maximum drive times was just above 44 minutes.  Most of the agricultural activity in this range lies either in Benton or Franklin Counties.</p>",
+                ShortDescription = "Article Short Description 4",
+                IsPublished = true
+            };
+            context.Articles.Add(article5);
 
         
             // Adding content for ContentData
