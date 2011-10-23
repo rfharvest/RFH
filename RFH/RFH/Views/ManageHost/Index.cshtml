@@ -6,24 +6,25 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<table>
-    <tr>
-        <th>
-            HostSiteUrl
-        </th>
-        <th>
-            Name
-        </th>
+<table class="standardTable">
+    <thead>
+        <tr>
+            <td>
+                HostSiteUrl
+            </td>
+            <td>
+                Name
+            </td>
             
-        <th>
-            Area
-        </th>
-        <th>
-            IsActive
-        </th>
-        <th></th>
-    </tr>
-    
+            <td>
+                Area
+            </td>
+            <td>
+                IsActive
+            </td>
+            <td></td>
+        </tr>
+    </thead>
 @foreach (var item in Model) {
     <tr>
         <td>

@@ -103,12 +103,14 @@
 
         <p>@Html.ActionLink("Add New Article", "Create", "ManageArticle")</p>
 
-        <table border="1" cellpadding="10">
-            <tr>
-                <th>Category Title</th>
-                <th>Is Published</th>
-                <th></th>
-            </tr>
+        <table  class="standardTable">
+            <thead>
+                <tr>
+                    <td>Category Title</td>
+                    <td>Is Published</td>
+                    <td></td>
+                </tr>
+            </thead>
             @foreach (var item in Model.Articles)
             {
                 <tr>
