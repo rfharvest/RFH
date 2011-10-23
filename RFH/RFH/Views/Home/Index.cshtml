@@ -7,8 +7,12 @@
 <style type="text/css">
 	#MainWindow
 	{
+		padding: 15 15 15 15;
+		/* background:url(smiley.gif) top left no-repeat, */
+		background: url("/Content/images/placeholder.png") 
 	}
 		
+@*	
 	#WelcomeContent
 	{
 		float: left;
@@ -46,9 +50,13 @@
 		text-align: center;
 		border: 1px solid #036;
 	}
+	*@
 </style>
 
 <div id="MainWindow">
+	@Html.Raw( @Model.Content )
+
+	@*	
 	<div id="MainWindowTop">
 		<div id="WelcomeContent">
 			@Html.Raw( @Model.Content )
@@ -67,4 +75,5 @@
 			This is where the Wizard might go.
 		</div>
 	</div>
+	*@
 </div>
