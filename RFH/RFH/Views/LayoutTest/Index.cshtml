@@ -3,9 +3,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>LayoutTest</h2>
+<h2>Search Wizard</h2>
 
-<div class="harryPotter">
+<div class="searchWizard">
     <form class="search">
         <div class="question">
             What kind of organization would you be?
@@ -69,132 +69,188 @@
             </select>
         </div>
     </form>
-    <div class="results" id="hermoine">
-    </div>
+    <div class="results"></div>
     <div class="clear"></div>
     
-    <script type="text/javascript">        var chapters = [
-	        {
-	            "id": 1,
-		        chapterName: "Turquoise Falcon",
-		        chapterUrl: "blah",
-		        criteria: {
-                    "orgType": "foodbank",
-                    "regionType": "rural",
-                    "agSize": "small",
-                    "yearsOld": "long5",
-                    "cropType": "veg",
-                    "numRecipients": "many25"
+    <script type="text/javascript">
+
+        function SearchWizard(queryForm, searchResultsWidget)
+        {
+            this.queryForm = queryForm;
+            this.searchResultsWidget = searchResultsWidget;
+
+            this._getFilters = function () {
+                var filters = {};
+                var formSelects = this.queryForm.find('select');   // Find all dropdowns in the form
+                formSelects.each(function() {
+                    filters[this.name] = this.value;            // Add dropdown's value to filter as key/value pair
+                });
+                return filters;
+            };
+
+            this._onChange = function () {
+                console.log("onChange fired");
+                var filters = this._getFilters();
+                this.searchResultsWidget.applyFilters(filters);
+            };
+
+            var me = this;
+            var changeElems = this.queryForm.find('select');
+            changeElems.change(function () { me._onChange() });
+            changeElems.keyup(function () { me._onChange() });
+        };
+
+        function SearchResults (hostSites, jqResultsNode)
+        {
+            this.hostSites = hostSites;
+            this.hostSiteLinkNodes = {}; // map hostSiteId -> hostSiteLinkNode
+            this.jqResultsNode = jqResultsNode;
+            this.jqSorryNode = null;
+
+            for (var i in this.hostSites) {
+                var hostSite = this.hostSites[i];
+
+                // Create a new host-site hyperlink
+                var newHtml = "<div><a href=\"" + hostSite.url + "\">" + hostSite.name + "</a></div>";
+                var newHtmlNode = $(newHtml);
+
+                // Map the host-site's data object to its hyperlink, for easy retrieval 
+                this.hostSiteLinkNodes[hostSite.id] = newHtmlNode;
+
+                // Add the hyperlink to the document
+                this.jqResultsNode.append(newHtmlNode);
+            }
+
+            // If the user filters away all possible host-sites, then display an apology, even though it's the user's fault.
+            this.jqSorryNode = $("<div class=\"sorry hidden\">Sorry, but none of our sites match your search parameters. Please remove or change some filters, and try again.</div>");
+            this.jqResultsNode.append(this.jqSorryNode);
+
+            this.applyFilters = function (filters) {
+                filters = filters || {};
+                var isAnySearchResultShown = false;
+
+                for (var i in this.hostSites) {
+                    var hostSite = this.hostSites[i];
+                    var isFilteredOut = false;
+
+                    // Test every host-site to see if it passes all the filters
+                    for (var fKey in filters) {
+                        var fVal = filters[fKey] || "";
+                        var hsVal = (hostSite.criteria && hostSite.criteria[fKey]) || "";
+                        if (fVal != "" && hsVal != fVal) {
+                            isFilteredOut = true;
+                            break;
+                        }
+                    }
+
+                    // Show/hide the host-site's hyperlink
+                    var hostSiteLinkNode = this.hostSiteLinkNodes[hostSite.id];
+                    if (isFilteredOut && hostSiteLinkNode) {
+                        hostSiteLinkNode.addClass("hidden");
+                    } else {
+                        hostSiteLinkNode.removeClass("hidden");
+                        isAnySearchResultShown = true;
+                    }
                 }
+
+                if (isAnySearchResultShown) {
+                    this.jqSorryNode.addClass("hidden");
+                } else {
+                    this.jqSorryNode.removeClass("hidden");
+                }
+            }
+        };
+
+        var mockHostSites = [
+	        {
+	            id: 1,
+	            name: "Turquoise Falcon",
+	            url: "blah",
+	            criteria: {
+	                "orgType": "foodbank",
+	                "regionType": "rural",
+	                "agSize": "small",
+	                "yearsOld": "long5",
+	                "cropType": "veg",
+	                "numRecipients": "many25"
+	            }
 	        },
 	        {
-	            "id": 2,
-		        chapterName: "Scarlet Piglet",
-		        chapterUrl: "blah",
-		        criteria: {
-                    "orgType": "foodbank",
-                    "regionType": "urban",
-                    "agSize": "commercial",
-                    "yearsOld": "short2",
-                    "cropType": "fruit",
-                    "numRecipients": "one"
-                }
+	            id: 2,
+	            name: "Scarlet Piglet",
+	            url: "blah",
+	            criteria: {
+	                "orgType": "foodbank",
+	                "regionType": "urban",
+	                "agSize": "commercial",
+	                "yearsOld": "short2",
+	                "cropType": "fruit",
+	                "numRecipients": "one"
+	            }
 	        },
 	        {
-	            "id": 3,
-	            chapterName: "Mauve Komodo Dragon",
-	            chapterUrl: "blah",
-		        criteria: {
-                    "orgType": "coalition",
-                    "regionType": "suburb",
-                    "agSize": "commercial",
-                    "yearsOld": "med2to5",
-                    "cropType": "fruit",
-                    "numRecipients": "some10to25"
-                }
+	            id: 3,
+	            name: "Mauve Komodo Dragon",
+	            url: "blah",
+	            criteria: {
+	                "orgType": "coalition",
+	                "regionType": "suburb",
+	                "agSize": "commercial",
+	                "yearsOld": "med2to5",
+	                "cropType": "fruit",
+	                "numRecipients": "some10to25"
+	            }
 	        },
 	        {
-	            "id": 4,
-		        chapterName: "Pink Panther",
-		        chapterUrl: "blah",
-		        criteria: {
-                    "orgType": "nonprofit",
-                    "regionType": "suburb",
-                    "agSize": "small",
-                    "yearsOld": "med2to5",
-                    "cropType": "veg",
-                    "numRecipients": "many25"
-                }
+	            id: 4,
+	            name: "Pink Panther",
+	            url: "blah",
+	            criteria: {
+	                "orgType": "nonprofit",
+	                "regionType": "suburb",
+	                "agSize": "small",
+	                "yearsOld": "med2to5",
+	                "cropType": "veg",
+	                "numRecipients": "many25"
+	            }
 	        },
 	        {
-	            "id": 5,
-		        chapterName: "Cyan Mustang",
-		        chapterUrl: "blah",
-		        criteria: {
-                    "orgType": "coalition",
-                    "regionType": "ruralCity",
-                    "agSize": "commercial",
-                    "yearsOld": "long5",
-                    "cropType": "veg",
-                    "numRecipients": "many25"
-                }
+	            id: 5,
+	            name: "Cyan Mustang",
+	            url: "blah",
+	            criteria: {
+	                "orgType": "coalition",
+	                "regionType": "ruralCity",
+	                "agSize": "commercial",
+	                "yearsOld": "long5",
+	                "cropType": "veg",
+	                "numRecipients": "many25"
+	            }
 	        },
 	        {
-	            "id": 6,
-		        chapterName: "Purple Cat",
-		        chapterUrl: "blah",
-		        criteria: {
-                    "orgType": "foodbank",
-                    "regionType": "rural",
-                    "agSize": "small",
-                    "yearsOld": "med2to5",
-                    "cropType": "fruit",
-                    "numRecipients": "few2to8"
-                }
+	            id: 6,
+	            name: "Purple Cat",
+	            url: "blah",
+	            criteria: {
+	                "orgType": "foodbank",
+	                "regionType": "rural",
+	                "agSize": "small",
+	                "yearsOld": "med2to5",
+	                "cropType": "fruit",
+	                "numRecipients": "few2to8"
+	            }
 	        }
         ];
 
-        criteria = {
+        var mockFilters = {
             "orgType": "foodbank",
             "cropType": "fruit"
-	    };
+        };
 
-        var chapterLinks = {};
-        var results = $("#hermoine");
-        for (var i in chapters) {
-            var chapter = chapters[i];
-            var newHtml = "<a href=\"http://" + chapter.chapterUrl + "\">"
-                        + chapter.chapterName
-                        + "</a>";
-            var newHtmlNode = $(newHtml);
-            results.append(newHtmlNode);
-	        chapterLinks[chapter.id] = newHtmlNode;
-	    }
+        $(document).ready(function() {
+            g_searchResults = new SearchResults(mockHostSites, $('.searchWizard .results'));
+            g_searchWizard = new SearchWizard($(".searchWizard form.search"), g_searchResults);
+        });
 
-	    var applyCriteria = function (criteria, chapters, chapterLinks) {
-	        for (var i in chapters) {
-	            var chapter = chapters[i];
-	            console.log("Looking at chapter: " + chapter.chapterName);
-
-	            var chapterIsOk = true;
-	            for (var criterion in criteria) {
-	                console.log("Comparing [" + criteria[criterion] + "] to [" + chapter.criteria[criterion] + "]");
-	                if (criteria[criterion] && chapter.criteria[criterion] != criteria[criterion]) {
-	                    console.log("mismatch, break");
-	                    chapterIsOk = false; break;
-	                }
-	            }
-
-	            var chapterNode = chapterLinks[chapter.id];
-	            if (chapterIsOk) {
-	                chapterNode.removeClass("hidden");
-	            } else {
-	                chapterNode.addClass("hidden");
-	            }
-	        }
-	    }
-	    xCrit = criteria;
-	    xChap = chapters;
-	    xLink = chapterLinks;
-	    xFn = applyCriteria;    </script>
+    </script>
 </div>
