@@ -101,6 +101,7 @@
     <Compile Include="Views\Article\IndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\admincss.css" />
     <Content Include="Content\HeaderFooter.css" />
     <Content Include="Content\images\bg\cardboard.jpg" />
     <Content Include="Content\images\header.png" />
