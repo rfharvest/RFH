@@ -6,6 +6,8 @@
     .categoryTitle{ font-size: 1.8em; font-color: #121212; font-weight: bold; }
     .categoryDescription{ font-size: 1.0em; font-color: #121212; }
     .hostSite { font-size: 0.9em; font-weight: bold;}
+    .hostSite a { text-decoration: none; }
+    .hostSite a:hover { text-decoration: underline; }
     .shortDescription { font-size: 0.8em; font-color: #121212; }
 </style>
 <div class="categoryTitle">@ViewBag.Title</div>
@@ -14,8 +16,8 @@
 {
     
     <ul>
-        <li class="hostSite">@item.HostSite.Area</li>
-        <li class="shortDescription">@item.ShortDescription &nbsp;@Html.ActionLink("...", "Index", "Article", new { id = item.Id}, null)</li>
+        <li class="hostSite">@Html.ActionLink(item.HostSite.Area, null, "Site", new { id = item.HostSite.Name}, null)</li>
+        <li class="shortDescription">@item.ShortDescription &nbsp;@Html.ActionLink("more", "Index", "Article", new { id = item.Id}, null)</li>
     </ul>
    
 }
