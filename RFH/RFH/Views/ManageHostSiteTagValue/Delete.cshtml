@@ -1,24 +1,23 @@
 ﻿@model RFH.Models.HostSiteTagValue
 
-<h2>Manage Metadata Values</h2>
+<h2>Manage Metadata Values &mdash; Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>HostSiteTagValue</legend>
+<h3>Are you sure you want to delete this Metadata value?</h3>
 
-    <div class="display-label">Name</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
+<div class="display-label">Name</div>
+<div class="display-field">
+    @Html.DisplayFor(model => model.Name)
+</div>
 
-    <div class="display-label">HostSiteTag</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.HostSiteTag.Name)
-    </div>
-</fieldset>
+<div class="display-label">HostSiteTag</div>
+<div class="display-field">
+    @Html.DisplayFor(model => model.HostSiteTag.Name)
+</div>
+
 @using (Html.BeginForm()) {
     <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Details", "ManageHostSiteTag", new { id = Model.HostSiteTagId}, null)
+        <input type="submit" value="Delete" class="standardButton" />
     </p>
 }
+
+@Html.ActionLink("Back to List", "Details", "ManageHostSiteTag", new { id = Model.HostSiteTagId}, null)

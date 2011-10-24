@@ -1,15 +1,11 @@
 ﻿@model RFH.Models.ManageHostSiteTagDetailViewModel
 
-<h2>Manage Metadata</h2>
+<h2>Manage Metadata &mdash; Details</h2>
 
-<fieldset>
-    <legend>HostSiteTag</legend>
-
-    <div class="display-label">Name</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.HostSiteTag.Name)
-    </div>
-</fieldset>
+<div class="display-label">Name</div>
+<div class="display-field">
+    @Html.DisplayFor(model => model.HostSiteTag.Name)
+</div>
 
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.HostSiteTag.Id }) |

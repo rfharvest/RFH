@@ -3,54 +3,50 @@
 
 <h2>Manage HostSites</h2>
 
-<div>
-              
-    <h1>Are you sure you want to delete this?</h1>
+<h3>Are you sure you want to delete this?</h3>
 
-    <table cellpadding="10" cellspacing="1" border="1">
+<table class="twoColumnTable">
         
-        <tr>
-            <td>@Html.LabelFor(m => m.Name)</td>
-            <td>@Model.Name</td>
-        </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Name)</td>
+        <td>@Model.Name</td>
+    </tr>
 
-        <tr>
-            <td>@Html.LabelFor(m => m.Area)</td>
-            <td>@Model.Area</td>
-        </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Area)</td>
+        <td>@Model.Area</td>
+    </tr>
 
-        <tr>
-            <td>@Html.LabelFor(m => m.HostSiteUrl)</td>
-            <td>@Model.HostSiteUrl</td>
-        </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.HostSiteUrl)</td>
+        <td>@Model.HostSiteUrl</td>
+    </tr>
 
-        <tr>
-            <td>@Html.LabelFor(m => m.IsActive)</td>
-            <td>@Model.IsActive</td>
-        </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.IsActive)</td>
+        <td>@Model.IsActive</td>
+    </tr>
 
-        <tr>
-            <td>@Html.LabelFor(m => m.Description)</td>
-            <td>@Html.Raw(@Model.Description)</td>
-        </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Description)</td>
+        <td>@Html.Raw(@Model.Description)</td>
+    </tr>
 
-        <tr>
-            <td>@Html.LabelFor(m => m.Area)</td>
-            <td>@Model.Area</td>
-        </tr>
-    </table>
+    <tr>
+        <td>@Html.LabelFor(m => m.Area)</td>
+        <td>@Model.Area</td>
+    </tr>
+</table>
 
-    @using (Html.BeginForm()) {
+@using (Html.BeginForm()) {
 
-        @Html.HiddenFor(model => model.Id)
-
-        <p>
-            <input type="submit" value="Delete" class="standardButton" />
-        </p>
-    }
+    @Html.HiddenFor(model => model.Id)
 
     <p>
-        @Html.ActionLink("Back to List", "Index")
+        <input type="submit" value="Delete" class="standardButton" />
     </p>
+}
 
-</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

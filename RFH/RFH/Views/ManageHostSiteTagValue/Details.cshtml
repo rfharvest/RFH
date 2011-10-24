@@ -1,20 +1,17 @@
 ﻿@model RFH.Models.HostSiteTagValue
 
-<h2>Manage Metadata Values</h2>
+<h2>Manage Metadata Values &mdash; Details</h2>
 
-<fieldset>
-    <legend>HostSiteTagValue</legend>
+<div class="display-label">Name</div>
+<div class="display-field">
+    @Html.DisplayFor(model => model.Name)
+</div>
 
-    <div class="display-label">Name</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
+<div class="display-label">HostSiteTag</div>
+<div class="display-field">
+    @Html.DisplayFor(model => model.HostSiteTag.Name)
+</div>
 
-    <div class="display-label">HostSiteTag</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.HostSiteTag.Name)
-    </div>
-</fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
     @Html.ActionLink("Back to List", "Details", "ManageHostSiteTag", new { id = Model.HostSiteTagId}, null)
