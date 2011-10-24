@@ -15,12 +15,12 @@ namespace RFH.Controllers
 
         public ActionResult ListCategory()
         {
-           return PartialView(_dataContext.Categories.ToList());
+           return PartialView(_dataContext.Categories.OrderBy(c=>c.Name).ToList());
         }
 
 
         public ActionResult ListSite() {
-            return PartialView(_dataContext.HostSites.ToList());
+            return PartialView(_dataContext.HostSites.OrderBy(s => s.Name).ToList());
         }
 
 
