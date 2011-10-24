@@ -10,6 +10,7 @@ using RFH.Models;
 
 namespace RFH.Controllers
 { 
+    [Authorize]
     public class ManageHostSiteTagController : Controller
     {
         private DataContext _dataContext = new DataContext();
