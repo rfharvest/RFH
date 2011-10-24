@@ -8,6 +8,7 @@ using RFH.Models;
 
 namespace RFH.Controllers
 {
+    [Authorize]
 	public class ManageArticleController : Controller
 	{
 		private DataContext _dataContext = new DataContext();
