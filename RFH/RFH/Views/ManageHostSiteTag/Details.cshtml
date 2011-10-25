@@ -2,15 +2,19 @@
 
 <h2>Manage Metadata &mdash; Details</h2>
 
-<div class="display-label">Name</div>
-<div class="display-field">
-    @Html.DisplayFor(model => model.HostSiteTag.Name)
-</div>
+<div class="formContainer">
 
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.HostSiteTag.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HostSiteTag.Name)
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.HostSiteTag.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+</div>
 
 <h2>Values</h2>
 

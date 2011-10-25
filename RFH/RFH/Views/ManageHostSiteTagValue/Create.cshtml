@@ -2,10 +2,10 @@
 
 <h2>Manage Metadata Values</h2>
 
-@using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>HostSiteTagValue</legend>
+<div class="formContainer">
+
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
 
         @Html.HiddenFor(model => model.HostSiteTagId)
 
@@ -18,11 +18,12 @@
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Create" class="standardButton" />
         </p>
-    </fieldset>
-}
+    }
 
-<div>
-    @Html.ActionLink("Back to List", "Details", "ManageHostSiteTag", new { id = Model.HostSiteTagId}, null)
 </div>
+
+<p>
+    @Html.ActionLink("Back to List", "Details", "ManageHostSiteTag", new { id = Model.HostSiteTagId}, null)
+</p>

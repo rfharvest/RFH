@@ -7,11 +7,17 @@
 
     <p>@Html.ActionLink("Upload Image", "Upload")</p>
 
-    <ul>
-        @foreach (var imageUrl in Model.ImageUrls)
-        {
-            <li><a href="/ManageImage/Details?fileName=@imageUrl" title="@imageUrl"><img src="@Model.FolderUrl/@imageUrl" alt="" /></a></li>
-        }
-    </ul>
+    <div class="formContainer">
+
+        <ul>
+            @foreach (var imageUrl in Model.ImageUrls)
+            {
+                <li><a href="/ManageImage/Details?fileName=@imageUrl" title="@imageUrl"><img src="@Model.FolderUrl/@imageUrl" alt="" /></a></li>
+            }
+        </ul>
+
+    </div>
+
+    <p>@Html.ActionLink("Upload Image", "Upload")</p>
 
 </div>

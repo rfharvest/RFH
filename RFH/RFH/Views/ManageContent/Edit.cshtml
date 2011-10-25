@@ -3,6 +3,8 @@
 
 <h2>Manage ContentData &mdash; Edit</h2>
 
+<div class="formContainer">
+
 	@using (Html.BeginForm()) {
 		@Html.ValidationSummary(true)
 	
@@ -36,7 +38,9 @@
 			<input type="submit" value="Save" class="standardButton" />
 		</p>
 	}
+
+</div>
 	
-	<div>
-		@Html.ActionLink("Back to List", "Index")
-	</div>
+<p>
+	@Html.ActionLink("Back to List", "Index")
+</p>

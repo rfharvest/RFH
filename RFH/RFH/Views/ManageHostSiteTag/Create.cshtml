@@ -2,23 +2,27 @@
 
 <h2>Manage Metadata &mdash; Create</h2>
 
-@using (Html.BeginForm()) {
+<div class="formContainer">
+
+    @using (Html.BeginForm()) {
     
-    @Html.ValidationSummary(true)
+        @Html.ValidationSummary(true)
 
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Name)
-    </div>
-    <div class="editor-field">
-        @Html.EditorFor(model => model.Name)
-        @Html.ValidationMessageFor(model => model.Name)
-    </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
 
-    <p>
-        <input type="submit" value="Create" class="standardButton" />
-    </p>
-}
+        <p>
+            <input type="submit" value="Create" class="standardButton" />
+        </p>
+    }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

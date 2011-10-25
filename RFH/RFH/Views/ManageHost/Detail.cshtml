@@ -3,9 +3,9 @@
 
 <h2>Manage HostSites &mdash; Details</h2>
 
-<table border="1" cellpadding="10" cellspacing="0">
+<table id="hostSiteDetailTable">
 <tr>
-    <td valign="top" width="75%">
+    <td width="75%" class="hostSiteInfo">
     
         <h3>HostSite Info</h3>
 
@@ -28,7 +28,7 @@
             </tr>
             <tr>
                 <td>@Html.LabelFor(m => m.HostSite.Description)</td>
-                <td>@Html.Raw(Model.HostSite.Description)</td>
+                <td class="htmlField">@Html.Raw(Model.HostSite.Description)</td>
             </tr>
             <tr>
                 <td>@Html.LabelFor(m => m.HostSite.Area)</td>
@@ -43,7 +43,7 @@
         </p>
 
     </td>
-    <td valign="top" rowspan="2" width="25%">
+    <td rowspan="2" width="25%" class="metaDataInfo">
     
         <h3>HostSite Metadata</h3>
 
@@ -97,7 +97,7 @@
     </td>
 </tr>
 <tr>
-    <td valign="top">
+    <td class="articleInfo">
         
         <h3>Articles</h3>
 

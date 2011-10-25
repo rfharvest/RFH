@@ -2,30 +2,33 @@
 
 <h2>Manage Content Data &mdash; Details</h2>
 
-<div class="display-label">
-	Controller Name:
-</div>
-<div class="display-field">
-	@Html.DisplayFor(model => model.ControllerName)
-</div>
+<div class="formContainer">
 
-<div class="display-label">
-	Action Name:
-</div>
-<div class="display-field">
-	@Html.DisplayFor(model => model.ActionName)
-</div>
+    <div class="display-label">
+	    Controller Name:
+    </div>
+    <div class="display-field">
+	    @Html.DisplayFor(model => model.ControllerName)
+    </div>
+
+    <div class="display-label">
+	    Action Name:
+    </div>
+    <div class="display-field">
+	    @Html.DisplayFor(model => model.ActionName)
+    </div>
 	
-<div class="display-label">
-	Content:
-</div>
-<div class="display-field">
-	@Html.Raw(Model.Content)
+    <div class="display-label">
+	    Content:
+    </div>
+    <div class="display-field htmlField">
+	    @Html.Raw(Model.Content)
+    </div>
+
 </div>
 
 <p>
 	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
 	@Html.ActionLink("Back to List", "Index") |
-	@Html.ActionLink("Launch Public Page", Model.ActionName, Model.ControllerName,
-					 null, new { target = "_blank" })
+	@Html.ActionLink("Launch Public Page", Model.ActionName, Model.ControllerName, null, new { target = "_blank" })
 </p>

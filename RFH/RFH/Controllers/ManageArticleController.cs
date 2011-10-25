@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,12 +17,11 @@ namespace RFH.Controllers
 		public ActionResult Detail(int id)
 		{
 			var model = new ManageArticleDetailViewModel();
-			model.Article = _dataContext.Articles.Single(m => m.Id == id);
+			model.Article = _dataContext.Articles.Include(m => m.Category).Single(m => m.Id == id);
 			model.HostSite = _dataContext.HostSites.Single(m => m.Id == model.Article.HostSiteId);
 
 			return View(model);
 		}
-
 
 		public ActionResult Edit(int id)
 		{

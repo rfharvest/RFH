@@ -2,29 +2,39 @@
 
 <h2>Manage Articles &mdash; Details</h2>
 
-<div class="display-label">HostSite</div>
-<div class="display-field">
-    @Html.DisplayFor(model => model.HostSite.Name)
-</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { Model.Article.Id }) |
+    @Html.ActionLink("Delete", "Delete", new { Model.Article.Id }) |
+    @Html.ActionLink("Back to HostSite", "Detail", "ManageHost", new {Model.HostSite.Id}, null)
+</p>
 
-<div class="display-label">Category</div>
-<div class="display-field">
-    @Html.DisplayFor(model => model.Article.Category.Name)
-</div>
+<div class="formContainer">
 
-<div class="display-label">IsPublished</div>
-<div class="display-field">
-    @Html.DisplayFor(model => model.Article.IsPublished)
-</div>
+    <div class="display-label">HostSite</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HostSite.Name)
+    </div>
 
-<div class="display-label">Content</div>
-<div class="display-field">
-    @Html.Raw(Model.Article.Content)
-</div>
+    <div class="display-label">Category</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Article.Category.Name)
+    </div>
 
-<div class="display-label">ShortDescription</div>
-<div class="display-field">
-    @Html.DisplayFor(model => model.Article.ShortDescription)
+    <div class="display-label">IsPublished</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Article.IsPublished)
+    </div>
+
+    <div class="display-label">Content</div>
+    <div class="display-field htmlField">
+        @Html.Raw(Model.Article.Content)
+    </div>
+
+    <div class="display-label">ShortDescription</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Article.ShortDescription)
+    </div>
+
 </div>
 
 <p>

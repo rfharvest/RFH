@@ -3,7 +3,7 @@
 
 <h2>Manage HostSites</h2>
 
-<div>
+<div class="formContainer">
             
     @using (Html.BeginForm()) {
         
@@ -17,8 +17,8 @@
         </p>
     }
 
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-              
 </div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

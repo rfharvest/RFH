@@ -2,26 +2,30 @@
 
 <h2>Manage Metadata Values &mdash; Edit</h2>
 
-@using (Html.BeginForm()) {
+<div class="formContainer">
 
-    @Html.ValidationSummary(true)
+    @using (Html.BeginForm()) {
 
-    @Html.HiddenFor(model => model.Id)
-    @Html.HiddenFor(model => model.HostSiteTagId)
+        @Html.ValidationSummary(true)
 
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Name)
-    </div>
-    <div class="editor-field">
-        @Html.EditorFor(model => model.Name)
-        @Html.ValidationMessageFor(model => model.Name)
-    </div>
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.HostSiteTagId)
 
-    <p>
-        <input type="submit" value="Save" class="standardButton" />
-    </p>
-}
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Details", "ManageHostSiteTag", new { id = Model.HostSiteTagId}, null)
+        <p>
+            <input type="submit" value="Save" class="standardButton" />
+        </p>
+    }
+
 </div>
+
+<p>
+    @Html.ActionLink("Back to List", "Details", "ManageHostSiteTag", new { id = Model.HostSiteTagId}, null)
+</p>
