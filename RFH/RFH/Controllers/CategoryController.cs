@@ -23,7 +23,8 @@ namespace RFH.Controllers
                                 .Include(h => h.HostSite)
                                 .Include(c => c.Category)
                                 .Where(a => a.Category.Name == id)
-                                .Where(a => a.IsPublished == true).ToList();
+                                .Where(a => a.IsPublished == true)
+								.Where(h => h.HostSite.IsActive == true).ToList();
 
             if (articles.Count() > 0)
             {
