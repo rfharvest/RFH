@@ -1,0 +1,61 @@
+﻿@model RFH.Models.ManageImageDetailsViewModel
+
+<h2>Manage Images &mdash; Details</h2>
+
+<table>
+
+    <tr>
+        <td width="30%" valign="top">
+        
+            <div class="display-label">Url</div>
+            <div class="display-field" id="urlField">
+                @Html.DisplayFor(model => model.VirtualPath)
+            </div>
+
+            <div class="display-label">Size</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Size)
+            </div>
+
+            <p>
+                @Html.ActionLink("Delete", "Delete", new { url=Model.Name }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        
+        </td>
+        <td width="70%" valign="top">
+            <div><img src="@Model.VirtualPath" alt=""/></div>
+        </td>
+    </tr>
+
+</table>
+
+<script type="text/javascript">
+
+    function selectText(element) {
+        var doc = document;
+        var text = doc.getElementById(element);
+        if (doc.body.createTextRange) { // ms
+            var range = doc.body.createTextRange();
+            range.moveToElementText(text);
+            range.select();
+        } else if (window.getSelection) {
+            var selection = window.getSelection();
+            if (selection.setBaseAndExtent) { // webkit
+                selection.setBaseAndExtent(text, 0, text, 1);
+            } else { // moz, opera
+                var range = doc.createRange();
+                range.selectNodeContents(text);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+        }
+    }
+
+    $('#urlField').click(function () {
+
+        selectText('urlField');
+
+    });
+</script>
+

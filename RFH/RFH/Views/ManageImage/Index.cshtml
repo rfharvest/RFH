@@ -1,0 +1,17 @@
+﻿@using RFH.Models
+@model ManageImageIndexViewModel
+
+<div id="manageImageIndex">
+
+    <h2>Manage Images</h2>
+
+    <p>@Html.ActionLink("Upload Image", "Upload")</p>
+
+    <ul>
+        @foreach (var imageUrl in Model.Images)
+        {
+            <li><a href="/ManageImage/Details?url=@imageUrl"><img src="@Model.ImageFolderPath/@imageUrl" alt="" /></a></li>
+        }
+    </ul>
+
+</div>
