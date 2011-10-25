@@ -9,18 +9,19 @@ body
 }
 
 h1 {
-    color: #CCC;
-    font-size: 1.3em;
+    color: #DDD;
+    font: normal normal normal 1.4em Arial;
 }
 
 h2 {
-    color: #666;
-    font: normal normal normal 1.2em Arial;
+    color: #CCC;
+    font: normal normal normal 2.2em Arial;
 }
 
 h3 {
     color: #666;
     font: normal normal normal 2.0em Arial;
+    margin: 30px 0;
 }
 
 a {
@@ -49,7 +50,7 @@ a {
                 font: normal normal bold 1em Arial;
             }
 #content {
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     margin-bottom: 50px;    
 }
 
@@ -92,7 +93,7 @@ a {
     #hostSiteDetailTable td.hostSiteInfo,
     #hostSiteDetailTable td.metaDataInfo,
     #hostSiteDetailTable td.articleInfo {
-        padding: 10px;
+        padding: 0 10px 10px 10px;
         vertical-align: top;
     }
 

@@ -2,17 +2,23 @@
 
 <h2>Manage Metadata &mdash; Delete</h2>
 
-<h3>Are you sure you want to delete this Metadata?</h3>
+<div class="formContainer">
 
-<div class="display-label">Name</div>
-<div class="display-field">
-    @Html.DisplayFor(model => model.Name)
+    <h3>Are you sure you want to delete this Metadata?</h3>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    @using (Html.BeginForm()) {
+        <p>
+            <input type="submit" value="Delete" class="standardButton" />
+        </p>
+    }
+
 </div>
 
-@using (Html.BeginForm()) {
-    <p>
-        <input type="submit" value="Delete" class="standardButton" />
-    </p>
-}
-
-@Html.ActionLink("Back to List", "Index")
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
