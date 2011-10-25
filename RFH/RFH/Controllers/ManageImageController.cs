@@ -13,39 +13,131 @@ namespace RFH.Controllers
     {
         public ActionResult Index()
         {
-            var folderVirtualPath = "/Content/images/cms";
-            var folderPhysicalPath = Server.MapPath(folderVirtualPath);
-            var directoryInfo = new System.IO.DirectoryInfo(folderPhysicalPath);
-
             var model = new ManageImageIndexViewModel();
-            model.ImageFolderPath = folderVirtualPath;
-            model.Images = new List<string>();
+            model.FolderUrl = ImageFolderUrl;
+            model.ImageUrls = new List<string>();
 
-            foreach (var file in directoryInfo.GetFiles())
+            var directoryInfo = GetDirectoryInfo(ImageFolderUrl);
+            var files = directoryInfo.GetFiles().OrderBy(f => f.Name);
+
+            foreach (var file in files)
             {
-                model.Images.Add(file.Name);
+                model.ImageUrls.Add(file.Name);
             }
 
             return View(model);
         }
 
-        public ActionResult Details(string url)
+        public ActionResult Details(string fileName)
         {
-            var folderVirtualPath = "/Content/images/cms";
-
-            var virtualPath = string.Format("{0}/{1}", folderVirtualPath, url);
-            var physicalPath = Server.MapPath(virtualPath);
-            var file = new FileInfo(physicalPath);
-            var fileSize = (file.Length/1000).ToString("###,###,##0");
+            var url = GetImageUrl(fileName);
+            var fileInfo = GetFileInfo(url);
+            var fileSize = (fileInfo.Length/1000).ToString("###,###,##0");
 
             var model = new ManageImageDetailsViewModel
                             {
-                                Name = url,
-                                VirtualPath = virtualPath,
+                                FileName = fileName,
+                                ImageUrl = url,
                                 Size = string.Format("{0}KB", fileSize)
                             };
 
             return View(model);
+        }
+
+        public ActionResult Delete(string fileName)
+        {
+            var url = GetImageUrl(fileName);
+            var fileInfo = GetFileInfo(url);
+            var fileSize = (fileInfo.Length / 1000).ToString("###,###,##0");
+
+            var model = new ManageImageDetailsViewModel
+            {
+                FileName = fileName,
+                ImageUrl = url,
+                Size = string.Format("{0}KB", fileSize)
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(string fileName, FormCollection form)
+        {
+            var url = GetImageUrl(fileName);
+            var physicalPath = Server.MapPath(url);
+
+            if (System.IO.File.Exists(physicalPath))
+            {
+                System.IO.File.Delete(physicalPath);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Upload()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase imageUrlFile)
+        {
+            if (imageUrlFile == null || imageUrlFile.ContentLength < 1)
+            {
+                ModelState.AddModelError("imageUrlFile", "Please select an image file to upload.");
+                return View();
+            }
+
+            string ext = Path.GetExtension(imageUrlFile.FileName);
+            var validExts = new List<string> {".gif", ".jpg", ".png"};
+            var isValidExtension = validExts.Any(e => string.Equals(ext, e, StringComparison.InvariantCultureIgnoreCase));
+
+            if(!isValidExtension)
+            {
+                ModelState.AddModelError("imageUrlFile", "Invalid image file. Please upload .gif, .jpg, or .png files.");
+                return View();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var url = string.Format("{0}/{1}", ImageFolderUrl, imageUrlFile.FileName);
+                var physicalPath = Server.MapPath(url);
+
+                imageUrlFile.SaveAs(physicalPath);
+
+                return RedirectToAction("Index");    
+            }
+
+            return View();
+        }
+
+        private string ImageFolderUrl
+        {
+            get
+            {
+                var url = "/Content/cmsImages";
+                return url;
+            }
+        }
+
+        private string GetImageUrl(string fileName)
+        {
+            var url = string.Format("{0}/{1}", ImageFolderUrl, fileName);
+            return url;
+        }
+
+        private FileInfo GetFileInfo(string url)
+        {
+            var physicalPath = Server.MapPath(url);
+            var file = new FileInfo(physicalPath);
+            return file;
+        }
+
+        private DirectoryInfo GetDirectoryInfo(string folderUrl)
+        {
+            var folderPhysicalPath = Server.MapPath(folderUrl);
+            var directoryInfo = new DirectoryInfo(folderPhysicalPath);
+            return directoryInfo;
         }
     }
 }

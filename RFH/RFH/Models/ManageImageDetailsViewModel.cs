@@ -7,8 +7,8 @@ namespace RFH.Models
 {
     public class ManageImageDetailsViewModel
     {
-        public string Name { get; set; }
-        public string VirtualPath { get; set; }
+        public string FileName { get; set; }
+        public string ImageUrl { get; set; }
         public string Size { get; set; }
     }
 }

@@ -28,7 +28,7 @@
             </tr>
             <tr>
                 <td>@Html.LabelFor(m => m.HostSite.Description)</td>
-                <td>@Model.HostSite.Description</td>
+                <td>@Html.Raw(Model.HostSite.Description)</td>
             </tr>
             <tr>
                 <td>@Html.LabelFor(m => m.HostSite.Area)</td>

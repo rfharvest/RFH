@@ -1,0 +1,20 @@
+﻿<h2>Manage Images &mdash; Upload</h2>
+
+@Html.ValidationSummary()
+
+<form action="" method="post" enctype="multipart/form-data">
+
+    <div class="editor-label">
+        Select an image file to upload.
+    </div>
+    <div class="editor-field">
+        <input type="file" name="imageUrlFile" />
+    </div>
+
+    <p>Note: If you upload a file with the same name as an existing file, the existing file will be replaced.</p>
+                    
+    <p><input type="submit" value="Upload Image" class="standardButton" /></p>
+
+</form>
+
+<p>@Html.ActionLink("Return to list", "Index")</p>

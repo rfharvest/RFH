@@ -8,9 +8,9 @@
     <p>@Html.ActionLink("Upload Image", "Upload")</p>
 
     <ul>
-        @foreach (var imageUrl in Model.Images)
+        @foreach (var imageUrl in Model.ImageUrls)
         {
-            <li><a href="/ManageImage/Details?url=@imageUrl"><img src="@Model.ImageFolderPath/@imageUrl" alt="" /></a></li>
+            <li><a href="/ManageImage/Details?fileName=@imageUrl" title="@imageUrl"><img src="@Model.FolderUrl/@imageUrl" alt="" /></a></li>
         }
     </ul>
 

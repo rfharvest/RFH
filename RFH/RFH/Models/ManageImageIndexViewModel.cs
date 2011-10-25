@@ -7,7 +7,7 @@ namespace RFH.Models
 {
     public class ManageImageIndexViewModel
     {
-        public string ImageFolderPath { get; set; }
-        public IList<string> Images { get; set; } 
+        public string FolderUrl { get; set; }
+        public IList<string> ImageUrls { get; set; } 
     }
 }

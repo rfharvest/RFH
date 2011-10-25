@@ -9,7 +9,7 @@
         
             <div class="display-label">Url</div>
             <div class="display-field" id="urlField">
-                @Html.DisplayFor(model => model.VirtualPath)
+                @Html.DisplayFor(model => model.ImageUrl)
             </div>
 
             <div class="display-label">Size</div>
@@ -18,13 +18,13 @@
             </div>
 
             <p>
-                @Html.ActionLink("Delete", "Delete", new { url=Model.Name }) |
+                @Html.ActionLink("Delete", "Delete", new { fileName=Model.FileName }) |
                 @Html.ActionLink("Back to List", "Index")
             </p>
         
         </td>
         <td width="70%" valign="top">
-            <div><img src="@Model.VirtualPath" alt=""/></div>
+            <div><img src="@Model.ImageUrl" alt=""/></div>
         </td>
     </tr>
 
@@ -53,9 +53,7 @@
     }
 
     $('#urlField').click(function () {
-
         selectText('urlField');
-
     });
-</script>
 
+</script>
