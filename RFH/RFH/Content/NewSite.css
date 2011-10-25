@@ -55,7 +55,7 @@ a:active { color: #262; text-decoration: underline; }
 .contentSection
 {
     position: relative;
-    margin: 0 0 0 250px;
+    margin: 0 0 0 251px; /* make white bar to the right of the logo line up */
     padding: 1em;
     background-color: #e5dcd1;
     min-height: 450px;
