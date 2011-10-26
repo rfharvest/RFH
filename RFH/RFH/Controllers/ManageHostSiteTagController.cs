@@ -20,7 +20,11 @@ namespace RFH.Controllers
 
         public ViewResult Index()
         {
-            return View(_dataContext.HostSiteTags.ToList());
+            var model = _dataContext.HostSiteTags
+                .OrderBy(m => m.Name)
+                .ToList();
+            
+            return View(model);
         }
 
         //
@@ -29,8 +33,13 @@ namespace RFH.Controllers
         public ViewResult Details(int id)
         {
             var model = new ManageHostSiteTagDetailViewModel();
+            
             model.HostSiteTag = _dataContext.HostSiteTags.Find(id);
-            model.HostSiteTagValues = _dataContext.HostSiteTagValues.Where(m => m.HostSiteTagId == id).ToList();
+
+            model.HostSiteTagValues = _dataContext.HostSiteTagValues
+                .Where(m => m.HostSiteTagId == id)
+                .OrderBy(m => m.Name)
+                .ToList();
 
             return View(model);
         }

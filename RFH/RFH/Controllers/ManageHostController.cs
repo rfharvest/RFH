@@ -16,7 +16,7 @@ namespace RFH.Controllers
 
         public ActionResult Index()
         {
-            var host = _dataContext.HostSites;
+            var host = _dataContext.HostSites.OrderBy(m => m.Name).ToList();
             return View(host);
         }
 
@@ -24,11 +24,26 @@ namespace RFH.Controllers
         {
             var model = new ManageHostDetailViewModel();
 
-            model.HostSite = _dataContext.HostSites.Single(h => h.Id == id);
-            model.Articles = _dataContext.Articles.Include(i => i.Category).Where(m => m.HostSiteId == id).ToList();
-            model.HostSiteTags = _dataContext.HostSiteTags.ToList();
-            model.HostSiteTagValues = _dataContext.HostSiteTagValues.ToList();
-            model.HostSiteToHostSiteTagValues = _dataContext.HostSiteToHostSiteTagValues.Where(m => m.HostSiteId == model.HostSite.Id).ToList();
+            model.HostSite = this._dataContext.HostSites
+                .Single(h => h.Id == id);
+
+            model.Articles = this._dataContext.Articles
+                .Include(i => i.Category)
+                .Where(m => m.HostSiteId == id)
+                .OrderBy(m => m.Category.Name)
+                .ToList();
+
+            model.HostSiteTags = this._dataContext.HostSiteTags
+                .OrderBy(m => m.Name)
+                .ToList();
+
+            model.HostSiteTagValues = this._dataContext.HostSiteTagValues
+                .OrderBy(m => m.Name)
+                .ToList();
+
+            model.HostSiteToHostSiteTagValues = this._dataContext.HostSiteToHostSiteTagValues
+                .Where(m => m.HostSiteId == model.HostSite.Id)
+                .ToList();
 
             return View(model);
         }

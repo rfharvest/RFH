@@ -9,7 +9,6 @@
 <table class="standardTable">
     <thead>
         <tr>
-            <th>HostSiteUrl</th>
             <th>Name</th>
             <th>Area</th>
             <th>Is Active</th>
@@ -19,9 +18,6 @@
     <tbody>
         @foreach (var item in Model) {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HostSiteUrl)
-                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>

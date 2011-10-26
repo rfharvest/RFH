@@ -15,7 +15,10 @@ namespace RFH.Controllers
 
         public ActionResult Index()
         {
-            var model = _dataContext.Categories;
+            var model = _dataContext.Categories
+                .OrderBy(m => m.Name)
+                .ToList();
+
             return View(model);
         }
 
