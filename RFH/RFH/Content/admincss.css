@@ -155,3 +155,15 @@ a {
     padding: 20px;
     margin-right: 10px;
 }
+    .htmlField h1 {
+        color: #000;
+        font: normal normal normal 2em Arial;
+    }
+    .htmlField h2 {
+        color: #000;
+        font: normal normal normal 1.6em Arial;
+    }
+    .htmlField h3 {
+        color: #000;
+        font: normal normal normal 1.2em Arial;
+    }
