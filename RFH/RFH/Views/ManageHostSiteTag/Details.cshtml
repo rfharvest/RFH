@@ -23,20 +23,21 @@
 <table class="standardTable">
     <thead>
         <tr>
-            <td>Value</td>
-            <td></td>
+            <th>Value</th>
+            <th></th>
         </tr>
     </thead>
-
-    @foreach (var item in Model.HostSiteTagValues)
-    {
-        <tr>
-            <td>@item.Name</td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", "ManageHostSiteTagValue", new { id=item.Id }, null) |
-                @Html.ActionLink("Delete", "Delete", "ManageHostSiteTagValue", new { id=item.Id }, null)
-            </td>
-        </tr>
-    }
+    <tbody>
+        @foreach (var item in Model.HostSiteTagValues)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "ManageHostSiteTagValue", new { id=item.Id }, null) |
+                    @Html.ActionLink("Delete", "Delete", "ManageHostSiteTagValue", new { id=item.Id }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
 

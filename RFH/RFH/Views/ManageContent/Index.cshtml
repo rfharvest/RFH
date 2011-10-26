@@ -10,21 +10,21 @@
             <th></th>
         </tr>
     </thead>
-    
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ControllerName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ActionName)
-        </td>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ControllerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActionName)
+                </td>
             
-        <td>
-            @Html.ActionLink("Details", "Detail", new { id=item.Id }) |
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id })
-        </td>
-    </tr>
-}
-    
+                <td>
+                    @Html.ActionLink("Details", "Detail", new { id=item.Id }) |
+                    @Html.ActionLink("Edit", "Edit", new { id=item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>

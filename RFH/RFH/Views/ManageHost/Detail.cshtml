@@ -107,18 +107,20 @@
                     <th></th>
                 </tr>
             </thead>
-            @foreach (var item in Model.Articles)
-            {
-                <tr>
-                    <td>@item.Category.Name</td>
-                    <td>@item.IsPublished</td>
-                    <td>
-                        @Html.ActionLink("Details", "Detail", "ManageArticle", new { @item.Id }, null) |
-                        @Html.ActionLink("Edit", "Edit", "ManageArticle", new { @item.Id }, null) |
-                        @Html.ActionLink("Delete", "Delete", "ManageArticle", new { @item.Id }, null)
-                    </td>
-                </tr>
-            }
+            <tbody>
+                @foreach (var item in Model.Articles)
+                {
+                    <tr>
+                        <td>@item.Category.Name</td>
+                        <td>@item.IsPublished</td>
+                        <td>
+                            @Html.ActionLink("Details", "Detail", "ManageArticle", new { @item.Id }, null) |
+                            @Html.ActionLink("Edit", "Edit", "ManageArticle", new { @item.Id }, null) |
+                            @Html.ActionLink("Delete", "Delete", "ManageArticle", new { @item.Id }, null)
+                        </td>
+                    </tr>
+                }
+            </tbody>
         </table>
 
     </td>

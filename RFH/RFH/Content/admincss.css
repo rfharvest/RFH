@@ -118,6 +118,9 @@ a {
             padding-left:4px;
             font:normal normal bold 1em Arial;
         }
+        .standardTable tbody tr.hover {
+            background-color:#FFFF99;
+        }
 
 .twoColumnTable td {
     padding: 10px;
