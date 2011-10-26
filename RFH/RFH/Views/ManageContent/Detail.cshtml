@@ -2,6 +2,12 @@
 
 <h2>Manage Content Data &mdash; Details</h2>
 
+<p>
+	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+	@Html.ActionLink("Back to List", "Index") |
+	@Html.ActionLink("Launch Public Page", Model.ActionName, Model.ControllerName, null, new { target = "_blank" })
+</p>
+
 <div class="formContainer">
 
     <div class="display-label">

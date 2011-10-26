@@ -30,10 +30,6 @@
                 <td>@Html.LabelFor(m => m.HostSite.Description)</td>
                 <td class="htmlField">@Html.Raw(Model.HostSite.Description)</td>
             </tr>
-            <tr>
-                <td>@Html.LabelFor(m => m.HostSite.Area)</td>
-                <td>@Model.HostSite.Area</td>
-            </tr>
         </table>
 
         <p id="manageHostDetailTopActions">
@@ -106,9 +102,9 @@
         <table  class="standardTable">
             <thead>
                 <tr>
-                    <td>Category Title</td>
-                    <td>Is Published</td>
-                    <td></td>
+                    <th>Category Title</th>
+                    <th>Is Published</th>
+                    <th></th>
                 </tr>
             </thead>
             @foreach (var item in Model.Articles)
