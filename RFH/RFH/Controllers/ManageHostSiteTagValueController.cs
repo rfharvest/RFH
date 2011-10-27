@@ -60,8 +60,11 @@ namespace RFH.Controllers
 
         public ActionResult Delete(int id)
         {
-            HostSiteTagValue hostsitetagvalue = _dataContext.HostSiteTagValues.Find(id);
-            return View(hostsitetagvalue);
+            var model = _dataContext.HostSiteTagValues
+                .Include(m => m.HostSiteTag)
+                .Single(m => m.Id == id);
+
+            return View(model);
         }
 
         [HttpPost, ActionName("Delete")]
