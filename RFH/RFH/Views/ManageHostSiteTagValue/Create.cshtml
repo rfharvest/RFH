@@ -10,6 +10,13 @@
         @Html.HiddenFor(model => model.HostSiteTagId)
 
         <div class="editor-label">
+            @Html.LabelFor(model => model.HostSiteTag.Name)
+        </div>
+        <div class="editor-field">
+            @Model.HostSiteTag.Name
+        </div>
+
+        <div class="editor-label">
             @Html.LabelFor(model => model.Name)
         </div>
         <div class="editor-field">

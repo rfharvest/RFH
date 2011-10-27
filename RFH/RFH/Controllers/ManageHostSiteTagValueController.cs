@@ -13,8 +13,12 @@ namespace RFH.Controllers
 
         public ActionResult Create(int id)
         {
-            var model = new HostSiteTagValue();
-            model.HostSiteTagId = id;
+            var model = new HostSiteTagValue
+                            {
+                                HostSiteTag = _dataContext.HostSiteTags.Single(m => m.Id == id),
+                                HostSiteTagId = id
+                            };
+            
             return View(model);
         } 
 
@@ -41,17 +45,17 @@ namespace RFH.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(int id, HostSiteTagValue hostsitetagvalue)
+        public ActionResult Edit(int id, HostSiteTagValue postedModel)
         {
-            var record = _dataContext.HostSiteTagValues.Single(m => m.Id == id);
+            var model = _dataContext.HostSiteTagValues.Single(m => m.Id == id);
 
-            if (TryUpdateModel(record))
+            if (TryUpdateModel(model))
             {
                 _dataContext.SaveChanges();
-                return RedirectToAction("Details", "ManageHostSiteTag", new { id=hostsitetagvalue.HostSiteTagId });  
+                return RedirectToAction("Details", "ManageHostSiteTag", new { id=postedModel.HostSiteTagId });  
             }
 
-            return View(hostsitetagvalue);
+            return View(postedModel);
         }
 
         public ActionResult Delete(int id)
