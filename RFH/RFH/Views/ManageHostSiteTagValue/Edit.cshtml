@@ -1,6 +1,6 @@
 ﻿@model RFH.Models.HostSiteTagValue
 
-<h2>Manage Metadata Values &mdash; Edit</h2>
+<h2>@Html.Raw(@PageData["SectionTitle"]) Edit</h2>
 
 <div class="formContainer">
 
@@ -11,6 +11,13 @@
         @Html.HiddenFor(model => model.Id)
         @Html.HiddenFor(model => model.HostSiteTagId)
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HostSiteTag.Name)
+        </div>
+        <div class="editor-field">
+            @Model.HostSiteTag.Name
+        </div>
+        
         <div class="editor-label">
             @Html.LabelFor(model => model.Name)
         </div>

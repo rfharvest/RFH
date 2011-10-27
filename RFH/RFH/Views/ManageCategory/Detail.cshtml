@@ -1,15 +1,15 @@
 ﻿@model RFH.Models.Category
 
-<h2>Manage Categories &mdash; Details</h2>
+<h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
 
 <div class="formContainer">
 
-    <div class="display-label">Name</div>
+    <div class="display-label">@Html.LabelFor(m => m.Name)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Name)
     </div>
     
-    <div class="display-label">Description</div>
+    <div class="display-label">@Html.LabelFor(m => m.Description)</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>

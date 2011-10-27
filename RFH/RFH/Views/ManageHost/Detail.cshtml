@@ -1,13 +1,13 @@
 ﻿@using RFH.Models
 @model ManageHostDetailViewModel
 
-<h2>Manage HostSites &mdash; Details</h2>
+<h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
 
 <table id="hostSiteDetailTable">
 <tr>
     <td width="75%" class="hostSiteInfo">
     
-        <h3>HostSite Info</h3>
+        <h3>Info</h3>
 
         <table class="twoColumnTable">
             <tr>
@@ -41,7 +41,7 @@
     </td>
     <td rowspan="2" width="25%" class="metaDataInfo">
     
-        <h3>HostSite Metadata</h3>
+        <h3>Tags</h3>
 
         @foreach (var item in Model.HostSiteTags)
         {

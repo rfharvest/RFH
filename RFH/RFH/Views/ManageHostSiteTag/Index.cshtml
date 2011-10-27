@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<RFH.Models.HostSiteTag>
 
-<h2>Manage Metadata</h2>
+<h2>@Html.Raw(@PageData["SectionTitle"]) List</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -9,7 +9,7 @@
 <table class="standardTable">
     <thead>
         <tr>
-            <th>Name</th>
+            <th>Tag Name</th>
             <th></th>
         </tr>
     </thead>

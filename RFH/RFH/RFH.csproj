@@ -935,7 +935,6 @@
     <Content Include="Views\Account\LogOn.cshtml" />
     <Content Include="Views\ManageHostSiteTagValue\Create.cshtml" />
     <Content Include="Views\ManageHostSiteTagValue\Delete.cshtml" />
-    <Content Include="Views\ManageHostSiteTagValue\Details.cshtml" />
     <Content Include="Views\ManageHostSiteTagValue\Edit.cshtml" />
     <Content Include="Views\ManageHostSiteTag\Create.cshtml" />
     <Content Include="Views\ManageHostSiteTag\Delete.cshtml" />

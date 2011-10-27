@@ -1,6 +1,6 @@
 ﻿@model RFH.Models.Category
 
-<h2>Manage Categories &mdash; Edit</h2>
+<h2>@Html.Raw(@PageData["SectionTitle"]) Edit</h2>
 
 <div class="formContainer">
 
@@ -33,6 +33,6 @@
 
 </div>
    
-<div>
+<p>
     @Html.ActionLink("Back to List", "Index")
-</div>
+</p>

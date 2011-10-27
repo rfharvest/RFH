@@ -1,6 +1,6 @@
 ﻿@model RFH.Models.ContentData
 
-<h2>Manage Content Data &mdash; Details</h2>
+<h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
 
 <p>
 	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
@@ -11,19 +11,12 @@
 <div class="formContainer">
 
     <div class="display-label">
-	    Controller Name:
+	    Name
     </div>
     <div class="display-field">
-	    @Html.DisplayFor(model => model.ControllerName)
+	    @Html.DisplayFor(model => model.Name)
     </div>
 
-    <div class="display-label">
-	    Action Name:
-    </div>
-    <div class="display-field">
-	    @Html.DisplayFor(model => model.ActionName)
-    </div>
-	
     <div class="display-label">
 	    Content:
     </div>
