@@ -12,26 +12,25 @@ namespace RFH.Controllers
     public class CategoryController : Controller
     {
         private DataContext _dataContext = new DataContext();
-
      
         public ActionResult Index(string id)
         {
-            ViewBag.Title = id;
-
+            var category = _dataContext.Categories.Single(m => m.Name == id);
 
             var articles = _dataContext.Articles
-                                .Include(h => h.HostSite)
-                                .Include(c => c.Category)
-                                .Where(a => a.Category.Name == id)
-                                .Where(a => a.IsPublished == true)
-								.Where(h => h.HostSite.IsActive == true).ToList();
+                .Include(m => m.HostSite)
+                .Include(m => m.Category)
+                .Where(m => m.Category.Id == category.Id)
+                .Where(m => m.IsPublished)
+                .Where(m => m.HostSite.IsActive).ToList();
 
-            if (articles.Count() > 0)
-            {
-                ViewBag.Description = articles[0].Category.Description;
-            }
+            var model = new CategoryIndexViewModel
+                            {
+                                Category = category,
+                                Articles = articles
+                            };
 
-            return View(articles);
+            return View(model);
         }
     }
 }

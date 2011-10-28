@@ -1,15 +1,11 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using RFH.Models;
 
-namespace RFH.Views.Article {
-    public class IndexViewModel {
-
+namespace RFH.Models 
+{
+    public class ArticleIndexViewModel 
+    {
         public Models.Article Article { get; set; }
 
         public IList<RelatedArticle> RelatedArticles { get; set; }
-
     }
 }

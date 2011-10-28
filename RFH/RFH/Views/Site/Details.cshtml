@@ -1,9 +1,8 @@
 ﻿@model RFH.Models.HostSite
            
 @{
-    ViewBag.Title = Model.Name;
+    ViewBag.Title = string.Format("{0} - Rotary First Harvest", Model.Name);
 }
-
 
 <table>
     <tr>
@@ -22,8 +21,16 @@
                 </div>
 
                 <div>
+
                     <h3>Articles</h3>
-                    @Html.Action("ListArticleInSite", "Article", new { id = Model.Id })
+
+                    <ul>
+                        @foreach (var item in Model.Articles) {
+                            <li style="margin-bottom: 10px;">@Html.ActionLink(item.Category.Name, "Index", "Article", new { id = item.Id }, null)</li>      
+                        }
+                    </ul>
+
+                    @*@Html.Action("ListArticleInSite", "Article", new { id = Model.Id })*@
                 </div>
 
             </div>

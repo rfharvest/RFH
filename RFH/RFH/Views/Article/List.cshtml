@@ -1,7 +1,0 @@
-﻿@model IEnumerable<RFH.Models.Article>
-
-<ul>
-@foreach (var item in Model) {
-        <li style="margin-bottom: 10px;">@Html.ActionLink(item.Category.Name, "Index", "Article", new { id = item.Id }, null)</li>      
-}
-</ul>

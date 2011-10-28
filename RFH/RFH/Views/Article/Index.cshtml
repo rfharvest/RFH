@@ -1,8 +1,11 @@
-﻿@model RFH.Views.Article.IndexViewModel
+﻿@model RFH.Models.ArticleIndexViewModel
 
 @{
-    ViewBag.Title = Model.Article.ShortDescription;
-}
+    ViewBag.Title = string.Format(
+        "{0} - {1} - Rotary First Harvest", 
+        Model.Article.Category.Name, 
+        Model.Article.HostSite.Name);
+ }
 
 <div class="breadCrumb">
     @Html.ActionLink(Model.Article.HostSite.Name, "Details", "Site", new {Id=Model.Article.HostSite.Name}, null)
@@ -11,7 +14,7 @@
 </div>
 
 <div style="float:right">
-    @Model.Article.HostSite.Name
+    <h3>@Model.Article.HostSite.Name</h3>
     <div>
         <ul>
         @foreach (var metaData in Model.Article.HostSite.MetaData) {

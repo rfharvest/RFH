@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Data.Entity;
 using System.Web.Mvc;
 using RFH.Infrastructure;
@@ -13,10 +10,14 @@ namespace RFH.Controllers
         private DataContext _dataContext = new DataContext();
         public ActionResult Details(string id)
         {
-                var siteQuery = from s in _dataContext.HostSites.Include(s => s.MetaData).Include(s => s.MetaData.Select(m => m.Values))
-                                  where s.Name == id
-                                  select s;
-                return View(siteQuery.FirstOrDefault());
+            _dataContext.Categories.ToList();
+
+            var model = _dataContext.HostSites
+                            .Include(m => m.Articles)
+                            .Where(m => m.Name == id)
+                            .Single();
+            
+            return View(model);
         }
     }
 }
