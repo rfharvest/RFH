@@ -12,6 +12,13 @@ a:visited { color: #062; text-decoration: underline; }
 a:hover { color: #262; text-decoration: underline; }
 a:active { color: #262; text-decoration: underline; }
 
+h1 {
+    font:normal normal normal 2em Helvetica, Arial, Sans-Serif;
+}
+h2 {
+    font:normal normal normal 1.6em Helvetica, Arial, Sans-Serif;
+}
+
 .midsection
 {
     background-color: White;
@@ -35,8 +42,8 @@ a:active { color: #262; text-decoration: underline; }
 
 .navPaneSection .sidePane h2, .navPaneSection .sidePane h3
 {
-    margin: 0;
-    font-size: medium;
+    margin: 14px 0;
+    font:normal normal normal 1.4em Helvetica, Arial, Sans-Serif;
     color: #363636;
 }
 
