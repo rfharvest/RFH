@@ -95,6 +95,7 @@
     <Compile Include="Models\ContentData.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\HomeWizardViewModel.cs" />
     <Compile Include="Models\HostSite.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -811,7 +812,6 @@
     <Content Include="Views\ManageImage\Details.cshtml" />
     <Content Include="Views\ManageImage\Delete.cshtml" />
     <Content Include="Views\ManageImage\Upload.cshtml" />
-    <None Include="Views\Shared\SearchWizard\MockData.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -947,6 +947,7 @@
     <Content Include="Views\Shared\SearchWizard\MockData.cshtml" />
     <Content Include="Views\Shared\NewUi\_Footer.cshtml" />
     <Content Include="Views\Shared\NewUi\_Header.cshtml" />
+    <Content Include="Views\Home\Wizard.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
