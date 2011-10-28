@@ -15,6 +15,7 @@ namespace RFH.Controllers
             var model = _dataContext.HostSites
                             .Include(m => m.Articles)
                             .Where(m => m.Name == id)
+                            .Where(m => m.IsActive)
                             .Single();
             
             return View(model);

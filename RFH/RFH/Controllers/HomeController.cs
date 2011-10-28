@@ -78,6 +78,7 @@ namespace RFH.Controllers
                                 .ToList();
 
             var model = _dataContext.HostSites
+                            .Where(m => m.IsActive)
                             .OrderBy(m => m.Name)
                             .ToList()
                             .Select(m => new 
