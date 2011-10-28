@@ -1,0 +1,30 @@
+﻿@model RFH.Models.HomeWizardViewModel
+
+<div class="searchWizard">
+
+    <form class="search">
+
+        <h3>Search Filters</h3>
+
+        @foreach (var item in Model.TagItems) { 
+            <div class="question">    
+                <p>@item.TagName:</p>
+                @Html.DropDownList("tag" + item.TagId, item.TagValues, "Any")
+            </div>
+        }
+
+    </form>
+
+    <div class="results">
+        <h3>Organizations</h3>
+        <div id="hostSiteContainer"></div>
+    </div>
+    
+    <div class="clear"></div>
+
+    <script type="text/javascript">
+        var hostSites = @Html.Action("wizardjsondata");
+    </script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/wizard.js")"></script>
+
+</div>

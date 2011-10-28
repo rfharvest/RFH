@@ -95,6 +95,7 @@
     <Compile Include="Models\ContentData.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\HomeWizardViewModel.cs" />
     <Compile Include="Models\HostSite.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -806,12 +807,12 @@
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Scripts\SearchWizard.js" />
+    <Content Include="Scripts\wizard.js" />
     <Content Include="Views\ManageImage\Index.cshtml" />
     <Content Include="Views\ManageImage\_ViewStart.cshtml" />
     <Content Include="Views\ManageImage\Details.cshtml" />
     <Content Include="Views\ManageImage\Delete.cshtml" />
     <Content Include="Views\ManageImage\Upload.cshtml" />
-    <None Include="Views\Shared\SearchWizard\MockData.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -947,6 +948,7 @@
     <Content Include="Views\Shared\SearchWizard\MockData.cshtml" />
     <Content Include="Views\Shared\NewUi\_Footer.cshtml" />
     <Content Include="Views\Shared\NewUi\_Header.cshtml" />
+    <Content Include="Views\Home\Wizard.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

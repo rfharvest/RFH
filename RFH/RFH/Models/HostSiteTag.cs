@@ -14,5 +14,7 @@ namespace RFH.Models
         [DisplayName("Tag Name")]
         [Required]
         public string Name { get; set; }
+
+        public ICollection<HostSiteTagValue> HostSiteTagValues { get; set; }
     }
 }

@@ -35,5 +35,6 @@ namespace RFH.Models {
 
         public ICollection<HostSiteMetaData> MetaData { get; set; }
 
+        public ICollection<HostSiteTagValue> HostSiteTagValues { get; set; }
     }
 }
