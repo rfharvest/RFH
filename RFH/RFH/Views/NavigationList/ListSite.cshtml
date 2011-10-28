@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<RFH.Models.HostSite>
 
-<h2>Host Site</h2>
-<ul>    
-@foreach (var item in Model) {
-        <li>@Html.ActionLink(item.Name, "Details", "Site", new { id = item.Name }, null)</li>      
-}
-</ul>    
+<h2>Host Sites</h2>
+
+<ul>
+    @foreach (var item in Model) {
+        <li>@Html.ActionLink(item.Name, "Details", "Site", new { id = item.Name }, null)</li>
+    }
+</ul>

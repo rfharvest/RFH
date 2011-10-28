@@ -92,6 +92,10 @@ a:active { color: #262; text-decoration: underline; }
     margin-bottom: 1ex;
 }
 .searchWizard .sorry { color: #900; }
+.searchWizard .results li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
 
 /* Styles for basic forms
 -----------------------------------------------------------*/

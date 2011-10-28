@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<RFH.Models.Category>
 
-<h2>Category</h2>
+<h2>Categories</h2>
+
 <ul>    
-@foreach (var item in Model) {
-        <li>@Html.ActionLink(item.Name, "Index", "Category", new { id = item.Name }, null)</li>      
-}
+    @foreach (var item in Model) {
+        <li>@Html.ActionLink(item.Name, "Index", "Category", new { id = item.Name }, null)</li>
+    }
 </ul>    
