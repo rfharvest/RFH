@@ -128,6 +128,7 @@ a {
 }
     .twoColumnTable td:first-child {
         font-weight: bold;
+        min-width: 130px;
     }
         
 .editor-label {
