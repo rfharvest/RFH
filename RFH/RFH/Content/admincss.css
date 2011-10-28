@@ -144,6 +144,10 @@ a {
     .editor-field input.checkbox {
         width: auto;
     }
+    .editor-field textarea {
+        width: 800px;
+        height: 80px;
+    }
    
 .display-label {
     font-weight: bold;

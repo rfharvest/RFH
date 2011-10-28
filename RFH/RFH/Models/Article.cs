@@ -25,6 +25,7 @@ namespace RFH.Models
         public bool IsPublished { get; set; }
 
         [DisplayName("Short Description")]
+        [UIHint("TextArea")]
         [Required]
         public string ShortDescription { get; set; }
 

@@ -14,6 +14,7 @@ namespace RFH.Models {
         [Required]
         public string Name { get; set; }
 
+        [UIHint("TextArea")]
         [Required]
         public string Description { get; set; }
 
