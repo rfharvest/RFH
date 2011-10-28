@@ -28,11 +28,13 @@ namespace RFH.Controllers
 			ViewBag.HostSites = GetHostSiteListItems(
 				_dataContext.HostSites.ToList());
 
-			var model = _dataContext.Articles.Single(m => m.Id == id);
-			var host = _dataContext.HostSites.Single(m => m.Id == model.HostSiteId);
-
 			ViewBag.Categories = GetCategoryListItems(
 				_dataContext.Categories.ToList());
+
+            var model = _dataContext.Articles
+                            .Include(m => m.HostSite)
+                            .Include(m => m.Category)
+                            .Single(m => m.Id == id);
 
 			return View(model);
 		}
@@ -100,8 +102,11 @@ namespace RFH.Controllers
 
 		public ActionResult Delete(int id)
 		{
-			var model = _dataContext.Articles.Single(m => m.Id == id);
-			var host = _dataContext.HostSites.Single(m => m.Id == model.HostSiteId);
+            var model = _dataContext.Articles
+                            .Include(m => m.HostSite)
+                            .Include(m => m.Category)
+                            .Single(m => m.Id == id);
+
 			return View(model);
 		}
 
