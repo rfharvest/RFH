@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web.Mvc;
 using RFH.Infrastructure;
@@ -67,13 +68,24 @@ namespace RFH.Controllers
             return View(model);
         }
 
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
-        {            
-            HostSiteTagValue hostsitetagvalue = _dataContext.HostSiteTagValues.Find(id);
-            _dataContext.HostSiteTagValues.Remove(hostsitetagvalue);
-            _dataContext.SaveChanges();
-            return RedirectToAction("Details", "ManageHostSiteTag", new { id = hostsitetagvalue.HostSiteTagId });  
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection form)
+        {
+            HostSiteTagValue model = null;
+
+            try 
+            {
+                model = _dataContext.HostSiteTagValues.Find(id);
+                _dataContext.HostSiteTagValues.Remove(model);
+                _dataContext.SaveChanges();
+
+                return RedirectToAction("Details", "ManageHostSiteTag", new { id = model.HostSiteTagId });
+            }
+            catch (DbUpdateException)
+            {
+                ModelState.AddModelError("Id", "Unable to delete. Please confirm there are no items are linked to this value.");
+                return View(model);
+            }
         }
     }
 }

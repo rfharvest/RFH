@@ -12,6 +12,7 @@
     </div>
 
     @using (Html.BeginForm()) {
+        @Html.ValidationSummary()
         <p>
             <input type="submit" value="Delete" class="standardButton" />
         </p>

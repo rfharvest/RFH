@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -113,12 +114,25 @@ namespace RFH.Controllers
 		[HttpPost]
 		public ActionResult Delete(int id, FormCollection form)
 		{
-			var model = _dataContext.Articles.Single(m => m.Id == id);
+		    Article model = null;
 
-			_dataContext.Articles.Remove(model);
-			_dataContext.SaveChanges();
+		    try
+		    {
+		        model = _dataContext.Articles
+		            .Include(m => m.HostSite)
+		            .Include(m => m.Category)
+		            .Single(m => m.Id == id);
 
-			return RedirectToAction("Detail", "ManageHost", new { Id = model.HostSiteId });
+			    _dataContext.Articles.Remove(model);
+			    _dataContext.SaveChanges();
+
+			    return RedirectToAction("Detail", "ManageHost", new { Id = model.HostSiteId });
+            }
+            catch (DbUpdateException)
+            {
+                ModelState.AddModelError("Id", "Unable to delete. Please confirm there are no items linked to this article.");
+                return View(model);
+            }
 		}
 
 		#region . Query Helpers (DRY!) .

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web.Mvc;
 using RFH.Infrastructure;
@@ -41,18 +42,27 @@ namespace RFH.Controllers
 
         public ActionResult Delete(int id)
         {
-            var model = _dataContext.BackupRecipients.Single(m => m.Id == id);
+            var model = _dataContext.BackupRecipients.Find(id);
             return View(model);
         }
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection form)
         {
-            var model = _dataContext.BackupRecipients.Single(m => m.Id == id);
-            _dataContext.BackupRecipients.Remove(model);
-            _dataContext.SaveChanges();
+            BackupRecipient model = null;
+            try 
+            {
+                model = _dataContext.BackupRecipients.Find(id);
+                _dataContext.BackupRecipients.Remove(model);
+                _dataContext.SaveChanges();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            catch (DbUpdateException)
+            {
+                ModelState.AddModelError("Id", "Unable to delete. Please confirm there are no items are linked to this value.");
+                return View(model);
+            }
         }
 
         [HttpPost]

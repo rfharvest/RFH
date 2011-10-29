@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using RFH.Infrastructure;
 using RFH.Models;
@@ -15,9 +12,6 @@ namespace RFH.Controllers
     {
         private DataContext _dataContext = new DataContext();
 
-        //
-        // GET: /ManageHostSiteTag/
-
         public ViewResult Index()
         {
             var model = _dataContext.HostSiteTags
@@ -26,9 +20,6 @@ namespace RFH.Controllers
             
             return View(model);
         }
-
-        //
-        // GET: /ManageHostSiteTag/Details/5
 
         public ViewResult Details(int id)
         {
@@ -44,16 +35,10 @@ namespace RFH.Controllers
             return View(model);
         }
 
-        //
-        // GET: /ManageHostSiteTag/Create
-
         public ActionResult Create()
         {
             return View();
         } 
-
-        //
-        // POST: /ManageHostSiteTag/Create
 
         [HttpPost]
         public ActionResult Create(HostSiteTag hostsitetag)
@@ -68,17 +53,11 @@ namespace RFH.Controllers
             return View(hostsitetag);
         }
         
-        //
-        // GET: /ManageHostSiteTag/Edit/5
- 
         public ActionResult Edit(int id)
         {
             HostSiteTag hostsitetag = _dataContext.HostSiteTags.Find(id);
             return View(hostsitetag);
         }
-
-        //
-        // POST: /ManageHostSiteTag/Edit/5
 
         [HttpPost]
         public ActionResult Edit(HostSiteTag hostsitetag)
@@ -92,25 +71,30 @@ namespace RFH.Controllers
             return View(hostsitetag);
         }
 
-        //
-        // GET: /ManageHostSiteTag/Delete/5
- 
         public ActionResult Delete(int id)
         {
             HostSiteTag hostsitetag = _dataContext.HostSiteTags.Find(id);
             return View(hostsitetag);
         }
 
-        //
-        // POST: /ManageHostSiteTag/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection form)
+        {
+            HostSiteTag model = null;
 
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
-        {            
-            HostSiteTag hostsitetag = _dataContext.HostSiteTags.Find(id);
-            _dataContext.HostSiteTags.Remove(hostsitetag);
-            _dataContext.SaveChanges();
-            return RedirectToAction("Index");
+            try 
+            {
+                model = _dataContext.HostSiteTags.Find(id);
+                _dataContext.HostSiteTags.Remove(model);
+                _dataContext.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            catch (DbUpdateException)
+            {
+                ModelState.AddModelError("Id", "Unable to delete. Please confirm there are no Host Sites or Values linked to this item.");
+                return View(model);
+            }
         }
 
         protected override void Dispose(bool disposing)

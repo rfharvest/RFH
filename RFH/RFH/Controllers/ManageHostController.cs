@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using RFH.Infrastructure;
 using RFH.Models;
+using System.Data.Entity.Infrastructure;
 
 namespace RFH.Controllers
 {
@@ -100,11 +98,21 @@ namespace RFH.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection form)
         {
-            var host = _dataContext.HostSites.Single(h => h.Id == id);
-            _dataContext.HostSites.Remove(host);
-            _dataContext.SaveChanges();
+            HostSite model = null;
 
-            return RedirectToAction("Index", "Admin");
+            try
+            {
+                model = _dataContext.HostSites.Single(h => h.Id == id);
+                _dataContext.HostSites.Remove(model);
+                _dataContext.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            catch (DbUpdateException)
+            {
+                ModelState.AddModelError("Id", "Unable to delete. Please confirm there are no articles or tags linked to this item.");
+                return View(model);
+            }
         }
 
         public string EditTag(int hostSiteId, int hostSiteTagValueId, bool isChecked)

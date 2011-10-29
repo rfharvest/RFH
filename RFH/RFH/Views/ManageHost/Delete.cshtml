@@ -32,6 +32,8 @@
 
     @using (Html.BeginForm()) {
 
+        @Html.ValidationSummary()
+        
         @Html.HiddenFor(model => model.Id)
 
         <p>
