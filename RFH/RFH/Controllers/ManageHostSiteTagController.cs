@@ -77,8 +77,8 @@ namespace RFH.Controllers
             return View(hostsitetag);
         }
 
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection form)
         {
             HostSiteTag model = null;
 

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using RFH.Infrastructure;
 using RFH.Models;
@@ -76,12 +74,21 @@ namespace RFH.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection form)
         {
-            var model = _dataContext.Categories.Single(m => m.Id == id);
-            _dataContext.Categories.Remove(model);
-            _dataContext.SaveChanges();
+            Category model = null;
 
-            return RedirectToAction("Index", "Admin");
+            try 
+            {
+                model = _dataContext.Categories.Find(id);
+                _dataContext.Categories.Remove(model);
+                _dataContext.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            catch (DbUpdateException)
+            {
+                ModelState.AddModelError("Id", "Unable to delete. Please confirm there are no Articles linked to this category.");
+                return View(model);
+            }
         }
-
     }
 }
