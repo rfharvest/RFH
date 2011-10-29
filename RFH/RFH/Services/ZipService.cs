@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.IO;
 using System.IO.Packaging;
 
-namespace RFH.Infrastructure
+namespace RFH.Services
 {
     public class ZipService
     {

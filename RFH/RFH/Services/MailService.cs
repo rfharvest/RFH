@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Net.Configuration;
 using System.Net.Mail;
 using System.Web;
 using System.Web.Configuration;
 
-namespace RFH.Infrastructure
+namespace RFH.Services
 {
     public class MailService
     {
