@@ -12,7 +12,7 @@
     @foreach (var item in Model.Articles)
     {
         <p>
-            <strong>@Html.ActionLink(item.HostSite.Name, "Details", "Site", new { id = item.HostSite.Name }, null)</strong><br />
+            <strong>@Html.ActionLink(item.HostSite.Name, "Details", "Site", new { id = item.HostSite.UrlFriendlyName }, null)</strong><br />
             @item.ShortDescription @Html.ActionLink("read this article", "Index", "Article", new { id = item.Id }, null)
         </p>
     }
