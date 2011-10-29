@@ -1,18 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.Entity;
 using RFH.Models;
 
-namespace RFH.Infrastructure {
-    public class DataContext: DbContext {
-
-        public DataContext():base("RFHDB") {
-
+namespace RFH.Infrastructure
+{
+    public class DataContext : DbContext
+    {
+        public DataContext() : base("RFHDB")
+        {
             Database.SetInitializer(new DatabaseInitializer());
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+        }
 
         public IDbSet<Article> Articles { get; set; }
 
@@ -22,10 +24,14 @@ namespace RFH.Infrastructure {
 
         public IDbSet<HostSiteMetaData> HostSiteMetaData { get; set; }
 
-        public IDbSet<BackupRecipient> BackupRecipients { get; set; } 
+        public IDbSet<BackupRecipient> BackupRecipients { get; set; }
+
         public IDbSet<ContentData> ContentDatas { get; set; }
+        
         public IDbSet<HostSiteTag> HostSiteTags { get; set; }
+        
         public IDbSet<HostSiteTagValue> HostSiteTagValues { get; set; }
+        
         public IDbSet<HostSiteToHostSiteTagValue> HostSiteToHostSiteTagValues { get; set; }
     }
 }
