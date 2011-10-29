@@ -198,6 +198,9 @@ namespace RFH.Infrastructure
             context.HostSiteTagValues.Add(hostSiteTag6Value1);
             context.HostSiteTagValues.Add(hostSiteTag6Value2);
             context.HostSiteTagValues.Add(hostSiteTag6Value3);
+
+            context.BackupRecipients.Add(new BackupRecipient { EmailAddress = "user@domain.com" });
+            context.BackupRecipients.Add(new BackupRecipient { EmailAddress = "user2@domain.com" });
         }
     }
 }

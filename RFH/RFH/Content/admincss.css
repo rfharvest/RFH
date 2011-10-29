@@ -186,3 +186,7 @@ a {
 .validation-summary-errors {
     color:#F00;
 }
+
+.hidden {
+    display: none;
+}

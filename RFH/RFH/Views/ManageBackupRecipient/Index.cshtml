@@ -1,0 +1,57 @@
+﻿@model IEnumerable<RFH.Models.BackupRecipient>
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) List</h2>
+
+<div class="formContainer">
+
+    <h3>Backup Recipients</h3>
+    <p>The following list of email addresses will receive the backup.</p>
+
+    <p>@Html.ActionLink("Create New", "Create", "ManageBackupRecipient")</p>
+
+    <table class="standardTable">
+        <thead>
+            <tr>
+                <th>Email Address</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EmailAddress</td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", "ManageBackupRecipient", new { @item.Id }, null)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h3>Backup</h3>
+    <p>Click this button to send an email containing all files on this web server.</p>
+
+    <p>
+        <input id="backupWebsiteButton" type="button" value="Backup Website" class="standardButton" /> 
+        <span id="backupIProgress" class="hidden">Backup in progress...</span>
+    </p>
+
+</div>
+
+<script type="text/javascript">
+
+    $('#backupWebsiteButton').click(function () {
+
+        $(this).attr('disabled', 'disabled');
+        $('#backupIProgress').removeClass('hidden');
+
+        $.post('/ManageBackupRecipient/BackupWebsite', function () {
+            $('#backupIProgress').addClass('hidden');
+            alert('Backup completed.');
+            $('#backupWebsiteButton').attr('disabled', '');
+            
+        });
+    });
+
+</script>

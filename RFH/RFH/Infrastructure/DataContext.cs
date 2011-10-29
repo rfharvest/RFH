@@ -22,7 +22,7 @@ namespace RFH.Infrastructure {
 
         public IDbSet<HostSiteMetaData> HostSiteMetaData { get; set; }
 
-
+        public IDbSet<BackupRecipient> BackupRecipients { get; set; } 
         public IDbSet<ContentData> ContentDatas { get; set; }
         public IDbSet<HostSiteTag> HostSiteTags { get; set; }
         public IDbSet<HostSiteTagValue> HostSiteTagValues { get; set; }
