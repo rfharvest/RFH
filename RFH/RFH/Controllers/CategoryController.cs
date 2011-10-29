@@ -15,7 +15,7 @@ namespace RFH.Controllers
      
         public ActionResult Index(string id)
         {
-            var category = _dataContext.Categories.Single(m => m.Name == id);
+            var category = _dataContext.Categories.Single(m => m.UrlFriendlyName == id);
 
             var articles = _dataContext.Articles
                 .Include(m => m.HostSite)

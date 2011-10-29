@@ -4,6 +4,6 @@
 
 <ul>
     @foreach (var item in Model) {
-        <li>@Html.ActionLink(item.Name, "Details", "Site", new { id = item.Name }, null)</li>
+        <li>@Html.ActionLink(item.Name, "Details", "Site", new { id = item.UrlFriendlyName }, null)</li>
     }
 </ul>

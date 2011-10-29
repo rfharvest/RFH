@@ -8,9 +8,9 @@
  }
 
 <div class="breadCrumb">
-    @Html.ActionLink(Model.Article.HostSite.Name, "Details", "Site", new {Id=Model.Article.HostSite.Name}, null)
+    @Html.ActionLink(Model.Article.HostSite.Name, "Details", "Site", new {Id=Model.Article.HostSite.UrlFriendlyName}, null)
     &gt;   
-    @Html.ActionLink(Model.Article.Category.Name, "Index", "Category", new {Id=Model.Article.Category.Name}, null)
+    @Html.ActionLink(Model.Article.Category.Name, "Index", "Category", new {Id=Model.Article.Category.UrlFriendlyName}, null)
 </div>
 
 <div style="float:right">

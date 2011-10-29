@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 
 namespace RFH.Models 
 {
     public class HostSite 
     {
+        private string urlFriendlyName;
+
         public HostSite() 
         {
             this.MetaData = new List<HostSiteMetaData>();
@@ -22,6 +25,14 @@ namespace RFH.Models
         [DisplayName("Host Site Name")]
         [Required]
         public string Name { get; set; }
+
+
+        [DisplayName("Url Friendly Name")]
+        public string UrlFriendlyName
+        {
+            get { return Regex.Replace(Name, @"[^\w]+", "-", RegexOptions.IgnoreCase); }
+            set { urlFriendlyName = Regex.Replace(Name, @"[^\w]+", "-", RegexOptions.IgnoreCase); }
+        }
 
         [Required]
         public string Description { get; set; }
