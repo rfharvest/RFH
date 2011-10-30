@@ -11,20 +11,7 @@
         @Html.HiddenFor(model => model.Id)
         @Html.HiddenFor(model => model.HostSiteTagId)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.HostSiteTag.Name)
-        </div>
-        <div class="editor-field">
-            @Model.HostSiteTag.Name
-        </div>
-        
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
-        </div>
+        @Html.Partial("_CreateOrEdit", Model)
 
         <p>
             <input type="submit" value="Save" class="standardButton" />

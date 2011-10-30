@@ -4,15 +4,7 @@
 
 <div class="formContainer">
 
-    <div class="display-label">@Html.LabelFor(m => m.Name)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
-    
-    <div class="display-label">@Html.LabelFor(m => m.Description)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
+    @Html.Partial("_Display", Model)
 
 </div>
 

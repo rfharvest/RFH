@@ -1,0 +1,26 @@
+﻿@model RFH.Models.Article
+
+<div class="display-label">@Html.LabelFor(model => model.HostSite.Name)</div>
+<div class="display-field">
+    @Html.DisplayFor(model => model.HostSite.Name)
+</div>
+
+<div class="display-label">@Html.LabelFor(model => model.Category.Name)</div>
+<div class="display-field">
+    @Html.DisplayFor(model => model.Category.Name)
+</div>
+
+<div class="display-label">@Html.LabelFor(model => model.IsPublished)</div>
+<div class="display-field">
+    @Html.DisplayFor(model => model.IsPublished)
+</div>
+
+<div class="display-label">@Html.LabelFor(model => model.ShortDescription)</div>
+<div class="display-field">
+    @Html.DisplayFor(model => model.ShortDescription)
+</div>
+
+<div class="display-label">@Html.LabelFor(model => model.Content)</div>
+<div class="display-field htmlField">
+    @Html.Raw(Model.Content)
+</div>

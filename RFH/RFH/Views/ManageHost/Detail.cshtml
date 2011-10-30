@@ -1,5 +1,4 @@
-﻿@using RFH.Models
-@model ManageHostDetailViewModel
+﻿@model RFH.Models.ManageHostDetailViewModel
 
 <h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
 
@@ -9,28 +8,7 @@
     
         <h3>Info</h3>
 
-        <table class="twoColumnTable">
-            <tr>
-                <td>@Html.LabelFor(m => m.HostSite.Name)</td>
-                <td>@Model.HostSite.Name</td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(m => m.HostSite.Area)</td>
-                <td>@Model.HostSite.Area</td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(m => m.HostSite.HostSiteUrl)</td>
-                <td>@Model.HostSite.HostSiteUrl</td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(m => m.HostSite.IsActive)</td>
-                <td>@Model.HostSite.IsActive</td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(m => m.HostSite.Description)</td>
-                <td class="htmlField">@Html.Raw(Model.HostSite.Description)</td>
-            </tr>
-        </table>
+        @Html.Partial("_Display", Model.HostSite)
 
         <p id="manageHostDetailTopActions">
             @Html.ActionLink("Edit", "Edit", new { Model.HostSite.Id }) |

@@ -10,30 +10,7 @@
 
 <div class="formContainer">
 
-    <div class="display-label">@Html.LabelFor(model => model.HostSite.Name)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.HostSite.Name)
-    </div>
-
-    <div class="display-label">@Html.LabelFor(model => model.Article.Category.Name)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Article.Category.Name)
-    </div>
-
-    <div class="display-label">@Html.LabelFor(model => model.Article.IsPublished)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Article.IsPublished)
-    </div>
-
-    <div class="display-label">@Html.LabelFor(model => model.Article.ShortDescription)</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Article.ShortDescription)
-    </div>
-
-    <div class="display-label">@Html.LabelFor(model => model.Article.Content)</div>
-    <div class="display-field htmlField">
-        @Html.Raw(Model.Article.Content)
-    </div>
+    @Html.Partial("_Display", Model.Article)
 
 </div>
 

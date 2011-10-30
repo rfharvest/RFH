@@ -970,6 +970,14 @@
     <Content Include="Views\ManageBackupRecipient\_ViewStart.cshtml" />
     <Content Include="Views\ManageBackupRecipient\Delete.cshtml" />
     <Content Include="Views\ManageBackupRecipient\Index.cshtml" />
+    <Content Include="Views\ManageHost\_Display.cshtml" />
+    <Content Include="Views\ManageArticle\_CreateOrEdit.cshtml" />
+    <Content Include="Views\ManageArticle\_Display.cshtml" />
+    <Content Include="Views\ManageCategory\_Display.cshtml" />
+    <Content Include="Views\ManageCategory\_CreateOrEdit.cshtml" />
+    <Content Include="Views\ManageHostSiteTag\_CreateOrEdit.cshtml" />
+    <Content Include="Views\ManageHostSiteTag\_Display.cshtml" />
+    <Content Include="Views\ManageHostSiteTagValue\_CreateOrEdit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

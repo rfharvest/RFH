@@ -1,0 +1,24 @@
+﻿@model RFH.Models.HostSite
+
+<table class="twoColumnTable">
+    <tr>
+        <td>@Html.LabelFor(m => m.Name)</td>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Area)</td>
+        <td>@Model.Area</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.HostSiteUrl)</td>
+        <td>@Model.HostSiteUrl</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.IsActive)</td>
+        <td>@Model.IsActive</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.Description)</td>
+        <td class="htmlField">@Html.Raw(Model.Description)</td>
+    </tr>
+</table>

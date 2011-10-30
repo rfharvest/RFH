@@ -1,0 +1,41 @@
+﻿@model RFH.Models.Article
+           
+<div class="editor-label">
+    @Html.LabelFor(model => model.HostSiteId)
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(m => m.HostSiteId, (IEnumerable<SelectListItem>)ViewBag.HostSites)
+    @Html.ValidationMessageFor(model => model.HostSiteId)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CategoryId)
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.CategoryId, (IEnumerable<SelectListItem>)ViewBag.Categories)
+    @Html.ValidationMessageFor(model => model.CategoryId)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.IsPublished)
+</div>
+<div class="editor-field">
+    @Html.CheckBoxFor(model => model.IsPublished, new { Class = "checkbox" })
+    @Html.ValidationMessageFor(model => model.IsPublished)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ShortDescription)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ShortDescription)
+    @Html.ValidationMessageFor(model => model.ShortDescription)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Content)
+</div>
+<div class="editor-field">
+    @Html.CKEditor("Content", Model.Content)
+    @Html.ValidationMessageFor(model => model.Content)
+</div>

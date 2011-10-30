@@ -4,10 +4,7 @@
 
 <div class="formContainer">
 
-    <div class="display-label">Tag Name</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.HostSiteTag.Name)
-    </div>
+    @Html.Partial("_Display", Model.HostSiteTag)
 
     <p>
         @Html.ActionLink("Edit", "Edit", new { id=Model.HostSiteTag.Id }) |
