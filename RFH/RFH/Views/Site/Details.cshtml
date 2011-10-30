@@ -1,65 +1,55 @@
 ﻿@model RFH.Models.HostSite
-           
 @{
     ViewBag.Title = Model.Name;
 }
-
 <table>
     <tr>
         <td width="60%" valign="top">
-        
-            <div style="padding-right:20px;">
-
+            <div style="padding-right: 20px;">
                 <div class="titlePane">
-
                     <h2>@Model.Name</h2>
-
-                    @if (!string.IsNullOrWhiteSpace(Model.Area)) { 
-                        <h3>in @Model.Area</h3> 
+                    @if (!string.IsNullOrWhiteSpace(Model.Area))
+                    { 
+                        <h3>
+                            in @Model.Area</h3> 
                     }
-
-                    <h4><a href="@Model.HostSiteUrl">@Model.Name website</a></h4>
-
+                    <h4>
+                        <a href="@Model.HostSiteUrl">@Model.Name website</a></h4>
                 </div>
-
                 <div>
                     @Html.Raw(Model.Description)
                 </div>
-
                 <div>
-
-                    <h3>Articles</h3>
-
-                    <ul>
-                        @foreach (var item in Model.Articles) {
-                            <li style="margin-bottom: 10px;">@Html.ActionLink(item.Category.Name, "Index", "Article", new { id = item.Id }, null)</li>      
-                        }
-                    </ul>
-
+                    <h3>
+                        Articles</h3>
+                    @foreach (var item in Model.Articles)
+                    {
+                        <p>
+                            <strong>@Html.ActionLink(item.Category.Name, "Index", "Article", new { id = item.Id }, null)</strong><br />
+                            @item.ShortDescription @Html.ActionLink("read this article", "Index", "Article", new { id = item.Id }, null)
+                        </p>
+                   
+                    }
                 </div>
-
             </div>
-        
         </td>
         <td width="40%" valign="top">
-            
             <div style="border: 1px solid #DDD;">
                 <ul>
-                    @foreach (var md in Model.MetaData) {
+                    @foreach (var md in Model.MetaData)
+                    {
                         <li>
                             <h4>@Html.Label(md.Type)</h4>
                             <ul>
-                                @foreach (var mdValues in md.Values) { 
-                                   <li>@Html.Label(mdValues.Value)</li> 
+                                @foreach (var mdValues in md.Values)
+                                { 
+                                    <li>@Html.Label(mdValues.Value)</li> 
                                 }
                             </ul>
                         </li>
                     }
                 </ul>
             </div>
-
         </td>
     </tr>
 </table>
-
-
