@@ -2,8 +2,8 @@
 
 <h2>Categories</h2>
 
-<ul>    
+<ul id="categoryNav">
     @foreach (var item in Model) {
-        <li>@Html.ActionLink(item.Name, "Index", "Category", new { id = item.UrlFriendlyName}, null)</li>
+        <li data-id="@item.Id">@Html.ActionLink(item.Name, "Index", "Category", new { id = item.UrlFriendlyName}, null)</li>
     }
-</ul>    
+</ul>

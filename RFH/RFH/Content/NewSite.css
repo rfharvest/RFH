@@ -41,31 +41,35 @@ dd {
     background-color: white;
 }
 
-.navPaneSection .sidePane
-{
-    border-bottom: 1px solid #060;
-    padding: 5px 0px;
-    margin: 0px 20px;
-}
+    .navPaneSection .sidePane
+    {
+        border-bottom: 1px solid #060;
+        padding: 5px 0px;
+        margin: 0px 20px;
+    }
 
-.navPaneSection .sidePane h2, .navPaneSection .sidePane h3
-{
-    margin: 14px 0;
-    font:normal normal normal 1.4em Helvetica, Arial, Sans-Serif;
-    color: #363636;
-}
+        .navPaneSection .sidePane h2, 
+        .navPaneSection .sidePane h3
+        {
+            margin: 14px 0;
+            font:normal normal normal 1.4em Helvetica, Arial, Sans-Serif;
+            color: #363636;
+        }
 
-.navPaneSection .sidePane ul 
-{
-    padding: 0;
-    list-style-type: none;
-    font-size: smaller;
-}
-
-.navPaneSection .sidePane ul li
-{
-    margin: 0 30px 5px;
-}
+    .navPaneSection .sidePane ul 
+    {
+        padding: 0;
+        list-style-type: none;
+        font-size: smaller;
+    }
+        .navPaneSection .sidePane ul li
+        {
+            margin: 0 0 8px 0;
+        }
+            .navPaneSection .sidePane ul li.current a
+            {
+                text-decoration: none;
+            }
 
 .contentSection
 {
