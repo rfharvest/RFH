@@ -11,9 +11,15 @@
             <div style="padding-right:20px;">
 
                 <div class="titlePane">
+
                     <h2>@Model.Name</h2>
-                    <h3>in @Model.Area</h3>
+
+                    @if (!string.IsNullOrWhiteSpace(Model.Area)) { 
+                        <h3>in @Model.Area</h3> 
+                    }
+
                     <h4><a href="@Model.HostSiteUrl">@Model.Name website</a></h4>
+
                 </div>
 
                 <div>
@@ -30,7 +36,6 @@
                         }
                     </ul>
 
-                    @*@Html.Action("ListArticleInSite", "Article", new { id = Model.Id })*@
                 </div>
 
             </div>
