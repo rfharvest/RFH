@@ -19,6 +19,14 @@ h2 {
     font:normal normal normal 1.6em Helvetica, Arial, Sans-Serif;
 }
 
+dt {
+    margin: 0 0 6px 0;
+}
+dd {
+    margin: 0 0 14px 0;
+    padding: 0;
+}
+
 .midsection
 {
     background-color: White;
