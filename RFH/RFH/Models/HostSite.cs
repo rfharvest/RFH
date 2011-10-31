@@ -34,6 +34,7 @@ namespace RFH.Models
             set { urlFriendlyName = Regex.Replace(Name, @"[^\w]+", "-", RegexOptions.IgnoreCase); }
         }
 
+        [UIHint("HtmlContent")]
         [Required]
         public string Description { get; set; }
 

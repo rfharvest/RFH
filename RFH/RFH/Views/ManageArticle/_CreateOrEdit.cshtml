@@ -36,7 +36,6 @@
     @Html.LabelFor(model => model.Article.Content)
 </div>
 <div class="editor-field">
-    @*@Html.CKEditor("Content", Model.Article.Content)*@
     @Html.EditorFor(m => m.Article.Content)
     @Html.ValidationMessageFor(model => model.Article.Content)
 </div>

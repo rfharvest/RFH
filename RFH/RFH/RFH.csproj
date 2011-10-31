@@ -97,7 +97,6 @@
     </Compile>
     <Compile Include="Infrastructure\DatabaseInitializer.cs" />
     <Compile Include="Infrastructure\DataContext.cs" />
-    <Compile Include="Infrastructure\EditorHelper.cs" />
     <Compile Include="Models\Article.cs">
       <SubType>Code</SubType>
     </Compile>
