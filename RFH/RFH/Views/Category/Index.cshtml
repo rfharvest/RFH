@@ -9,13 +9,13 @@
 <p>@Model.Category.Description</p>
 
 <div class="matchingArticles">
+    <dl>
     @foreach (var item in Model.Articles)
     {
-        <p>
-            <strong>@Html.ActionLink(item.HostSite.Name, "Details", "Site", new { id = item.HostSite.UrlFriendlyName }, null)</strong><br />
-            @item.ShortDescription @Html.ActionLink("read this article", "Index", "Article", new { id = item.Id }, null)
-        </p>
+        <dt>@Html.ActionLink(item.HostSite.Name, "Details", "Site", new { id = item.HostSite.UrlFriendlyName }, null)</dt>
+        <dd>@item.ShortDescription &raquo; @Html.ActionLink("read this article", "Index", "Article", new { id = item.Id }, null)</dd>
     }
+    </dl>
 </div>
 
 <script type="text/javascript">
