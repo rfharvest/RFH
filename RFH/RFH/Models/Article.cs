@@ -30,6 +30,7 @@ namespace RFH.Models
         public string ShortDescription { get; set; }
 
         [Required]
+        [UIHint("HtmlContent")]
         public string Content { get; set; }
     }
 }

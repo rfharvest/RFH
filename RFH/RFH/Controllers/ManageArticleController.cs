@@ -19,24 +19,19 @@ namespace RFH.Controllers
 		{
 			var model = new ManageArticleDetailViewModel();
 			model.Article = _dataContext.Articles.Include(m => m.Category).Single(m => m.Id == id);
-			model.HostSite = _dataContext.HostSites.Single(m => m.Id == model.Article.HostSiteId);
+			model.HostSite = _dataContext.HostSites.Find(model.Article.HostSiteId);
 
 			return View(model);
 		}
 
 		public ActionResult Edit(int id)
 		{
-			ViewBag.HostSites = GetHostSiteListItems(
-				_dataContext.HostSites.ToList());
+		    var article = _dataContext.Articles
+		        .Include(m => m.HostSite)
+		        .Include(m => m.Category)
+		        .Single(m => m.Id == id);
 
-			ViewBag.Categories = GetCategoryListItems(
-				_dataContext.Categories.ToList());
-
-            var model = _dataContext.Articles
-                            .Include(m => m.HostSite)
-                            .Include(m => m.Category)
-                            .Single(m => m.Id == id);
-
+		    var model = GetManageArticleEditViewModel(article);
 			return View(model);
 		}
 
@@ -44,62 +39,40 @@ namespace RFH.Controllers
 		[ValidateInput(false)]
 		public ActionResult Edit(int id, FormCollection form)
 		{
-			var model = _dataContext.Articles.Single(m => m.Id == id);
-			
-			if (TryUpdateModel(model))
+			var article = _dataContext.Articles.Single(m => m.Id == id);
+
+			if (TryUpdateModel(article, "Article"))
 			{
 				_dataContext.SaveChanges();
-				return RedirectToAction("Detail", new {model.Id});
+                return RedirectToAction("Detail", new { article.Id });
 			}
 
-			var host = _dataContext.HostSites.Single(m => m.Id == model.HostSiteId);
-
-			ViewBag.HostSites = GetHostSiteListItems(
-				_dataContext.HostSites.ToList());
-
-			ViewBag.Categories = GetCategoryListItems(
-				_dataContext.Categories.ToList());
-
-			return View(model);
+            var model = GetManageArticleEditViewModel(article);
+            return View(model);
 		}
 
 
 		public ActionResult Create()
 		{
-			ViewBag.HostSites = GetHostSiteListItems(
-				_dataContext.HostSites.ToList());
-
-			ViewBag.Categories = GetCategoryListItems(
-				_dataContext.Categories.ToList());
-	
-			var model = new Article()
-				{
-					Content = "Please enter content"
-				};
-
+            var model = GetManageArticleEditViewModel(null);
 			return View(model);
 		}
 
 		[HttpPost]
 		[ValidateInput(false)]
-		public ActionResult Create(Article model) 
+		public ActionResult Create(Article article)
 		{
-			if (ModelState.IsValid) {
-				_dataContext.Articles.Add(model);
-				_dataContext.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _dataContext.Articles.Add(article);
+                _dataContext.SaveChanges();
 
-				return RedirectToAction("Detail", new { model.Id });
-			}
+                return RedirectToAction("Detail", new { article.Id });
+            }
 
-			ViewBag.HostSites = GetHostSiteListItems(
-				_dataContext.HostSites.ToList());
-
-			ViewBag.Categories = GetCategoryListItems(
-				_dataContext.Categories.ToList());
-
+            var model = GetManageArticleEditViewModel(article);
 			return View(model);
 		}
-
 
 		public ActionResult Delete(int id)
 		{
@@ -135,16 +108,6 @@ namespace RFH.Controllers
             }
 		}
 
-		#region . Query Helpers (DRY!) .
-
-		/// <summary>
-		/// Gets the specified Category items.
-		/// </summary>
-		/// 
-		/// <param name="items">List&lt;Category&gt;</param>
-		/// 
-		/// <returns>IEnumerable&lt;SelectListItem&gt;</returns>
-		/// 
 		protected IEnumerable<SelectListItem> GetCategoryListItems(List<Category> items)
 		{
 			return items.Select(x => new SelectListItem
@@ -154,14 +117,6 @@ namespace RFH.Controllers
 				});
 		}
 
-		/// <summary>
-		/// Gets the specified HostSite items.
-		/// </summary>
-		/// 
-		/// <param name="items">List&lt;HostSite&gt;</param>
-		/// 
-		/// <returns>IEnumerable&lt;SelectListItem&gt;</returns>
-		/// 
 		protected IEnumerable<SelectListItem> GetHostSiteListItems(List<HostSite> items)
 		{
 			return items.Select(x => new SelectListItem
@@ -171,7 +126,16 @@ namespace RFH.Controllers
 				});
 		}
 
-		#endregion
+        private ManageArticleEditViewModel GetManageArticleEditViewModel(Article article)
+        {
+            var model = new ManageArticleEditViewModel
+            {
+                Article = article,
+                HostSiteItems = GetHostSiteListItems(_dataContext.HostSites.ToList()),
+                CategoryItems = GetCategoryListItems(_dataContext.Categories.ToList())
+            };
 
+            return model;
+        }
 	}
 }

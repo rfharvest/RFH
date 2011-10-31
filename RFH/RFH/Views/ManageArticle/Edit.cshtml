@@ -1,4 +1,4 @@
-﻿@model RFH.Models.Article
+﻿@model RFH.Models.ManageArticleEditViewModel
 
 <h2>@Html.Raw(@PageData["SectionTitle"]) Edit</h2>
 
@@ -6,8 +6,8 @@
 
     @using (Html.BeginForm()) {
 
-        @Html.ValidationSummary(true)
-        @Html.HiddenFor(model => model.Id)
+        @Html.ValidationSummary()
+        @Html.HiddenFor(model => model.Article.Id)
         @Html.Partial("_CreateOrEdit", Model)
 
         <p>
@@ -18,5 +18,5 @@
 </div>
     
 <p>
-    @Html.ActionLink("Back to HostSite", "Detail", "ManageHost", new {id=Model.HostSiteId}, null)
+    @Html.ActionLink("Back to Details", "Detail", new {id=Model.Article.HostSiteId})
 </p>

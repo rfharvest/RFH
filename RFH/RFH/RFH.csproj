@@ -132,6 +132,7 @@
     <Compile Include="Models\ManageArticleDetailViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\ManageArticleEditViewModel.cs" />
     <Compile Include="Models\ManageHostDetailViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -978,6 +979,7 @@
     <Content Include="Views\ManageHostSiteTag\_CreateOrEdit.cshtml" />
     <Content Include="Views\ManageHostSiteTag\_Display.cshtml" />
     <Content Include="Views\ManageHostSiteTagValue\_CreateOrEdit.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\HtmlContent.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

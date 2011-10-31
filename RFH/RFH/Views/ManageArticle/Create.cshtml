@@ -1,4 +1,4 @@
-﻿@model RFH.Models.Article
+﻿@model RFH.Models.ManageArticleEditViewModel
 
 <h2>@Html.Raw(@PageData["SectionTitle"]) Create</h2>
 
@@ -6,7 +6,7 @@
 
     @using (Html.BeginForm()) {
 
-        @Html.ValidationSummary(true)
+        @Html.ValidationSummary()
 
         @Html.Partial("_CreateOrEdit", Model)
         

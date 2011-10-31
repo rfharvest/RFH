@@ -1,41 +1,42 @@
-﻿@model RFH.Models.Article
+﻿@model RFH.Models.ManageArticleEditViewModel
            
 <div class="editor-label">
-    @Html.LabelFor(model => model.HostSiteId)
+    @Html.LabelFor(model => model.Article.HostSiteId)
 </div>
 <div class="editor-field">
-    @Html.DropDownListFor(m => m.HostSiteId, (IEnumerable<SelectListItem>)ViewBag.HostSites)
-    @Html.ValidationMessageFor(model => model.HostSiteId)
+    @Html.DropDownListFor(m => m.Article.HostSiteId, Model.HostSiteItems)
+    @Html.ValidationMessageFor(model => model.Article.HostSiteId)
 </div>
 
 <div class="editor-label">
-    @Html.LabelFor(model => model.CategoryId)
+    @Html.LabelFor(model => model.Article.CategoryId)
 </div>
 <div class="editor-field">
-    @Html.DropDownListFor(model => model.CategoryId, (IEnumerable<SelectListItem>)ViewBag.Categories)
-    @Html.ValidationMessageFor(model => model.CategoryId)
+    @Html.DropDownListFor(model => model.Article.CategoryId, Model.CategoryItems)
+    @Html.ValidationMessageFor(model => model.Article.CategoryId)
 </div>
 
 <div class="editor-label">
-    @Html.LabelFor(model => model.IsPublished)
+    @Html.LabelFor(model => model.Article.IsPublished)
 </div>
 <div class="editor-field">
-    @Html.CheckBoxFor(model => model.IsPublished, new { Class = "checkbox" })
-    @Html.ValidationMessageFor(model => model.IsPublished)
+    @Html.CheckBoxFor(model => model.Article.IsPublished, new { Class = "checkbox" })
+    @Html.ValidationMessageFor(model => model.Article.IsPublished)
 </div>
 
 <div class="editor-label">
-    @Html.LabelFor(model => model.ShortDescription)
+    @Html.LabelFor(model => model.Article.ShortDescription)
 </div>
 <div class="editor-field">
-    @Html.EditorFor(model => model.ShortDescription)
-    @Html.ValidationMessageFor(model => model.ShortDescription)
+    @Html.EditorFor(model => model.Article.ShortDescription)
+    @Html.ValidationMessageFor(model => model.Article.ShortDescription)
 </div>
 
 <div class="editor-label">
-    @Html.LabelFor(model => model.Content)
+    @Html.LabelFor(model => model.Article.Content)
 </div>
 <div class="editor-field">
-    @Html.CKEditor("Content", Model.Content)
-    @Html.ValidationMessageFor(model => model.Content)
+    @*@Html.CKEditor("Content", Model.Article.Content)*@
+    @Html.EditorFor(m => m.Article.Content)
+    @Html.ValidationMessageFor(model => model.Article.Content)
 </div>
