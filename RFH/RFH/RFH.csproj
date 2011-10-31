@@ -143,6 +143,7 @@
     <Compile Include="Models\RelatedArticle.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\SiteDetailsViewModel.cs" />
     <Compile Include="Models\UserCredentials.cs">
       <SubType>Code</SubType>
     </Compile>

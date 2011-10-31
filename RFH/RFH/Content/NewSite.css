@@ -93,23 +93,26 @@ dd {
         line-height: 1.4em;
     }
 
-#articleIndexView #hostSite {
+#hostSiteMetadata {
     float: right;
     border: 1px solid #666;
     padding: 10px 20px;
     border-radius: 10px;
     background: #FFF;
 }
-    #articleIndexView #hostSite .tags {
+    #hostSiteMetadata h3 {
+        border-bottom: 1px solid #666;
+    }
+    #hostSiteMetadata .tags {
         margin: 0;
         padding: 0;
     }
-        #articleIndexView #hostSite .tags li {
+        #hostSiteMetadata .tags li {
             list-style-type: none;
             font-weight: bold;
             margin: 6px;
         }
-            #articleIndexView #hostSite .tags .tagValues li {
+            #hostSiteMetadata .tags .tagValues li {
                 list-style-type: disc;
                 font-weight: normal;
             }

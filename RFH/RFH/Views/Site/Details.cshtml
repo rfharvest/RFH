@@ -1,6 +1,6 @@
-﻿@model RFH.Models.HostSite
+﻿@model RFH.Models.SiteDetailsViewModel
 @{
-    ViewBag.Title = Model.Name;
+    ViewBag.Title = Model.HostSite.Name;
 }
 <table>
     <tr>
@@ -8,24 +8,26 @@
             <div style="padding-right: 20px;">
                 <div class="titlePane">
                     
-                    <h2>@Model.Name</h2>
+                    <h2>@Model.HostSite.Name</h2>
                     
-                    @if (!string.IsNullOrWhiteSpace(Model.Area)) { 
-                        <p>@Model.Area</p> 
+                    @if (!string.IsNullOrWhiteSpace(Model.HostSite.Area))
+                    { 
+                        <p>@Model.HostSite.Area</p> 
                     }
                     
-                    @if (!string.IsNullOrWhiteSpace(Model.HostSiteUrl)) {
-                        <p>Website: <a href="@Model.HostSiteUrl" target="_blank">@Model.HostSiteUrl</a></p>
+                    @if (!string.IsNullOrWhiteSpace(Model.HostSite.HostSiteUrl))
+                    {
+                        <p>Website: <a href="@Model.HostSite.HostSiteUrl" target="_blank">@Model.HostSite.HostSiteUrl</a></p>
                     }
                     
                 </div>
                 <div>
-                    @Html.Raw(Model.Description)
+                    @Html.Raw(Model.HostSite.Description)
                 </div>
                 <div>
                     <h3>Articles</h3>
                     <dl>
-                        @foreach (var item in Model.Articles)
+                        @foreach (var item in Model.HostSite.Articles)
                         {
                             <dt>@Html.ActionLink(item.Category.Name, "Index", "Article", new { id = item.Id }, null)</dt>
                             <dd>@item.ShortDescription</dd>
@@ -35,28 +37,30 @@
             </div>
         </td>
         <td width="40%" valign="top">
-            <div style="border: 1px solid #DDD;">
-                <ul>
-                    @foreach (var md in Model.MetaData)
-                    {
-                        <li>
-                            <h4>@Html.Label(md.Type)</h4>
-                            <ul>
-                                @foreach (var mdValues in md.Values)
-                                { 
-                                    <li>@Html.Label(mdValues.Value)</li> 
-                                }
-                            </ul>
-                        </li>
+            
+            <div id="hostSiteMetadata">
+                <h3>Host Site Facts</h3>
+                <div>
+                    <ul class="tags">
+                    @foreach (var tag in Model.HostSiteTags) {
+                        <li>@tag.Name:</li>
+                        <ul class="tagValues">
+                            @foreach (var tagValue in Model.HostSiteTagValues.Where(m => m.HostSiteTagId.Equals(tag.Id)))
+                            {
+                                <li>@tagValue.Name</li>
+                            }
+                        </ul>
                     }
-                </ul>
+                    </ul>
+                </div>
             </div>
+
         </td>
     </tr>
 </table>
 
 <script type="text/javascript">
     $(function () {
-        $('#hostSiteNav li[data-id="@Model.Id"]').addClass('current');
+        $('#hostSiteNav li[data-id="@Model.HostSite.Id"]').addClass('current');
     });
 </script>
