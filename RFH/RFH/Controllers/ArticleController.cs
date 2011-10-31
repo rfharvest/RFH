@@ -15,32 +15,48 @@ namespace RFH.Controllers
 
         public ActionResult Index(int id)
         {
-            // Lookup the article by id (only include published articles)
-            var article = (from a in _dataContext.Articles.Include(a => a.HostSite).Include(a=>a.Category).Include(a=>a.HostSite.MetaData.Select(m => m.Values))
-                           where a.Id == id && a.IsPublished == true
-                           select a).FirstOrDefault();
+            var article = _dataContext.Articles
+                .Include(a => a.HostSite)
+                .Include(a => a.Category)
+                .Where(a => a.IsPublished)
+                .Where(a => a.Id == id)
+                .FirstOrDefault();
 
-            // If you cannot find the article then redirect to Home
-            if (article == null) {
-                return RedirectToAction("Index", "Home");
-            }
+            var relatedArticles = _dataContext.Articles
+                .Where(m => m.CategoryId == article.CategoryId)
+                .Where(m => m.Id != article.Id)
+                .Where(m => m.IsPublished)
+                .Select(m => new RelatedArticle
+                                 {
+                                     ArticleId = m.Id,
+                                     HostSiteName = m.HostSite.Name
+                                 }).ToList();
 
-            // Get related articles
-            var relatedArticles = (from a in _dataContext.Articles
-                                   where a.CategoryId == article.Category.Id
-                                   && a.Id != article.Id
-                                   && a.IsPublished == true
-                                   select new RelatedArticle { ArticleId = a.Id, HostSiteName = a.HostSite.Name }).ToList();
+            // TODO: Move the following filter execution from C# to the database
 
+            var selectedTagValues = _dataContext.HostSiteToHostSiteTagValues
+                .Where(m => m.HostSiteId == article.HostSiteId)
+                .Select(m => m.HostSiteTagValue)
+                .OrderBy(m => m.Name)
+                .ToList();
+
+            var distinctHostSiteTags = selectedTagValues.Select(m => m.HostSiteTagId).Distinct();
+
+            var hostSiteTags = _dataContext.HostSiteTags
+                .Include(m => m.HostSiteTagValues)
+                .ToList()
+                .Where(m => distinctHostSiteTags.Any(d => d == m.Id))
+                .OrderBy(m => m.Name);
 
             var model = new ArticleIndexViewModel
                             {
                                 Article = article,
-                                RelatedArticles = relatedArticles
+                                RelatedArticles = relatedArticles,
+                                HostSiteTags = hostSiteTags,
+                                HostSiteTagValues = selectedTagValues
                             };
 
             return View(model);
         }
-
     }
 }

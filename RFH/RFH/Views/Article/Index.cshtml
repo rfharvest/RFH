@@ -7,44 +7,50 @@
         Model.Article.HostSite.Name);
  }
 
-<div class="breadCrumb">
-    @Html.ActionLink(Model.Article.HostSite.Name, "Details", "Site", new {Id=Model.Article.HostSite.UrlFriendlyName}, null)
-    &gt;   
-    @Html.ActionLink(Model.Article.Category.Name, "Index", "Category", new {Id=Model.Article.Category.UrlFriendlyName}, null)
-</div>
+<div id="articleIndexView">
 
-<div style="float:right">
-    <h3>@Model.Article.HostSite.Name</h3>
-    <div>
-        <ul>
-        @foreach (var metaData in Model.Article.HostSite.MetaData) {
-            <li>@metaData.Type:</li>
-            <ul>
-            @foreach (var metaDataValue in metaData.Values) {
-                <li>@metaDataValue.Value</li>
+    <div class="breadCrumb">
+        @Html.ActionLink(Model.Article.HostSite.Name, "Details", "Site", new {Id=Model.Article.HostSite.UrlFriendlyName}, null)
+        &gt;   
+        @Html.ActionLink(Model.Article.Category.Name, "Index", "Category", new {Id=Model.Article.Category.UrlFriendlyName}, null)
+    </div>
+
+    <div id="hostSite">
+        <h3>@Model.Article.HostSite.Name</h3>
+        <div>
+            <ul class="tags">
+            @foreach (var tag in Model.HostSiteTags) {
+                <li>@tag.Name:</li>
+                <ul class="tagValues">
+                    @foreach (var tagValue in Model.HostSiteTagValues.Where(m => m.HostSiteTagId.Equals(tag.Id)))
+                    {
+                        <li>@tagValue.Name</li>
+                    }
+                </ul>
             }
             </ul>
-        }
-        </ul>
+        </div>
     </div>
-</div>
 
-<div>
-    @Html.Raw( Model.Article.Content )
-</div>
-<div class="goUp">
-    @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Details", "Site", new {Id=Model.Article.HostSite.Name}, null)
-</div>
-<div>
-    @if (Model.RelatedArticles.Count > 0) {
-        <h1>Related Articles</h1>
-        <ul>
-            @foreach (var relatedArticle in Model.RelatedArticles) {
-                <li>
-                    @Html.ActionLink(String.Format("{0} article by {1}", Model.Article.Category.Name, relatedArticle.HostSiteName), "Index", "Article", new {id = relatedArticle.ArticleId}, null)
-                </li>
-            }   
-        </ul>
+    <div>
+        @Html.Raw( Model.Article.Content )
+    </div>
+
+    <div class="goUp">
+        @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Details", "Site", new {Id=Model.Article.HostSite.Name}, null)
+    </div>
+
+    @if (Model.RelatedArticles.Count() > 0) {
+        <div>
+            <h1>Related Articles</h1>
+            <ul>
+                @foreach (var relatedArticle in Model.RelatedArticles) {
+                    <li>
+                        @Html.ActionLink(String.Format("{0} article by {1}", Model.Article.Category.Name, relatedArticle.HostSiteName), "Index", "Article", new {id = relatedArticle.ArticleId}, null)
+                    </li>
+                }   
+            </ul>
+        </div>
     }
-
+    
 </div>

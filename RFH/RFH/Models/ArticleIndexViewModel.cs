@@ -4,8 +4,12 @@ namespace RFH.Models
 {
     public class ArticleIndexViewModel 
     {
-        public Models.Article Article { get; set; }
+        public Article Article { get; set; }
 
-        public IList<RelatedArticle> RelatedArticles { get; set; }
+        public IEnumerable<RelatedArticle> RelatedArticles { get; set; }
+
+        public IEnumerable<HostSiteTag> HostSiteTags { get; set; }
+
+        public IEnumerable<HostSiteTagValue> HostSiteTagValues { get; set; }
     }
 }
