@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using RFH.Infrastructure;
 using RFH.Models;
@@ -39,6 +40,7 @@ namespace RFH.Controllers
 
             if (TryUpdateModel(model))
             {
+                model.UrlFriendlyName = Regex.Replace(model.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
                 _dataContext.SaveChanges();
                 return RedirectToAction("Detail", new { model.Id });
             }
@@ -56,6 +58,7 @@ namespace RFH.Controllers
         {
             if (ModelState.IsValid)
             {
+                model.UrlFriendlyName = Regex.Replace(model.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
                 _dataContext.Categories.Add(model);
                 _dataContext.SaveChanges();
 

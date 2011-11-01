@@ -10,8 +10,6 @@ namespace RFH.Models
 {
     public class HostSite 
     {
-        private string urlFriendlyName;
-
         public HostSite() 
         {
             this.MetaData = new List<HostSiteMetaData>();
@@ -26,13 +24,7 @@ namespace RFH.Models
         [Required]
         public string Name { get; set; }
 
-
-        [DisplayName("Url Friendly Name")]
-        public string UrlFriendlyName
-        {
-            get { return Regex.Replace(Name, @"[^\w]+", "-", RegexOptions.IgnoreCase); }
-            set { urlFriendlyName = Regex.Replace(Name, @"[^\w]+", "-", RegexOptions.IgnoreCase); }
-        }
+        public string UrlFriendlyName { get; set; }
 
         [UIHint("HtmlContent")]
         [Required]

@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using RFH.Infrastructure;
 using RFH.Models;
@@ -58,6 +59,8 @@ namespace RFH.Controllers
         {
             var model = _dataContext.HostSites.Single(h => h.Id == id);
 
+            model.UrlFriendlyName = Regex.Replace(model.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
+
             if (TryUpdateModel(model))
             {
                 _dataContext.SaveChanges();
@@ -78,7 +81,7 @@ namespace RFH.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+                model.UrlFriendlyName = Regex.Replace(model.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
                 _dataContext.HostSites.Add(model);
                 _dataContext.SaveChanges();
 

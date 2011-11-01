@@ -99,6 +99,7 @@ dd {
     padding: 10px 20px;
     border-radius: 10px;
     background: #FFF;
+    margin: 0 0 30px 30px;
 }
     #hostSiteMetadata h3 {
         border-bottom: 1px solid #666;
