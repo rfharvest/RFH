@@ -36,6 +36,7 @@ namespace RFH.Models
 
         [UIHint("HtmlContent")]
         [Required]
+        [MaxLength]
         public string Description { get; set; }
 
         public string Area { get; set; }
