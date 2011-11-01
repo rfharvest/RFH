@@ -1,35 +1,35 @@
 ﻿@model RFH.Models.UserCredentials
 
-<h2>LogOn</h2>
+<h2>Sign In</h2>
+
+<p>Only authorized staff are permitted to Sign In</p>
 
 @using (Html.BeginForm()) {
+
     @Html.ValidationSummary(false)
-    <fieldset>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.UserName)
-            @Html.ValidationMessageFor(model => model.UserName)
-        </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.UserName)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.UserName)
+        @Html.ValidationMessageFor(model => model.UserName)
+    </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Password)
-        </div>
-        <div class="editor-field">
-            @Html.PasswordFor(model => model.Password)
-            @Html.ValidationMessageFor(model => model.Password)
-        </div>
-        <p>
-            <input type="submit" value="Login" />
-        </p>
-    </fieldset>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Password)
+    </div>
+    <div class="editor-field">
+        @Html.PasswordFor(model => model.Password)
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+    <p>
+        <input type="submit" value="Sign In" />
+    </p>
     
     <script type="text/javascript">
         $(function () {
-            $('#UserName').val('test123');
-            $('#Password').val('test123');
+            $('#UserName').focus();
         });
     </script>
 }

@@ -27,7 +27,8 @@ obj/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
-RFH/RFH.suo
-RFH/RFH/Content/cmsImages/*
-RFH/RFH/RFH.csproj.user
-RFH/RFH/App_Data/*.sdf
+RFH.suo
+cmsImages/
+RFH.csproj.user
+*.sdf
+deploy/

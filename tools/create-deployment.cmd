@@ -1,0 +1,1 @@
+robocopy ..\src\rfh ..\deploy /s /xd ckeditor cmsImages obj /xf *.cs* *.config *.xml *.sdf
