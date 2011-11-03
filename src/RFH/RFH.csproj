@@ -82,7 +82,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageArticleController.cs" />
-    <Compile Include="Controllers\ManageBackupRecipientController.cs" />
+    <Compile Include="Controllers\ManageBackupController.cs" />
     <Compile Include="Controllers\ManageCategoryController.cs" />
     <Compile Include="Controllers\ManageContentController.cs" />
     <Compile Include="Controllers\ManageHostController.cs" />
@@ -967,10 +967,10 @@
     <Content Include="Views\Shared\NewUi\_Header.cshtml" />
     <Content Include="Views\Home\Wizard.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TextArea.cshtml" />
-    <Content Include="Views\ManageBackupRecipient\Create.cshtml" />
-    <Content Include="Views\ManageBackupRecipient\_ViewStart.cshtml" />
-    <Content Include="Views\ManageBackupRecipient\Delete.cshtml" />
-    <Content Include="Views\ManageBackupRecipient\Index.cshtml" />
+    <Content Include="Views\ManageBackup\Create.cshtml" />
+    <Content Include="Views\ManageBackup\_ViewStart.cshtml" />
+    <Content Include="Views\ManageBackup\Delete.cshtml" />
+    <Content Include="Views\ManageBackup\Index.cshtml" />
     <Content Include="Views\ManageHost\_Display.cshtml" />
     <Content Include="Views\ManageArticle\_CreateOrEdit.cshtml" />
     <Content Include="Views\ManageArticle\_Display.cshtml" />

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<string>
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) List</h2>
+
+<div class="formContainer">
+
+    <p>@Html.ActionLink("Create New Backup", "Create")</p>
+
+    @if (Model.Count() > 0) {
+
+        <h3>Backup Files</h3>
+
+        <table class="standardTable">
+            <thead>
+                <tr>
+                    <th>Backup File</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item</td>
+                        <td>
+                            @Html.ActionLink("Download", "Download", "ManageBackup", new { id = Path.GetFileNameWithoutExtension(item) }, null) |
+                            @Html.ActionLink("Delete", "Delete", "ManageBackup", new { id = Path.GetFileNameWithoutExtension(item) }, null)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+</div>

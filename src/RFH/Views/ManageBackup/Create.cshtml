@@ -1,0 +1,20 @@
+﻿<h2>@Html.Raw(@PageData["SectionTitle"]) Create</h2>
+
+<div class="formContainer">
+
+    <h3>Are you sure you want to create a new backup file?</h3>
+
+    @using (Html.BeginForm()) {
+        
+        @Html.ValidationSummary()
+
+        <p>
+            <input type="submit" value="Create Backup" class="standardButton" />
+        </p>
+    }
+
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
