@@ -980,6 +980,7 @@
     <Content Include="Views\ManageHostSiteTag\_Display.cshtml" />
     <Content Include="Views\ManageHostSiteTagValue\_CreateOrEdit.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\HtmlContent.cshtml" />
+    <Content Include="Views\Home\GiveCamp.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,13 @@
+﻿@model RFH.Models.ContentData
+		   
+@{
+    ViewBag.Title = "GiveCamp";
+}
+
+<div id="MainWindow">
+	<div id="MainWindowTop">
+		<div id="WelcomeContent">
+			@Html.Raw( @Model.Content )
+		</div>
+	</div>
+</div>

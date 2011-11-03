@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
-using System.Web.Helpers;
 using System.Web.Mvc;
 using RFH.Infrastructure;
 using RFH.Models;
@@ -12,30 +9,24 @@ namespace RFH.Controllers
 {
 	public class HomeController : Controller
 	{
-		//
-		// GET: /Home/
-
 		private DataContext _dataContext = new DataContext();
-
 
 		public ActionResult Index()
 		{
-			var contentItem = from content in _dataContext.ContentDatas
-							  where content.ActionName == "Index" &&  
-									content.ControllerName == "Home"
-							  select content;
-
-			return View(contentItem.FirstOrDefault());
+            var model = GetContentData("Index", "Home");
+            return View(model);
 		}
 
         public ActionResult GeneralResource()
         {
-            var contentItem = from content in _dataContext.ContentDatas
-                              where content.ActionName == "GeneralResource" &&
-                                    content.ControllerName == "Home"
-                              select content;
+            var model = GetContentData("GeneralResource", "Home");
+            return View(model);
+        }
 
-            return View(contentItem.FirstOrDefault());
+        public ActionResult GiveCamp()
+        {
+            var model = GetContentData("GiveCamp", "Home");
+            return View(model);
         }
 
         [ChildActionOnly]
@@ -92,5 +83,21 @@ namespace RFH.Controllers
             return Json(model, "text/html", JsonRequestBehavior.AllowGet);
         }
 
+        private ContentData GetContentData(string actionName, string controllerName)
+        {
+            var model = _dataContext.ContentDatas
+                    .Where(m => m.ActionName == actionName)
+                    .Where(m => m.ControllerName == controllerName)
+                    .SingleOrDefault();
+
+            if (model == null)
+            {
+                model = new ContentData { ActionName = actionName, ControllerName = controllerName, Name = actionName };
+                _dataContext.ContentDatas.Add(model);
+                _dataContext.SaveChanges();
+            }
+
+            return model;
+        }
 	}
 }
