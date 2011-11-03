@@ -208,7 +208,11 @@ textarea
     display: none;
 }
 
-/* utility crap */
+/* utility classes  */
 
 .hidden { display: none ! important; }
 .clear {clear: both;}
+
+.footer {
+    padding-bottom:10px;
+}
