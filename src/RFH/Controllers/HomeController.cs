@@ -92,7 +92,7 @@ namespace RFH.Controllers
 
             if (model == null)
             {
-                model = new ContentData { ActionName = actionName, ControllerName = controllerName, Name = actionName };
+                model = new ContentData { ActionName = actionName, ControllerName = controllerName, Name = actionName, Content="Content goes here." };
                 _dataContext.ContentDatas.Add(model);
                 _dataContext.SaveChanges();
             }
