@@ -85,7 +85,7 @@ namespace RFH.Controllers
                                 {
                                     id = m.Id,
                                     name = m.Name,
-                                    url = "/site/" + m.Name,
+                                    url = "/site/" + m.UrlFriendlyName,
                                     tagValues = tagValues.Where(t => t.HostSiteId == m.Id).Select(t => t.HostSiteTagValueId)
                                 });
 

@@ -12,16 +12,16 @@ namespace RFH.Infrastructure
 
             var categories = new List<Category> 
             {
-                new Category {Name="Gleaning", Description="Description goes here."},
-                new Category {Name="Market Recovery", Description="Description goes here."},
-                new Category {Name="Plant a Row/Starts", Description="Description goes here."},
-                new Category {Name="Volunteer Relations", Description="Description goes here."},
-                new Category {Name="Visibility", Description="Description goes here."},
-                new Category {Name="Fruit Tree Harvest", Description="Description goes here."},
-                new Category {Name="Farms/Gardens", Description="Description goes here."},
-                new Category {Name="Education", Description="Description goes here."},
-                new Category {Name="Parterships", Description="Description goes here."},
-                new Category {Name="Donor Relations", Description="Description goes here."}
+                new Category {Name="Gleaning", Description="Description goes here.", UrlFriendlyName="Gleaning"},
+                new Category {Name="Market Recovery", Description="Description goes here.", UrlFriendlyName="Market-Recovery"},
+                new Category {Name="Plant a Row/Starts", Description="Description goes here.", UrlFriendlyName="Plant-a-Row-Starts"},
+                new Category {Name="Volunteer Relations", Description="Description goes here.", UrlFriendlyName="Volunteer-Relations"},
+                new Category {Name="Visibility", Description="Description goes here.", UrlFriendlyName="Visibility"},
+                new Category {Name="Fruit Tree Harvest", Description="Description goes here.", UrlFriendlyName="Fruit-Tree-Harvest"},
+                new Category {Name="Farms/Gardens", Description="Description goes here.", UrlFriendlyName="Farms-Gardens"},
+                new Category {Name="Education", Description="Description goes here.", UrlFriendlyName="Education"},
+                new Category {Name="Parterships", Description="Description goes here.", UrlFriendlyName="Parterships"},
+                new Category {Name="Donor Relations", Description="Description goes here.", UrlFriendlyName="Donor-Relations"}
             };
 
             categories.ForEach(c => context.Categories.Add(c));
@@ -36,7 +36,8 @@ namespace RFH.Infrastructure
                                             Description = @"The following information describes how the gleaning coordinator organize a food recovery program in this region- including collection of surplus produce from farms, home gardens, and farmers markets.  Because the program is new and still growing, information reflects the gleaning coordinator's experience in starting a program essentially from scratch. Goals for the future of the program are described as well.",
                                             HostSiteUrl = "http://mtvernon.org",
                                             Area = "MT Vernon",
-                                            IsActive = true
+                                            IsActive = true,
+                                            UrlFriendlyName = "MT-Vernon-Food-Bank"
                                         },
                                     new HostSite
                                         {
@@ -44,7 +45,8 @@ namespace RFH.Infrastructure
                                             Description = "TBD",
                                             HostSiteUrl = "http://seattlelettuce.org",
                                             Area = "Seattle",
-                                            IsActive = true
+                                            IsActive = true,
+                                            UrlFriendlyName = "Seattle-Lettuce-Link"
                                         },
                                     new HostSite
                                         {
@@ -52,7 +54,8 @@ namespace RFH.Infrastructure
                                             Description = @"The fields of grace focuses on three segments to gather the majority of the food.  The                      primary focus is on gleaning leftover crops, followed by donated first fruits on the tree and vien and farmer's market",
                                             HostSiteUrl = "http://SeattleHarvestTri-Cities.org",
                                             Area = "Tri-cities",
-                                            IsActive = true
+                                            IsActive = true,
+                                            UrlFriendlyName = "Second-Harvest-Tri-cities"
                                         }
                                 };
 
