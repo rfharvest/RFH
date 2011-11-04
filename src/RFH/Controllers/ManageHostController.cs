@@ -33,11 +33,13 @@ namespace RFH.Controllers
                 .ToList();
 
             model.HostSiteTags = this._dataContext.HostSiteTags
-                .OrderBy(m => m.Name)
+                .OrderBy(m => m.SortOrder)
+                .ThenBy(m => m.Name)
                 .ToList();
 
             model.HostSiteTagValues = this._dataContext.HostSiteTagValues
-                .OrderBy(m => m.Name)
+                .OrderBy(m => m.SortOrder)
+                .ThenBy(m => m.Name)
                 .ToList();
 
             model.HostSiteToHostSiteTagValues = this._dataContext.HostSiteToHostSiteTagValues

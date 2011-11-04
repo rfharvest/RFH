@@ -38,7 +38,8 @@ namespace RFH.Controllers
 
             var tags = _dataContext.HostSiteTags
                 .Include(m => m.HostSiteTagValues)
-                .OrderBy(m => m.Name)
+                .OrderBy(m => m.SortOrder)
+                .ThenBy(m => m.Name)
                 .ToList();
 
             foreach (var tag in tags)
@@ -49,7 +50,8 @@ namespace RFH.Controllers
                             TagId = tag.Id,
                             TagName = tag.Name,
                             TagValues = tag.HostSiteTagValues
-                                            .OrderBy(m => m.Name)
+                                            .OrderBy(m => m.SortOrder)
+                                            .ThenBy(m => m.Name)
                                             .Select(m => new SelectListItem
                                                 {
                                                     Text = m.Name, 

@@ -3,12 +3,14 @@ using System.Data.Entity;
 using RFH.Models;
 
 namespace RFH.Infrastructure
+
 {
     public class DataContext : DbContext
     {
         public DataContext() : base("RFHDB")
         {
-            Database.SetInitializer(new DatabaseInitializer());
+            // Database.SetInitializer(new DatabaseInitializer());
+            Database.SetInitializer<DataContext>(null);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -11,6 +11,10 @@ namespace RFH.Models
         [Required]
         public string Name { get; set; }
 
+        [DisplayName("Sort Order")]
+        [Required]
+        public int SortOrder { get; set; }
+
         public HostSiteTag HostSiteTag { get; set; }
         public int HostSiteTagId { get; set; }
     }

@@ -21,6 +21,7 @@
     <thead>
         <tr>
             <th>Tag Value</th>
+            <th>Sort Order</th>
             <th></th>
         </tr>
     </thead>
@@ -29,6 +30,7 @@
         {
             <tr>
                 <td>@item.Name</td>
+                <td>@item.SortOrder</td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", "ManageHostSiteTagValue", new { id=item.Id }, null) |
                     @Html.ActionLink("Delete", "Delete", "ManageHostSiteTagValue", new { id=item.Id }, null)

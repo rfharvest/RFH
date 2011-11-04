@@ -24,7 +24,8 @@ namespace RFH.Controllers
             var selectedTagValues = _dataContext.HostSiteToHostSiteTagValues
                 .Where(m => m.HostSiteId == hostSite.Id)
                 .Select(m => m.HostSiteTagValue)
-                .OrderBy(m => m.Name)
+                .OrderBy(m => m.SortOrder)
+                .ThenBy(m => m.Name)
                 .ToList();
 
             var distinctHostSiteTags = selectedTagValues.Select(m => m.HostSiteTagId).Distinct();
@@ -33,7 +34,8 @@ namespace RFH.Controllers
                 .Include(m => m.HostSiteTagValues)
                 .ToList()
                 .Where(m => distinctHostSiteTags.Any(d => d == m.Id))
-                .OrderBy(m => m.Name);
+                .OrderBy(m => m.SortOrder)
+                .ThenBy(m => m.Name);
 
             var model = new SiteDetailsViewModel
                             {

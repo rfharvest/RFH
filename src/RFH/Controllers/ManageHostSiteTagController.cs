@@ -15,7 +15,8 @@ namespace RFH.Controllers
         public ViewResult Index()
         {
             var model = _dataContext.HostSiteTags
-                .OrderBy(m => m.Name)
+                .OrderBy(m => m.SortOrder)
+                .ThenBy(m => m.Name)
                 .ToList();
             
             return View(model);
@@ -29,7 +30,8 @@ namespace RFH.Controllers
 
             model.HostSiteTagValues = _dataContext.HostSiteTagValues
                 .Where(m => m.HostSiteTagId == id)
-                .OrderBy(m => m.Name)
+                .OrderBy(m => m.SortOrder)
+                .ThenBy(m => m.Name)
                 .ToList();
 
             return View(model);
