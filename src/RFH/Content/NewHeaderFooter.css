@@ -31,11 +31,17 @@
 {
     display: block;
     height: 90px;
-    font-family: "Impact", "Impact Regular", Sans-Serif;
     background: #c69c6d;
 }
-.header .siteTitle h2 { margin: 0; padding: 10px 0 0 10px; color: White; font-size: xx-large; font-weight: normal; }
-.header .siteTitle h3 { margin: 0; padding: 0px 0 0 10px; color: #363636; font-size: x-large; font-weight: normal; }
+.header .siteTitle h2,
+.header .siteTitle h3 {
+    font-family: "Impact", "Impact Regular", Sans-Serif;
+    font-weight: normal;
+    margin: 0;
+}
+
+.header .siteTitle h2 { padding: 10px 0 0 10px; color: #363636; font-size: 2.4em; }
+.header .siteTitle h3 { padding: 0px 0 0 10px; color: #FFF; font-size: 1.4em; }
 
 /******************************************************************************
  ** FOOTER
