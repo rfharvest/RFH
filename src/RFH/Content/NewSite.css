@@ -1,19 +1,28 @@
-body
-{
+body {
     font-family: Helvetica, Arial, Sans-Serif;
     color: black;
 }
-
-a:link { color: #030; text-decoration: underline; }
-a:visited { color: #062; text-decoration: underline; }
-a:hover { color: #262; text-decoration: underline; }
-a:active { color: #262; text-decoration: underline; }
-
+a:link {
+    color: #030;
+    text-decoration: underline;
+}
+a:visited {
+    color: #062;
+    text-decoration: underline;
+}
+a:hover {
+    color: #262;
+    text-decoration: underline;
+}
+a:active {
+    color: #262;
+    text-decoration: underline;
+}
 h1 {
-    font:normal normal normal 2em Helvetica, Arial, Sans-Serif;
+    font: normal normal normal 2em Helvetica, Arial, Sans-Serif;
 }
 h2 {
-    font:normal normal normal 1.6em Helvetica, Arial, Sans-Serif;
+    font: normal normal normal 1.6em Helvetica, Arial, Sans-Serif;
 }
 p {
     margin: 10px 0;
@@ -30,69 +39,51 @@ dt {
 }
 dd {
     margin: 0 0 14px 0;
-    padding: 0;
 }
-
-.navPaneSection
-{
+.navPaneSection .generalResource {
+    border-bottom: 1px solid #060;
+    border-top: 1px solid #060;
 }
-
-    .navPaneSection .generalResource {
-        border-bottom: 1px solid #060;
-        border-top: 1px solid #060;
+.navPaneSection .sidePane {
+    padding: 5px 0px;
+    margin: 0px 20px;
+}
+    .navPaneSection .sidePane h2, 
+    .navPaneSection .sidePane h3 {
+        margin: 14px 0;
+        font: normal normal normal 1.4em Helvetica, Arial, Sans-Serif;
+        color: #363636;
     }
-
-    .navPaneSection .sidePane
-    {
-        padding: 5px 0px;
-        margin: 0px 20px;
-    }
-
-        .navPaneSection .sidePane h2, 
-        .navPaneSection .sidePane h3
-        {
-            margin: 14px 0;
-            font:normal normal normal 1.4em Helvetica, Arial, Sans-Serif;
-            color: #363636;
-        }
-
-    .navPaneSection .sidePane ul 
-    {
-        padding: 0;
+    .navPaneSection .sidePane ul {
         font-size: smaller;
     }
-        .navPaneSection .sidePane ul li
-        {
+        .navPaneSection .sidePane ul li {
             margin: 0 0 8px 0;
             list-style-type: none;
         }
-            .navPaneSection .sidePane ul li.current a
-            {
-                text-decoration: none;
-            }
-/*
-.contentSection
-{
-    position: relative;
-    margin: 0 0 0 251px;
-    padding: 1em;
-    background-color: #e5dcd1;
-    min-height: 450px;
-} */
+.navPaneSection .sidePane ul li.current a {
+    text-decoration: none;
+}
 
 /* Page styles
 -----------------------------------------------------------*/
 
-.goUp { font-size: smaller; font-style: italic; margin: 1em 0;}
-.breadCrumb { font-size: smaller; font-style: italic; margin-bottom: 1em;}
-
+.goUp {
+    font-size: smaller;
+    font-style: italic;
+    margin: 1em 0;
+}
+.breadCrumb {
+    font-size: smaller;
+    font-style: italic;
+    margin-bottom: 1em;
+}
 .matchingArticles {
     margin-top: 30px;
 }
-    .matchingArticles p {
-        line-height: 1.4em;
-    }
-
+.matchingArticles p {
+    line-height: 1.4em;
+}
 #hostSiteMetadata {
     float: right;
     border: 1px solid #666;
@@ -101,28 +92,28 @@ dd {
     background: #FFF;
     margin: 0 0 30px 30px;
 }
-    #hostSiteMetadata h3 {
-        border-bottom: 1px solid #666;
-    }
-    #hostSiteMetadata .tags {
-        margin: 0;
-        padding: 0;
-    }
-        #hostSiteMetadata .tags li {
-            list-style-type: none;
-            font-weight: bold;
-            margin: 6px;
-        }
-            #hostSiteMetadata .tags .tagValues li {
-                list-style-type: disc;
-                font-weight: normal;
-            }
+#hostSiteMetadata h3 {
+    border-bottom: 1px solid #666;
+}
+#hostSiteMetadata .tags {
+    margin: 0;
+    padding: 0;
+}
+#hostSiteMetadata .tags li {
+    list-style-type: none;
+    font-weight: bold;
+    margin: 6px;
+}
+#hostSiteMetadata .tags .tagValues li {
+    list-style-type: disc;
+    font-weight: normal;
+}
 
 /* Search wizard
 -----------------------------------------------------------*/
 
-.searchWizard .results, .searchWizard .search 
-{
+.searchWizard .results, 
+.searchWizard .search {
     position: relative;
     float: left;
     width: 40%;
@@ -131,84 +122,42 @@ dd {
     background: #eee;
     border: 2px solid #060;
 }
-.searchWizard h3 { margin: 0 0 1em; }
-.searchWizard .search .question { clear: both; margin-bottom: 1em;}
-.searchWizard p { margin: 0; }
-.searchWizard .search .question p {float: left; margin: 0; padding: 0; width: 50%; }
-.searchWizard .search .question select { width: 50%;}
-.searchWizard .results > * 
-{
+.searchWizard h3 {
+    margin: 0 0 1em;
+}
+.searchWizard .search .question {
+    clear: both;
+    margin-bottom: 1em;
+}
+.searchWizard p {
+    margin: 0;
+}
+.searchWizard .search .question p {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}
+.searchWizard .search .question select {
+    width: 50%;
+}
+.searchWizard .results > * {
     display: block;
     margin-bottom: 1ex;
 }
-.searchWizard .sorry { color: #900; }
+.searchWizard .sorry {
+    color: #900;
+}
 .searchWizard .results li {
     list-style-type: none;
     margin-bottom: 10px;
 }
 
-/* Styles for basic forms
------------------------------------------------------------*/
-
-fieldset 
-{
-    border:1px solid #ddd;
-    padding:0 1.4em 1.4em 1.4em;
-    margin:0 0 1.5em 0;
-}
-    
-legend 
-{
-    font-size:1.2em;
-    font-weight: bold;
-}
-
-textarea 
-{
-    min-height: 75px;
-}
-
-.editor-label 
-{
-    margin: 1em 0 0 0;
-}
-
-.editor-field 
-{
-    margin:0.5em 0 0 0;
-}
-
-
-/* Styles for validation helpers
------------------------------------------------------------*/
-.field-validation-error
-{
-    color: #ff0000;
-}
-
-.field-validation-valid
-{
-    display: none;
-}
-
-.input-validation-error
-{
-    border: 1px solid #ff0000;
-    background-color: #ffeeee;
-}
-
-.validation-summary-errors
-{
-    font-weight: bold;
-    color: #ff0000;
-}
-
-.validation-summary-valid
-{
-    display: none;
-}
-
 /* utility classes  */
 
-.hidden { display: none ! important; }
-.clear {clear: both;}
+.hidden {
+    display: none;
+}
+.clear {
+    clear: both;
+}

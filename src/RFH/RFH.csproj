@@ -864,12 +864,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Header.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_Footer.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\LayoutTest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -965,8 +959,8 @@
     <Content Include="Views\ManageHostSiteTagValue\_ViewStart.cshtml" />
     <Content Include="Views\Home\GeneralResource.cshtml" />
     <Content Include="Views\Shared\SearchWizard\MockData.cshtml" />
-    <Content Include="Views\Shared\NewUi\_Footer.cshtml" />
-    <Content Include="Views\Shared\NewUi\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Home\Wizard.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TextArea.cshtml" />
     <Content Include="Views\ManageBackup\Create.cshtml" />
