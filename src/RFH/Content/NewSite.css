@@ -1,10 +1,7 @@
 body
 {
-    margin: 0;
-    padding: 0;
     font-family: Helvetica, Arial, Sans-Serif;
     color: black;
-    background-color: #060;
 }
 
 a:link { color: #030; text-decoration: underline; }
@@ -18,7 +15,16 @@ h1 {
 h2 {
     font:normal normal normal 1.6em Helvetica, Arial, Sans-Serif;
 }
-
+p {
+    margin: 10px 0;
+}
+li {
+    margin: 20px 30px;
+    list-style-type: disc;
+}
+hr {
+    margin: 20px 0;
+}
 dt {
     margin: 0 0 6px 0;
 }
@@ -27,23 +33,17 @@ dd {
     padding: 0;
 }
 
-.midsection
-{
-    background-color: White;
-}
-
 .navPaneSection
 {
-    float: left;
-    clear: left;
-    width: 250px;
-    margin: 0;
-    background-color: white;
 }
+
+    .navPaneSection .generalResource {
+        border-bottom: 1px solid #060;
+        border-top: 1px solid #060;
+    }
 
     .navPaneSection .sidePane
     {
-        border-bottom: 1px solid #060;
         padding: 5px 0px;
         margin: 0px 20px;
     }
@@ -59,26 +59,26 @@ dd {
     .navPaneSection .sidePane ul 
     {
         padding: 0;
-        list-style-type: none;
         font-size: smaller;
     }
         .navPaneSection .sidePane ul li
         {
             margin: 0 0 8px 0;
+            list-style-type: none;
         }
             .navPaneSection .sidePane ul li.current a
             {
                 text-decoration: none;
             }
-
+/*
 .contentSection
 {
     position: relative;
-    margin: 0 0 0 251px; /* make white bar to the right of the logo line up */
+    margin: 0 0 0 251px;
     padding: 1em;
     background-color: #e5dcd1;
     min-height: 450px;
-}
+} */
 
 /* Page styles
 -----------------------------------------------------------*/
@@ -212,7 +212,3 @@ textarea
 
 .hidden { display: none ! important; }
 .clear {clear: both;}
-
-.footer {
-    padding-bottom:10px;
-}
