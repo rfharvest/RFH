@@ -8,6 +8,7 @@ function adjustLayoutHeight() {
     
     var $sidebar = $('#sidebar');
     var $content = $('#content');
+    
     var sidebarHeight = $sidebar.outerHeight();
     var contentHeight = $content.outerHeight();
 
@@ -25,6 +26,7 @@ function initWindowResizeFeature() {
         if (!gAdjustLayoutHeightIsQueued) {
 
             gAdjustLayoutHeightIsQueued = true;
+            
             window.setTimeout(function () {
                 adjustLayoutHeight();
             }, 1000);

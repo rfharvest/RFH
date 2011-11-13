@@ -6,7 +6,6 @@ body {
     background: #060;
 }
 #header {
-    background: #EAEAEA;
     height: 163px;
     background: #a68661;
 }
@@ -54,12 +53,12 @@ body {
     height: 90px;
     background: #c69c6d;
 }
-#header .siteTitle h2, #header .siteTitle h3 {
+#header .siteTitle h2, 
+#header .siteTitle h3 {
     font-family: "Impact" , "Impact Regular" , Sans-Serif;
     font-weight: normal;
     margin: 0;
 }
-
 #header .siteTitle h2 {
     padding: 10px 0 0 10px;
     color: #363636;
@@ -84,34 +83,35 @@ body {
 }
 
 /******************************************************************************
- ** Page Styles
+ ** GENERAL TAG STYLES
  *****************************************************************************/
 
 body {
     font-family: Helvetica, Arial, Sans-Serif;
-    color: black;
+    color: #000;
 }
-a:link {
+a {
     color: #030;
     text-decoration: underline;
 }
-a:visited {
-    color: #062;
-    text-decoration: underline;
-}
 a:hover {
-    color: #262;
+    color: #060;
     text-decoration: underline;
 }
-a:active {
-    color: #262;
-    text-decoration: underline;
+h1, h2, h3 {
+    font-family: Helvetica, Arial, Sans-Serif;
 }
 h1 {
-    font: normal normal normal 2em Helvetica, Arial, Sans-Serif;
+    font-size: 2em;
+    margin: 20px 0;
 }
 h2 {
-    font: normal normal normal 1.6em Helvetica, Arial, Sans-Serif;
+    font-size: 1.6em;
+    margin: 16px 0;
+}
+h3 {
+    font-size: 1.2em;
+    margin: 12px 0;
 }
 p {
     margin: 10px 0;
@@ -121,7 +121,7 @@ li {
     list-style-type: disc;
 }
 hr {
-    margin: 20px 0;
+    margin: 30px 0;
 }
 dt {
     margin: 0 0 6px 0;
@@ -129,6 +129,11 @@ dt {
 dd {
     margin: 0 0 14px 0;
 }
+
+/******************************************************************************
+ ** NAV MENU STYLES
+ *****************************************************************************/
+
 .navPaneSection .generalResource {
     border-bottom: 1px solid #060;
     border-top: 1px solid #060;
@@ -143,20 +148,27 @@ dd {
         font: normal normal normal 1.4em Helvetica, Arial, Sans-Serif;
         color: #363636;
     }
+    .navPaneSection .sidePane a {
+        font-size: 1.2em;
+    }
     .navPaneSection .sidePane ul {
         font-size: smaller;
     }
         .navPaneSection .sidePane ul li {
-            margin: 0 0 8px 0;
+            margin: 0 0 12px 0;
             list-style-type: none;
         }
-.navPaneSection .sidePane ul li.current a {
-    text-decoration: none;
+            .navPaneSection .sidePane ul li.current a {
+                text-decoration: none;
+                color: #060;
+            }
+
+/******************************************************************************
+ ** PAGE STYLES
+ *****************************************************************************/
+#content h2:first-child {
+    margin-top: 0;
 }
-
-/* Page styles
------------------------------------------------------------*/
-
 .goUp {
     font-size: smaller;
     font-style: italic;
@@ -184,32 +196,47 @@ dd {
 #hostSiteMetadata h3 {
     border-bottom: 1px solid #666;
 }
-#hostSiteMetadata .tags {
-    margin: 0;
-    padding: 0;
+#hostSiteMetadata ul {
+    /* margin: 0;
+    padding: 0; */
 }
-#hostSiteMetadata .tags li {
-    list-style-type: none;
-    font-weight: bold;
-    margin: 6px;
-}
-#hostSiteMetadata .tags .tagValues li {
-    list-style-type: disc;
-    font-weight: normal;
-}
+    #hostSiteMetadata ul li {
+        margin: 0 0 10px 0;
+    }
+    #hostSiteMetadata .tags li {
+        list-style-type: none;
+        font-weight: bold;
+        color: #333;
+    }
+        #hostSiteMetadata .tags .tagValues li {
+            list-style-type: disc;
+            margin-left: 30px;
+            font-weight: normal;
+            color: #000;
+        }
 
-/* Search wizard
------------------------------------------------------------*/
-
-.searchWizard .results, 
+/******************************************************************************
+ ** SEARCH WIZARD STYLES
+ *****************************************************************************/
+.searchWizard {
+    clear: both;
+    width: 860px;
+    margin-top: 40px;
+}
 .searchWizard .search {
-    position: relative;
     float: left;
-    width: 40%;
-    margin-right: 1ex;
-    padding: 1em;
+    width: 500px;
     background: #eee;
     border: 2px solid #060;
+    padding: 10px;
+}
+.searchWizard .results {
+    position: relative;
+    float: right;
+    width: 300px;
+    background: #eee;
+    border: 2px solid #060;
+    padding: 10px;
 }
 .searchWizard h3 {
     margin: 0 0 1em;
@@ -217,9 +244,6 @@ dd {
 .searchWizard .search .question {
     clear: both;
     margin-bottom: 1em;
-}
-.searchWizard p {
-    margin: 0;
 }
 .searchWizard .search .question p {
     float: left;
@@ -239,14 +263,24 @@ dd {
 }
 .searchWizard .results li {
     list-style-type: none;
-    margin-bottom: 10px;
+    margin: 0 0 20px 0;
 }
 
-/* utility classes  */
+/******************************************************************************
+ ** UTILITY CLASSES
+ *****************************************************************************/
 
 .hidden {
     display: none;
 }
 .clear {
     clear: both;
+}
+.floatcontainer:after{
+    content: "."; 
+    display: block; 
+    height: 0; 
+    font-size:0;	
+    clear: both; 
+    visibility:hidden;
 }

@@ -4,18 +4,6 @@
 	ViewBag.Title = "Produce Recovery Guide";
 }
 
-<div id="MainWindow">
+@Html.Raw( @Model.Content )
 
-	<div id="MainWindowTop">
-		<div id="WelcomeContent">
-			@Html.Raw( @Model.Content )
-		</div>
-	</div>
-
-	<hr style="clear:both;" />
-
-	<div id="MainWindowBottom">
-        @Html.Action("Wizard")
-	</div>
-
-</div>
+@Html.Action("Wizard")

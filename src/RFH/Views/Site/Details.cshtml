@@ -43,7 +43,7 @@
                 <div>
                     <ul class="tags">
                     @foreach (var tag in Model.HostSiteTags) {
-                        <li>@tag.Name:</li>
+                        <li>@tag.Name</li>
                         <ul class="tagValues">
                             @foreach (var tagValue in Model.HostSiteTagValues.Where(m => m.HostSiteTagId.Equals(tag.Id)))
                             {
