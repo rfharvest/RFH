@@ -1,2 +1,8 @@
 ﻿@model String
-@Html.TextAreaFor(m => m)
+<div class="editor-label">
+    @Html.LabelFor(model => model)
+</div>
+<div class="editor-field">
+    @Html.TextAreaFor(model => model)
+    @Html.ValidationMessageFor(model => model)
+</div>

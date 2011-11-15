@@ -978,6 +978,9 @@
     <Content Include="Views\Shared\EditorTemplates\HtmlContent.cshtml" />
     <Content Include="Views\Home\GiveCamp.cshtml" />
     <Content Include="Views\Shared\_Nav.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -1,8 +1,8 @@
-﻿@model String
+﻿@model bool?
 <div class="editor-label">
     @Html.LabelFor(model => model)
 </div>
 <div class="editor-field">
-    @Html.TextAreaFor(model => model, new { Class="htmlContent" })
+    @Html.CheckBox("", Model.HasValue ? Model.Value : false, new { Class = "checkbox" })
     @Html.ValidationMessageFor(model => model)
 </div>

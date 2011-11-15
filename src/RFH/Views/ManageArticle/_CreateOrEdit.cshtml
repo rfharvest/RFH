@@ -16,26 +16,6 @@
     @Html.ValidationMessageFor(model => model.Article.CategoryId)
 </div>
 
-<div class="editor-label">
-    @Html.LabelFor(model => model.Article.IsPublished)
-</div>
-<div class="editor-field">
-    @Html.CheckBoxFor(model => model.Article.IsPublished, new { Class = "checkbox" })
-    @Html.ValidationMessageFor(model => model.Article.IsPublished)
-</div>
-
-<div class="editor-label">
-    @Html.LabelFor(model => model.Article.ShortDescription)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.Article.ShortDescription)
-    @Html.ValidationMessageFor(model => model.Article.ShortDescription)
-</div>
-
-<div class="editor-label">
-    @Html.LabelFor(model => model.Article.Content)
-</div>
-<div class="editor-field">
-    @Html.EditorFor(m => m.Article.Content)
-    @Html.ValidationMessageFor(model => model.Article.Content)
-</div>
+@Html.EditorFor(model => model.Article.IsPublished)
+@Html.EditorFor(model => model.Article.ShortDescription)
+@Html.EditorFor(m => m.Article.Content)
