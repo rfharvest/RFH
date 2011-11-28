@@ -9,8 +9,11 @@ namespace RFH.Infrastructure
     {
         public DataContext() : base("RFHDB")
         {
+#if DEBUG
             Database.SetInitializer(new DatabaseInitializer());
-            // Database.SetInitializer<DataContext>(null);
+#else
+            Database.SetInitializer<DataContext>(null);
+#endif
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
