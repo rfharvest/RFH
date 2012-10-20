@@ -38,5 +38,7 @@ namespace RFH.Infrastructure
         public IDbSet<HostSiteTagValue> HostSiteTagValues { get; set; }
         
         public IDbSet<HostSiteToHostSiteTagValue> HostSiteToHostSiteTagValues { get; set; }
+        
+        public IDbSet<Statistics> StatisticsItemValues { get; set; }
     }
 }
