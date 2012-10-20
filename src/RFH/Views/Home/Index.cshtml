@@ -1,9 +1,10 @@
-﻿@model RFH.Models.ContentData
-		   
+﻿@model RFH.Models.ContentData		   
 @{
 	ViewBag.Title = "Produce Recovery Guide";
 }
-
+@section Head {    
+      @Html.Partial("_ImageSliderHead")
+}
 <div class="row-fluid mainContent">
   <div class="span1">
   </div>
@@ -17,12 +18,14 @@
       </ul>
     </div><!--/.well -->
   </div><!--/span-->
+
   <div class="span8">
-    <div class="hero-unit">
-      <h1>Welcome</h1>
-      <p>Image slider can go here</p>
-      <img src="/Content/images/newHeader.png" class="mainLogo" alt="mainLogo"/>
-      <p><a class="btn btn-primary btn-large" href="/SampleSite">Go To Sample Site &raquo;</a></p>
+    <div class="span3 alignC">
+        <h1>Welcome</h1>
+        <img src="/Content/images/newHeader.png" class="mainLogo" alt="mainLogo"/>
+    </div>
+    <div class="span8">
+        @Html.Partial("_ImageSlider")
     </div>
     <div class="row-fluid">
       <div class="span4">
