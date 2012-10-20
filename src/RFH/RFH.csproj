@@ -121,6 +121,7 @@
     <Compile Include="Models\ContentData.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\HomeStatisticsViewModel.cs" />
     <Compile Include="Models\HomeWizardViewModel.cs" />
     <Compile Include="Models\HostSite.cs">
       <SubType>Code</SubType>
@@ -1007,6 +1008,7 @@
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\HostMap\Index.cshtml" />
+    <Content Include="Views\Home\Statistics.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
