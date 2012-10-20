@@ -81,6 +81,7 @@
             <thead>
                 <tr>
                     <th>Category Name</th>
+                    <th>Title</th>
                     <th>Is Published</th>
                     <th></th>
                 </tr>
@@ -90,6 +91,7 @@
                 {
                     <tr>
                         <td>@item.Category.Name</td>
+                        <td>@item.Title</td>
                         <td>@item.IsPublished</td>
                         <td>
                             @Html.ActionLink("Details", "Detail", "ManageArticle", new { @item.Id }, null) |
