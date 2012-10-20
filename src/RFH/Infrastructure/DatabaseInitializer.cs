@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using RFH.Models;
 
@@ -6,8 +8,10 @@ namespace RFH.Infrastructure
 {
     public class DatabaseInitializer : DropCreateDatabaseIfModelChanges<DataContext>
     {
-        protected override void Seed(DataContext context) 
+        protected override void Seed(DataContext context)
         {
+            
+
             // Category
 
             var categories = new List<Category> 
@@ -37,7 +41,11 @@ namespace RFH.Infrastructure
                                             HostSiteUrl = "http://mtvernon.org",
                                             Area = "MT Vernon",
                                             IsActive = true,
-                                            UrlFriendlyName = "MT-Vernon-Food-Bank"
+                                            UrlFriendlyName = "MT-Vernon-Food-Bank",
+                                            Address = "202 South 1st Street",
+                                            City = "Mount Vernon",
+                                            State = "WA",
+                                            Zip = "98273"
                                         },
                                     new HostSite
                                         {
@@ -46,7 +54,11 @@ namespace RFH.Infrastructure
                                             HostSiteUrl = "http://seattlelettuce.org",
                                             Area = "Seattle",
                                             IsActive = true,
-                                            UrlFriendlyName = "Seattle-Lettuce-Link"
+                                            UrlFriendlyName = "Seattle-Lettuce-Link",
+                                            Address = "500 Winton Ave",
+                                            City = "Everett",
+                                            State = "WA",
+                                            Zip = "98201"
                                         },
                                     new HostSite
                                         {
@@ -55,7 +67,11 @@ namespace RFH.Infrastructure
                                             HostSiteUrl = "http://SeattleHarvestTri-Cities.org",
                                             Area = "Tri-cities",
                                             IsActive = true,
-                                            UrlFriendlyName = "Second-Harvest-Tri-cities"
+                                            UrlFriendlyName = "Second-Harvest-Tri-cities",
+                                            Address = "14110 NE 179th St",
+                                            City = "Woodinville",
+                                            State = "WA",
+                                            Zip = "98271"
                                         }
                                 };
 

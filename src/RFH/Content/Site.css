@@ -1,3 +1,8 @@
 .mainContent {
   margin-top: 10px;
 }
+#map_canvas {
+    margin: 0;
+    padding: 0;
+    height: 500px;
+}

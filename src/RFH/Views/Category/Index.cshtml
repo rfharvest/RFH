@@ -12,8 +12,8 @@
     <dl>
     @foreach (var item in Model.Articles)
     {
-        <dt>@Html.ActionLink(item.HostSite.Name, "Details", "Site", new { id = item.HostSite.UrlFriendlyName }, null)</dt>
-        <dd>@item.ShortDescription &raquo; @Html.ActionLink("read this article", "Index", "Article", new { id = item.Id }, null)</dd>
+        <dt>@Html.ActionLink(item.Title, "Index", "Article", new { id = item.Id }, null)</dt>
+        <dd>@item.ShortDescription</dd>
     }
     </dl>
 </div>

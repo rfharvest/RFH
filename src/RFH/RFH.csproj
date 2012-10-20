@@ -15,7 +15,7 @@
     <AssemblyName>RFH</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -91,6 +91,7 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HostMapController.cs" />
     <Compile Include="Controllers\ManageArticleController.cs" />
     <Compile Include="Controllers\ManageBackupController.cs" />
     <Compile Include="Controllers\ManageCategoryController.cs" />
@@ -171,14 +172,11 @@
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\HeaderFooter.css" />
+    <Content Include="Content\admincss.css" />
     <Content Include="Content\images\bg\cardboard.jpg" />
     <Content Include="Content\images\header.png" />
     <Content Include="Content\images\newHeader.png" />
     <Content Include="Content\images\placeholder.png" />
-    <Content Include="Content\NewHeaderFooter.css" />
-    <Content Include="Content\NewSite.css" />
-    <Content Include="Content\reset.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -874,6 +872,7 @@
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -980,6 +979,8 @@
     <Content Include="Views\ManageHostSiteTagValue\_ViewStart.cshtml" />
     <Content Include="Views\Home\GeneralResource.cshtml" />
     <Content Include="Views\Shared\SearchWizard\MockData.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Home\Wizard.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TextArea.cshtml" />
     <Content Include="Views\ManageBackup\Create.cshtml" />
@@ -1001,6 +1002,11 @@
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\SampleSite\Index.cshtml" />
     <Content Include="Views\Article\SiteDisplay.cshtml" />
+    <Content Include="Views\Shared\_Nav.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\HostMap\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
@@ -1023,12 +1029,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>13929</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:13929/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
