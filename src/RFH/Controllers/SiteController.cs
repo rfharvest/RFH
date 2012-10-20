@@ -9,6 +9,7 @@ namespace RFH.Controllers
     public class SiteController : Controller
     {
         private DataContext _dataContext = new DataContext();
+
         public ActionResult Details(string id)
         {
             _dataContext.Categories.ToList();
