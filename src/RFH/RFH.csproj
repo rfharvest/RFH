@@ -165,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\placeholder.txt" />
+    <Content Include="App_Data\RFHDB.sdf" />
     <Content Include="Content\admincss.css" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />

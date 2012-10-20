@@ -20,6 +20,11 @@ namespace RFH.Models
         [DisplayName("Is Published")]
         public bool IsPublished { get; set; }
 
+        [DisplayName("Title")]
+        [Required]
+        [MaxLength(100)]
+        public string Title { get; set; }
+
         [DisplayName("Short Description")]
         [UIHint("TextArea")]
         [Required]
