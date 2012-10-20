@@ -101,7 +101,6 @@
     <Compile Include="Controllers\ManageImageController.cs" />
     <Compile Include="Controllers\NavigationListController.cs" />
     <Compile Include="Controllers\LayoutTestController.cs" />
-    <Compile Include="Controllers\SampleSiteController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -173,12 +172,23 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\admincss.css" />
+    <Content Include="Content\images\arrows-small.png" />
+    <Content Include="Content\images\arrows.png" />
+    <Content Include="Content\images\banner\banner1_apples.jpg" />
+    <Content Include="Content\images\banner\banner2_picking.jpg" />
+    <Content Include="Content\images\banner\banner3_picking.jpg" />
+    <Content Include="Content\images\banner\banner4_boxofapples.jpg" />
+    <Content Include="Content\images\banner\banner5_field.jpg" />
+    <Content Include="Content\images\banner\banner6_stringbeans.jpg" />
+    <Content Include="Content\images\banner\banner7_blueberries.jpg" />
+    <Content Include="Content\images\banner\banner8_blueberrygreenhouse.jpg" />
     <Content Include="Content\images\bg\cardboard.jpg" />
     <Content Include="Content\images\header.png" />
     <Content Include="Content\images\map.jpg" />
     <Content Include="Content\images\newHeader.png" />
     <Content Include="Content\images\placeholder.png" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\slidy.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -847,6 +857,7 @@
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Scripts\SearchWizard.js" />
+    <Content Include="Scripts\slidy.js" />
     <Content Include="Scripts\wizard.js" />
     <Content Include="Views\ManageImage\Index.cshtml" />
     <Content Include="Views\ManageImage\_ViewStart.cshtml" />
@@ -1001,13 +1012,15 @@
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
-    <Content Include="Views\SampleSite\Index.cshtml" />
     <Content Include="Views\Article\SiteDisplay.cshtml" />
     <Content Include="Views\Shared\_Nav.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Home\_HostSitesMap.cshtml" />
+    <Content Include="Views\HostMap\Index.cshtml" />
+    <Content Include="Views\Shared\_ImageSlider.cshtml" />
+    <Content Include="Views\Shared\_ImageSliderHead.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
