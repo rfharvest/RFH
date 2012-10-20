@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using RFH.Infrastructure;
+using System.Data.Entity;
 
 namespace RFH.Controllers
 {
@@ -15,7 +16,7 @@ namespace RFH.Controllers
 
         public ActionResult ListCategory()
         {
-           return PartialView(_dataContext.Categories.OrderBy(c=>c.Name).ToList());
+           return PartialView(_dataContext.SuperCategories.Include("Categories").OrderBy(c=>c.Name).ToList());
         }
 
 
