@@ -25,7 +25,7 @@
         <img src="/Content/images/newHeader.png" class="mainLogo" alt="mainLogo"/>
     </div>
     <div class="span8">
-        @Html.Partial("_ImageSlider")
+        @{Html.RenderAction("Index", "ImageSlider");}
     </div>
     <div class="row-fluid">
       <div class="span4">

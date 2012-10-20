@@ -91,6 +91,7 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageSliderController.cs" />
     <Compile Include="Controllers\ManageArticleController.cs" />
     <Compile Include="Controllers\ManageBackupController.cs" />
     <Compile Include="Controllers\ManageCategoryController.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Models\HostSiteToHostSiteTagValue.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\ImageSliderModel.cs" />
     <Compile Include="Models\ManageArticleDetailViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
