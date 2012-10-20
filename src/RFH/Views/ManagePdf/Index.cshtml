@@ -11,7 +11,13 @@
         <ul>
             @foreach (var pdfUrl in Model.PdfUrls)
             {
-                <li><a href="/ManagePdf/Details?fileName=@pdfUrl" title="@pdfUrl">@pdfUrl</a></li>
+                <li>
+                    @using (Html.BeginForm("Delete", "ManagePdf", FormMethod.Post, new { @class = "inline" })) {
+                        @Html.Hidden("FileName", pdfUrl)
+                            <input type="submit" value="Delete" />
+                    }
+                    <a href="/ManagePdf/Details?fileName=@pdfUrl" title="@pdfUrl">@pdfUrl</a>
+                </li>
             }
         </ul>
 

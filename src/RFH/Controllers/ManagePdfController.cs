@@ -28,6 +28,20 @@ namespace RFH.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        public ActionResult Delete(string fileName, FormCollection form)
+        {
+            var url = GetPdfUrl(fileName);
+            var physicalPath = Server.MapPath(url);
+
+            if (System.IO.File.Exists(physicalPath))
+            {
+                System.IO.File.Delete(physicalPath);
+            }
+
+            return RedirectToAction("Index");
+        }
+
         private string PdfFolderUrl
         {
             get { return "/Content/cmsPdfs"; }
@@ -68,6 +82,12 @@ namespace RFH.Controllers
             }
 
             return View();
+        }
+
+        private string GetPdfUrl(string fileName)
+        {
+            var url = string.Format("{0}/{1}", PdfFolderUrl, fileName);
+            return url;
         }
     }
 }
