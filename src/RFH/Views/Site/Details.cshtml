@@ -2,65 +2,66 @@
 @{
     ViewBag.Title = Model.HostSite.Name;
 }
-<table style="width: 100%;">
-    <tr>
-        <td style="width: 60%; vertical-align: top;">
-            <div style="padding-right: 20px;">
-                <div class="titlePane">
-                    
-                    <h2>@Model.HostSite.Name</h2>
-                    
-                    @if (!string.IsNullOrWhiteSpace(Model.HostSite.Area))
-                    { 
-                        <p>@Model.HostSite.Area</p> 
-                    }
-                    
-                    @if (!string.IsNullOrWhiteSpace(Model.HostSite.HostSiteUrl))
-                    {
-                        <p>Website: <a href="@Model.HostSite.HostSiteUrl" target="_blank">@Model.HostSite.HostSiteUrl</a></p>
-                    }
-                    
-                </div>
-                <div>
-                    @Html.Raw(Model.HostSite.Description)
-                </div>
-                <div>
-                    <h3>Articles</h3>
-                    <dl>
-                        @foreach (var item in Model.HostSite.Articles)
-                        {
-                            <dt>@Html.ActionLink(item.Category.Name, "Index", "Article", new { id = item.Id }, null)</dt>
-                            <dd>@item.ShortDescription</dd>
-                        }
-                    </dl>
-                </div>
-            </div>
-        </td>
-        <td  style="width: 40%; vertical-align: top;">
-            
-            <div id="hostSiteMetadata">
-                <h3>Host Site Facts</h3>
-                <div>
-                    <ul class="tags">
-                    @foreach (var tag in Model.HostSiteTags) {
-                        <li>@tag.Name</li>
-                        <ul class="tagValues">
-                            @foreach (var tagValue in Model.HostSiteTagValues.Where(m => m.HostSiteTagId.Equals(tag.Id)))
-                            {
-                                <li>@tagValue.Name</li>
-                            }
-                        </ul>
-                    }
-                    </ul>
-                </div>
-            </div>
 
-        </td>
-    </tr>
-</table>
 
-<script type="text/javascript">
-    $(function () {
-        $('#hostSiteNav li[data-id="@Model.HostSite.Id"]').addClass('current');
-    });
-</script>
+<div class="row-fluid mainContent">
+  <div class="span1"></div>
+  <div class="span8">
+    <div class="hero-unit sitehero">
+      <h2>@Model.HostSite.Name</h2>
+      @if (!string.IsNullOrWhiteSpace(Model.HostSite.Area))
+      {
+        <p>@Model.HostSite.Area</p> 
+      }
+                    
+      @if (!string.IsNullOrWhiteSpace(Model.HostSite.HostSiteUrl))
+      {
+        <p>Website: <a href="@Model.HostSite.HostSiteUrl" target="_blank">@Model.HostSite.HostSiteUrl</a></p>
+      }
+      @Html.Raw(Model.HostSite.Description)
+  </div>
+    @{
+      var articleList = Model.HostSite.Articles.ToList();
+      var articleCount = articleList.Count;
+      var masterCounter = 0;
+    }
+    @for (int i = 0; i <= articleCount/3; i++)
+    {
+      <div class="row-fluid">
+        @for (int j = 0; j < 3; j++) {
+          if (masterCounter == articleCount)
+          {
+            break;
+          }
+          var article = articleList[masterCounter];
+          <div class="span4">
+            <h2>@Html.ActionLink(article.Category.Name, "Index", "Article", new { id = article.Id }, null)</h2>
+            <p>@article.ShortDescription</p>
+            <p>@Html.ActionLink("View Details", "Index", "Article", new { id = article.Id }, new { @class = "btn" })</p>
+          </div>
+          masterCounter++;
+        }
+      </div>
+    }
+  </div>
+
+  <div class="span2">
+    <div class="row-fluid">
+      <ul class="tags">
+        <h3>Host Site Facts</h3>
+        @foreach (var tag in Model.HostSiteTags) {
+            <li>@tag.Name</li>
+            <ul class="tagValues">
+                @foreach (var tagValue in Model.HostSiteTagValues.Where(m => m.HostSiteTagId.Equals(tag.Id)))
+                {
+                    <li>@tagValue.Name</li>
+                }
+            </ul>
+        }
+      </ul>
+    </div>
+    <div class="row-fluid">
+      <p>Here is the blog content</p>
+    </div>
+  </div>
+</div>
