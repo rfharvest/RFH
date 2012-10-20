@@ -4,3 +4,8 @@
 .sitehero p {
   font-size: 0.9em;
 }
+#map_canvas {
+  margin: 0;
+  padding: 0;
+  height: 500px;
+}
