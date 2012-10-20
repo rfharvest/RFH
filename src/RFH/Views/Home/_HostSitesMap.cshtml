@@ -1,0 +1,50 @@
+﻿@model IEnumerable<RFH.Models.HostSite>
+
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+    var map;
+    var geocoder;
+    var sites = @(Html.Raw(Json.Encode(Model)))
+
+    $(function () {
+        initialize();
+        GeoCodeSites();
+    });
+
+    function GeoCodeSites() {
+        if (sites == null) {
+            return;
+        }
+        for (var i = 0; i < sites.length; i++) {
+            var site = sites[i];
+            var address = sites.Address + ' ' + site.City + ', ' + site.State + ' ' + site.Zip;
+            codeAddress(address);
+        }
+    }
+
+    function initialize() {
+        geocoder = new google.maps.Geocoder();
+        var mapOptions = {
+            zoom: 5,
+            center: new google.maps.LatLng(47.85, -120.75),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    }
+
+    function codeAddress(address) {
+        geocoder.geocode({ 'address': address },
+            function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+    }
+</script>
+
+<div id="map_canvas" style="height: 200px;"></div>
