@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿    using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -18,6 +18,11 @@ namespace RFH.Models
         [Required]
         public string Description { get; set; }
 
+        public int SuperCategoryId { get; set; }
+
         public ICollection<Article> Articles { get; set; }
+
+        [ForeignKey("SuperCategoryId")]
+        public SuperCategory SuperCategory { get; set; }
     }
 }
