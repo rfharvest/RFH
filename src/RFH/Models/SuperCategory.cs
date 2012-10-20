@@ -17,6 +17,7 @@ namespace RFH.Models
         [Required]
         public string UrlFriendlyName { get; set; }
 
+        
         public ICollection<Category> Categories { get; set; }
     }
 }
