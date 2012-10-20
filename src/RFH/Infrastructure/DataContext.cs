@@ -25,6 +25,8 @@ namespace RFH.Infrastructure
 
         public IDbSet<Category> Categories { get; set; }
 
+        public IDbSet<SuperCategory> SuperCategories { get; set; }
+
         public IDbSet<HostSite> HostSites { get; set; }
 
         public IDbSet<HostSiteMetaData> HostSiteMetaData { get; set; }
@@ -38,5 +40,7 @@ namespace RFH.Infrastructure
         public IDbSet<HostSiteTagValue> HostSiteTagValues { get; set; }
         
         public IDbSet<HostSiteToHostSiteTagValue> HostSiteToHostSiteTagValues { get; set; }
+        
+        public IDbSet<Statistics> StatisticsItemValues { get; set; }
     }
 }

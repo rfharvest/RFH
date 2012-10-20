@@ -1,0 +1,24 @@
+﻿@model RFH.Models.HostSiteTag
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) Edit</h2>
+
+<div class="formContainer">
+
+    @using (Html.BeginForm()) {
+    
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.Id)
+
+        @Html.Partial("_CreateOrEdit", Model)
+
+        <p>
+            <input type="submit" value="Save" class="standardButton" />
+        </p>
+    }
+
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
