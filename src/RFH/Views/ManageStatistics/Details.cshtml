@@ -1,0 +1,42 @@
+﻿@model RFH.Models.ManageHostSiteTagDetailViewModel
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
+
+<div class="formContainer">
+
+    @Html.Partial("_Display", Model.HostSiteTag)
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.HostSiteTag.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+</div>
+
+<h3>Tag Values</h3>
+
+<p>@Html.ActionLink("Create New", "Create", "ManageHostSiteTagValue", new { id = Model.HostSiteTag.Id }, null)</p>
+
+<table class="standardTable">
+    <thead>
+        <tr>
+            <th>Tag Value</th>
+            <th>Sort Order</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.HostSiteTagValues)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.SortOrder</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "ManageHostSiteTagValue", new { id=item.Id }, null) |
+                    @Html.ActionLink("Delete", "Delete", "ManageHostSiteTagValue", new { id=item.Id }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

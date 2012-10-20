@@ -2,7 +2,9 @@
 @{
 	ViewBag.Title = "Produce Recovery Guide";
 }
-@section Head {    
+@section Head {
+    <script type="text/javascript" src="/Scripts/lightbox.js"></script>
+    <link href="/Content/lightbox.css" rel="stylesheet" />
       @Html.Partial("_ImageSliderHead")
 }
 <div class="row-fluid mainContent">
@@ -13,8 +15,6 @@
       <ul class="nav nav-list">
         <li class="nav-header">Sites</li>
         @Html.Action("ListSite", "NavigationList")
-        <li class="nav-header">Categories</li>
-        @Html.Action("ListCategory", "NavigationList")
       </ul>
     </div><!--/.well -->
   </div><!--/span-->
@@ -49,7 +49,6 @@
         <h2>Host Sites Map</h2>
           @*<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
         <p><a class="btn" href="#">View details &raquo;</a></p>*@
-          <img src="/Content/images/map.jpg"/>
       </div><!--/span-->
       <div class="span4">
         <h2>Heading</h2>
@@ -70,4 +69,4 @@
 
 @*@Html.Raw( @Model.Content )*@
 
-@*@Html.Action("Wizard")*@
+@*@Html.Action("Wizard")*@ 

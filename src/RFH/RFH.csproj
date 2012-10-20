@@ -191,6 +191,7 @@
     <Content Include="Content\images\map.jpg" />
     <Content Include="Content\images\newHeader.png" />
     <Content Include="Content\images\placeholder.png" />
+    <Content Include="Content\lightbox.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\slidy.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -858,6 +859,7 @@
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\lightbox.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Scripts\SearchWizard.js" />
@@ -1029,6 +1031,14 @@
     <Content Include="Views\Home\Statistics.cshtml" />
     <Content Include="Views\Shared\_ImageSlider.cshtml" />
     <Content Include="Views\Shared\_ImageSliderHead.cshtml" />
+    <Content Include="Views\ManageStatistics\_CreateOrEdit.cshtml" />
+    <Content Include="Views\ManageStatistics\_Display.cshtml" />
+    <Content Include="Views\ManageStatistics\_ViewStart.cshtml" />
+    <Content Include="Views\ManageStatistics\Create.cshtml" />
+    <Content Include="Views\ManageStatistics\Delete.cshtml" />
+    <Content Include="Views\ManageStatistics\Details.cshtml" />
+    <Content Include="Views\ManageStatistics\Edit.cshtml" />
+    <Content Include="Views\ManageStatistics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
