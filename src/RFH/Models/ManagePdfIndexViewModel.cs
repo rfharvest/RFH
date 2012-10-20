@@ -2,9 +2,9 @@
 
 namespace RFH.Models
 {
-    public class ManageImageIndexViewModel
+    public class ManagePdfIndexViewModel
     {
         public string FolderUrl { get; set; }
-        public IList<string> ImageUrls { get; set; }
+        public IList<string> PdfUrls { get; set; }
     }
 }

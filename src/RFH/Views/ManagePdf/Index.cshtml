@@ -1,0 +1,22 @@
+﻿@model RFH.Models.ManagePdfIndexViewModel
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) List</h2>
+
+<div id="managePdfIndex">
+
+    <p>@Html.ActionLink("Upload PDF", "Upload")</p>
+
+    <div class="formContainer">
+
+        <ul>
+            @foreach (var pdfUrl in Model.PdfUrls)
+            {
+                <li><a href="/ManagePdf/Details?fileName=@pdfUrl" title="@pdfUrl">@pdfUrl</a></li>
+            }
+        </ul>
+
+    </div>
+
+    <p>@Html.ActionLink("Upload PDF", "Upload")</p>
+
+</div>
