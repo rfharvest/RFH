@@ -37,7 +37,7 @@
           <div class="span4">
             <h2>@Html.ActionLink(article.Category.Name, "Index", "Article", new { id = article.Id }, null)</h2>
             <p>@article.ShortDescription</p>
-            <p>@Html.ActionLink("View Details", "Index", "Article", new { id = article.Id }, new { @class = "btn" })</p>
+            <p>@Html.ActionLink("View Details >>", "Index", "Article", new { id = article.Id }, new { @class = "btn" })</p>
           </div>
           masterCounter++;
         }
