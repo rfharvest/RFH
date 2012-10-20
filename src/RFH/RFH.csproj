@@ -1023,6 +1023,14 @@
     <Content Include="Views\Home\Statistics.cshtml" />
     <Content Include="Views\Shared\_ImageSlider.cshtml" />
     <Content Include="Views\Shared\_ImageSliderHead.cshtml" />
+    <Content Include="Views\ManageStatistics\_CreateOrEdit.cshtml" />
+    <Content Include="Views\ManageStatistics\_Display.cshtml" />
+    <Content Include="Views\ManageStatistics\_ViewStart.cshtml" />
+    <Content Include="Views\ManageStatistics\Create.cshtml" />
+    <Content Include="Views\ManageStatistics\Delete.cshtml" />
+    <Content Include="Views\ManageStatistics\Details.cshtml" />
+    <Content Include="Views\ManageStatistics\Edit.cshtml" />
+    <Content Include="Views\ManageStatistics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
