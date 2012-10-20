@@ -14,6 +14,9 @@
     <img src="/Content/images/newHeader.png" class="mainLogo" alt="mainLogo"/>
     <hr />
     <p>Here is an explanation of what our organization does and what this site is for</p>
+    <hr />
+    <h4>Fun Facts</h4>
+    @Html.Action("Statistics")
   </div><!--/span-->
 
   <div class="span6">
@@ -26,7 +29,7 @@
       </div><!--/span-->
       <div class="span4">
         <!--Statistics view for the right section display starts here-->
-        @Html.Action("Statistics")
+        Hi
         <!--Statistics view for the right section display starts here-->
       </div><!--/span-->
       <div class="span4">
@@ -49,3 +52,12 @@
 @*@Html.Raw( @Model.Content )*@
 
 @*@Html.Action("Wizard")*@ 
+
+<script>
+  $(function () { 
+    function tick() {
+      $('#ticker li:first').animate({ 'opacity': 0 }, 400, function () { $(this).appendTo($('#ticker')).css('opacity', 1); });
+    }
+    setInterval(function () { tick() }, 3500);
+  });
+</script>
