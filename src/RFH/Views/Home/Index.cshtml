@@ -1,0 +1,51 @@
+﻿@model RFH.Models.ContentData
+@{
+  ViewBag.Title = "Produce Recovery Guide";
+}
+@section Head {
+  <script type="text/javascript" src="/Scripts/lightbox.js"></script>
+  <link href="/Content/lightbox.css" rel="stylesheet" />
+  @Html.Partial("_ImageSliderHead")
+}
+<div class="row-fluid mainContent">
+  <div class="span2">
+  </div>
+  <div class="span2 well">
+    <img src="/Content/images/newHeader.png" class="mainLogo" alt="mainLogo"/>
+    <hr />
+    <p>Here is an explanation of what our organization does and what this site is for</p>
+  </div><!--/span-->
+
+  <div class="span6">
+        @Html.Partial("_ImageSlider")
+    <div class="row-fluid">
+      <div class="span4">
+        <h2>Sites</h2>
+        <p>Browse the great work that is going on at one of our many sites! Use the drop-down at the top-left to find one you like.</p>
+        <p><img src="/Content/images/sites.png" alt="Sites UI" /></p>
+      </div><!--/span-->
+      <div class="span4">
+        <!--Statistics view for the right section display starts here-->
+        @Html.Action("Statistics")
+        <!--Statistics view for the right section display starts here-->
+      </div><!--/span-->
+      <div class="span4">
+        <h2>Topics</h2>
+        <p>Learn about other projects! Choose a category from the top menu and explore.</p>
+        <p><img src="/Content/images/topics.png" alt="Categories UI" /></p>
+      </div><!--/span-->
+    </div><!--/row-->
+    <div class="row-fluid">
+      <div class="span4">
+        <h2>Host Sites Map</h2>
+          @*<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn" href="#">View details &raquo;</a></p>*@
+          @Html.Action("_HostSitesMap")
+      </div><!--/span-->
+    </div><!--/row-->
+  </div><!--/span-->
+</div><!--/row-->
+
+@*@Html.Raw( @Model.Content )*@
+
+@*@Html.Action("Wizard")*@ 
