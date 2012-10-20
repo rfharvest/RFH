@@ -41,7 +41,7 @@ namespace RFH.Controllers
                               && site.Zip != null
                         select site;
 
-            return View(model);
+            return PartialView(model);
         }
 
         [ChildActionOnly]
@@ -73,6 +73,32 @@ namespace RFH.Controllers
                                                     Value = m.Id.ToString()
                                                 })
                         });
+            }
+
+            return PartialView(model);
+        }
+
+        [ChildActionOnly]
+        public ActionResult Statistics()
+        {
+            var model = new HomeStatisticsViewModel();
+            model.StatisticsItems = new List<Statistics>();
+
+            var Statistics = _dataContext.StatisticsItemValues
+                .OrderBy(m=>m.SortOrder)
+                .ToList();
+
+            foreach(var StatisticsItem in Statistics)
+            {
+                model.StatisticsItems.Add(
+                    new Statistics
+                    {
+                        StatisticId = StatisticsItem.StatisticId,
+                        Description = StatisticsItem.Description,
+                        Units = StatisticsItem.Units,
+                        Value = StatisticsItem.Value,
+                        SortOrder = StatisticsItem.SortOrder
+                    });
             }
 
             return PartialView(model);
