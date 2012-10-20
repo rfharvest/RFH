@@ -3,74 +3,53 @@
 @{
     ViewBag.Title = "Index";
 }
+
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
     var map;
     var geocoder;
-
     var sites = @(Html.Raw(Json.Encode(Model)))
+
+    $(function () {
+        initialize();
+        GeoCodeSites();
+    });
 
     function GeoCodeSites() {
         if (sites == null) {
             return;
         }
-        
         for (var i = 0; i < sites.length; i++) {
             var site = sites[i];
-
-            var address = site.Address + ' ' + site.City + ', ' + site.State + ' ' + site.Zip;
-
-            //var address = "503 winton ave everett, wa 98201";
-
+            var address = sites.Address + ' ' + site.City + ', ' + site.State + ' ' + site.Zip;
             codeAddress(address);
         }
     }
 
     function initialize() {
         geocoder = new google.maps.Geocoder();
-
         var mapOptions = {
             zoom: 7,
             center: new google.maps.LatLng(47.85, -120.75),
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        map = new google.maps.Map(document.getElementById('map_canvas'),
-            mapOptions);
+        map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+        
     }
 
     function codeAddress(address) {
-        
         geocoder.geocode({ 'address': address },
             function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
-                //map.setCenter(results[0].geometry.location);
-                var marker = new google.maps.Marker({
-                    map: map,
-                    position: results[0].geometry.location
-                });
-            } else {
-                alert('Geocode was not successful for the following reason: ' + status);
-            }
-        });
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
     }
-
-    google.maps.event.addDomListener(window, 'load', initialize);
-    
-    $(function () {
-        initialize();
-
-        GeoCodeSites();
-    });
 </script>
-<style>
-      #map_canvas {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-    </style>
-<div>
-      <input id="address" type="textbox" value="">
-      <input type="button" value="Geocode" onclick="codeAddress()">
-    </div>
+
 <div id="map_canvas"></div>
