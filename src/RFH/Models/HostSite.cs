@@ -15,6 +15,7 @@ namespace RFH.Models
             this.MetaData = new List<HostSiteMetaData>();
         }
 
+        [Key]
         public int Id { get; set; }
 
         [DisplayName("Host Site Url")]
@@ -32,6 +33,11 @@ namespace RFH.Models
         public string Description { get; set; }
 
         public string Area { get; set; }
+
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zip { get; set; }
 
         [DisplayName("Is Active")]
         public bool IsActive { get; set; }
