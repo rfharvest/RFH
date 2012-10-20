@@ -9,13 +9,15 @@
 <p>@Model.Category.Description</p>
 
 <div class="matchingArticles">
-    <dl>
+    <ul>
     @foreach (var item in Model.Articles)
     {
-        <dt>@Html.ActionLink(item.Title, "Index", "Article", new { id = item.Id }, null)</dt>
-        <dd>@item.ShortDescription</dd>
+        <li>
+            <h2>@Html.ActionLink(item.Title, "Index", "Article", new { id = item.Id }, null)</h2>
+            <p>@item.ShortDescription</p>
+        </li>
     }
-    </dl>
+    </ul>
 </div>
 
 <script type="text/javascript">
