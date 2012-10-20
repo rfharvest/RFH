@@ -14,7 +14,7 @@
         <li class="nav-header">Sites</li>
         @Html.Action("ListSite", "NavigationList")
         <li class="nav-header">Categories</li>
-        
+        @Html.Action("ListCategory", "NavigationList")
       </ul>
     </div><!--/.well -->
   </div><!--/span-->
@@ -57,6 +57,9 @@
         <p><a class="btn" href="#">View details &raquo;</a></p>
       </div><!--/span-->
       <div class="span4">
+        <!--Statistics view for the right section display starts here-->
+        @Html.Action("Statistics")
+        <!--Statistics view for the right section display starts here-->
         <h2>Heading</h2>
         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
         <p><a class="btn" href="#">View details &raquo;</a></p>

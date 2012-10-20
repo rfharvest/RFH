@@ -30,21 +30,6 @@ namespace RFH.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult _HostSitesMap()
-        {
-            var model = from site in _dataContext.HostSites
-                        orderby site.Name
-                        where site.IsActive
-                              && site.Address != null
-                              && site.City != null
-                              && site.State != null
-                              && site.Zip != null
-                        select site;
-
-            return View(model);
-        }
-
-        [ChildActionOnly]
         public ActionResult Wizard()
         {
             var model = new HomeWizardViewModel();
@@ -73,6 +58,32 @@ namespace RFH.Controllers
                                                     Value = m.Id.ToString()
                                                 })
                         });
+            }
+
+            return PartialView(model);
+        }
+
+        [ChildActionOnly]
+        public ActionResult Statistics()
+        {
+            var model = new HomeStatisticsViewModel();
+            model.StatisticsItems = new List<Statistics>();
+
+            var Statistics = _dataContext.StatisticsItemValues
+                .OrderBy(m=>m.SortOrder)
+                .ToList();
+
+            foreach(var StatisticsItem in Statistics)
+            {
+                model.StatisticsItems.Add(
+                    new Statistics
+                    {
+                        StatisticId = StatisticsItem.StatisticId,
+                        Description = StatisticsItem.Description,
+                        Units = StatisticsItem.Units,
+                        Value = StatisticsItem.Value,
+                        SortOrder = StatisticsItem.SortOrder
+                    });
             }
 
             return PartialView(model);
