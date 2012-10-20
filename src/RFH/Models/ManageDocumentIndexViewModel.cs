@@ -2,9 +2,9 @@
 
 namespace RFH.Models
 {
-    public class ManagePdfIndexViewModel
+    public class ManageDocumentIndexViewModel
     {
         public string FolderUrl { get; set; }
-        public IList<string> PdfUrls { get; set; }
+        public IList<string> DocumentUrls { get; set; }
     }
 }

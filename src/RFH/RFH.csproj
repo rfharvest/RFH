@@ -99,7 +99,7 @@
     <Compile Include="Controllers\ManageHostSiteTagController.cs" />
     <Compile Include="Controllers\ManageHostSiteTagValueController.cs" />
     <Compile Include="Controllers\ManageImageController.cs" />
-    <Compile Include="Controllers\ManagePdfController.cs" />
+    <Compile Include="Controllers\ManageDocumentController.cs" />
     <Compile Include="Controllers\NavigationListController.cs" />
     <Compile Include="Controllers\LayoutTestController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
@@ -154,7 +154,7 @@
     </Compile>
     <Compile Include="Models\ManageImageDetailsViewModel.cs" />
     <Compile Include="Models\ManageImageIndexViewModel.cs" />
-    <Compile Include="Models\ManagePdfIndexViewModel.cs" />
+    <Compile Include="Models\ManageDocumentIndexViewModel.cs" />
     <Compile Include="Models\RelatedArticle.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1023,9 +1023,9 @@
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Home\_HostSitesMap.cshtml" />
     <Content Include="Views\HostMap\Index.cshtml" />
-    <Content Include="Views\ManagePdf\Index.cshtml" />
-    <Content Include="Views\ManagePdf\_ViewStart.cshtml" />
-    <Content Include="Views\ManagePdf\Upload.cshtml" />
+    <Content Include="Views\ManageDocument\Index.cshtml" />
+    <Content Include="Views\ManageDocument\_ViewStart.cshtml" />
+    <Content Include="Views\ManageDocument\Upload.cshtml" />
     <Content Include="Views\Home\Statistics.cshtml" />
     <Content Include="Views\Shared\_ImageSlider.cshtml" />
     <Content Include="Views\Shared\_ImageSliderHead.cshtml" />
