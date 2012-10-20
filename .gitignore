@@ -28,8 +28,6 @@ obj/
 _ReSharper*/
 [Tt]est[Rr]esult*
 RFH.suo
-cmsImages/
 RFH.csproj.user
-*.sdf
 *.zip
 deploy/
