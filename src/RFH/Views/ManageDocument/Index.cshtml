@@ -1,0 +1,28 @@
+﻿@model RFH.Models.ManageDocumentIndexViewModel
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) List</h2>
+
+<div id="manageDocumentIndex">
+
+    <p>@Html.ActionLink("Upload Document", "Upload")</p>
+
+    <div class="formContainer">
+
+        <ul>
+            @foreach (var documentUrl in Model.DocumentUrls)
+            {
+                <li>
+                    @using (Html.BeginForm("Delete", "ManageDocument", FormMethod.Post, new { @class = "inline" })) {
+                        @Html.Hidden("FileName", documentUrl)
+                            <input type="submit" value="Delete" />
+                    }
+                    <a href="/ManageDocument/Details?fileName=@documentUrl" title="@documentUrl">@documentUrl</a>
+                </li>
+            }
+        </ul>
+
+    </div>
+
+    <p>@Html.ActionLink("Upload Document", "Upload")</p>
+
+</div>

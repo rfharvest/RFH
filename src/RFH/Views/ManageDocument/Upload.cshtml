@@ -1,0 +1,26 @@
+﻿<h2>@Html.Raw(@PageData["SectionTitle"]) Upload</h2>
+
+<div class="formContainer">
+
+    @Html.ValidationSummary()
+
+    <form action="" method="post" enctype="multipart/form-data">
+
+        <div class="editor-label">
+            Choose an image file
+        </div>
+        <div class="editor-field">
+            <input type="file" name="documentUrlFile" />
+        </div>
+
+        <p>Note: If you upload a file with the same name as an existing file, the existing file will be replaced.</p>
+                    
+        <p><input type="submit" value="Upload Document" class="standardButton" /></p>
+
+    </form>
+
+</div>
+
+<p>
+    @Html.ActionLink("Return to list", "Index")
+</p>

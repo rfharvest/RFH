@@ -30,6 +30,21 @@ namespace RFH.Controllers
         }
 
         [ChildActionOnly]
+        public ActionResult _HostSitesMap()
+        {
+            var model = from site in _dataContext.HostSites
+                        orderby site.Name
+                        where site.IsActive
+                              && site.Address != null
+                              && site.City != null
+                              && site.State != null
+                              && site.Zip != null
+                        select site;
+
+            return PartialView(model);
+        }
+
+        [ChildActionOnly]
         public ActionResult Wizard()
         {
             var model = new HomeWizardViewModel();
