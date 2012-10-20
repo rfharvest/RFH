@@ -4,24 +4,43 @@
     ViewBag.Title = Model.Category.Name;
 }
 
-<h2>@Model.Category.Name</h2>
-
-<p>@Model.Category.Description</p>
-
-<div class="matchingArticles">
-    <ul>
-    @foreach (var item in Model.Articles)
-    {
-        <li>
-            <h2>@Html.ActionLink(item.Title, "Index", "Article", new { id = item.Id }, null)</h2>
-            <p>@item.ShortDescription</p>
-        </li>
+<div class="row-fluid mainContent">
+  <div class="span1"></div>
+  <div class="span10">
+    <div class="hero-unit">
+      <h1>@Model.Category.Name</h1>
+      <p>@Model.Category.Description</p>
+    </div>
+    @{
+      var articleList = Model.Articles.ToList();
+      var articleCount = articleList.Count;
+      var masterCounter = 0;
     }
-    </ul>
-</div>
+    @for (int i = 0; i <= articleCount/3; i++)
+    {
+      <div class="row-fluid">
+        @for (int j = 0; j < 3; j++) {
+          if (masterCounter == articleCount)
+          {
+            break;
+          }
+          var article = articleList[masterCounter];
+          <div class="span4">
+            <h2>@Html.ActionLink(article.Title, "Index", "Article", new { id = article.Id }, null)</h2>
+            
+            @if (!article.ImageFilename.IsEmpty())
+            {
+              <img src="/Content/cmsImages/@article.ImageFilename" class="articleImage" alt="@article.ImageFilename" />
+            } 
+            <p>@article.ShortDescription</p>
+            <p>@Html.ActionLink("View Details >>", "Index", "Article", new { id = article.Id }, new { @class = "btn" })</p>
+          </div>
+          masterCounter++;
+        }
+      </div>
+    }
+  </div><!--/span-->
 
-<script type="text/javascript">
-    $(function () {
-        $('#categoryNav li[data-id="@Model.Category.Id"]').addClass('current');
-    });
-</script>
+</div><!--/row-->
+
+    

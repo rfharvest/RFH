@@ -1,15 +1,19 @@
 .mainContent {
   margin-top: 10px;
 }
+
 .sitehero p {
   font-size: 0.9em;
-}
-#map_canvas {
-  margin: 0;
-  padding: 0;
-  height: 500px;
 }
 
 .articleContent {
   margin-top: 15px;
 }
+
+.articleImage {
+  float: left;
+  margin: 0 13px 2px 0;
+  height: 100px;
+  width: 100px;
+}
+.alignC { text-align: center; }
