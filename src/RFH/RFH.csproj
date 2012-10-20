@@ -91,6 +91,7 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HostMapController.cs" />
     <Compile Include="Controllers\ManageArticleController.cs" />
     <Compile Include="Controllers\ManageBackupController.cs" />
     <Compile Include="Controllers\ManageCategoryController.cs" />
@@ -171,6 +172,7 @@
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\admincss.css" />
     <Content Include="Content\HeaderFooter.css" />
     <Content Include="Content\images\bg\cardboard.jpg" />
     <Content Include="Content\images\header.png" />
@@ -874,6 +876,7 @@
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -980,6 +983,8 @@
     <Content Include="Views\ManageHostSiteTagValue\_ViewStart.cshtml" />
     <Content Include="Views\Home\GeneralResource.cshtml" />
     <Content Include="Views\Shared\SearchWizard\MockData.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Home\Wizard.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TextArea.cshtml" />
     <Content Include="Views\ManageBackup\Create.cshtml" />
@@ -1001,6 +1006,11 @@
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\SampleSite\Index.cshtml" />
     <Content Include="Views\Article\SiteDisplay.cshtml" />
+    <Content Include="Views\Shared\_Nav.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\HostMap\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
