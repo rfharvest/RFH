@@ -34,5 +34,9 @@ namespace RFH.Models
         [UIHint("HtmlContent")]
         [MaxLength]
         public string Content { get; set; }
+
+        [UIHint("Image")]
+        [MaxLength(100)]
+        public string ImageFilename { get; set; }
     }
 }
