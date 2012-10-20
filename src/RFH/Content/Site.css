@@ -6,12 +6,6 @@
   font-size: 0.9em;
 }
 
-#map_canvas {
-  margin: 0;
-  padding: 0;
-  height: 500px;
-}
-
 .articleContent {
   margin-top: 15px;
 }
@@ -22,3 +16,4 @@
   height: 100px;
   width: 100px;
 }
+.alignC { text-align: center; }
