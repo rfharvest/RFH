@@ -39,8 +39,15 @@
     <div class="goUp">
         @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Details", "Site", new {Id=Model.Article.HostSite.UrlFriendlyName}, null)
     </div>
+    
+    @Html.Partial("_CreateComment", Model.NewComment)
+    
+    @if(Model.Comments.Any())
+    {
+        @Html.Partial("_CommentList", Model.Comments)
+    }
 
-    @if (Model.RelatedArticles.Count() > 0) {
+    @if (Model.RelatedArticles.Any()) {
         <div>
             <h1>Related Articles</h1>
             <ul>

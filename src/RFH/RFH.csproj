@@ -90,6 +90,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HostMapController.cs" />
     <Compile Include="Controllers\ManageArticleController.cs" />
@@ -118,9 +119,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\CategoryIndexViewModel.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\ContentData.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\CreateCommentViewModel.cs" />
     <Compile Include="Models\HomeWizardViewModel.cs" />
     <Compile Include="Models\HostSite.cs">
       <SubType>Code</SubType>
@@ -1007,6 +1010,8 @@
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\HostMap\Index.cshtml" />
+    <Content Include="Views\Article\_CreateComment.cshtml" />
+    <Content Include="Views\Article\_CommentList.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

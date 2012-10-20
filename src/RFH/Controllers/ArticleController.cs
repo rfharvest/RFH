@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -18,9 +19,8 @@ namespace RFH.Controllers
             var article = _dataContext.Articles
                 .Include(a => a.HostSite)
                 .Include(a => a.Category)
-                .Where(a => a.IsPublished)
-                .Where(a => a.Id == id)
-                .FirstOrDefault();
+                .Include(a => a.Comments)
+                .Where(a => a.IsPublished).FirstOrDefault(a => a.Id == id);
 
             var relatedArticles = _dataContext.Articles
                 .Where(m => m.CategoryId == article.CategoryId)
@@ -53,7 +53,9 @@ namespace RFH.Controllers
                                 Article = article,
                                 RelatedArticles = relatedArticles,
                                 HostSiteTags = hostSiteTags,
-                                HostSiteTagValues = selectedTagValues
+                                HostSiteTagValues = selectedTagValues,
+                                Comments = article != null ? article.Comments ?? new Collection<Comment>() : new Collection<Comment>(),
+                                NewComment = new CreateCommentViewModel{ ArticleId = id}
                             };
 
             return View(model);
