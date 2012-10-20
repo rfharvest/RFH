@@ -9,11 +9,9 @@
     <div class="well sidebar-nav">
       <ul class="nav nav-list">
         <li class="nav-header">Sites</li>
-        <li class="active"><a href="#">Olympia</a></li>
-        <li><a href="#">Wenatchee</a></li>
-        <li><a href="#">Vancouver</a></li>
-        <li><a href="#">Walla Walla</a></li>
-        <li><a href="#">Carnation</a></li>
+        @Html.Action("ListSite", "NavigationList")
+        <li class="nav-header">Categories</li>
+        @Html.Action("ListCategory", "NavigationList")
       </ul>
     </div><!--/.well -->
   </div><!--/span-->

@@ -1,9 +1,5 @@
 ﻿@model IEnumerable<RFH.Models.HostSite>
 
-<h2>Host Sites</h2>
-
-<ul id="hostSiteNav">
-    @foreach (var item in Model) {
-        <li data-id="@item.Id">@Html.ActionLink(item.Name, "Details", "Site", new { id = item.UrlFriendlyName }, null)</li>
-    }
-</ul>
+@foreach (var item in Model) {
+  <li data-id="@item.Id">@Html.ActionLink(item.Name, "Details", "Site", new { id = item.UrlFriendlyName }, null)</li>
+}
