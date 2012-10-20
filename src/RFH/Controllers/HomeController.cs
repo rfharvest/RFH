@@ -30,7 +30,7 @@ namespace RFH.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult _HostSitesMap()
+        public ActionResult _HostSitesMap() 
         {
             var model = from site in _dataContext.HostSites
                         orderby site.Name
@@ -41,7 +41,7 @@ namespace RFH.Controllers
                               && site.Zip != null
                         select site;
 
-            return View(model);
+            return PartialView(model);
         }
 
         [ChildActionOnly]
