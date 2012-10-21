@@ -25,7 +25,7 @@ namespace RFH.Models
 
         [DisplayName("Statistics Value")]
         [Required]
-        public long Value { get; set; }
+        public int Value { get; set; }
 
         [DisplayName("Statistics Units")]
         [Required]
@@ -33,6 +33,6 @@ namespace RFH.Models
 
         [DisplayName("Sort Order")]
         [Required]
-        public byte SortOrder { get; set; }
+        public int SortOrder { get; set; }
     }
 }
