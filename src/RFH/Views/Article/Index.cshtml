@@ -25,7 +25,7 @@
     </div>
     
     <div class="commentArea">
-    <h2>Comments</h2>
+    <h3>Comments</h3>
     @if(Model.Comments.Any())
     {
         @Html.Partial("_CommentList", Model.Comments)
@@ -37,9 +37,31 @@
       @Html.Partial("_CreateComment", Model.NewComment)
     </div>
 
-    @if (Model.RelatedArticles.Any()) {
+   
+  </div>
+
+ <div class="span2">
+      <div class="row-fluid">
+          <p> @{Html.RenderAction("HostSiteSidebar", "HostSiteSidebar", new { id = Model.Article.HostSite.UrlFriendlyName });}</p>
+    </div>
+    @*<div class="row-fluid">
+      <ul class="tags">
+        <h3>Host Site Facts</h3>
+        @foreach (var tag in Model.HostSiteTags) {
+            <li>@tag.Name</li>
+            <ul class="tagValues">
+                @foreach (var tagValue in Model.HostSiteTagValues.Where(m => m.HostSiteTagId.Equals(tag.Id)))
+                {
+                    <li>@tagValue.Name</li>
+                }
+            </ul>
+        }
+      </ul>
+    </div>
+      *@
+ @if (Model.RelatedArticles.Any()) {
       <div>
-          <h1>Related Articles</h1>
+          <h3>Related Articles</h3>
           <ul>
               @foreach (var relatedArticle in Model.RelatedArticles) {
                   <li>
@@ -49,16 +71,5 @@
           </ul>
       </div>
     }
-  </div>
-
-  <div class="span2">
-    <div class="row-fluid">
-        <p>Skyscraper content here</p>
-          <p> @{Html.RenderAction("HostSiteSidebar", "HostSiteSidebar", new { id = Model.Article.HostSite.UrlFriendlyName});}</p>
-      @*@Html.Partial("SiteDisplay")*@
-    </div>
-    <div class="row-fluid">
-      <p>Here is the blog content</p>
-    </div>
   </div>
 </div>
