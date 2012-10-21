@@ -1,11 +1,22 @@
-﻿@model RFH.Models.HostSiteTag
+﻿@model RFH.Models.Statistics
 
-<div class="display-label">@Html.LabelFor(model => model.Name)</div>
+<div class="display-label">@Html.LabelFor(model => model.Description)</div>
 <div class="display-field">
-    @Html.DisplayFor(model => model.Name)
+    @Html.DisplayFor(model => model.Description)
+</div>
+
+<div class="display-label">@Html.LabelFor(model => model.Value)</div>
+<div class="display-field">
+    @Html.DisplayFor(model => model.Value)
+</div>
+
+<div class="display-label">@Html.LabelFor(model => model.Units)</div>
+<div class="display-field">
+    @Html.DisplayFor(model => model.Units)
 </div>
 
 <div class="display-label">@Html.LabelFor(model => model.SortOrder)</div>
 <div class="display-field">
     @Html.DisplayFor(model => model.SortOrder)
 </div>
+

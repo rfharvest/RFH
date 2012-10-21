@@ -103,6 +103,7 @@
     <Compile Include="Controllers\ManageHostSiteTagController.cs" />
     <Compile Include="Controllers\ManageHostSiteTagValueController.cs" />
     <Compile Include="Controllers\ManageImageController.cs" />
+    <Compile Include="Controllers\ManageStatisticsController.cs" />
     <Compile Include="Controllers\NavigationListController.cs" />
     <Compile Include="Controllers\LayoutTestController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Models\ManageCategoryEditViewModel.cs" />
     <Compile Include="Models\HostSiteSidebarIndexViewModel.cs" />
     <Compile Include="Models\ManageDocumentIndexViewModel.cs" />
+    <Compile Include="Models\ManageStatisticsViewModel.cs" />
     <Compile Include="Models\SuperCategory.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\ContentData.cs">

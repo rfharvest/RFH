@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RFH.Models.HostSiteTag>
+﻿@model IEnumerable<RFH.Models.Statistics>
 
 <h2>@Html.Raw(@PageData["SectionTitle"]) List</h2>
 
@@ -9,7 +9,9 @@
 <table class="standardTable">
     <thead>
         <tr>
-            <th>Tag Name</th>
+            <th>Description</th>
+            <th>Value</th>
+            <th>Units</th>
             <th>Sort Order</th>
             <th></th>
         </tr>
@@ -18,15 +20,21 @@
         @foreach (var item in Model) {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Units)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.SortOrder)
                 </td>
                 <td>
-                    @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                    @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                    @Html.ActionLink("Details", "Details", new { id=item.StatisticId }) |
+                    @Html.ActionLink("Edit", "Edit", new { id=item.StatisticId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.StatisticId })
                 </td>
             </tr>
         }

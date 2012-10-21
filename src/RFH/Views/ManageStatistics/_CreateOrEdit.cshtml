@@ -1,4 +1,15 @@
-﻿@model RFH.Models.HostSiteTag
+﻿@model RFH.Models.Statistics
 
-@Html.EditorFor(model => model.Name)
-@Html.EditorFor(model => model.SortOrder)
+
+@Html.EditorFor(model => model.Description)
+<div class="editor-label">
+@Html.HiddenFor(m => m.Value)@Html.DisplayFor(m=>m.Value)
+</div>
+
+@*@Html.EditorFor(model => model.Value)*@
+<div class="editor-label">
+@Html.HiddenFor(m => m.SortOrder)@Html.DisplayFor(m=>m.SortOrder)
+</div>
+
+@*@Html.DisplayFor(model => model.SortOrder)*@
+@Html.EditorFor(model => model.Units)
