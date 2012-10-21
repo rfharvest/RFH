@@ -1,0 +1,18 @@
+﻿@model RFH.Models.ArticleIndexViewModel
+    <div style="padding-right: 20px;">
+        <div class="titlePane">
+            @if (!string.IsNullOrWhiteSpace(Model.Article.HostSite.Area))
+            { 
+                <p>@Model.Article.HostSite.Area</p> 
+            }
+
+            @if (!string.IsNullOrWhiteSpace(Model.Article.HostSite.HostSiteUrl))
+            {
+                <p>Website: <a href="@Model.Article.HostSite.HostSiteUrl" target="_blank">@Model.Article.HostSite.HostSiteUrl</a></p>
+            }
+
+        </div>
+        <div>
+            @Html.Raw(Model.Article.HostSite.Description)
+        </div>
+    </div>
