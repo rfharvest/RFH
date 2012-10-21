@@ -90,12 +90,15 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HostSiteSidebarController.cs" />
     <Compile Include="Controllers\ImageSliderController.cs" />
     <Compile Include="Controllers\ManageArticleController.cs" />
     <Compile Include="Controllers\ManageBackupController.cs" />
     <Compile Include="Controllers\ManageCategoryController.cs" />
     <Compile Include="Controllers\ManageContentController.cs" />
+    <Compile Include="Controllers\ManageDocumentController.cs" />
     <Compile Include="Controllers\ManageHostController.cs" />
     <Compile Include="Controllers\ManageHostSiteTagController.cs" />
     <Compile Include="Controllers\ManageHostSiteTagValueController.cs" />
@@ -103,6 +106,8 @@
     <Compile Include="Controllers\NavigationListController.cs" />
     <Compile Include="Controllers\LayoutTestController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
+    <Compile Include="Controllers\ViewSitesController.cs" />
+    <Compile Include="Extensions\DirectoryExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -119,11 +124,15 @@
     <Compile Include="Models\CategoryIndexViewModel.cs" />
     <Compile Include="Models\ManageCategoryDetailViewModel.cs" />
     <Compile Include="Models\ManageCategoryEditViewModel.cs" />
+    <Compile Include="Models\HostSiteSidebarIndexViewModel.cs" />
+    <Compile Include="Models\ManageDocumentIndexViewModel.cs" />
     <Compile Include="Models\SuperCategory.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\ContentData.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\HomeStatisticsViewModel.cs" />
+    <Compile Include="Models\CreateCommentViewModel.cs" />
     <Compile Include="Models\HomeWizardViewModel.cs" />
     <Compile Include="Models\HostSite.cs">
       <SubType>Code</SubType>
@@ -192,6 +201,8 @@
     <Content Include="Content\images\map.jpg" />
     <Content Include="Content\images\newHeader.png" />
     <Content Include="Content\images\placeholder.png" />
+    <Content Include="Content\images\sites.png" />
+    <Content Include="Content\images\topics.png" />
     <Content Include="Content\lightbox.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\slidy.css" />
@@ -1024,7 +1035,9 @@
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
-    <Content Include="Views\Home\_HostSitesMap.cshtml" />
+    <Content Include="Views\ViewSites\_HostSitesMap.cshtml" />
+    <Content Include="Views\Article\_CreateComment.cshtml" />
+    <Content Include="Views\Article\_CommentList.cshtml" />
     <Content Include="Views\Home\Statistics.cshtml" />
     <Content Include="Views\Shared\_ImageSlider.cshtml" />
     <Content Include="Views\Shared\_ImageSliderHead.cshtml" />
@@ -1036,7 +1049,11 @@
     <Content Include="Views\ManageStatistics\Details.cshtml" />
     <Content Include="Views\ManageStatistics\Edit.cshtml" />
     <Content Include="Views\ManageStatistics\Index.cshtml" />
-    <Content Include="Views\Shared\SiteDisplay.cshtml" />
+    <Content Include="Views\Shared\HostSiteSidebar.cshtml" />
+    <Content Include="Views\ViewSites\Index.cshtml" />
+    <Content Include="Views\ManageDocument\Index.cshtml" />
+    <Content Include="Views\ManageDocument\Upload.cshtml" />
+    <Content Include="Views\ManageDocument\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

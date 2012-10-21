@@ -1,17 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RFH.Models;
 using RFH.Infrastructure;
 using System.Data.Entity;
-using RFH.Models;
 
 namespace RFH.Controllers
 {
-    public class ArticleController : Controller
+    public class HostSiteSidebarController : Controller
     {
+        //
+        // GET: /HostSiteSidebar/
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         private DataContext _dataContext = new DataContext();
 
         public ActionResult Index(int id)
@@ -19,18 +26,19 @@ namespace RFH.Controllers
             var article = _dataContext.Articles
                 .Include(a => a.HostSite)
                 .Include(a => a.Category)
-                .Include(a => a.Comments)
-                .Where(a => a.IsPublished).FirstOrDefault(a => a.Id == id);
+                .Where(a => a.IsPublished)
+                .Where(a => a.Id == id)
+                .FirstOrDefault();
 
             var relatedArticles = _dataContext.Articles
                 .Where(m => m.CategoryId == article.CategoryId)
                 .Where(m => m.Id != article.Id)
                 .Where(m => m.IsPublished)
                 .Select(m => new RelatedArticle
-                                 {
-                                     ArticleId = m.Id,
-                                     HostSiteName = m.HostSite.Name
-                                 }).ToList();
+                {
+                    ArticleId = m.Id,
+                    HostSiteName = m.HostSite.Name
+                }).ToList();
 
             // TODO: Move the following filter execution from C# to the database
 
@@ -49,16 +57,15 @@ namespace RFH.Controllers
                 .OrderBy(m => m.Name);
 
             var model = new ArticleIndexViewModel
-                            {
-                                Article = article,
-                                RelatedArticles = relatedArticles,
-                                HostSiteTags = hostSiteTags,
-                                HostSiteTagValues = selectedTagValues,
-                                Comments = article != null ? article.Comments ?? new Collection<Comment>() : new Collection<Comment>(),
-                                NewComment = new CreateCommentViewModel{ ArticleId = id}
-                            };
+            {
+                Article = article,
+                RelatedArticles = relatedArticles,
+                HostSiteTags = hostSiteTags,
+                HostSiteTagValues = selectedTagValues
+            };
 
             return View(model);
         }
+
     }
 }

@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = string.Format(
         "{0} - {1}", 
-        Model.Article.Title, 
+        Model.Article.Category.Name, 
         Model.Article.HostSite.Name);
  }
 
@@ -15,8 +15,7 @@
         &gt;   
         @Html.ActionLink(Model.Article.Category.Name, "Index", "Category", new {Id=Model.Article.Category.UrlFriendlyName}, null)
     </div>
-
-    <div>
+    <div class="articleContent">
         @Html.Raw( Model.Article.Content )
     </div>
 
@@ -24,20 +23,15 @@
         @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Details", "Site", new {Id=Model.Article.HostSite.UrlFriendlyName}, null)
     </div>
     
-    <div class="commentArea">
-    <h2>Comments</h2>
+    @Html.Partial("_CreateComment", Model.NewComment)
+    
     @if(Model.Comments.Any())
     {
         @Html.Partial("_CommentList", Model.Comments)
-    } else {
-      <p>No comments yet!</p>
     }
-    </div>
-    <div class="createComment">
-      @Html.Partial("_CreateComment", Model.NewComment)
-    </div>
 
-    @if (Model.RelatedArticles.Any()) {
+<<<<<<< HEAD
+    @if (Model.RelatedArticles.Count() > 0) {
       <div>
           <h1>Related Articles</h1>
           <ul>
@@ -48,6 +42,19 @@
               }   
           </ul>
       </div>
+=======
+    @if (Model.RelatedArticles.Any()) {
+        <div>
+            <h1>Related Articles</h1>
+            <ul>
+                @foreach (var relatedArticle in Model.RelatedArticles) {
+                    <li>
+                        @Html.ActionLink(String.Format("{0} article by {1}", Model.Article.Category.Name, relatedArticle.HostSiteName), "Index", "Article", new {id = relatedArticle.ArticleId}, null)
+                    </li>
+                }   
+            </ul>
+        </div>
+>>>>>>> Comments
     }
   </div>
 

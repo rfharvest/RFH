@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace RFH.Models 
 {
-    public class ArticleIndexViewModel 
+    public class HostSiteSidebarIndexViewModel 
     {
         public Article Article { get; set; }
 
@@ -11,9 +11,5 @@ namespace RFH.Models
         public IEnumerable<HostSiteTag> HostSiteTags { get; set; }
 
         public IEnumerable<HostSiteTagValue> HostSiteTagValues { get; set; }
-
-        public IEnumerable<Comment> Comments { get; set; }
-
-        public CreateCommentViewModel NewComment { get; set; }
     }
 }

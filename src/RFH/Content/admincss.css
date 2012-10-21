@@ -81,6 +81,14 @@ a {
         width: 200px;
     }
 
+#manageDocumentIndex ul {
+    list-style-type: none;
+}
+
+.inline {
+    display: inline;
+}
+
 #hostSiteDetailTable {
     border: 1px solid #ccc;
 }

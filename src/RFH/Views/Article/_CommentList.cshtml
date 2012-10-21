@@ -1,0 +1,11 @@
+﻿@model IEnumerable<RFH.Models.Comment>
+
+<div class="article-comments">
+@foreach (var item in Model)
+{
+    <div class="comment">
+        <span class="name">@Html.DisplayFor(modelItem => item.Name)</span> <span class="location">(@Html.DisplayFor(modelItem => item.Location))</span> says...
+        <div><span class="text">@Html.DisplayFor(modelItem => item.Text)</span></div>
+    </div>
+}
+</div>
