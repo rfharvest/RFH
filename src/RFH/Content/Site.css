@@ -23,6 +23,19 @@
     margin: 5px 0 5px 0;
 }
 
+.hostSiteSkyscraper {
+    border: 1px solid #E9E9E9;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.hostSiteSkyscraper a {
+    word-wrap: break-word;
+}
+
+
+
 #ticker {
   height: 60px;
   overflow: hidden;
