@@ -42,6 +42,9 @@ namespace RFH.Models
         public string State { get; set; }
         public string Zip { get; set; }
 
+        [DisplayName("Comments are enabled for this Host Site")]
+        public bool CommentsEnabled { get; set; }
+
         [DisplayName("Hero FileName")]
         public string HeroFileName { get; set; }
 

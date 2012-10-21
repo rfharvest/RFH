@@ -45,7 +45,8 @@ namespace RFH.Infrastructure
                                             Address = "202 South 1st Street",
                                             City = "Mount Vernon",
                                             State = "WA",
-                                            Zip = "98273"
+                                            Zip = "98273",
+                                            CommentsEnabled = true
                                         },
                                     new HostSite
                                         {
@@ -58,7 +59,8 @@ namespace RFH.Infrastructure
                                             Address = "500 Winton Ave",
                                             City = "Everett",
                                             State = "WA",
-                                            Zip = "98201"
+                                            Zip = "98201",
+                                            CommentsEnabled = true
                                         },
                                     new HostSite
                                         {
@@ -71,7 +73,8 @@ namespace RFH.Infrastructure
                                             Address = "14110 NE 179th St",
                                             City = "Woodinville",
                                             State = "WA",
-                                            Zip = "98271"
+                                            Zip = "98271",
+                                            CommentsEnabled = true
                                         }
                                 };
 

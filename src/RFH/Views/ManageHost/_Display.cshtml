@@ -42,6 +42,10 @@
         <td>@Model.IsActive</td>
     </tr>
     <tr>
+        <td>@Html.LabelFor(m => m.CommentsEnabled)</td>
+        <td>@Model.CommentsEnabled</td>
+    </tr>
+    <tr>
         <td>@Html.LabelFor(m => m.Description)</td>
         <td class="htmlField">@Html.Raw(Model.Description)</td>
     </tr>
