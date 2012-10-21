@@ -2,8 +2,25 @@
   margin-top: 10px;
 }
 
+.pushLeft {
+  margin-left: 100px;
+}
+
+.heroSpacer {
+  height: 10px;
+  display: block;
+}
+
+.sitehero {
+  padding: 7px 50px 25px 50px;
+}
+
 .sitehero p {
   font-size: 0.9em;
+}
+
+.siteImage {
+  height: 300px;
 }
 
 .articleContent {
@@ -17,6 +34,24 @@
   width: 100px;
 }
 .alignC { text-align: center; }
+
+.hostSiteLogo {
+    width: 150px;
+    margin: 5px 0 5px 0;
+}
+
+.skyScraperSpacer {
+  display: block;
+  height: 35px;
+}
+.hostSiteSkyscraper {
+    border: 1px solid #E9E9E9;
+    padding-left: 25px;
+}
+
+.word-wrap {
+    word-wrap: break-word;
+}
 
 #ticker {
   height: 60px;
@@ -44,6 +79,10 @@
 .breadCrumb {
   font-size: 1.5em;
   margin-bottom: 15px;
+}
+
+.comment {
+    margin-top: 15px;
 }
 
 .commentArea {

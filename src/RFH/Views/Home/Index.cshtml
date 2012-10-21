@@ -12,7 +12,6 @@
     <img src="/Content/images/newHeader.png" class="mainLogo" alt="mainLogo"/>
     <hr />
     <p>Here is an explanation of what our organization does and what this site is for</p>
-    <hr />
   </div><!--/span-->
 
   <div class="span6">
@@ -20,32 +19,27 @@
     <div class="row-fluid">
       <div class="span4">
         <h2>Sites</h2>
-        <p>Browse the great work that is going on at one of our many sites! You can also use the drop-down at the top-left to find one you like.</p>
-        <p><img src="/Content/images/sites.png" alt="sites ui" /></p>
+        <p>Browse the great work that is going on at one of our many sites! Use the drop-down at the top-left to find one you like.</p>
+        <p><img src="/Content/images/sites.png" alt="sites UI" /></p>
         <p>@Html.ActionLink("View Sites >>", "Index", "ViewSites", null, new { @class = "btn" })</p>
       </div><!--/span-->
       <div class="span4">
         <h2>Topics</h2>
         <p>Learn about other projects! Choose a category from the top menu and explore.</p>
-        <p><img src="/Content/images/topics.png" alt="topics ui" /></p>
+        <p><img src="/Content/images/topics.png" alt="topics UI" /></p>
       </div><!--/span-->
       <div class="span4">
-        <!--Statistics view for the right section display starts here-->
         <h2>Fun Facts</h2>
         <p>@Html.Action("Statistics")</p>
-        <!--Statistics view for the right section display starts here-->
       </div><!--/span-->
-      
     </div><!--/row-->
   </div><!--/span-->
 </div><!--/row-->
 
-@*@Html.Raw( @Model.Content )*@
-
-@*@Html.Action("Wizard")*@ 
+@Html.Partial("_ShareTab")
 
 <script>
-  $(function () { 
+  $(function () {
     function tick() {
       $('#ticker li:first').animate({ 'opacity': 0 }, 400, function () { $(this).appendTo($('#ticker')).css('opacity', 1); });
     }

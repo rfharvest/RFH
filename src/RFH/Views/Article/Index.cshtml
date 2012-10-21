@@ -9,7 +9,7 @@
 
 <div class="row-fluid mainContent">
   <div class="span1"></div>
-  <div class="span8">
+  <div class="span7">
     <div class="breadCrumb">
         @Html.ActionLink(Model.Article.HostSite.Name, "Details", "Site", new {Id=Model.Article.HostSite.UrlFriendlyName}, null)
         &gt;   
@@ -25,7 +25,7 @@
     </div>
     
     <div class="commentArea">
-    <h2>Comments</h2>
+    <h3>Comments</h3>
     @if(Model.Comments.Any())
     {
         @Html.Partial("_CommentList", Model.Comments)
@@ -37,28 +37,25 @@
       @Html.Partial("_CreateComment", Model.NewComment)
     </div>
 
-    @if (Model.RelatedArticles.Any()) {
-      <div>
-          <h1>Related Articles</h1>
-          <ul>
-              @foreach (var relatedArticle in Model.RelatedArticles) {
-                  <li>
-                      @Html.ActionLink(String.Format("{0} article by {1}", Model.Article.Category.Name, relatedArticle.HostSiteName), "Index", "Article", new {id = relatedArticle.ArticleId}, null)
-                  </li>
-              }   
-          </ul>
-      </div>
-    }
+   
   </div>
 
-  <div class="span2">
-    <div class="row-fluid">
-        <p>Skyscraper content here</p>
-          <p> @{Html.RenderAction("HostSiteSidebar", "HostSiteSidebar", new { id = Model.Article.HostSite.UrlFriendlyName});}</p>
-      @*@Html.Partial("SiteDisplay")*@
-    </div>
-    <div class="row-fluid">
-      <p>Here is the blog content</p>
-    </div>
+ <div class="span3">
+   <div class="skyScraperSpacer"></div>
+      <div class="row-fluid">
+        <p> @{Html.RenderAction("HostSiteSidebar", "HostSiteSidebar", new { id = Model.Article.HostSite.UrlFriendlyName });}</p>
+      </div>
+      @if (Model.RelatedArticles.Any()) {
+        <div>
+            <h3>Related Articles</h3>
+            <ul>
+                @foreach (var relatedArticle in Model.RelatedArticles) {
+                    <li>
+                        @Html.ActionLink(relatedArticle.Title, "Index", "Article", new {id = relatedArticle.ArticleId}, null)
+                    </li>
+                }   
+            </ul>
+        </div>
+      }
   </div>
 </div>

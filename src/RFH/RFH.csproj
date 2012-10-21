@@ -126,7 +126,6 @@
     <Compile Include="Models\CategoryIndexViewModel.cs" />
     <Compile Include="Models\ManageCategoryDetailViewModel.cs" />
     <Compile Include="Models\ManageCategoryEditViewModel.cs" />
-    <Compile Include="Models\HostSiteSidebarIndexViewModel.cs" />
     <Compile Include="Models\ManageDocumentIndexViewModel.cs" />
     <Compile Include="Models\ManageStatisticsViewModel.cs" />
     <Compile Include="Models\SuperCategory.cs" />

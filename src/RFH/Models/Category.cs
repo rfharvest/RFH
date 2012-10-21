@@ -24,5 +24,7 @@ namespace RFH.Models
 
         [ForeignKey("SuperCategoryId")]
         public SuperCategory SuperCategory { get; set; }
+
+        public string HeroFileName { get; set; }
     }
 }

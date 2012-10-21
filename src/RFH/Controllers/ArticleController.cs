@@ -29,7 +29,8 @@ namespace RFH.Controllers
                 .Select(m => new RelatedArticle
                                  {
                                      ArticleId = m.Id,
-                                     HostSiteName = m.HostSite.Name
+                                     HostSiteName = m.HostSite.Name,
+                                     Title = m.Title
                                  }).ToList();
 
             // TODO: Move the following filter execution from C# to the database
