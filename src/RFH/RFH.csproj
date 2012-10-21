@@ -207,6 +207,7 @@
     <Content Include="Content\images\header.png" />
     <Content Include="Content\images\map.jpg" />
     <Content Include="Content\images\newHeader.png" />
+    <Content Include="Content\images\newHeader3.png" />
     <Content Include="Content\images\placeholder.png" />
     <Content Include="Content\images\sites.png" />
     <Content Include="Content\images\topics.png" />
