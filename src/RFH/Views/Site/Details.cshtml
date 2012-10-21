@@ -36,7 +36,7 @@
           }
           var article = articleList[masterCounter];
           <div class="span4">
-            <h4>@Html.ActionLink(article.Title + " - " + article.Category.Name, "Index", "Article", new { id = article.Id }, null)</h4>
+            <h4>@Html.ActionLink(article.Title, "Index", "Article", new { id = article.Id }, null)</h4>
             <p>@article.ShortDescription</p>
             <p>@Html.ActionLink("View Details >>", "Index", "Article", new { id = article.Id }, new { @class = "btn" })</p>
           </div>
