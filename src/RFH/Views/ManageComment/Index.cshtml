@@ -1,0 +1,23 @@
+﻿@model IEnumerable<RFH.Models.ContentData>
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) List</h2>
+
+<table class="standardTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>
+                    @Html.ActionLink("Details", "Detail", new { id=item.Id }) |
+                    @Html.ActionLink("Edit", "Edit", new { id=item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

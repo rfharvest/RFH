@@ -37,7 +37,13 @@
 
 .hostSiteLogo {
     width: 150px;
-    margin: 5px 0 5px 0;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hostSiteLink {
+    text-align: center;
 }
 
 .skyScraperSpacer {
@@ -139,4 +145,11 @@
 .field-validation-error {
   margin-left: 10px;
   color: #ff0000;
+}
+
+footer p {
+    text-align: center;
+    width: 65%;
+    margin: 5px auto;
+    font-size: .9em;
 }
