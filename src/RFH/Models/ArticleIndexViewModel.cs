@@ -11,5 +11,9 @@ namespace RFH.Models
         public IEnumerable<HostSiteTag> HostSiteTags { get; set; }
 
         public IEnumerable<HostSiteTagValue> HostSiteTagValues { get; set; }
+
+        public IEnumerable<Comment> Comments { get; set; }
+
+        public CreateCommentViewModel NewComment { get; set; }
     }
 }

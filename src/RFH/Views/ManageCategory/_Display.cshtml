@@ -1,5 +1,10 @@
 ﻿@model RFH.Models.Category
 
+<div class="display-label">@Html.LabelFor(model => model.SuperCategory.Name)</div>
+<div class="display-field">
+    @Html.DisplayFor(model => model.SuperCategory.Name)
+</div>
+
 <div class="display-label">@Html.LabelFor(m => m.Name)</div>
 <div class="display-field">
     @Html.DisplayFor(model => model.Name)

@@ -1,10 +1,21 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace RFH.Models 
 {
-    public class Article 
+    public class HostSiteSidebarIndexViewModel 
+    {
+        public HostSite HostSiteSidebar { get; set; }
+
+        public IEnumerable<RelatedArticle> RelatedArticles { get; set; }
+
+        public IEnumerable<HostSiteTag> HostSiteTags { get; set; }
+
+        public IEnumerable<HostSiteTagValue> HostSiteTagValues { get; set; }
+    }
+
+    public class HostSiteSidebar
     {
         public int Id { get; set; }
 
@@ -39,8 +50,8 @@ namespace RFH.Models
         [UIHint("Image")]
         [MaxLength(100)]
         public string ImageFilename { get; set; }
-        
-        public ICollection<Comment> Comments { get;set; }
+
+        public ICollection<Comment> Comments { get; set; }
 
     }
 }

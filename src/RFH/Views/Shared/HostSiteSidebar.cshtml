@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+@model RFH.Models.HostSiteSidebarIndexViewModel
+    <div style="padding-right: 10px;">
+        <div class="titlePane">
+            <h4>@Model.HostSiteSidebar.Name</h4>
+            @if (!string.IsNullOrWhiteSpace(Model.HostSiteSidebar.LogoFileName))
+            {
+                if (!string.IsNullOrWhiteSpace(Model.HostSiteSidebar.HostSiteUrl))
+                {
+                     <a href="@Model.HostSiteSidebar.HostSiteUrl" target="_blank">
+                        <img src="/Content/cmsImages/@Model.HostSiteSidebar.LogoFileName" class="articleImage" alt="@Model.HostSiteSidebar.LogoFileName" />
+                     </a>
+                }
+                else
+                {
+                    <img src="/Content/cmsImages/@Model.HostSiteSidebar.LogoFileName" class="articleImage" alt="@Model.HostSiteSidebar.LogoFileName" />
+                }
+            }
+            
+            @if (!string.IsNullOrWhiteSpace(Model.HostSiteSidebar.HostSiteUrl))
+            {
+                <p>Website: <a href="@Model.HostSiteSidebar.HostSiteUrl" target="_blank">@Model.HostSiteSidebar.HostSiteUrl</a></p>
+            }
+
+        </div>
+        <div>
+            @Html.Raw(Model.HostSiteSidebar.Description)
+        </div>
+    </div>

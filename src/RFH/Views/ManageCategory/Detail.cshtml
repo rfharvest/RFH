@@ -1,15 +1,15 @@
-﻿@model RFH.Models.Category
+﻿@model RFH.Models.ManageCategoryDetailViewModel
 
 <h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
 
 <div class="formContainer">
 
-    @Html.Partial("_Display", Model)
+    @Html.Partial("_Display", Model.Category)
 
 </div>
 
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Delete", "Delete", new { id=Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Category.Id }) |
+    @Html.ActionLink("Delete", "Delete", new { id=Model.Category.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

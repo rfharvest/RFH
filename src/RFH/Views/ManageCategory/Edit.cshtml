@@ -1,4 +1,4 @@
-﻿@model RFH.Models.Category
+﻿@model RFH.Models.ManageCategoryEditViewModel
 
 <h2>@Html.Raw(@PageData["SectionTitle"]) Edit</h2>
 
@@ -8,7 +8,7 @@
     
         @Html.ValidationSummary(true)
     
-        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.Category.Id)
     
         @Html.Partial("_CreateOrEdit", Model)
     
