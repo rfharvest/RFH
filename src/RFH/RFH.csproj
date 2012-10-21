@@ -241,7 +241,6 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
-    <Content Include="Release Notes - Microsoft.Web.Helpers.txt" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\adminCustom.js" />
     <Content Include="Scripts\bootstrap.min.js" />
