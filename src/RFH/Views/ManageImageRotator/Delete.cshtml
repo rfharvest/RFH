@@ -1,0 +1,45 @@
+﻿@model RFH.Models.ManageImageDetailsViewModel
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) Delete</h2>
+
+<table>
+
+    <tr>
+        <td width="30%" valign="top">
+
+            <div class="formContainer">
+
+                <h3>Are you sure you want to delete this image?</h3>
+        
+                <div class="display-label">Url</div>
+                <div class="display-field" id="urlField">
+                    @Html.DisplayFor(model => model.ImageUrl)
+                </div>
+
+                <div class="display-label">Size</div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Size)
+                </div>
+
+                @using (Html.BeginForm()) {
+
+                    @Html.HiddenFor(model => model.FileName)
+
+                    <p>
+                        <input type="submit" value="Delete" class="standardButton" />
+                    </p>
+                }
+
+            </div>
+
+            <p>
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        
+        </td>
+        <td width="70%" valign="top">
+            <div><img src="@Model.ImageUrl" alt=""/></div>
+        </td>
+    </tr>
+
+</table>

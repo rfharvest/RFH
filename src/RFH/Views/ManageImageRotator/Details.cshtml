@@ -1,0 +1,63 @@
+﻿@model RFH.Models.ManageImageDetailsViewModel
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
+
+<table>
+
+    <tr>
+        <td width="30%" valign="top">
+
+            <div class="formContainer">
+        
+                <div class="display-label">Url</div>
+                <div class="display-field" id="urlField">
+                    @Html.DisplayFor(model => model.ImageUrl)
+                </div>
+
+                <div class="display-label">Size</div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Size)
+                </div>
+
+            </div>
+
+            <p>
+                @Html.ActionLink("Delete", "Delete", new { fileName=Model.FileName }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        
+        </td>
+        <td width="70%" valign="top">
+            <div><img src="@Model.ImageUrl" alt=""/></div>
+        </td>
+    </tr>
+
+</table>
+
+<script type="text/javascript">
+
+    function selectText(element) {
+        var doc = document;
+        var text = doc.getElementById(element);
+        if (doc.body.createTextRange) { // ms
+            var range = doc.body.createTextRange();
+            range.moveToElementText(text);
+            range.select();
+        } else if (window.getSelection) {
+            var selection = window.getSelection();
+            if (selection.setBaseAndExtent) { // webkit
+                selection.setBaseAndExtent(text, 0, text, 1);
+            } else { // moz, opera
+                var range = doc.createRange();
+                range.selectNodeContents(text);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+        }
+    }
+
+    $('#urlField').click(function () {
+        selectText('urlField');
+    });
+
+</script>
