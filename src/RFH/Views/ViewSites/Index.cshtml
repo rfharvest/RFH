@@ -1,25 +1,14 @@
-﻿@model RFH.Models.ContentData
-@{
-  ViewBag.Title = "Produce Recovery Guide";
-}
-@section Head {
-  @Html.Partial("_ImageSliderHead")
+﻿@{
+  ViewBag.Title = "View Sites";
 }
 <div class="row-fluid mainContent">
   <div class="span2">
   </div>
   <div class="span2 well">
-    <img src="/Content/images/newHeader.png" class="mainLogo" alt="mainLogo"/>
-    <hr />
-    <p>Here is an explanation of what our organization does and what this site is for</p>
-    <hr />
-    <h4>Fun Facts</h4>
-    @Html.Action("Statistics")
-    <hr />
+    @Html.Action("_HostSitesMap")
   </div><!--/span-->
 
   <div class="span6">
-    @{ Html.RenderAction("Index", "ImageSlider"); }
     <div class="row-fluid">
       <div class="span4">
         <h2>Sites</h2>
@@ -43,6 +32,10 @@
   </div><!--/span-->
 </div><!--/row-->
 
+<div class="row-fluid mapRow">
+  <div class="span2"></div>
+  <div class="span8"><h2>Site Map</h2></div>
+</div>
 @*@Html.Raw( @Model.Content )*@
 
 @*@Html.Action("Wizard")*@ 
