@@ -13,9 +13,6 @@
     <hr />
     <p>Here is an explanation of what our organization does and what this site is for</p>
     <hr />
-    <h4>Fun Facts</h4>
-    @Html.Action("Statistics")
-    <hr />
   </div><!--/span-->
 
   <div class="span6">
@@ -25,7 +22,7 @@
         <h2>Sites</h2>
         <p>Browse the great work that is going on at one of our many sites! You can also use the drop-down at the top-left to find one you like.</p>
         <p><img src="/Content/images/sites.png" alt="sites ui" /></p>
-
+        <p>@Html.ActionLink("View Sites >>", "Index", "ViewSites", null, new { @class = "btn" })</p>
       </div><!--/span-->
       <div class="span4">
         <h2>Topics</h2>
@@ -34,8 +31,8 @@
       </div><!--/span-->
       <div class="span4">
         <!--Statistics view for the right section display starts here-->
-        <h2>Another panel!</h2>
-        <p>More information here</p>
+        <h2>Fun Facts</h2>
+        <p>@Html.Action("Statistics")</p>
         <!--Statistics view for the right section display starts here-->
       </div><!--/span-->
       

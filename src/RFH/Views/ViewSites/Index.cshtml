@@ -4,47 +4,22 @@
 <div class="row-fluid mainContent">
   <div class="span2">
   </div>
+  <div class="span8">
+    <h2>View Sites</h2>
+  </div>
+</div>
+<div class="row-fluid mainContent">
+  <div class="span2">
+  </div>
   <div class="span2 well">
-    @Html.Action("_HostSitesMap")
+    <ul class="nav nav-list">
+         <li class="nav-header">Sites</li>
+         @Html.Action("ListSite", "NavigationList")
+    </ul>
+    
   </div><!--/span-->
 
   <div class="span6">
-    <div class="row-fluid">
-      <div class="span4">
-        <h2>Sites</h2>
-        <p>Browse the great work that is going on at one of our many sites! You can also use the drop-down at the top-left to find one you like.</p>
-        <p><img src="/Content/images/sites.png" alt="sites ui" /></p>
-
-      </div><!--/span-->
-      <div class="span4">
-        <h2>Topics</h2>
-        <p>Learn about other projects! Choose a category from the top menu and explore.</p>
-        <p><img src="/Content/images/topics.png" alt="topics ui" /></p>
-      </div><!--/span-->
-      <div class="span4">
-        <!--Statistics view for the right section display starts here-->
-        <h2>Another panel!</h2>
-        <p>More information here</p>
-        <!--Statistics view for the right section display starts here-->
-      </div><!--/span-->
-      
-    </div><!--/row-->
+    @Html.Action("_HostSitesMap")
   </div><!--/span-->
 </div><!--/row-->
-
-<div class="row-fluid mapRow">
-  <div class="span2"></div>
-  <div class="span8"><h2>Site Map</h2></div>
-</div>
-@*@Html.Raw( @Model.Content )*@
-
-@*@Html.Action("Wizard")*@ 
-
-<script>
-  $(function () { 
-    function tick() {
-      $('#ticker li:first').animate({ 'opacity': 0 }, 400, function () { $(this).appendTo($('#ticker')).css('opacity', 1); });
-    }
-    setInterval(function () { tick() }, 3500);
-  });
-</script>
