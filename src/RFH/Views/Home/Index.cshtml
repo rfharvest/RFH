@@ -31,11 +31,11 @@
           <p>@Html.ActionLink("View Sites >>", "Index", "ViewSites", null, new { @class = "btn" })</p>
         </p>
       </div><!--/span-->
-      <div class="span4">
+      <div class="span5">
         <h2>Featured Article</h2>
-        <p>Article summary goes here.</p>
+        @{ Html.RenderAction("Featured", "Article"); }
       </div><!--/span-->
-      <div class="span4">
+      <div class="span3">
         <h2>Fun Facts</h2>
         <p>@Html.Action("Statistics")</p>
       </div><!--/span-->

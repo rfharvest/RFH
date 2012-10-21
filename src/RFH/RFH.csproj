@@ -1043,6 +1043,7 @@
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\ViewSites\_HostSitesMap.cshtml" />
+    <Content Include="Views\Article\_ArticleSummary.cshtml" />
     <Content Include="Views\Article\_CreateComment.cshtml" />
     <Content Include="Views\Article\_CommentList.cshtml" />
     <Content Include="Views\Home\Statistics.cshtml" />

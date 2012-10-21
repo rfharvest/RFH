@@ -1,0 +1,6 @@
+﻿@using RFH.Models;
+@model Article
+
+<h4 style="color:#444;">@Model.Title</h4>
+<p>@Model.ShortDescription</p>
+<p>@Html.ActionLink("View entire article", "Index", "Article", new { @id = Model.Id }, null)</p>
