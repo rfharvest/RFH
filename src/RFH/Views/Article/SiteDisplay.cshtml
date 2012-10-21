@@ -15,14 +15,4 @@
         <div>
             @Html.Raw(Model.Article.HostSite.Description)
         </div>
-        <div>
-            <h3>Articles</h3>
-            <dl>
-                @foreach (var item in Model.Article.HostSite.Articles)
-                {
-                    <dt>@Html.ActionLink(item.Category.Name, "Index", "Article", new { id = item.Id }, null)</dt>
-                    <dd>@item.ShortDescription</dd>
-                }
-            </dl>
-        </div>
     </div>

@@ -1,17 +1,7 @@
 ﻿@model RFH.Models.HomeStatisticsViewModel
 
-
-<h2>Statistics</h2>
-<p>This is a running total since the project started in summer of 2009)</p>
-
-<div>
-    <ul class="tags">
-        @foreach (var item in Model.StatisticsItems) {
-        <li>@item.Description:</li>
-        <ul class="tagValues">
-                <li>@item.Value @item.Units</li>
-        </ul>
-        }
-    </ul>
-</div>
-
+<ul id="ticker">
+  @foreach (var item in Model.StatisticsItems) {
+    <li>@item.Description: @item.Value @item.Units</li>
+  }
+</ul>

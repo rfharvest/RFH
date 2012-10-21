@@ -17,3 +17,18 @@
   width: 100px;
 }
 .alignC { text-align: center; }
+
+#ticker {
+  height: 40px;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+}
+
+#ticker li {
+  height: 40px;
+}
+
+#map_canvas {
+  height: 200px;
+}
