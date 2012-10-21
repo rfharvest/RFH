@@ -82,10 +82,17 @@
 }
 
 .comment {
-    margin-top: 15px;
+  margin-top: 15px;
+  position: relative;
+  background-color: #E9E9E9;
+  padding: 13px;
+  height: 75px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
 
-.commentArea {
+.commentHeader {
   margin-top: 7px;
   text-align: right;
 }
@@ -97,10 +104,30 @@
 
 .comment .text {
   font-size: 1.2em;
-  display: inline-block;
+  display: block;
   margin-top: 5px;
+  text-align: left;
+  width: 80%;
+  height: 60px;
+  overflow: auto;
 }
 
 .createComment {
   margin-top: 10px;
+}
+
+.commentBlock {
+  position: absolute;
+  left: 13px;
+}
+
+.gravatar {
+  position: absolute;
+  right: 13px;
+}
+
+.gravatar img {
+    -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
