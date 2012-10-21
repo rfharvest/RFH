@@ -20,9 +20,6 @@
         @Html.Raw( Model.Article.Content )
     </div>
 
-    <div class="goUp">
-        @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Details", "Site", new {Id=Model.Article.HostSite.UrlFriendlyName}, null)
-    </div>
     @if(Model.Article.HostSite.CommentsEnabled)
     {
         <h3 class="commentHeader">Comments</h3>
