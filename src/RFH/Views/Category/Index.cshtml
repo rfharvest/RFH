@@ -27,7 +27,7 @@
           }
           var article = articleList[masterCounter];
           <div class="span4">
-            <h2>@Html.ActionLink(article.Title, "Index", "Article", new { id = article.Id }, null)</h2>
+            <h4>@Html.ActionLink(article.Title, "Index", "Article", new { id = article.Id }, null)</h4>
             
             @if (!article.ImageFilename.IsEmpty())
             {
