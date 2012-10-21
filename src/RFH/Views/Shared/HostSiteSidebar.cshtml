@@ -5,11 +5,12 @@
     <div class="well word-wrap hostSiteSkyscraper">
         <div class="titlePane">
             <h3>@Model.Name</h3>
+            <div>
             @if (!string.IsNullOrWhiteSpace(Model.LogoFileName))
             {
                 if (!string.IsNullOrWhiteSpace(Model.HostSiteUrl))
                 {
-                     <a href="@Model.HostSiteUrl" target="_blank">
+                     <a href="@Model.HostSiteUrl" class="hostSiteLink" target="_blank">
                         <img src="/Content/cmsImages/@Model.LogoFileName" class="hostSiteLogo" alt="@Model.LogoFileName" />
                      </a>
                 }
@@ -18,7 +19,8 @@
                     <img src="/Content/cmsImages/@Model.LogoFileName" class="hostSiteLogo" alt="@Model.LogoFileName" />
                 }
             }
-            
+            </div>
+            <br />
             @if (!string.IsNullOrWhiteSpace(Model.HostSiteUrl))
             {
                 <p>Website:<br /><a href="@Model.HostSiteUrl" target="_blank">@Model.HostSiteUrl</a></p>
