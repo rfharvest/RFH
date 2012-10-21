@@ -105,6 +105,7 @@
     <Compile Include="Controllers\NavigationListController.cs" />
     <Compile Include="Controllers\LayoutTestController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
+    <Compile Include="Controllers\ViewSitesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1029,7 +1030,7 @@
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
-    <Content Include="Views\Home\_HostSitesMap.cshtml" />
+    <Content Include="Views\ViewSites\_HostSitesMap.cshtml" />
     <Content Include="Views\Article\_CreateComment.cshtml" />
     <Content Include="Views\Article\_CommentList.cshtml" />
     <Content Include="Views\Home\Statistics.cshtml" />
@@ -1044,6 +1045,7 @@
     <Content Include="Views\ManageStatistics\Edit.cshtml" />
     <Content Include="Views\ManageStatistics\Index.cshtml" />
     <Content Include="Views\Shared\HostSiteSidebar.cshtml" />
+    <Content Include="Views\ViewSites\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
