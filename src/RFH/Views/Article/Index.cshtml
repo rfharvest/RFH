@@ -65,7 +65,7 @@
           <ul>
               @foreach (var relatedArticle in Model.RelatedArticles) {
                   <li>
-                      @Html.ActionLink(String.Format("{0} article by {1}", Model.Article.Category.Name, relatedArticle.HostSiteName), "Index", "Article", new {id = relatedArticle.ArticleId}, null)
+                      @Html.ActionLink(relatedArticle.Title, "Index", "Article", new {id = relatedArticle.ArticleId}, null)
                   </li>
               }   
           </ul>
