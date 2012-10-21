@@ -2,6 +2,6 @@
 
 <ul id="ticker">
   @foreach (var item in Model.StatisticsItems) {
-    <li>@item.Description: @item.Value @item.Units</li>
+    <li class="tickerItem"><span class="tickerDescription">@item.Description</span>: @item.Value @item.Units</li>
   }
 </ul>
