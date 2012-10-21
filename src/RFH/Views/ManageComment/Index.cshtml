@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RFH.Models.ContentData>
+﻿@model IEnumerable<RFH.Models.Comment>
 
 <h2>@Html.Raw(@PageData["SectionTitle"]) List</h2>
 
@@ -14,8 +14,8 @@
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.Name)</td>
                 <td>
-                    @Html.ActionLink("Details", "Detail", new { id=item.Id }) |
-                    @Html.ActionLink("Edit", "Edit", new { id=item.Id })
+                    @Html.ActionLink("Details", "Detail", new { id=item.CommentId }) |
+                    @Html.ActionLink("Edit", "Edit", new { id=item.CommentId })
                 </td>
             </tr>
         }

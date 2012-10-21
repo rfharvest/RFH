@@ -1,0 +1,33 @@
+﻿@model RFH.Models.ContentData
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
+
+<p>
+	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+	@Html.ActionLink("Back to List", "Index") |
+	@Html.ActionLink("Launch Public Page", Model.ActionName, Model.ControllerName, null, new { target = "_blank" })
+</p>
+
+<div class="formContainer">
+
+    <div class="display-label">
+	    @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="display-field">
+	    @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+	    @Html.LabelFor(model => model.Content)
+    </div>
+    <div class="display-field htmlField">
+	    @Html.Raw(Model.Content)
+    </div>
+
+</div>
+
+<p>
+	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+	@Html.ActionLink("Back to List", "Index") |
+	@Html.ActionLink("Launch Public Page", Model.ActionName, Model.ControllerName, null, new { target = "_blank" })
+</p>
