@@ -16,7 +16,8 @@
                         @Html.Hidden("FileName", documentUrl)
                             <input type="submit" value="Delete" />
                     }
-                    <a href="/ManageDocument/Details?fileName=@documentUrl" title="@documentUrl">@documentUrl</a>
+                    <a href="@Path.Combine(Model.FolderUrl, documentUrl)" title="@documentUrl">@documentUrl</a> - @Model.FolderUrl/@documentUrl
+                    
                 </li>
             }
         </ul>

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RFH.Extensions;
 using RFH.Models;
 
 namespace RFH.Controllers
@@ -17,7 +18,7 @@ namespace RFH.Controllers
             model.FolderUrl = ImageFolderUrl;
             model.ImageUrls = new List<string>();
 
-            var directoryInfo = GetDirectoryInfo(ImageFolderUrl);
+            var directoryInfo = ImageFolderUrl.GetDirectoryInfo(Server);
             var files = directoryInfo.GetFiles().OrderBy(f => f.Name);
 
             foreach (var file in files)
@@ -31,7 +32,7 @@ namespace RFH.Controllers
         public ActionResult Details(string fileName)
         {
             var url = GetImageUrl(fileName);
-            var fileInfo = GetFileInfo(url);
+            var fileInfo = url.GetFileInfo(Server);
             var fileSize = (fileInfo.Length/1000).ToString("###,###,##0");
 
             var model = new ManageImageDetailsViewModel
@@ -47,7 +48,7 @@ namespace RFH.Controllers
         public ActionResult Delete(string fileName)
         {
             var url = GetImageUrl(fileName);
-            var fileInfo = GetFileInfo(url);
+            var fileInfo = url.GetFileInfo(Server);
             var fileSize = (fileInfo.Length / 1000).ToString("###,###,##0");
 
             var model = new ManageImageDetailsViewModel
@@ -124,20 +125,6 @@ namespace RFH.Controllers
         {
             var url = string.Format("{0}/{1}", ImageFolderUrl, fileName);
             return url;
-        }
-
-        private FileInfo GetFileInfo(string url)
-        {
-            var physicalPath = Server.MapPath(url);
-            var file = new FileInfo(physicalPath);
-            return file;
-        }
-
-        private DirectoryInfo GetDirectoryInfo(string folderUrl)
-        {
-            var folderPhysicalPath = Server.MapPath(folderUrl);
-            var directoryInfo = new DirectoryInfo(folderPhysicalPath);
-            return directoryInfo;
         }
     }
 }

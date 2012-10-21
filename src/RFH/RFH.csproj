@@ -98,6 +98,7 @@
     <Compile Include="Controllers\ManageBackupController.cs" />
     <Compile Include="Controllers\ManageCategoryController.cs" />
     <Compile Include="Controllers\ManageContentController.cs" />
+    <Compile Include="Controllers\ManageDocumentController.cs" />
     <Compile Include="Controllers\ManageHostController.cs" />
     <Compile Include="Controllers\ManageHostSiteTagController.cs" />
     <Compile Include="Controllers\ManageHostSiteTagValueController.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Controllers\LayoutTestController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Controllers\ViewSitesController.cs" />
+    <Compile Include="Extensions\DirectoryExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -121,6 +123,7 @@
     </Compile>
     <Compile Include="Models\CategoryIndexViewModel.cs" />
     <Compile Include="Models\HostSiteSidebarIndexViewModel.cs" />
+    <Compile Include="Models\ManageDocumentIndexViewModel.cs" />
     <Compile Include="Models\SuperCategory.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\ContentData.cs">
@@ -1046,6 +1049,9 @@
     <Content Include="Views\ManageStatistics\Index.cshtml" />
     <Content Include="Views\Shared\HostSiteSidebar.cshtml" />
     <Content Include="Views\ViewSites\Index.cshtml" />
+    <Content Include="Views\ManageDocument\Index.cshtml" />
+    <Content Include="Views\ManageDocument\Upload.cshtml" />
+    <Content Include="Views\ManageDocument\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
