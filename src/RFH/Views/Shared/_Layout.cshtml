@@ -34,8 +34,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">sites<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li class="nav-header">Interactive</li>
-                  <li><a href="#">View Map</a></li>
-                  <li><a href="#">Find a site</a></li>
+                  <li>@Html.ActionLink("View Map", "Index", "ViewSites")</li>
                   <li class="divider"></li>
                   <li class="nav-header">Sites</li>
                   @Html.Action("ListSite", "NavigationList")
