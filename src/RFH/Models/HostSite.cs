@@ -32,6 +32,7 @@ namespace RFH.Models
         [MaxLength]
         public string Description { get; set; }
 
+        [DisplayName("Logo FileName")]
         public string LogoFileName { get; set; }
 
         public string Area { get; set; }
@@ -41,6 +42,7 @@ namespace RFH.Models
         public string State { get; set; }
         public string Zip { get; set; }
 
+        [DisplayName("Hero FileName")]
         public string HeroFileName { get; set; }
 
         [DisplayName("Is Active")]
