@@ -46,7 +46,7 @@ namespace RFH.Controllers
             {
                 mailService.Send(recep, "RFH: A new comment has been added for the article - " + articleData.Title, newComment.Text, null);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 
             }
