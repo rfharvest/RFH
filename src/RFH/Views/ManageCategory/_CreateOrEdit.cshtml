@@ -1,4 +1,11 @@
-﻿@model RFH.Models.Category
+﻿@model RFH.Models.ManageCategoryEditViewModel
 
-@Html.EditorFor(model => model.Name)
-@Html.EditorFor(model => model.Description)
+<div class="editor-label">
+    @Html.LabelFor(model => model.Category.SuperCategory.Name)
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.Category.SuperCategoryId, Model.SuperCategories)
+    @Html.ValidationMessageFor(model => model.Category.SuperCategoryId)
+</div>
+@Html.EditorFor(model => model.Category.Name)
+@Html.EditorFor(model => model.Category.Description)

@@ -117,6 +117,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\CategoryIndexViewModel.cs" />
+    <Compile Include="Models\ManageCategoryDetailViewModel.cs" />
+    <Compile Include="Models\ManageCategoryEditViewModel.cs" />
     <Compile Include="Models\SuperCategory.cs" />
     <Compile Include="Models\ContentData.cs">
       <SubType>Code</SubType>
