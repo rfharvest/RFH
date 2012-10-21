@@ -94,6 +94,7 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\ManageCommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HostSiteSidebarController.cs" />
     <Compile Include="Controllers\ImageSliderController.cs" />
