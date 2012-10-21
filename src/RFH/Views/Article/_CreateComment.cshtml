@@ -6,18 +6,17 @@
 
 @using (Html.BeginForm("CreateComment", "Comment", FormMethod.Post)) {
     @Html.ValidationSummary(true)
-    <fieldset>
         <legend>Add a Comment</legend>
-
-
         <div class="editor-field">
-            @Html.EditorFor(model => model.Name)
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name, new { @class = "span5" })
             @Html.ValidationMessageFor(model => model.Name)
         </div>
 
 
         <div class="editor-field">
-            @Html.EditorFor(model => model.Email)
+            @Html.LabelFor(model => model.Email)
+            @Html.TextBoxFor(model => model.Email, new { @class = "span5" })
             @Html.ValidationMessageFor(model => model.Email)
         </div>
 
@@ -26,23 +25,23 @@
             <div>
                 <label>@Html.LabelFor(model => model.Text)</label>
             </div>
-            @Html.TextAreaFor(model => model.Text)
+            @Html.TextAreaFor(model => model.Text, new { @class = "span5" })
             @Html.ValidationMessageFor(model => model.Text)
         </div>
 
 
         <div class="editor-field">
-            @Html.EditorFor(model => model.Location)
+            @Html.LabelFor(model => model.Location)
+            @Html.TextBoxFor(model => model.Location, new { @class = "span5" })
             @Html.ValidationMessageFor(model => model.Location)
         </div>
 
             @Html.HiddenFor(model => model.ArticleId)
 
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+        <div class="submitComment">
+            <input type="submit" class="btn btn-primary" value="Comment" />
+        </div>
 }
 
 

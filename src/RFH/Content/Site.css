@@ -121,13 +121,22 @@
   left: 13px;
 }
 
+.submitComment {
+  margin-top: 10px;
+}
+
 .gravatar {
   position: absolute;
   right: 13px;
 }
 
 .gravatar img {
-    -moz-border-radius: 3px;
+  -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+}
+
+.field-validation-error {
+  margin-left: 10px;
+  color: #ff0000;
 }
