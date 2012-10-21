@@ -43,4 +43,25 @@
 
 .breadCrumb {
   font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.commentArea {
+  margin-top: 7px;
+  text-align: right;
+}
+
+.comment .name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.comment .text {
+  font-size: 1.2em;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.createComment {
+  margin-top: 10px;
 }

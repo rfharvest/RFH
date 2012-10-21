@@ -15,24 +15,6 @@
         &gt;   
         @Html.ActionLink(Model.Article.Category.Name, "Index", "Category", new {Id=Model.Article.Category.UrlFriendlyName}, null)
     </div>
-    <div class="articleContent">
-
-    <div id="hostSiteMetadata">
-        <h3>@*@Model.Article.HostSite.Name*@</h3>
-        <div>
-            <ul class="tags">
-            @foreach (var tag in Model.HostSiteTags) {
-                <li>@tag.Name:</li>
-                <ul class="tagValues">
-                    @foreach (var tagValue in Model.HostSiteTagValues.Where(m => m.HostSiteTagId.Equals(tag.Id)))
-                    {
-                        <li>@tagValue.Name</li>
-                    }
-                </ul>
-            }
-            </ul>
-        </div>
-    </div>
 
     <div>
         @Html.Raw( Model.Article.Content )
@@ -42,12 +24,18 @@
         @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Details", "Site", new {Id=Model.Article.HostSite.UrlFriendlyName}, null)
     </div>
     
-    @Html.Partial("_CreateComment", Model.NewComment)
-    
+    <div class="commentArea">
+    <h2>Comments</h2>
     @if(Model.Comments.Any())
     {
         @Html.Partial("_CommentList", Model.Comments)
+    } else {
+      <p>No comments yet!</p>
     }
+    </div>
+    <div class="createComment">
+      @Html.Partial("_CreateComment", Model.NewComment)
+    </div>
 
     @if (Model.RelatedArticles.Any()) {
       <div>
