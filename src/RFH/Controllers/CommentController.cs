@@ -39,7 +39,7 @@ namespace RFH.Controllers
             _dataContext.Comments.Add(comment);
             _dataContext.SaveChanges();
 
-            newComment.Text = newComment.Text + "\\n Article Category: " + articleData.Category;
+            newComment.Text = newComment.Text + "\\n Article Category: " + articleData.Category + "\\n Click here to moderate this comment: " + ConfigurationManager.AppSettings["siteURL"] + "/ManageComment/Detail/" + comment.CommentId;
   
             List<string> emailRecipients = new List<string>() { ConfigurationManager.AppSettings["CommentAlertEmail"] };
             try
@@ -52,17 +52,6 @@ namespace RFH.Controllers
             }
 
             return  RedirectToAction("Index", "Article", new { id = newComment.ArticleId});
-        }
-
-        static IEnumerable<T> Combine<T>(params IEnumerable<T>[] enumerables)
-        {
-            foreach (IEnumerable<T> enumerable in enumerables)
-            {
-                foreach (T item in enumerable)
-                {
-                    yield return item;
-                }
-            }
         }
     }
 }
