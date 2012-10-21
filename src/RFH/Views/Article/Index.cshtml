@@ -23,20 +23,21 @@
     <div class="goUp">
         @Html.ActionLink(String.Format("Back to {0}", Model.Article.HostSite.Name), "Details", "Site", new {Id=Model.Article.HostSite.UrlFriendlyName}, null)
     </div>
-    
-    <div class="commentArea">
-    <h3>Comments</h3>
-    @if(Model.Comments.Any())
+    @if(Model.Article.HostSite.CommentsEnabled)
     {
-        @Html.Partial("_CommentList", Model.Comments)
-    } else {
-      <p>No comments yet!</p>
+        <h3 class="commentHeader">Comments</h3>
+         if (Model.Comments.Any())
+         {
+             @Html.Partial("_CommentList", Model.Comments)
+         }
+         else
+         {
+             <p>No comments yet!</p>
+         }
+        <div class="createComment">
+            @Html.Partial("_CreateComment", Model.NewComment)
+        </div>
     }
-    </div>
-    <div class="createComment">
-      @Html.Partial("_CreateComment", Model.NewComment)
-    </div>
-
    
   </div>
 
