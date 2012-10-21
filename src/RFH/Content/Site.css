@@ -2,6 +2,10 @@
   margin-top: 10px;
 }
 
+.pushLeft {
+  margin-left: 100px;
+}
+
 .heroSpacer {
   height: 10px;
   display: block;
