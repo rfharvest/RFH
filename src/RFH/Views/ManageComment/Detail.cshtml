@@ -23,6 +23,11 @@
     <div class="display-field">
 	    @Html.DisplayFor(model => model.Comment.Email)
     </div>
+
+    <div class="display-label">
+        <p>Click here to navigate to the article where it was commented: <a href="/article/@Model.Comment.ArticleId" target="_blank">@Model.Comment.ArticleId</a></p>
+    </div>
+
     <div class="display-label">
 	    @Html.LabelFor(model => model.Comment.Location)
     </div>
