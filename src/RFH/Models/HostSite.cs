@@ -41,6 +41,8 @@ namespace RFH.Models
         public string State { get; set; }
         public string Zip { get; set; }
 
+        public string HeroFileName { get; set; }
+
         [DisplayName("Is Active")]
         public bool IsActive { get; set; }
 
