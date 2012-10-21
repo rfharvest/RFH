@@ -1034,6 +1034,7 @@
     <Content Include="Views\ManageStatistics\Details.cshtml" />
     <Content Include="Views\ManageStatistics\Edit.cshtml" />
     <Content Include="Views\ManageStatistics\Index.cshtml" />
+    <Content Include="Views\Shared\SiteDisplay.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
