@@ -1067,6 +1067,9 @@
     <Content Include="Views\ManageSuperCategory\_Display.cshtml" />
     <Content Include="Views\ManageSuperCategory\Delete.cshtml" />
     <Content Include="Views\ManageSuperCategory\_ViewStart.cshtml" />
+    <Content Include="Views\ManageComment\_ViewStart.cshtml" />
+    <Content Include="Views\ManageComment\Delete.cshtml" />
+    <Content Include="Views\ManageComment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
