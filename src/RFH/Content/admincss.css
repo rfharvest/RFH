@@ -81,10 +81,6 @@ a {
         width: 200px;
     }
 
-#manageDocumentIndex ul {
-    list-style-type: none;
-}
-
 #hostSiteDetailTable {
     border: 1px solid #ccc;
 }
@@ -104,10 +100,6 @@ a {
 .standardButton {
     font-size: 1.4em;
     padding: 4px 20px;
-}
-
-.inline {
-    display: inline;
 }
 
 .standardTable {
