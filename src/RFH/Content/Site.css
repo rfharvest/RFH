@@ -137,3 +137,10 @@
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
+
+footer p {
+    text-align: center;
+    width: 65%;
+    margin: 5px auto;
+    font-size: .9em;
+}
