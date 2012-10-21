@@ -16,10 +16,12 @@
         @Html.ActionLink(Model.Article.Category.Name, "Index", "Category", new {Id=Model.Article.Category.UrlFriendlyName}, null)
     </div>
 
+    <h2>@Model.Article.Title</h2>
     <div>
         @Html.Raw( Model.Article.Content )
     </div>
 
+    <hr class="articleEnd" />
     @if(Model.Article.HostSite.CommentsEnabled)
     {
         <h3 class="commentHeader">Comments</h3>
