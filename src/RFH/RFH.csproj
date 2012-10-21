@@ -91,6 +91,7 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HostSiteSidebarController.cs" />
     <Compile Include="Controllers\ImageSliderController.cs" />
     <Compile Include="Controllers\ManageArticleController.cs" />
     <Compile Include="Controllers\ManageBackupController.cs" />
@@ -1034,7 +1035,7 @@
     <Content Include="Views\ManageStatistics\Details.cshtml" />
     <Content Include="Views\ManageStatistics\Edit.cshtml" />
     <Content Include="Views\ManageStatistics\Index.cshtml" />
-    <Content Include="Views\Shared\SiteDisplay.cshtml" />
+    <Content Include="Views\Shared\HostSiteSidebar.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
