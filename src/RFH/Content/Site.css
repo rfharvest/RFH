@@ -23,18 +23,18 @@
     margin: 5px 0 5px 0;
 }
 
+.skyScraperSpacer {
+  display: block;
+  height: 35px;
+}
 .hostSiteSkyscraper {
     border: 1px solid #E9E9E9;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    padding-left: 25px;
 }
 
 .word-wrap {
     word-wrap: break-word;
 }
-
-
 
 #ticker {
   height: 60px;
