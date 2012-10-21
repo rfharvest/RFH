@@ -1,33 +1,52 @@
-﻿@model RFH.Models.ContentData
+﻿@model RFH.Models.ManageCommentDetailViewModel
 
 <h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
 
 <p>
-	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+	@Html.ActionLink("Delete", "Delete", new { id = Model.Comment.CommentId }) |
 	@Html.ActionLink("Back to List", "Index") |
-	@Html.ActionLink("Launch Public Page", Model.ActionName, Model.ControllerName, null, new { target = "_blank" })
+	@*@Html.ActionLink("Launch Public Page", Model.ActionName, Model.ControllerName, null, new { target = "_blank" })*@
 </p>
 
 <div class="formContainer">
 
     <div class="display-label">
-	    @Html.LabelFor(model => model.Name)
+	    @Html.LabelFor(model => model.Comment.Name)
     </div>
     <div class="display-field">
-	    @Html.DisplayFor(model => model.Name)
+	    @Html.DisplayFor(model => model.Comment.Name)
     </div>
 
     <div class="display-label">
-	    @Html.LabelFor(model => model.Content)
+	    @Html.LabelFor(model => model.Comment.Email)
+    </div>
+    <div class="display-field">
+	    @Html.DisplayFor(model => model.Comment.Email)
+    </div>
+    <div class="display-label">
+	    @Html.LabelFor(model => model.Comment.Location)
+    </div>
+    <div class="display-field">
+	    @Html.DisplayFor(model => model.Comment.Location)
+    </div>
+    <div class="display-label">
+	    @Html.LabelFor(model => model.Comment.PostDate) (in UTC)
+    </div>
+    <div class="display-field">
+	    @Html.DisplayFor(model => model.Comment.PostDate)
+    </div>
+
+    <div class="display-label">
+	    @Html.LabelFor(model => model.Comment.Text)
     </div>
     <div class="display-field htmlField">
-	    @Html.Raw(Model.Content)
+	    @Html.Raw(Model.Comment.Text)
     </div>
 
 </div>
 
 <p>
-	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+	@Html.ActionLink("Delete", "Delete", new { id = Model.Comment.CommentId }) |
 	@Html.ActionLink("Back to List", "Index") |
-	@Html.ActionLink("Launch Public Page", Model.ActionName, Model.ControllerName, null, new { target = "_blank" })
+	@*@Html.ActionLink("Launch Public Page", Model.ActionName, Model.ControllerName, null, new { target = "_blank" })*@
 </p>

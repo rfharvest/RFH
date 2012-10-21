@@ -1,14 +1,11 @@
-﻿@model RFH.Models.ContentData
+﻿@model RFH.Models.Comment
 
-<h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
+<h2>@Html.Raw(@PageData["SectionTitle"]) Delete</h2>
 
-<p>
-	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-	@Html.ActionLink("Back to List", "Index") |
-	@Html.ActionLink("Launch Public Page", Model.ActionName, Model.ControllerName, null, new { target = "_blank" })
-</p>
 
 <div class="formContainer">
+
+    <h3>Are you sure you want to delete this category?</h3>
 
     <div class="display-label">
 	    @Html.LabelFor(model => model.Name)
@@ -18,16 +15,19 @@
     </div>
 
     <div class="display-label">
-	    @Html.LabelFor(model => model.Content)
+	    @Html.LabelFor(model => model.Text)
     </div>
     <div class="display-field htmlField">
-	    @Html.Raw(Model.Content)
+	    @Html.Raw(Model.Text)
     </div>
+
+    @using (Html.BeginForm()) {
+        <p>
+            <input type="submit" value="Delete" class="standardButton" />
+        </p>
+    }
 
 </div>
 
-<p>
-	@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-	@Html.ActionLink("Back to List", "Index") |
-	@Html.ActionLink("Launch Public Page", Model.ActionName, Model.ControllerName, null, new { target = "_blank" })
-</p>
+<p>@Html.ActionLink("Back to List", "Index")</p>
+

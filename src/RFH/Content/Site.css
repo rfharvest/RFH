@@ -168,3 +168,7 @@ footer p {
 .articleEnd {
   border-top: 2px solid #808080;
 }
+
+.tickerDescription {
+  font-weight: bold;
+}
