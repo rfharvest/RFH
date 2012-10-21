@@ -94,7 +94,7 @@
 
 .commentHeader {
   margin-top: 7px;
-  text-align: right;
+  clear: both;
 }
 
 .comment .name {
