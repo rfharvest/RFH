@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace RFH.Models 
@@ -38,5 +39,8 @@ namespace RFH.Models
         [UIHint("Image")]
         [MaxLength(100)]
         public string ImageFilename { get; set; }
+        
+        public ICollection<Comment> Comments { get;set; }
+
     }
 }
