@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿@model RFH.Models.ContentData
 @{
   ViewBag.Title = "Produce Recovery Guide";
@@ -19,7 +18,7 @@
   </div><!--/span-->
 
   <div class="span6">
-        @Html.Partial("_ImageSlider")
+    @{ Html.RenderAction("Index", "ImageSlider"); }
     <div class="row-fluid">
       <div class="span4">
         <h2>Sites</h2>
