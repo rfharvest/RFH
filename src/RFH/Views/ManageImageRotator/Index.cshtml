@@ -12,7 +12,7 @@
         <ul>
             @foreach (var imageUrl in Model.ImageUrls)
             {
-                <li><a href="/ManageImage/Details?fileName=@imageUrl" title="@imageUrl"><img src="@Model.FolderUrl/@imageUrl" alt="" /></a></li>
+                <li><a href="/ManageImageRotator/Details?fileName=@imageUrl" title="@imageUrl"><img src="@Model.FolderUrl/@imageUrl" alt="" /></a></li>
             }
         </ul>
 
