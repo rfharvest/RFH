@@ -18,7 +18,7 @@ namespace RFH.Controllers
 
         public ActionResult Index()
         {
-            var model = _dataContext.Categories
+            var model = _dataContext.Comments
                 .OrderBy(m => m.Name)
                 .ToList();
 
@@ -27,9 +27,9 @@ namespace RFH.Controllers
 
         public ActionResult Detail(int id)
         {
-            var model = new ManageCategoryDetailViewModel();
-            model.Category = _dataContext.Categories.Include(m => m.SuperCategory).Single(m => m.Id == id);
-            model.SuperCategory = _dataContext.SuperCategories.Find(model.Category.SuperCategoryId);
+            var model = new ManageCommentDetailViewModel();
+            model.Comment = _dataContext.Comments.Single(m=>m.CommentId == id);//.Find(model.Comment...Categories.Include(m => m.SuperCategory).Single(m => m.Id == id);
+            //model.SuperCategory = _dataContext.SuperCategories.Find(model.Category.SuperCategoryId);
 
             return View(model);
         }
