@@ -2,8 +2,21 @@
   margin-top: 10px;
 }
 
+.heroSpacer {
+  height: 10px;
+  display: block;
+}
+
+.sitehero {
+  padding: 7px 50px 25px 50px;
+}
+
 .sitehero p {
   font-size: 0.9em;
+}
+
+.siteImage {
+  height: 300px;
 }
 
 .articleContent {

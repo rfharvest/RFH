@@ -5,15 +5,16 @@
 
 <div class="row-fluid mainContent">
   <div class="span1"></div>
-  <div class="span8">
+  <div class="span7">
+    <div class="heroSpacer"></div>
     <div class="hero-unit sitehero">
       <h2>@Model.HostSite.Name</h2>
-      <p><img src="/Content/cmsImages/@Model.HostSite.HeroFileName" /></p>  
+      <div class="heroSpacer"></div>
+      <p><img class="siteImage" src="/Content/cmsImages/@Model.HostSite.HeroFileName" /></p>  
 <!--      @if (!string.IsNullOrWhiteSpace(Model.HostSite.Area))
       {
         <p>@Model.HostSite.Area</p> 
       }
-                    
       @if (!string.IsNullOrWhiteSpace(Model.HostSite.HostSiteUrl))
       {
         <p>Website: <a href="@Model.HostSite.HostSiteUrl" target="_blank">@Model.HostSite.HostSiteUrl</a></p>
@@ -35,7 +36,7 @@
           }
           var article = articleList[masterCounter];
           <div class="span4">
-            <h2>@Html.ActionLink(article.Title + " - " + article.Category.Name, "Index", "Article", new { id = article.Id }, null)</h2>
+            <h4>@Html.ActionLink(article.Title + " - " + article.Category.Name, "Index", "Article", new { id = article.Id }, null)</h4>
             <p>@article.ShortDescription</p>
             <p>@Html.ActionLink("View Details >>", "Index", "Article", new { id = article.Id }, new { @class = "btn" })</p>
           </div>
@@ -45,7 +46,7 @@
     }
   </div>
 
-  <div class="span2">
+  <div class="span3">
       <div class="row-fluid">
           <p> @{Html.RenderAction("HostSiteSidebar", "HostSiteSidebar", new { id = Model.HostSite.UrlFriendlyName });}</p>
     </div>
