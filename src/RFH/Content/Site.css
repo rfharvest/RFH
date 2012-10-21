@@ -42,6 +42,12 @@
     margin-right: auto;
 }
 
+.mainLogo {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .hostSiteLink {
     text-align: center;
 }
