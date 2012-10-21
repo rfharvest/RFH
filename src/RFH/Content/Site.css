@@ -28,3 +28,7 @@
 #ticker li {
   height: 40px;
 }
+
+#map_canvas {
+  height: 200px;
+}
