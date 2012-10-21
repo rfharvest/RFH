@@ -89,7 +89,7 @@
 }
 
 .breadCrumb {
-  font-size: 1.5em;
+  font-size: 1.1em;
   margin-bottom: 15px;
 }
 
@@ -151,6 +151,7 @@
 .field-validation-error {
   margin-left: 10px;
   color: #ff0000;
+  font-weight: bold;
 }
 
 footer p {
@@ -158,4 +159,8 @@ footer p {
     width: 65%;
     margin: 5px auto;
     font-size: .9em;
+}
+
+.articleEnd {
+  border-top: 2px solid #808080;
 }

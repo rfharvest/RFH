@@ -4,7 +4,7 @@
 @model RFH.Models.HostSite
     <div class="well word-wrap hostSiteSkyscraper">
         <div class="titlePane">
-            <h3>@Model.Name</h3>
+            <h3>@Html.ActionLink(Model.Name, "Details", "Site", new {Id=Model.UrlFriendlyName}, null)</h3>
             <div>
             @if (!string.IsNullOrWhiteSpace(Model.LogoFileName))
             {
