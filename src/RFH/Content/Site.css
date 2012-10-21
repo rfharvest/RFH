@@ -19,16 +19,24 @@
 .alignC { text-align: center; }
 
 #ticker {
-  height: 40px;
+  height: 60px;
   overflow: hidden;
   list-style: none;
   margin: 0;
 }
 
 #ticker li {
-  height: 40px;
+  height: 60px;
 }
 
 #map_canvas {
-  height:200px;
+  height: 300px;
+}
+
+#map_canvas h4 {
+  font-size: 1em;
+}
+
+.mapRow {
+  margin-top: 15px;
 }
