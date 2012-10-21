@@ -10,6 +10,8 @@ namespace RFH.Models {
 
         public string HostSiteName { get; set; }
 
+        public string Title { get; set; }
+
         public int ArticleId { get; set; }
 
     }
