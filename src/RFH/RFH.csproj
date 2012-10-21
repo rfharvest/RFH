@@ -191,6 +191,8 @@
     <Content Include="Content\images\map.jpg" />
     <Content Include="Content\images\newHeader.png" />
     <Content Include="Content\images\placeholder.png" />
+    <Content Include="Content\images\sites.png" />
+    <Content Include="Content\images\topics.png" />
     <Content Include="Content\lightbox.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\slidy.css" />
