@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -39,12 +40,11 @@ namespace RFH.Controllers
             _dataContext.SaveChanges();
 
             newComment.Text = newComment.Text + "\\n Article Category: " + articleData.Category;
-
-            List<string> stringEmail = new List<string>(new string[] { GetMailSettings.Smtp.From });
-            IEnumerable<string> recep = Combine(stringEmail);
+  
+            List<string> emailRecipients = new List<string>() { ConfigurationManager.AppSettings["CommentAlertEmail"] };
             try
             {
-                mailService.Send(recep, "RFH: A new comment has been added for the article - " + articleData.Title, newComment.Text, null);
+                mailService.Send(emailRecipients, "RFH: A new comment has been added for the article - " + articleData.Title, newComment.Text, null);
             }
             catch (Exception)
             {

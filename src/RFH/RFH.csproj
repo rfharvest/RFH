@@ -241,7 +241,6 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
-    <Content Include="Release Notes - Microsoft.Web.Helpers.txt" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\adminCustom.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1074,6 +1073,8 @@
     <Content Include="Views\ManageComment\Delete.cshtml" />
     <Content Include="Views\ManageComment\Index.cshtml" />
     <Content Include="Views\ManageComment\Detail.cshtml" />
+    <Content Include="Views\Article\_ArticleSummary.cshtml" />
+    <Content Include="Views\Shared\_ShareTab.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
