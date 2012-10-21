@@ -19,14 +19,16 @@
     <div class="row-fluid">
       <div class="span4">
         <h2>Sites</h2>
-        <p>Browse the great work that is going on at one of our many sites! Use the drop-down at the top-left to find one you like.</p>
-        <p><img src="/Content/images/sites.png" alt="sites UI" /></p>
-        <p>@Html.ActionLink("View Sites >>", "Index", "ViewSites", null, new { @class = "btn" })</p>
+        <p>Browse the great work that is going on at one of our many sites! Use the 
+            <img src="@Url.Content("~/content/images/sites.jpg")" alt="Sites" /> menu 
+            in the page header to find one you like, or click the View Sites button 
+            for an interactive map.</p>
+          <p>@Html.ActionLink("View Sites >>", "Index", "ViewSites", null, new { @class = "btn" })</p>
+        </p>
       </div><!--/span-->
       <div class="span4">
-        <h2>Topics</h2>
-        <p>Learn about other projects! Choose a category from the top menu and explore.</p>
-        <p><img src="/Content/images/topics.png" alt="topics UI" /></p>
+        <h2>Featured Article</h2>
+        <p>Article summary goes here.</p>
       </div><!--/span-->
       <div class="span4">
         <h2>Fun Facts</h2>
