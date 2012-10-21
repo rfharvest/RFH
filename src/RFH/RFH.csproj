@@ -90,7 +90,9 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HostSiteSidebarController.cs" />
     <Compile Include="Controllers\ImageSliderController.cs" />
     <Compile Include="Controllers\ManageArticleController.cs" />
     <Compile Include="Controllers\ManageBackupController.cs" />
@@ -118,10 +120,12 @@
     </Compile>
     <Compile Include="Models\CategoryIndexViewModel.cs" />
     <Compile Include="Models\SuperCategory.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\ContentData.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\HomeStatisticsViewModel.cs" />
+    <Compile Include="Models\CreateCommentViewModel.cs" />
     <Compile Include="Models\HomeWizardViewModel.cs" />
     <Compile Include="Models\HostSite.cs">
       <SubType>Code</SubType>
@@ -190,6 +194,8 @@
     <Content Include="Content\images\map.jpg" />
     <Content Include="Content\images\newHeader.png" />
     <Content Include="Content\images\placeholder.png" />
+    <Content Include="Content\images\sites.png" />
+    <Content Include="Content\images\topics.png" />
     <Content Include="Content\lightbox.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\slidy.css" />
@@ -1023,6 +1029,8 @@
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Home\_HostSitesMap.cshtml" />
+    <Content Include="Views\Article\_CreateComment.cshtml" />
+    <Content Include="Views\Article\_CommentList.cshtml" />
     <Content Include="Views\Home\Statistics.cshtml" />
     <Content Include="Views\Shared\_ImageSlider.cshtml" />
     <Content Include="Views\Shared\_ImageSliderHead.cshtml" />
@@ -1034,6 +1042,7 @@
     <Content Include="Views\ManageStatistics\Details.cshtml" />
     <Content Include="Views\ManageStatistics\Edit.cshtml" />
     <Content Include="Views\ManageStatistics\Index.cshtml" />
+    <Content Include="Views\Shared\HostSiteSidebar.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

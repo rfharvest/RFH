@@ -15,6 +15,7 @@
     <hr />
     <h4>Fun Facts</h4>
     @Html.Action("Statistics")
+    <hr />
   </div><!--/span-->
 
   <div class="span6">
@@ -22,31 +23,30 @@
     <div class="row-fluid">
       <div class="span4">
         <h2>Sites</h2>
-        <p>Browse the great work that is going on at one of our many sites! Use the drop-down at the top-left to find one you like.</p>
-        <p><img src="/Content/images/sites.png" alt="Sites UI" /></p>
-      </div><!--/span-->
-      <div class="span4">
-        <!--Statistics view for the right section display starts here-->
-        Hi
-        <!--Statistics view for the right section display starts here-->
+        <p>Browse the great work that is going on at one of our many sites! You can also use the drop-down at the top-left to find one you like.</p>
+        <p><img src="/Content/images/sites.png" alt="sites ui" /></p>
+
       </div><!--/span-->
       <div class="span4">
         <h2>Topics</h2>
         <p>Learn about other projects! Choose a category from the top menu and explore.</p>
-        <p><img src="/Content/images/topics.png" alt="Categories UI" /></p>
+        <p><img src="/Content/images/topics.png" alt="topics ui" /></p>
       </div><!--/span-->
-    </div><!--/row-->
-    <div class="row-fluid">
       <div class="span4">
-        <h2>Host Sites Map</h2>
-          @*<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn" href="#">View details &raquo;</a></p>*@
-          @Html.Action("_HostSitesMap")
+        <!--Statistics view for the right section display starts here-->
+        <h2>Another panel!</h2>
+        <p>More information here</p>
+        <!--Statistics view for the right section display starts here-->
       </div><!--/span-->
+      
     </div><!--/row-->
   </div><!--/span-->
 </div><!--/row-->
 
+<div class="row-fluid mapRow">
+  <div class="span2"></div>
+  <div class="span8"><h2>Site Map</h2>@Html.Action("_HostSitesMap")</div>
+</div>
 @*@Html.Raw( @Model.Content )*@
 
 @*@Html.Action("Wizard")*@ 
