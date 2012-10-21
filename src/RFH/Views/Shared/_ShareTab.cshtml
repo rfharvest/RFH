@@ -1,0 +1,35 @@
+﻿<style type="text/css">
+    #followTab { list-style: none; position: fixed; z-index: 1; right: 0; top: 130px; width: 24px; padding: 8px 5px; border: 3px solid #fff; border-right: none; -moz-border-radius: 10px 0 0 10px; -webkit-border-radius: 10px 0 0 10px; border-radius: 10px 0 0 10px; -moz-box-shadow: 0 0 7px rgba(0, 0, 0, .6); -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, .6); box-shadow: 0 0 7px rgba(0, 0, 0, .6); background: rgba(239, 91, 10, .75); background: -moz-linear-gradient(top, rgba(243, 52, 8, .75), rgba(239, 91, 10, .75)); background: -webkit-gradient( linear, left top, left bottom, from( rgba(243, 52, 8, .75) ), to( rgba(239, 91, 10, .75) ) ); background: linear-gradient(top, rgba(243, 52, 8, .75), rgba(239, 91, 10, .75)); filter: progid:DXImageTransform.Microsoft.Gradient( startColorStr='#c0f33408', endColorStr='#c0ef5b0a', GradientType=0 ); }
+        #followTab li { margin: 9px 0 0 0; line-height: 0; }
+            #followTab li:first-child { margin-top: 0; }
+        #followTab a { display: block; width: 24px; background-image: url("images/follow-tab-buttons.png"); }
+            #followTab a span { position: absolute; top: -999em; }
+            #followTab a.newsletter { height: 16px; background-position: 0 0; }
+                #followTab a.newsletter:hover { background-position: 0 -16px; }
+            #followTab a.rss { height: 24px; background-position: 0 -32px; }
+                #followTab a.rss:hover { background-position: 0 -56px; }
+            #followTab a.twitter { height: 15px; background-position: 0 -80px; }
+                #followTab a.twitter:hover { background-position: 0 -95px; }
+            #followTab a.facebook { height: 24px; background-position: 0 -110px; }
+                #followTab a.facebook:hover { background-position: 0 -134px; }
+</style>
+<!--[if lt IE 7]>
+<style type="text/css">
+#followTab { position: absolute; }
+</style>
+<![endif]-->
+<style type="text/css">
+    body { margin: 30px; font-family: "Georgia", serif; line-height: 1.8em; color: #333; }
+    #content { width: 800px; padding: 50px; margin: 0 auto; display: block; font-size: 1.2em; }
+        #content h2 { line-height: 1.5em; }
+    img.inline { position: relative; display: block; border: 1px solid #333; margin: 5px 0 10px 0; }
+    .wideBox { clear: both; text-align: center; margin: 70px; padding: 10px; background: #000; border: 1px solid #333; }
+        .wideBox h1 { font-weight: bold; margin: 20px; color: #666; font-size: 1.5em; }
+</style>
+
+<ul id="followTab">
+    <li><a class="newsletter" href="/newsletter/" title="Subscribe to the Elated Extra newsletter"><span>Subscribe to the Elated Extra newsletter</span></a></li>
+    <li><a class="rss" href="http://feeds.elated.com/ElatedNewStuff" title="Subscribe to Elated.com's RSS feed"><span>Subscribe to Elated.com's RSS feed</span></a></li>
+    <li><a class="twitter" href="http://twitter.com/ElatedDotCom" title="Follow Elated.com on Twitter"><span>Follow Elated.com on Twitter</span></a></li>
+    <li><a class="facebook" href="http://www.facebook.com/ElatedDotCom" title="Follow Elated.com on Facebook"><span>Follow Elated.com on Facebook</span></a></li>
+</ul>
