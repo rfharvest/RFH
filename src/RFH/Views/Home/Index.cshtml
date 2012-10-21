@@ -15,6 +15,7 @@
     <hr />
     <h4>Fun Facts</h4>
     @Html.Action("Statistics")
+    <hr />
   </div><!--/span-->
 
   <div class="span6">
@@ -37,9 +38,9 @@
   </div><!--/span-->
 </div><!--/row-->
 
-<div class="row-fluid">
+<div class="row-fluid mapRow">
   <div class="span2"></div>
-  <div class="span8">@Html.Action("_HostSitesMap")</div>
+  <div class="span8"><h2>Site Map</h2>@Html.Action("_HostSitesMap")</div>
 </div>
 @*@Html.Raw( @Model.Content )*@
 
