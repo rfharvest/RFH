@@ -104,6 +104,7 @@
     <Compile Include="Controllers\ManageHostSiteTagValueController.cs" />
     <Compile Include="Controllers\ManageImageController.cs" />
     <Compile Include="Controllers\ManageStatisticsController.cs" />
+    <Compile Include="Controllers\ManageSuperCategoryController.cs" />
     <Compile Include="Controllers\NavigationListController.cs" />
     <Compile Include="Controllers\LayoutTestController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
@@ -1055,6 +1056,13 @@
     <Content Include="Views\ManageDocument\Index.cshtml" />
     <Content Include="Views\ManageDocument\Upload.cshtml" />
     <Content Include="Views\ManageDocument\_ViewStart.cshtml" />
+    <Content Include="Views\ManageSuperCategory\Index.cshtml" />
+    <Content Include="Views\ManageSuperCategory\Edit.cshtml" />
+    <Content Include="Views\ManageSuperCategory\_CreateOrEdit.cshtml" />
+    <Content Include="Views\ManageSuperCategory\Create.cshtml" />
+    <Content Include="Views\ManageSuperCategory\Detail.cshtml" />
+    <Content Include="Views\ManageSuperCategory\_Display.cshtml" />
+    <Content Include="Views\ManageSuperCategory\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

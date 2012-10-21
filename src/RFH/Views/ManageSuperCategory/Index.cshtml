@@ -1,0 +1,30 @@
+﻿@model IEnumerable<RFH.Models.SuperCategory>
+
+<h2>Manage Super Categories</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="standardTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SuperCategoryId }) |
+                    @Html.ActionLink("Details", "Detail", new { id = item.SuperCategoryId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SuperCategoryId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

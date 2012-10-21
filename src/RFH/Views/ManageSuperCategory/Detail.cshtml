@@ -1,0 +1,16 @@
+﻿@model RFH.Models.SuperCategory
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
+
+<div class="formContainer">
+
+    @Html.Partial("_Display", Model)
+
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SuperCategoryId }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.SuperCategoryId }) |
+    @Html.ActionLink("Back to Index", "Index", "ManageSuperCategory")
+
+</p>

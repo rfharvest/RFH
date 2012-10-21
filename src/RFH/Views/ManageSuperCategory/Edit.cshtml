@@ -1,0 +1,22 @@
+﻿@model RFH.Models.SuperCategory
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) Edit</h2>
+
+<div class="formContainer">
+
+    @using (Html.BeginForm()) {
+
+        @Html.ValidationSummary()
+        @Html.HiddenFor(model => model.SuperCategoryId)
+        @Html.Partial("_CreateOrEdit", Model)
+
+        <p>
+            <input type="submit" value="Save" class="standardButton" />
+        </p>
+    }
+
+</div>
+    
+<p>
+    @Html.ActionLink("Back to Details", "Detail", new { id = Model.SuperCategoryId })
+</p>
