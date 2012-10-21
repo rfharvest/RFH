@@ -92,6 +92,8 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HostSiteSidebarController.cs" />
+    <Compile Include="Controllers\ImageSliderController.cs" />
     <Compile Include="Controllers\ManageArticleController.cs" />
     <Compile Include="Controllers\ManageBackupController.cs" />
     <Compile Include="Controllers\ManageCategoryController.cs" />
@@ -100,11 +102,9 @@
     <Compile Include="Controllers\ManageHostSiteTagController.cs" />
     <Compile Include="Controllers\ManageHostSiteTagValueController.cs" />
     <Compile Include="Controllers\ManageImageController.cs" />
-    <Compile Include="Controllers\ManageDocumentController.cs" />
     <Compile Include="Controllers\NavigationListController.cs" />
     <Compile Include="Controllers\LayoutTestController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
-    <Compile Include="Extensions\DirectoryExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,6 +145,7 @@
     <Compile Include="Models\HostSiteToHostSiteTagValue.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\ImageSliderModel.cs" />
     <Compile Include="Models\ManageArticleDetailViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -157,7 +158,6 @@
     </Compile>
     <Compile Include="Models\ManageImageDetailsViewModel.cs" />
     <Compile Include="Models\ManageImageIndexViewModel.cs" />
-    <Compile Include="Models\ManageDocumentIndexViewModel.cs" />
     <Compile Include="Models\RelatedArticle.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1027,12 +1027,8 @@
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
     <Content Include="Views\Home\_HostSitesMap.cshtml" />
-    <Content Include="Views\HostMap\Index.cshtml" />
-    <Content Include="Views\ManageDocument\Index.cshtml" />
-    <Content Include="Views\ManageDocument\_ViewStart.cshtml" />
     <Content Include="Views\Article\_CreateComment.cshtml" />
     <Content Include="Views\Article\_CommentList.cshtml" />
-    <Content Include="Views\ManageDocument\Upload.cshtml" />
     <Content Include="Views\Home\Statistics.cshtml" />
     <Content Include="Views\Shared\_ImageSlider.cshtml" />
     <Content Include="Views\Shared\_ImageSliderHead.cshtml" />
@@ -1044,6 +1040,7 @@
     <Content Include="Views\ManageStatistics\Details.cshtml" />
     <Content Include="Views\ManageStatistics\Edit.cshtml" />
     <Content Include="Views\ManageStatistics\Index.cshtml" />
+    <Content Include="Views\Shared\HostSiteSidebar.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

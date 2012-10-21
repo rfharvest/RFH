@@ -32,6 +32,8 @@ namespace RFH.Models
         [MaxLength]
         public string Description { get; set; }
 
+        public string LogoFileName { get; set; }
+
         public string Area { get; set; }
 
         public string Address { get; set; }

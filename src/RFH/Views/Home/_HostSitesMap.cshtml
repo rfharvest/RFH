@@ -2,74 +2,69 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
-    var map;
-    var geocoder;
-    var sites = @(Html.Raw(Json.Encode(Model)))
+  var map;
+  var geocoder;
+  var sites = @(Html.Raw(Json.Encode(Model)))
 
     $(function () {
-        initialize();
-        GeoCodeSites();
+      initialize();
+      GeoCodeSites();
     });
 
     function GeoCodeSites() {
-        if (sites == null) {
-            return;
-        }
-        for (var i = 0; i < sites.length; i++) {
-            var site = sites[i];
-            var address = sites.Address + ' ' + site.City + ', ' + site.State + ' ' + site.Zip;
-            codeAddress(address, site);
-        }
+      if (sites == null) {
+        return;
+      }
+      for (var i = 0; i < sites.length; i++) {
+        var site = sites[i];
+        var address = sites.Address + ' ' + site.City + ', ' + site.State + ' ' + site.Zip;
+        codeAddress(address, site);
+      }
     }
 
     function initialize() {
-        geocoder = new google.maps.Geocoder();
-        var mapOptions = {
-            zoom: 5,
-            center: new google.maps.LatLng(47.85, -120.75),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+      geocoder = new google.maps.Geocoder();
+      var mapOptions = {
+        zoom: 5,
+        center: new google.maps.LatLng(47.85, -120.75),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     }
 
     var previouslyOpenedInfoWindow;
 
     function codeAddress(address, site) {
-        geocoder.geocode({ 'address': address },
-            function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
+      geocoder.geocode({ 'address': address },
+          function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
 
-                    var contentString = '<div><h4>' + site.Name + '</h4><p>' + site.Address + '</p><p>' + site.City + ', ' + site.State + ' ' + site.Zip +
-                        '</p><p><a href="' + site.HostSiteUrl + '" target="_blank">' + site.HostSiteUrl + '</a></p></div>';
+              var contentString = '<div><h4>' + site.Name + '</h4><p>' + site.Address + '</p><p>' + site.City + ', ' + site.State + ' ' + site.Zip +
+                  '</p><p><a href="' + site.HostSiteUrl + '" target="_blank">' + site.HostSiteUrl + '</a></p></div>';
 
-                    var infowindow = new google.maps.InfoWindow({
-                        content: contentString
-                    });
+              var infowindow = new google.maps.InfoWindow({
+                content: contentString
+              });
 
-                    var marker = new google.maps.Marker({
-                        map: map,
-                        position: results[0].geometry.location
-                    });
-                    
-                    google.maps.event.addListener(marker, 'click', function () {
-                        if (previouslyOpenedInfoWindow != null) {
-                            previouslyOpenedInfoWindow.close();
-                        }
-                        previouslyOpenedInfoWindow = infowindow;
-                        infowindow.open(map, marker);
-                    });
+              var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+              });
 
-                } else {
-                    alert('Geocode was not successful for the following reason: ' + status);
+              google.maps.event.addListener(marker, 'click', function () {
+                if (previouslyOpenedInfoWindow != null) {
+                  previouslyOpenedInfoWindow.close();
                 }
-            });
-    }
-    
-    
+                previouslyOpenedInfoWindow = infowindow;
+                infowindow.open(map, marker);
+              });
 
-    
-    
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
+          });
+    }
 
 </script>
 
-<div id="map_canvas" style="height: 200px;"></div>
+<div id="map_canvas"></div>
