@@ -48,6 +48,10 @@
     margin-right: auto;
 }
 
+#mainTitle {
+  padding: 7px 9px 7px 13px;
+}
+
 .hostSiteLink {
     text-align: center;
 }
