@@ -10,6 +10,7 @@
     <div class="hero-unit">
       <h1>@Model.Category.Name</h1>
       <p>@Model.Category.Description</p>
+        <div><img src="/Content/cmsImages/@Model.Category.HeroFileName" alt="@Model.Category.Name" /></div>
     </div>
     @{
       var articleList = Model.Articles.ToList();
