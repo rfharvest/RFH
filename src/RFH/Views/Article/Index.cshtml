@@ -53,7 +53,9 @@
 
   <div class="span2">
     <div class="row-fluid">
-      @Html.Partial("SiteDisplay")
+        <p>Skyscraper content here</p>
+          <p> @{Html.RenderAction("HostSiteSidebar", "HostSiteSidebar", new { id = Model.Article.HostSite.UrlFriendlyName});}</p>
+      @*@Html.Partial("SiteDisplay")*@
     </div>
     <div class="row-fluid">
       <p>Here is the blog content</p>
