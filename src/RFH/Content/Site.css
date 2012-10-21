@@ -18,6 +18,11 @@
 }
 .alignC { text-align: center; }
 
+.hostSiteLogo {
+    width: 150px;
+    margin: 5px 0 5px 0;
+}
+
 #ticker {
   height: 60px;
   overflow: hidden;

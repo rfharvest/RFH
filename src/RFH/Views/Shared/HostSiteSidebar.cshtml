@@ -1,31 +1,31 @@
 ﻿@{
     Layout = null;
 }
-@model RFH.Models.HostSiteSidebarIndexViewModel
+@model RFH.Models.HostSite
     <div style="padding-right: 10px;">
         <div class="titlePane">
-            <h4>@Model.HostSiteSidebar.Name</h4>
-            @if (!string.IsNullOrWhiteSpace(Model.HostSiteSidebar.LogoFileName))
+            <h4>@Model.Name</h4>
+            @if (!string.IsNullOrWhiteSpace(Model.LogoFileName))
             {
-                if (!string.IsNullOrWhiteSpace(Model.HostSiteSidebar.HostSiteUrl))
+                if (!string.IsNullOrWhiteSpace(Model.HostSiteUrl))
                 {
-                     <a href="@Model.HostSiteSidebar.HostSiteUrl" target="_blank">
-                        <img src="/Content/cmsImages/@Model.HostSiteSidebar.LogoFileName" class="articleImage" alt="@Model.HostSiteSidebar.LogoFileName" />
+                     <a href="@Model.HostSiteUrl" target="_blank">
+                        <img src="/Content/cmsImages/@Model.LogoFileName" class="hostSiteLogo" alt="@Model.LogoFileName" />
                      </a>
                 }
                 else
                 {
-                    <img src="/Content/cmsImages/@Model.HostSiteSidebar.LogoFileName" class="articleImage" alt="@Model.HostSiteSidebar.LogoFileName" />
+                    <img src="/Content/cmsImages/@Model.LogoFileName" class="hostSiteLogo" alt="@Model.LogoFileName" />
                 }
             }
             
-            @if (!string.IsNullOrWhiteSpace(Model.HostSiteSidebar.HostSiteUrl))
+            @if (!string.IsNullOrWhiteSpace(Model.HostSiteUrl))
             {
-                <p>Website: <a href="@Model.HostSiteSidebar.HostSiteUrl" target="_blank">@Model.HostSiteSidebar.HostSiteUrl</a></p>
+                <p>Website:<br /><a href="@Model.HostSiteUrl" target="_blank">@Model.HostSiteUrl</a></p>
             }
 
         </div>
         <div>
-            @Html.Raw(Model.HostSiteSidebar.Description)
+            @Html.Raw(Model.Description)
         </div>
     </div>

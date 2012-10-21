@@ -8,7 +8,7 @@
   <div class="span8">
     <div class="hero-unit sitehero">
       <h2>@Model.HostSite.Name</h2>
-      @if (!string.IsNullOrWhiteSpace(Model.HostSite.Area))
+<!--      @if (!string.IsNullOrWhiteSpace(Model.HostSite.Area))
       {
         <p>@Model.HostSite.Area</p> 
       }
@@ -17,7 +17,7 @@
       {
         <p>Website: <a href="@Model.HostSite.HostSiteUrl" target="_blank">@Model.HostSite.HostSiteUrl</a></p>
       }
-      @Html.Raw(Model.HostSite.Description)
+      @Html.Raw(Model.HostSite.Description)-->
   </div>
     @{
       var articleList = Model.HostSite.Articles.ToList();
@@ -46,7 +46,6 @@
 
   <div class="span2">
       <div class="row-fluid">
-      <p>Skyscraper content here</p>
           <p> @{Html.RenderAction("HostSiteSidebar", "HostSiteSidebar", new { id = Model.HostSite.UrlFriendlyName });}</p>
     </div>
     @*<div class="row-fluid">
@@ -64,9 +63,6 @@
       </ul>
     </div>
       *@
-    <div class="row-fluid">
-      <p>Here is the blog content</p>
-    </div>
   </div>
 </div>
 
