@@ -1,15 +1,26 @@
-﻿    <link rel="stylesheet" type="text/css" href="@Url.Content("~/content/slidy.css")" />
-    <script type="text/javascript" src="@Url.Content("~/scripts/slidy.js")"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.slidyContainer').slidy({
-                showArrows: true,
-                movePrev: 'movePrev',
-                moveNext: 'moveNext',
-                useKeybord: true,
-                auto: true,
-                interval: 5000,
-                initialInterval: 3000
-            });
-        });
-    </script>
+﻿@using SquishIt.Framework
+@using SquishIt.Mvc
+    
+@(Bundle.Css()
+  .Add("~/Content/slidy.css")
+  .ForceRelease()
+  .MvcRender("~/Scripts/slidy_#.css")
+)
+@(Bundle.JavaScript()
+  .Add("~/Scripts/slidy.js")
+  .ForceRelease()
+  .MvcRender("~/Scripts/slidy_#.js")
+)
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('.slidyContainer').slidy({
+          showArrows: true,
+          movePrev: 'movePrev',
+          moveNext: 'moveNext',
+          useKeybord: true,
+          auto: true,
+          interval: 5000,
+          initialInterval: 3000
+      });
+  });
+</script>

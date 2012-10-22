@@ -14,6 +14,7 @@ namespace RFH.Models
         [Column("Comment")]
         public string Text { get; set; }
 
+        [Required]
         public string Location { get; set; }
 
         public int ArticleId { get; set; }

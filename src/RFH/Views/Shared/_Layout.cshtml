@@ -1,19 +1,30 @@
-﻿<!DOCTYPE html>
+﻿@using SquishIt.Framework
+@using SquishIt.Mvc
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title - Rotary First Harvest</title>
-    <link href="/Content/bootstrap.min.css" rel="stylesheet">
+    @(Bundle.Css()
+      .Add("~/Content/bootstrap.min.css")
+      .Add("~/Content/bootstrap-responsive.min.css")
+      .Add("~/Content/Site.css")
+      .ForceRelease()
+      .MvcRender("~/Content/combined_#.css")
+    )
     <style type="text/css">
       body {
         padding-top: 60px;
       }
     </style>
-    <link href="/Content/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="/Content/Site.css" rel="stylesheet">
     <link rel="icon" type="image/ico" href="/favicon.ico">
-    <script src="/Scripts/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="/Scripts/google.js"></script>
+    @(Bundle.JavaScript()
+      .Add("~/Scripts/jquery-1.8.2.js")
+      .Add("~/Scripts/google.js")
+      .Add("~/Scripts/bootstrap.min.js")
+      .ForceRelease()
+      .MvcRender("~/Scripts/combined_#.js")
+    )
     @RenderSection("Head", false)
 </head>
 <body>
@@ -55,7 +66,5 @@
     which accepts no liability therefor.</p>
       </footer>
     </div>
-    <script src="/Scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/scripts/custom.js"></script>
 </body>
 </html>

@@ -31,3 +31,6 @@ RFH.suo
 RFH.csproj.user
 *.zip
 deploy/
+#ignore combined CSS and js
+combined_*
+slidy_*
