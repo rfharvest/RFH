@@ -39,8 +39,8 @@
           function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
 
-              var contentString = '<div><h4>' + site.Name + '</h4><p>' + site.Address + '</p><p>' + site.City + ', ' + site.State + ' ' + site.Zip +
-                  '</p><p><a href="' + site.HostSiteUrl + '" target="_blank">' + site.HostSiteUrl + '</a></p></div>';
+              var contentString = '<div><h4><a href="/Site/' + site.UrlFriendlyName + '">' + site.Name + '</a></h4><p>' + site.Address + '</p><p>' + site.City + ', ' + site.State + ' ' + site.Zip +
+                  '</p></div>';
 
               var infowindow = new google.maps.InfoWindow({
                 content: contentString
