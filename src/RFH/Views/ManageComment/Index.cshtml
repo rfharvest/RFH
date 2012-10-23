@@ -8,6 +8,8 @@
             <tr>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Article Title</th>
+                <th>Comment</th>
                 <th>Location</th>
                 <th>Posted Date (in UTC)</th>
                 <th>Actions</th>
@@ -20,6 +22,8 @@
                 <tr>
                     <td>@Html.DisplayFor(modelItem => item.Name)</td>
                     <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Article.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Text)</td>
                     <td>@Html.DisplayFor(modelItem => item.Location)</td>
                     <td>@Html.DisplayFor(modelItem => item.PostDate)</td>
                     <td>

@@ -19,7 +19,8 @@ namespace RFH.Controllers
         public ActionResult Index()
         {
             var model = _dataContext.Comments
-                .OrderBy(m => m.Name)
+                .Include(c => c.Article)
+                .OrderByDescending(m => m.PostDate)
                 .ToList();
 
             return View(model);

@@ -41,6 +41,5 @@ namespace RFH.Models
         public string ImageFilename { get; set; }
         
         public ICollection<Comment> Comments { get;set; }
-
     }
 }

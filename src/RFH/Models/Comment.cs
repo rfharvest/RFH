@@ -27,5 +27,7 @@ namespace RFH.Models
 
         public bool Visible { get; set; }
 
+        [ForeignKey("ArticleId")]
+        public Article Article { get; set; }
     }
 }
