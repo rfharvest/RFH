@@ -22,7 +22,9 @@ namespace RFH.Controllers
                 .Include(m => m.Category)
                 .Where(m => m.Category.Id == category.Id)
                 .Where(m => m.IsPublished)
-                .Where(m => m.HostSite.IsActive).ToList();
+                .Where(m => m.HostSite.IsActive)
+                .OrderByDescending(m => m.Id)
+                .ToList();
 
             var model = new CategoryIndexViewModel
                             {
