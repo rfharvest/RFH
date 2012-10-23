@@ -15,7 +15,11 @@ namespace RFH.Controllers {
       public ActionResult Index() {
          ImageSliderModel model = new ImageSliderModel();
          string imgFolder = ConfigurationManager.AppSettings["ImageSliderFolder"];
-         var files = Directory.EnumerateFiles(Server.MapPath(imgFolder));
+         List<string> files = Directory.EnumerateFiles(Server.MapPath(imgFolder)).ToList();
+
+          // Sort
+         files.Sort();
+
          foreach (string f in files) {
             string fileName = Path.GetFileName(f);
             model.Slides.Add(new Slide() { Src = string.Format("~/{0}/{1}", imgFolder, fileName), Alt = fileName});
