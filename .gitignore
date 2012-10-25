@@ -34,3 +34,5 @@ deploy/
 #ignore combined CSS and js
 combined_*
 slidy_*
+*.publishsettings
+*.pubxml
