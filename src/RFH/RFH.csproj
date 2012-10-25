@@ -42,6 +42,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PrecompileBeforePublish>false</PrecompileBeforePublish>
+    <WDPMergeOption>DonotMerge</WDPMergeOption>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxMin">
@@ -130,6 +132,7 @@
     <Compile Include="Controllers\ManageSuperCategoryController.cs" />
     <Compile Include="Controllers\NavigationListController.cs" />
     <Compile Include="Controllers\LayoutTestController.cs" />
+    <Compile Include="Controllers\SearchFilterController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Controllers\ViewSitesController.cs" />
     <Compile Include="Extensions\DirectoryExtensions.cs" />
@@ -206,7 +209,6 @@
   <ItemGroup>
     <Content Include="App_Data\placeholder.txt" />
     <Content Include="App_Data\RFHDB.sdf" />
-    <Content Include="Content\admincss.css" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -307,15 +309,24 @@
     <Content Include="Content\cmsImages\Van Group.jpg" />
     <Content Include="Content\cmsImages\Volunteer Coordination.jpg" />
     <Content Include="Content\cmsImages\Working.JPG" />
+    <Content Include="Content\cmsRotatorImages\banner1_apples.jpg" />
+    <Content Include="Content\cmsRotatorImages\banner2_picking.jpg" />
+    <Content Include="Content\cmsRotatorImages\banner3_picking.jpg" />
+    <Content Include="Content\cmsRotatorImages\banner4_boxofapples.jpg" />
+    <Content Include="Content\cmsRotatorImages\banner5_field.jpg" />
+    <Content Include="Content\cmsRotatorImages\banner6_stringbeans.jpg" />
+    <Content Include="Content\cmsRotatorImages\banner7_blueberries.jpg" />
+    <Content Include="Content\cmsRotatorImages\banner8_blueberrygreenhouse.jpg" />
     <Content Include="Content\images\arrows-small.png" />
     <Content Include="Content\images\arrows.png" />
     <Content Include="Content\images\bg\cardboard.jpg" />
     <Content Include="Content\images\header.png" />
     <Content Include="Content\images\map.jpg" />
-    <Content Include="Content\images\newHeader.png" />
     <Content Include="Content\images\newHeader3.png" />
     <Content Include="Content\images\placeholder.png" />
+    <Content Include="Content\images\sites.jpg" />
     <Content Include="Content\images\sites.png" />
+    <Content Include="Content\images\smallLogo.png" />
     <Content Include="Content\images\topics.png" />
     <Content Include="Content\lightbox.css" />
     <Content Include="Content\Site.css" />
@@ -347,6 +358,7 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\adminCustom.js" />
@@ -574,47 +586,6 @@
     <Content Include="Scripts\ckeditor\skins\v2\skin.js" />
     <Content Include="Scripts\ckeditor\skins\v2\templates.css" />
     <Content Include="Scripts\ckeditor\themes\default\theme.js" />
-    <Content Include="Scripts\ckeditor\_samples\adobeair\application.xml" />
-    <Content Include="Scripts\ckeditor\_samples\adobeair\sample.html" />
-    <Content Include="Scripts\ckeditor\_samples\ajax.html" />
-    <Content Include="Scripts\ckeditor\_samples\api.html" />
-    <Content Include="Scripts\ckeditor\_samples\api_dialog.html" />
-    <Content Include="Scripts\ckeditor\_samples\api_dialog\my_dialog.js" />
-    <Content Include="Scripts\ckeditor\_samples\asp\advanced.asp" />
-    <Content Include="Scripts\ckeditor\_samples\asp\events.asp" />
-    <Content Include="Scripts\ckeditor\_samples\asp\index.html" />
-    <Content Include="Scripts\ckeditor\_samples\asp\replace.asp" />
-    <Content Include="Scripts\ckeditor\_samples\asp\replaceall.asp" />
-    <Content Include="Scripts\ckeditor\_samples\asp\sample_posteddata.asp" />
-    <Content Include="Scripts\ckeditor\_samples\asp\standalone.asp" />
-    <Content Include="Scripts\ckeditor\_samples\assets\output_for_flash.swf" />
-    <Content Include="Scripts\ckeditor\_samples\assets\output_xhtml.css" />
-    <Content Include="Scripts\ckeditor\_samples\assets\parsesample.css" />
-    <Content Include="Scripts\ckeditor\_samples\assets\swfobject.js" />
-    <Content Include="Scripts\ckeditor\_samples\autogrow.html" />
-    <Content Include="Scripts\ckeditor\_samples\bbcode.html" />
-    <Content Include="Scripts\ckeditor\_samples\devtools.html" />
-    <Content Include="Scripts\ckeditor\_samples\divreplace.html" />
-    <Content Include="Scripts\ckeditor\_samples\enterkey.html" />
-    <Content Include="Scripts\ckeditor\_samples\fullpage.html" />
-    <Content Include="Scripts\ckeditor\_samples\index.html" />
-    <Content Include="Scripts\ckeditor\_samples\jqueryadapter.html" />
-    <Content Include="Scripts\ckeditor\_samples\output_for_flash.html" />
-    <Content Include="Scripts\ckeditor\_samples\output_html.html" />
-    <Content Include="Scripts\ckeditor\_samples\output_xhtml.html" />
-    <Content Include="Scripts\ckeditor\_samples\php\index.html" />
-    <Content Include="Scripts\ckeditor\_samples\placeholder.html" />
-    <Content Include="Scripts\ckeditor\_samples\readonly.html" />
-    <Content Include="Scripts\ckeditor\_samples\replacebyclass.html" />
-    <Content Include="Scripts\ckeditor\_samples\replacebycode.html" />
-    <Content Include="Scripts\ckeditor\_samples\sample.css" />
-    <Content Include="Scripts\ckeditor\_samples\sample.js" />
-    <Content Include="Scripts\ckeditor\_samples\sharedspaces.html" />
-    <Content Include="Scripts\ckeditor\_samples\skins.html" />
-    <Content Include="Scripts\ckeditor\_samples\stylesheetparser.html" />
-    <Content Include="Scripts\ckeditor\_samples\tableresize.html" />
-    <Content Include="Scripts\ckeditor\_samples\ui_color.html" />
-    <Content Include="Scripts\ckeditor\_samples\ui_languages.html" />
     <Content Include="Scripts\ckeditor\_source\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\_source\core\ckeditor.js" />
     <Content Include="Scripts\ckeditor\_source\core\ckeditor_base.js" />
@@ -988,7 +959,9 @@
     <Content Include="Views\ManageImage\Details.cshtml" />
     <Content Include="Views\ManageImage\Delete.cshtml" />
     <Content Include="Views\ManageImage\Upload.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -997,9 +970,6 @@
     </Content>
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Views\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -1079,21 +1049,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\cmsDocuments\Volunteer Application.pdf" />
+    <None Include="Properties\PublishProfiles\DiscountASP.pubxml" />
+    <None Include="Properties\PublishProfiles\File.pubxml" />
+    <None Include="Properties\PublishProfiles\rfhresourceguide.org - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\rfhresourceguide.org - Web Deploy.pubxml" />
     <None Include="Scripts\ckeditor\.htaccess" />
     <None Include="Scripts\ckeditor\ckeditor.pack" />
     <None Include="Scripts\ckeditor\ckeditor.php" />
     <None Include="Scripts\ckeditor\ckeditor_php4.php" />
     <None Include="Scripts\ckeditor\ckeditor_php5.php" />
-    <None Include="Scripts\ckeditor\_samples\adobeair\run.bat" />
-    <None Include="Scripts\ckeditor\_samples\adobeair\run.sh" />
-    <None Include="Scripts\ckeditor\_samples\assets\output_for_flash.fla" />
-    <None Include="Scripts\ckeditor\_samples\assets\_posteddata.php" />
-    <None Include="Scripts\ckeditor\_samples\php\advanced.php" />
-    <None Include="Scripts\ckeditor\_samples\php\events.php" />
-    <None Include="Scripts\ckeditor\_samples\php\replace.php" />
-    <None Include="Scripts\ckeditor\_samples\php\replaceall.php" />
-    <None Include="Scripts\ckeditor\_samples\php\standalone.php" />
-    <None Include="Scripts\ckeditor\_samples\sample_posteddata.php" />
     <Content Include="Views\ManageArticle\Create.cshtml" />
     <Content Include="Views\Account\LogOn.cshtml" />
     <Content Include="Views\ManageHostSiteTagValue\Create.cshtml" />
@@ -1108,8 +1072,6 @@
     <Content Include="Views\ManageHostSiteTagValue\_ViewStart.cshtml" />
     <Content Include="Views\Home\GeneralResource.cshtml" />
     <Content Include="Views\Shared\SearchWizard\MockData.cshtml" />
-    <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Home\Wizard.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TextArea.cshtml" />
     <Content Include="Views\ManageBackup\Create.cshtml" />
@@ -1126,10 +1088,6 @@
     <Content Include="Views\ManageHostSiteTagValue\_CreateOrEdit.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\HtmlContent.cshtml" />
     <Content Include="Views\Home\GiveCamp.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
-    <Content Include="Views\Shared\_Nav.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
@@ -1173,9 +1131,7 @@
     <Content Include="Views\ManageImageRotator\Index.cshtml" />
     <Content Include="Views\ManageImageRotator\Upload.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\cmsRotatorImages\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

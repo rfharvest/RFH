@@ -1,12 +1,8 @@
 ﻿@model RFH.Models.CreateCommentViewModel
 @using SquishIt.Framework
 @using SquishIt.Mvc
-@(Bundle.JavaScript()
-  .Add("~/Scripts/jquery.validate.min.js")
-  .Add("~/Scripts/jquery.validate.unobtrusive.min.js")
-  .ForceRelease()
-  .MvcRender("~/Scripts/jqueryvalidatecombined_#.js")
-)
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
 
 @using (Html.BeginForm("CreateComment", "Comment", FormMethod.Post)) {
     @Html.ValidationSummary(true)

@@ -5,26 +5,18 @@
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title - Rotary First Harvest</title>
-    @(Bundle.Css()
-      .Add("~/Content/bootstrap.min.css")
-      .Add("~/Content/bootstrap-responsive.min.css")
-      .Add("~/Content/Site.css")
-      .ForceRelease()
-      .MvcRender("~/Content/combined_#.css")
-    )
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bootstrap.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bootstrap-responsive.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/site.css")" />
     <style type="text/css">
       body {
         padding-top: 60px;
       }
     </style>
     <link rel="icon" type="image/ico" href="/favicon.ico">
-    @(Bundle.JavaScript()
-      .Add("~/Scripts/jquery-1.8.2.js")
-      .Add("~/Scripts/google.js")
-      .Add("~/Scripts/bootstrap.min.js")
-      .ForceRelease()
-      .MvcRender("~/Scripts/combined_#.js")
-    )
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.8.2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/google.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
     @RenderSection("Head", false)
 </head>
 <body>
