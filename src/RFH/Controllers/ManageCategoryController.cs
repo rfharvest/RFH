@@ -84,22 +84,30 @@ namespace RFH.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var model = new ManageCategoryEditViewModel
+            {
+                SuperCategories = GetSuperCategoryListItems(_dataContext.SuperCategories.ToList())
+            };
+
+            return View(model);
         }
 
         [HttpPost]
-        public ActionResult Create(Category model)
+        public ActionResult Create(FormCollection form)
         {
-            if (ModelState.IsValid)
+            Category category = new Category();
+            if (TryUpdateModel(category, "Category"))
             {
-                model.UrlFriendlyName = Regex.Replace(model.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
-                _dataContext.Categories.Add(model);
+                category.UrlFriendlyName = Regex.Replace(category.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
+                _dataContext.Categories.Add(category);
                 _dataContext.SaveChanges();
 
-                return RedirectToAction("Detail", new { model.Id });
+                return RedirectToAction("Detail", new { category.Id });
             }
 
-            return View(model);
+
+            var viewModel = GetManageCategoryViewModel(category);
+            return View(viewModel);
         }
 
         public ActionResult Delete(int id)
