@@ -3,27 +3,18 @@
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
   var map;
-  var geocoder;
-  var sites = @(Html.Raw(Json.Encode(Model)))
+  var previouslyOpenedInfoWindow;
 
     $(function () {
       initialize();
-      GeoCodeSites();
+      $.get('/api/hostsiteapi', function (data) {
+          data.forEach(function(site) {
+              showMarker(site);
+          });
+      });
     });
 
-    function GeoCodeSites() {
-      if (sites == null) {
-        return;
-      }
-      for (var i = 0; i < sites.length; i++) {
-        var site = sites[i];
-        var address = sites.Address + ' ' + site.City + ', ' + site.State + ' ' + site.Zip;
-        codeAddress(address, site);
-      }
-    }
-
     function initialize() {
-      geocoder = new google.maps.Geocoder();
       var mapOptions = {
         zoom: 7,
         center: new google.maps.LatLng(47.55, -120.75),
@@ -32,39 +23,27 @@
       map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     }
 
-    var previouslyOpenedInfoWindow;
 
-    function codeAddress(address, site) {
-      geocoder.geocode({ 'address': address },
-          function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-
-              var contentString = '<div><h4><a href="/Site/' + site.UrlFriendlyName + '">' + site.Name + '</a></h4><p>' + site.Address + '</p><p>' + site.City + ', ' + site.State + ' ' + site.Zip +
+    function showMarker(site) {
+        var contentString = '<div><h4><a href="/Site/' + site.UrlFriendlyName + '">' + site.Name + '</a></h4><p>' + site.Address + '</p><p>' + site.City + ', ' + site.State + ' ' + site.Zip +
                   '</p></div>';
-
-              var infowindow = new google.maps.InfoWindow({
-                content: contentString
-              });
-
-              var marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location
-              });
-
-              google.maps.event.addListener(marker, 'click', function () {
-                if (previouslyOpenedInfoWindow != null) {
-                  previouslyOpenedInfoWindow.close();
-                }
-                previouslyOpenedInfoWindow = infowindow;
-                infowindow.open(map, marker);
-              });
-
-            } else {
-              alert('Geocode was not successful for the following reason: ' + status);
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+        
+        var marker = new google.maps.Marker({
+            map: map,
+            position: new google.maps.LatLng(site.Latitude, site.Longitude)
+        });
+        
+        google.maps.event.addListener(marker, 'click', function () {
+            if (previouslyOpenedInfoWindow != null) {
+                previouslyOpenedInfoWindow.close();
             }
-          });
+            previouslyOpenedInfoWindow = infowindow;
+            infowindow.open(map, marker);
+        });
     }
-
 </script>
 
 <div id="map_canvas"></div>

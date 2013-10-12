@@ -15,7 +15,7 @@ namespace RFH.Controllers
 
         public IEnumerable<HostSite> Get()
         {
-            var rv = _dataContext.HostSites;
+            var rv = _dataContext.HostSites.Where(h => h.Latitude.HasValue && h.Longitude.HasValue).ToList();
             return rv;
         }
     }
