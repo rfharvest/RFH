@@ -18,11 +18,6 @@ namespace RFH.Models
 
         public string UrlFriendlyName { get; set; }
 
-        [UIHint("HtmlContent")]
-        [Required]
-        [MaxLength]
-        public string Description { get; set; }
-
         public bool IsActive { get; set; }
 
         [DisplayName("Hero FileName")]

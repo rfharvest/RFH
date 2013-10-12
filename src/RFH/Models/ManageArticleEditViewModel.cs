@@ -11,5 +11,6 @@ namespace RFH.Models
         public Article Article { get; set; }
         public IEnumerable<SelectListItem> HostSiteItems { get; set; }
         public IEnumerable<SelectListItem> CategoryItems { get; set; }
+        public IEnumerable<SelectListItem> PageItems { get; set; }
     }
 }

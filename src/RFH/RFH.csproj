@@ -128,6 +128,7 @@
     <Compile Include="Controllers\ManageHostSiteTagValueController.cs" />
     <Compile Include="Controllers\ManageImageController.cs" />
     <Compile Include="Controllers\ManageImageRotatorController.cs" />
+    <Compile Include="Controllers\ManagePageController.cs" />
     <Compile Include="Controllers\ManageStatisticsController.cs" />
     <Compile Include="Controllers\ManageSuperCategoryController.cs" />
     <Compile Include="Controllers\NavigationListController.cs" />
@@ -1080,7 +1081,7 @@
     <Content Include="Views\ManageBackup\_ViewStart.cshtml" />
     <Content Include="Views\ManageBackup\Delete.cshtml" />
     <Content Include="Views\ManageBackup\Index.cshtml" />
-    <Content Include="Views\ManageHost\_Display.cshtml" />
+    <Content Include="Views\ManagePage\_Display.cshtml" />
     <Content Include="Views\ManageArticle\_CreateOrEdit.cshtml" />
     <Content Include="Views\ManageArticle\_Display.cshtml" />
     <Content Include="Views\ManageCategory\_Display.cshtml" />
@@ -1133,6 +1134,14 @@
     <Content Include="Views\ManageImageRotator\Index.cshtml" />
     <Content Include="Views\ManageImageRotator\Upload.cshtml" />
     <Content Include="Views\Page\Details.cshtml" />
+    <Content Include="Views\ManagePage\Create.cshtml" />
+    <Content Include="Views\ManagePage\_ViewStart.cshtml" />
+    <Content Include="Views\ManagePage\_CreateOrEdit.cshtml" />
+    <Content Include="Views\ManageHost\_Display.cshtml" />
+    <Content Include="Views\ManagePage\Delete.cshtml" />
+    <Content Include="Views\ManagePage\Edit.cshtml" />
+    <Content Include="Views\ManagePage\Index.cshtml" />
+    <Content Include="Views\ManagePage\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
