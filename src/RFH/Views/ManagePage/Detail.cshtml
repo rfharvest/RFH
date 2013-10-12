@@ -1,0 +1,43 @@
+﻿@model RFH.Models.Page
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
+    
+<h3>Info</h3>
+
+@Html.Partial("_Display", Model)
+
+<p id="manageHostDetailTopActions">
+    @Html.ActionLink("Edit", "Edit", new { Model.Id }) |
+    @Html.ActionLink("Delete", "Delete", new { Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+        
+<h3>Articles</h3>
+
+<p>@Html.ActionLink("Create New", "Create", "ManageArticle", new { PageId = Model.Id}, null)</p>
+
+<table  class="standardTable">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Is Published</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Articles)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.IsPublished</td>
+                <td>
+                    @Html.ActionLink("Details", "Detail", "ManageArticle", new { @item.Id }, null) |
+                    @Html.ActionLink("Edit", "Edit", "ManageArticle", new { @item.Id }, null) |
+                    @Html.ActionLink("Delete", "Delete", "ManageArticle", new { @item.Id }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
