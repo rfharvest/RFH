@@ -12,6 +12,7 @@ using RFH.Models;
 
 namespace RFH.Controllers
 {
+    [Authorize]
     public class ManagePageController : Controller
     {
         private DataContext _dataContext = new DataContext();
