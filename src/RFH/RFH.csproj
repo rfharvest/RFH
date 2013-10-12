@@ -1167,6 +1167,7 @@
     <Content Include="Views\ManagePage\Edit.cshtml" />
     <Content Include="Views\ManagePage\Index.cshtml" />
     <Content Include="Views\ManagePage\Detail.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Double.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
