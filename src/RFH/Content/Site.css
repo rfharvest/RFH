@@ -35,14 +35,14 @@ footer p {
 /*#endregion*/
 
 /*#region Ticker */
-.ticker {
+#ticker {
   height: 60px;
   list-style: none;
   margin: 0;
   overflow: hidden;
 }
 
-  .ticker li {
+  #ticker li {
     height: 60px;
   }
 
@@ -50,6 +50,21 @@ footer p {
   font-weight: bold;
 }
 /*#endregion*/
+
+/* #region newsfeedticker
+    
+ */
+#newsfeedticker {
+  height: 200px;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+}
+
+  #newsfeedticker li {
+    height: 200px;
+  }
+/*#end region*/
 
 /*#region Map */
 #map_canvas {
