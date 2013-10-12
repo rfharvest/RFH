@@ -1,4 +1,6 @@
-﻿@{
+﻿@model string
+
+@{
     ViewBag.Title = "Harvest Directory";
 }
 <script src="@Url.Content("~/scripts/jquery-jvectormap-1.2.2.min.js")"></script>
@@ -16,10 +18,7 @@
 </div>
 
 <script>
-    var stateData = {
-        "US-WA": 112,
-        "US-CA": 123,
-    };
+    var stateData = @Html.Raw(Model);
     
     $(function() {
         $('#map').vectorMap({
@@ -40,7 +39,7 @@
 
     function regionClick(e, code) {
         if (stateData[code]) {
-            window.alert(stateData[code]);
+            window.location.href = "/Article/" + stateData[code];
         }
     }
 </script>
