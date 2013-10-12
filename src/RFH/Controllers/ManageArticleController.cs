@@ -100,6 +100,8 @@ namespace RFH.Controllers
 
 		    try
 		    {
+		        int? pageId = model.PageId;
+		        int? hostSiteId = model.HostSiteId;
 		        model = _dataContext.Articles
 		            .Include(m => m.HostSite)
 		            .Include(m => m.Category)
@@ -109,13 +111,13 @@ namespace RFH.Controllers
 			    _dataContext.Articles.Remove(model);
 			    _dataContext.SaveChanges();
 
-                if (model.PageId.HasValue)
+                if (pageId.HasValue)
                 {
-                    return RedirectToAction("Detail", "ManagePage", new { Id = model.PageId });
+                    return RedirectToAction("Detail", "ManagePage", new { Id = pageId.Value });
                 }
                 else
                 {
-                    return RedirectToAction("Detail", "ManageHost", new { Id = model.HostSiteId });  
+                    return RedirectToAction("Detail", "ManageHost", new { Id = hostSiteId.Value });  
                 }
 
             }
