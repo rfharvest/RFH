@@ -178,6 +178,7 @@
     <Compile Include="Models\ManageCategoryDetailViewModel.cs" />
     <Compile Include="Models\ManageCategoryEditViewModel.cs" />
     <Compile Include="Models\ManageDocumentIndexViewModel.cs" />
+    <Compile Include="Models\ManagePageEditViewModel.cs" />
     <Compile Include="Models\ManageStatisticsViewModel.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\SuperCategory.cs" />
@@ -1157,7 +1158,7 @@
     <Content Include="Views\ManageImageRotator\Details.cshtml" />
     <Content Include="Views\ManageImageRotator\Index.cshtml" />
     <Content Include="Views\ManageImageRotator\Upload.cshtml" />
-    <Content Include="Views\Page\Details.cshtml" />
+    <Content Include="Views\Page\Detail.cshtml" />
     <Content Include="Views\ManagePage\Create.cshtml" />
     <Content Include="Views\ManagePage\_ViewStart.cshtml" />
     <Content Include="Views\ManagePage\_CreateOrEdit.cshtml" />

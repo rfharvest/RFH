@@ -23,10 +23,10 @@
   </div>
     @{
       var bgCounter = 0;
-      var bgList = Model.HostSite.Articles.Where(a => a.Category.SuperCategoryId == 1).ToList();
+      var bgList = Model.HostSite.Articles.Where(a => a.Category.SuperCategoryId == 1).ToList(); //background
 
       var pcCounter = 0;
-      var pcList = Model.HostSite.Articles.Where(pc => (pc.Category.SuperCategoryId == 2 || pc.Category.SuperCategoryId ==3)).ToList();
+      var pcList = Model.HostSite.Articles.Where(pc => pc.Category.SuperCategoryId == 2).ToList(); //2 = Produce
     }
       <h3>Background</h3>
       @for (int i = 0; i <= bgList.Count()/3; i++)

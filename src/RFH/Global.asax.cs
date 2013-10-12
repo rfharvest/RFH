@@ -26,7 +26,7 @@ namespace RFH
 		    routes.MapRoute(
 		        "Page",
 		        "Page/{id}",
-		        new {controller = "Page", action = "Details", id = UrlParameter.Optional});
+		        new {controller = "Page", action = "Detail", id = UrlParameter.Optional});
 
 			routes.MapRoute(
 				"Category", // Route name

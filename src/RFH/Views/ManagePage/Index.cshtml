@@ -11,6 +11,7 @@
         <tr>
             <th>Name</th>
             <th>Url Friendly Name</th>
+            <th>Super Category</th>
             <th>Is Active</th>
             <th></th>
         </tr>
@@ -23,6 +24,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.UrlFriendlyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SuperCategory.Name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.IsActive)

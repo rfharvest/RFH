@@ -1,5 +1,5 @@
 ﻿@using RFH.Models
-@model RFH.Models.Page
+@model RFH.Models.ManagePageEditViewModel
 
 <h2>@Html.Raw(@PageData["SectionTitle"]) Edit</h2>
 
@@ -9,7 +9,7 @@
         
         @Html.ValidationSummary(true)
 
-        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.Page.Id)
 		@Html.Partial("_CreateOrEdit", Model)
 
         <p>

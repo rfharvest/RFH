@@ -1,5 +1,15 @@
-﻿@model RFH.Models.Page
+﻿@model RFH.Models.ManagePageEditViewModel
 
-@Html.EditorFor(model => model.Name)
-@Html.EditorFor(model => model.HeroFileName)
-@Html.EditorFor(model => model.IsActive)
+@Html.EditorFor(model => model.Page.Name)
+@Html.EditorFor(model => model.Page.HeroFileName)
+@Html.EditorFor(model => model.Page.IsActive)
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Page.SuperCategoryId)
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.Page.SuperCategoryId, Model.SuperCategoryItems)
+    @Html.ValidationMessageFor(model => model.Page.SuperCategoryId)
+</div>
+
+
