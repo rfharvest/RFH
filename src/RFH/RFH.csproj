@@ -135,6 +135,7 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\HarvestDirectoryController.cs" />
     <Compile Include="Controllers\HostSiteApiController.cs" />
     <Compile Include="Controllers\ManageCommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -355,6 +356,7 @@
     <Content Include="Content\images\sites.png" />
     <Content Include="Content\images\smallLogo.png" />
     <Content Include="Content\images\topics.png" />
+    <Content Include="Content\jquery-jvectormap-1.2.2.css" />
     <Content Include="Content\lightbox.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\slidy.css" />
@@ -975,9 +977,11 @@
     <Content Include="Scripts\google.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-jvectormap-1.2.2.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\SearchWizard.js" />
     <Content Include="Scripts\slidy.js" />
     <Content Include="Scripts\wizard.js" />
@@ -1170,6 +1174,7 @@
     <Content Include="Views\ManagePage\Detail.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Double.cshtml" />
     <Content Include="Views\Home\NewsFeed.cshtml" />
+    <Content Include="Views\HarvestDirectory\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
