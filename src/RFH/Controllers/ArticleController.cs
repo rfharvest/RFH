@@ -26,36 +26,64 @@ namespace RFH.Controllers {
          var article = _dataContext.Articles
              .Include(a => a.HostSite)
              .Include(a => a.Category)
+             .Include(a => a.Page)
              .Include(a => a.Comments)
              .Where(a => a.IsPublished).FirstOrDefault(a => a.Id == id);
 
-         var relatedArticles = _dataContext.Articles
-             .Where(m => m.CategoryId == article.CategoryId)
-             .Where(m => m.Id != article.Id)
-             .Where(m => m.IsPublished)
-             .Select(m => new RelatedArticle {
-                ArticleId = m.Id,
-                HostSiteName = m.HostSite.Name,
-                Title = m.Title
-             }).ToList();
+          List<RelatedArticle> relatedArticles = new List<RelatedArticle>();
+          if (article.CategoryId.HasValue)
+          {
+              relatedArticles = _dataContext.Articles
+                  .Where(m => m.CategoryId == article.CategoryId)
+                  .Where(m => m.Id != article.Id)
+                  .Where(m => m.IsPublished)
+                  .Select(m => new RelatedArticle
+                  {
+                      ArticleId = m.Id,
+                      HostSiteName = m.HostSite.Name,
+                      Title = m.Title
+                  }).ToList();
+          }
+          else if (article.PageId.HasValue)
+          {
+              relatedArticles = _dataContext.Articles
+                                            .Where(m => m.PageId == article.PageId.Value)
+                                            .Where(m => m.Id != article.Id)
+                                            .Where(m => m.IsPublished)
+                                            .Select(m => new RelatedArticle
+                                                {
+                                                    ArticleId = m.Id,
+                                                    HostSiteName = m.Page.Name,
+                                                    Title = m.Title
+                                                }).ToList();
+          }
+
 
          // TODO: Move the following filter execution from C# to the database
+        List<HostSiteTagValue> selectedTagValues = new List<HostSiteTagValue>();
+        List<HostSiteTag> hostSiteTags = new List<HostSiteTag>();
+        List<int> distinctHostSiteTags = new List<int>();
 
-         var selectedTagValues = _dataContext.HostSiteToHostSiteTagValues
-             .Where(m => m.HostSiteId == article.HostSiteId)
-             .Select(m => m.HostSiteTagValue)
-             .OrderBy(m => m.Name)
-             .ToList();
+          // Only grab host site info if this article is mapped to a host site
+        if (article.HostSiteId.HasValue)
+        {
 
-         var distinctHostSiteTags = selectedTagValues.Select(m => m.HostSiteTagId).Distinct();
+            selectedTagValues = _dataContext.HostSiteToHostSiteTagValues
+                                            .Where(m => m.HostSiteId == article.HostSiteId)
+                                            .Select(m => m.HostSiteTagValue)
+                                            .OrderBy(m => m.Name)
+                                            .ToList();
 
-         var hostSiteTags = _dataContext.HostSiteTags
-             .Include(m => m.HostSiteTagValues)
-             .ToList()
-             .Where(m => distinctHostSiteTags.Any(d => d == m.Id))
-             .OrderBy(m => m.Name);
+            distinctHostSiteTags = selectedTagValues.Select(m => m.HostSiteTagId).Distinct().ToList();
 
-         var model = new ArticleIndexViewModel {
+            hostSiteTags = _dataContext.HostSiteTags
+                                        .Include(m => m.HostSiteTagValues)
+                                        .ToList()
+                                        .Where(m => distinctHostSiteTags.Any(d => d == m.Id))
+                                        .OrderBy(m => m.Name).ToList();
+        }
+
+          var model = new ArticleIndexViewModel {
             Article = article,
             RelatedArticles = relatedArticles,
             HostSiteTags = hostSiteTags,

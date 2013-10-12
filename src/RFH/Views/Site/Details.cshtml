@@ -22,10 +22,6 @@
       @Html.Raw(Model.HostSite.Description)-->
   </div>
     @{
-      var articleList = Model.HostSite.Articles.ToList();
-      var articleCount = articleList.Count;
-      var masterCounter = 0;
-      
       var bgCounter = 0;
       var bgList = Model.HostSite.Articles.Where(a => a.Category.SuperCategoryId == 1).ToList();
 
