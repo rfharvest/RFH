@@ -31,7 +31,6 @@ namespace RFH.Models
 
         [DisplayName("Short Description")]
         [UIHint("TextArea")]
-        [Required]
         public string ShortDescription { get; set; }
 
         [Required]

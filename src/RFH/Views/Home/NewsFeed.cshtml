@@ -1,0 +1,8 @@
+﻿@model RFH.Models.HomeNewsFeedViewModel
+
+<ul id="newsfeedticker" class="ticker">
+    @foreach (var item in Model.NewsFeedItems)
+    {
+        <li class="tickeritem"><span class="tickerDescription">@item.Description</span></li>
+    }
+</ul>

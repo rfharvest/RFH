@@ -1170,6 +1170,7 @@
     <Content Include="Views\ManagePage\Index.cshtml" />
     <Content Include="Views\ManagePage\Detail.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Double.cshtml" />
+    <Content Include="Views\Home\NewsFeed.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
