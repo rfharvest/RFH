@@ -28,10 +28,10 @@
       
       var bgCounter = 0;
       var bgList = Model.HostSite.Articles.Where(a => a.Category.SuperCategoryId == 1).ToList();
-      
+
+      var pcCounter = 0;
+      var pcList = Model.HostSite.Articles.Where(pc => (pc.Category.SuperCategoryId == 2 || pc.Category.SuperCategoryId ==3)).ToList();
     }
-      <h3>Produce Recovery</h3>
-      
       <h3>Background</h3>
       @for (int i = 0; i <= bgList.Count()/3; i++)
       {
@@ -54,25 +54,29 @@
               }
           </div>
       }
-      <h3>OLD STUFF - GET RID OF IT</h3>
-    @for (int i = 0; i <= articleCount/3; i++)
-    {
-      <div class="row-fluid">
-        @for (int j = 0; j < 3; j++) {
-          if (masterCounter == articleCount)
-          {
-            break;
-          }
-          var article = articleList[masterCounter];
-          <div class="span4">
-            <h4>@Html.ActionLink(article.Title, "Index", "Article", new { id = article.Id }, null)</h4>
-            <p>@article.ShortDescription</p>
-            <p>@Html.ActionLink("View Details >>", "Index", "Article", new { id = article.Id }, new { @class = "btn" })</p>
+      <h3>Produce Recovery</h3>
+       @for (int i = 0; i <= pcList.Count()/3; i++)
+      {
+          <div class="row-fluid">
+              @for (int j = 0; j < 3; j++)
+              {
+                  if (pcCounter == pcList.Count())
+                  {
+                      break;
+                  }
+                  var pcArticle = pcList[pcCounter];
+                  <div class="span4">
+                      <h4>
+                          @Html.ActionLink(pcArticle.Title, "Index", "Article", new { id = pcArticle.Id}, null)
+                      </h4>
+                      <p>@pcArticle.ShortDescription</p>
+                      <p>@Html.ActionLink("View Details >>", "Index", "Article", new { id = pcArticle.Id }, new {@class = "btn" })</p>
+                  </div>
+                  pcCounter++;
+              }
           </div>
-          masterCounter++;
-        }
-      </div>
-    }
+      }
+      
   </div>
 
   <div class="span3">
