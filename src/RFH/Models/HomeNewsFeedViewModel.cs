@@ -19,6 +19,8 @@ namespace RFH.Models
         public int NewsFeedId { get; set; }
 
         [Required]
+        [UIHint("HtmlContent")]
+        [MaxLength]
         [DisplayName("Description")]
         public string Description { get; set; }
     }
