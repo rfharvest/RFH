@@ -69,19 +69,20 @@ namespace RFH.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var model = GetManagePageEditViewModel(null);
+            return View(model);
         }
 
         [HttpPost]
-        public ActionResult Create(Page model)
+        public ActionResult Create(ManagePageEditViewModel model)
         {
             if (ModelState.IsValid)
             {
-                model.UrlFriendlyName = Regex.Replace(model.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
-                _dataContext.Pages.Add(model);
+                model.Page.UrlFriendlyName = Regex.Replace(model.Page.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
+                _dataContext.Pages.Add(model.Page);
                 _dataContext.SaveChanges();
 
-                return RedirectToAction("Detail", new { model.Id });
+                return RedirectToAction("Detail", new { model.Page.Id });
             }
 
             return View(model);
