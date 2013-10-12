@@ -1,0 +1,8 @@
+﻿@model double?
+<div class="editor-label">
+    @Html.LabelFor(model => model)
+</div>
+<div class="editor-field">
+    @Html.TextBox("", Model.HasValue ? Model : 0)
+    @Html.ValidationMessageFor(model => model)
+</div>

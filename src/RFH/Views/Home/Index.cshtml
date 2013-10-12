@@ -1,60 +1,63 @@
 ﻿@model RFH.Models.ContentData
 @{
-  ViewBag.Title = "Produce Recovery Guide";
+    ViewBag.Title = "Produce Recovery Guide";
 }
 @section Head {
-  @Html.Partial("_ImageSliderHead")
+    @Html.Partial("_ImageSliderHead")
 }
 <div class="row-fluid mainContent">
-  <div class="span2">
-  </div>
-  <div class="span2 well">
-    <div>
-    <img src="/Content/images/newHeader3.png" class="mainLogo" alt="mainLogo"/>
+    <div class="span2">
     </div>
-    <h5>Welcome to Produce Recovery Resource Guide </h5>
-    <p>Rotary First Harvest is leading an effort to connect food banks, growers and volunteers around Washington State to fight food insecurity.</p>
-    <p>This site contains best practices from a number of local produce recovery projects. A produce recovery project, such as gleaning, involves collecting and distributing surplus produce to the hungry. Best practices are provided in the form of articles and related examples.</p>
+    <div class="span2 well">
+        <div>
+            <img src="/Content/images/newHeader3.png" class="mainLogo" alt="mainLogo" />
+        </div>
+        <h5>Welcome to Produce Recovery Resource Guide </h5>
+        <p>Rotary First Harvest is leading an effort to connect food banks, growers and volunteers around Washington State to fight food insecurity.</p>
+        <p>This site contains best practices from a number of local produce recovery projects. A produce recovery project, such as gleaning, involves collecting and distributing surplus produce to the hungry. Best practices are provided in the form of articles and related examples.</p>
 
 
-  </div><!--/span-->
+    </div>
+    <!--/span-->
 
-  <div class="span6">
-    @{ Html.RenderAction("Index", "ImageSlider"); }
-    <div class="row-fluid">
-      <div class="span4">
-        <h2>Sites</h2>
-        <p>Browse the great work that is going on at one of our many sites! Use the 
-            <img src="@Url.Content("~/content/images/sites.jpg")" alt="Sites" /> menu 
-            in the page header to find one you like, or click the View Sites button 
-            for an interactive map.</p>
-          <p>@Html.ActionLink("View Sites >>", "Index", "ViewSites", null, new { @class = "btn btn-inverse" })</p>
-      </div><!--/span-->
-      <div class="span5">
-        <h2>Featured Article</h2>
-        @{ Html.RenderAction("Featured", "Article"); }
-      </div><!--/span-->
-      <div class="span3">
-        <h2>Fun Facts</h2>
-        <p>@Html.Action("Statistics")</p>
-      </div><!--/span-->
-        <div class="span3">
-            <a class="twitter-timeline" data-chrome="nofooter transparent" href="https://twitter.com/RFHarvest" data-widget-id="389072726293356544">Tweets by @@RFHarvest</a>
-<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+    <div class="span6">
+        @{ Html.RenderAction("Index", "ImageSlider"); }
+        <div class="row-fluid">
+            <div class="span4">
+                <h2>News Feed</h2>
+                <p>@Html.Action("Statistics")</p>
+            </div>
+            <!--/span-->
+            <div class="span5">
+                <h2>Featured Article</h2>
+                @{ Html.RenderAction("Featured", "Article"); }
+            </div>
+            <!--/span-->
+            <div class="span3">
+                <h2>Fun Facts</h2>
+                <p>@Html.Action("Statistics")</p>
+            </div>
+            <!--/span-->
+            <div class="span3">
+                <a class="twitter-timeline" data-chrome="nofooter transparent" href="https://twitter.com/RFHarvest" data-widget-id="389072726293356544">Tweets by @@RFHarvest</a>
+                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+
+            </div>
 
         </div>
-
-    </div><!--/row-->
-  </div><!--/span-->
-</div><!--/row-->
+        <!--/row-->
+    </div>
+    <!--/span-->
+</div>
+<!--/row-->
 
 @Html.Partial("_ShareTab")
 
 <script>
-  $(function () {
-    function tick() {
-      $('#ticker li:first').animate({ 'opacity': 0 }, 400, function () { $(this).appendTo($('#ticker')).css('opacity', 1); });
-    }
-    setInterval(function () { tick() }, 3500);
-  });
+    $(function () {
+        function tick() {
+            $('#ticker li:first').animate({ 'opacity': 0 }, 400, function () { $(this).appendTo($('#ticker')).css('opacity', 1); });
+        }
+        setInterval(function () { tick() }, 3500);
+    });
 </script>

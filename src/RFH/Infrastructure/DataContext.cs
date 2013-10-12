@@ -3,17 +3,17 @@ using System.Data.Entity;
 using RFH.Models;
 
 namespace RFH.Infrastructure
-
 {
     public class DataContext : DbContext
     {
-        public DataContext() : base("RFHDB")
+        public DataContext()
+            : base("RFHDB")
         {
-//#if DEBUG
-//            Database.SetInitializer(new DatabaseInitializer());
-//#else
+            //#if DEBUG
+            //            Database.SetInitializer(new DatabaseInitializer());
+            //#else
             Database.SetInitializer<DataContext>(null);
-//#endif
+            //#endif
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -34,17 +34,19 @@ namespace RFH.Infrastructure
         public IDbSet<BackupRecipient> BackupRecipients { get; set; }
 
         public IDbSet<ContentData> ContentDatas { get; set; }
-        
+
         public IDbSet<HostSiteTag> HostSiteTags { get; set; }
-        
+
         public IDbSet<HostSiteTagValue> HostSiteTagValues { get; set; }
-        
+
         public IDbSet<HostSiteToHostSiteTagValue> HostSiteToHostSiteTagValues { get; set; }
-        
+
         public IDbSet<Statistics> StatisticsItemValues { get; set; }
-        
+
         public IDbSet<Comment> Comments { get; set; }
 
-        public IDbSet<Page> Pages { get; set; } 
+        public IDbSet<Page> Pages { get; set; }
+
+        public IDbSet<NewsFeed> NewsFeedItemValues { get; set; }
     }
 }
