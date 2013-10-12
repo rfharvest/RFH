@@ -20,19 +20,19 @@ namespace RFH.Controllers
 
         public ActionResult Index()
         {
-            var pages = _dataContext.Pages.ToList();
+            var pages = _dataContext.Pages.Include(p => p.SuperCategory).ToList();
             return View(pages);
         }
 
         public ActionResult Detail(int id)
         {
-            var page = _dataContext.Pages.Include(p => p.Articles).Where(p => p.Id == id).Single();
+            var page = _dataContext.Pages.Include(p => p.Articles).Include(p=> p.SuperCategory).Where(p => p.Id == id).Single();
             return View(page);
         }
 
         public ActionResult Edit(int id)
         {
-            var page = _dataContext.Pages.Where(p => p.Id == id).Single();
+            var page = _dataContext.Pages.Include(p => p.SuperCategory).Where(p => p.Id == id).Single();
 
             var model = GetManagePageEditViewModel(page);
 
@@ -52,7 +52,7 @@ namespace RFH.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection form)
         {
-            var page = _dataContext.Pages.Single(h => h.Id == id);
+            var page = _dataContext.Pages.Include(p=> p.SuperCategory).Single(h => h.Id == id);
 
             page.UrlFriendlyName = Regex.Replace(page.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
 
@@ -90,7 +90,7 @@ namespace RFH.Controllers
 
         public ActionResult Delete(int id)
         {
-            var page = _dataContext.Pages.Single(h => h.Id == id);
+            var page = _dataContext.Pages.Include(p => p.SuperCategory).Single(h => h.Id == id);
             return View(page);
         }
 

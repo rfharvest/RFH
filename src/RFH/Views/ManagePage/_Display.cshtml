@@ -6,6 +6,10 @@
         <td>@Model.Name</td>
     </tr>
     <tr>
+        <td>@Html.LabelFor(m => m.SuperCategoryId)</td>
+        <td>@Model.SuperCategory.Name</td>
+    </tr>
+    <tr>
         <td>@Html.LabelFor(m => m.HeroFileName)</td>
         <td>@Model.HeroFileName</td>
     </tr>
