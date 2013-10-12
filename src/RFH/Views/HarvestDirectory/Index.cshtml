@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Harvest Directory";
+}
+<script src="@Url.Content("~/scripts/jquery-jvectormap-1.2.2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery-jvectormap-us-aea-en.js")"></script>
+<div class="row-fluid mainContent">
+    <div class="span1"></div>
+    <div class="span10">
+        <div class="heroSpacer"></div>
+        <div class="hero-unit sitehero" align="middle">
+            <h2>@ViewBag.Title</h2>
+            <div class="heroSpacer"></div>
+            <div id='map' style="width:100%;height:500px;"></div>  
+        </div>
+    </div>
+</div>
+
+<script>
+    var stateData = {
+        "US-WA": 112,
+        "US-CA": 123,
+    };
+    
+    $(function() {
+        $('#map').vectorMap({
+            map: 'us_aea_en',
+            onRegionClick: regionClick,
+            series: {
+                regions: [{
+                    scale: ['#A2A2A2', '#5A0029'],
+                    attribute: 'fill',
+                    values: stateData,
+                    min: 0,
+                    max: 1
+                }]
+            }
+        });
+    });
+    
+
+    function regionClick(e, code) {
+        if (stateData[code]) {
+            window.alert(stateData[code]);
+        }
+    }
+</script>
