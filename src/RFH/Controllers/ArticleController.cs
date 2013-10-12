@@ -30,6 +30,8 @@ namespace RFH.Controllers {
              .Include(a => a.Comments)
              .Where(a => a.IsPublished).FirstOrDefault(a => a.Id == id);
 
+
+
           List<RelatedArticle> relatedArticles = new List<RelatedArticle>();
           if (article.CategoryId.HasValue)
           {
@@ -56,6 +58,8 @@ namespace RFH.Controllers {
                                                     HostSiteName = m.Page.Name,
                                                     Title = m.Title
                                                 }).ToList();
+
+
           }
 
 
@@ -84,6 +88,7 @@ namespace RFH.Controllers {
         }
 
           var model = new ArticleIndexViewModel {
+            FromName = article.Page != null ? article.Page.Name : article.HostSite.Name,
             Article = article,
             RelatedArticles = relatedArticles,
             HostSiteTags = hostSiteTags,
