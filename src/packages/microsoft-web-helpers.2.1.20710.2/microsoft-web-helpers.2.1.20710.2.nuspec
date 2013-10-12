@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>microsoft-web-helpers</id>
+    <version>2.1.20710.2</version>
+    <title>ASP.NET Web Helpers Library</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://www.microsoft.com/web/webpi/eula/WebPages_2_eula_ENU.htm</licenseUrl>
+    <projectUrl>http://www.asp.net/web-pages</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>This package contains web helpers to easily add functionality to your site such as Captcha validation, Twitter profile and search boxes, Gravatars, Video, Bing search, site analytics or themes.
+
+This package is not compatible with ASP.NET MVC.</description>
+    <language>en-US</language>
+    <tags>ASPNETWEBPAGES</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.WebPages" version="[2.0.0, 2.1.0)" />
+      <dependency id="Microsoft.AspNet.WebPages.WebData" version="[2.0.0, 2.1.0)" />
+    </dependencies>
+  </metadata>
+</package>
