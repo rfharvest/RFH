@@ -1,0 +1,16 @@
+﻿@model RFH.Models.Page
+
+<table class="twoColumnTable">
+    <tr>
+        <td>@Html.LabelFor(m => m.Name)</td>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.HeroFileName)</td>
+        <td>@Model.HeroFileName</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(m => m.IsActive)</td>
+        <td>@Model.IsActive</td>
+    </tr>
+</table>

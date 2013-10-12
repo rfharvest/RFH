@@ -19,7 +19,15 @@ namespace RFH.Controllers
 		{
 			var model = new ManageArticleDetailViewModel();
 			model.Article = _dataContext.Articles.Include(m => m.Category).Single(m => m.Id == id);
-			model.HostSite = _dataContext.HostSites.Find(model.Article.HostSiteId);
+            if (model.Article.HostSiteId.HasValue)
+            {
+                model.HostSite = _dataContext.HostSites.Find(model.Article.HostSiteId);    
+            }
+			if (model.Article.PageId.HasValue)
+			{
+                model.Page = _dataContext.Pages.Single(p => p.Id == model.Article.PageId.Value);    
+			}
+		    
 
 			return View(model);
 		}
@@ -117,6 +125,11 @@ namespace RFH.Controllers
 				});
 		}
 
+        protected IEnumerable<SelectListItem> GetPageListItems(List<Page> items)
+        {
+            return items.Select(x => new SelectListItem() {Text = x.Name, Value = x.Id.ToString()});
+        }
+
 		protected IEnumerable<SelectListItem> GetHostSiteListItems(List<HostSite> items)
 		{
 			return items.Select(x => new SelectListItem
@@ -132,7 +145,8 @@ namespace RFH.Controllers
             {
                 Article = article,
                 HostSiteItems = GetHostSiteListItems(_dataContext.HostSites.ToList()),
-                CategoryItems = GetCategoryListItems(_dataContext.Categories.ToList())
+                CategoryItems = GetCategoryListItems(_dataContext.Categories.ToList()),
+                PageItems = GetPageListItems(_dataContext.Pages.ToList()),
             };
 
             return model;

@@ -5,7 +5,14 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { Model.Article.Id }) |
     @Html.ActionLink("Delete", "Delete", new { Model.Article.Id }) |
-    @Html.ActionLink("Back to HostSite", "Detail", "ManageHost", new {Model.HostSite.Id}, null)
+    @if (Model.HostSite != null)
+    {
+        @Html.ActionLink("Back to HostSite", "Detail", "ManageHost", new {Model.HostSite.Id}, null)
+    }
+    @if (Model.Page != null)
+    {
+        @Html.ActionLink("Back to Page", "Detail", "ManagePage", new {Model.Page.Id}, null)
+    }
 </p>
 
 <div class="formContainer">
@@ -17,5 +24,13 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { Model.Article.Id }) |
     @Html.ActionLink("Delete", "Delete", new { Model.Article.Id }) |
-    @Html.ActionLink("Back to HostSite", "Detail", "ManageHost", new {Model.HostSite.Id}, null)
+    @if (Model.HostSite != null)
+    {
+        @Html.ActionLink("Back to HostSite", "Detail", "ManageHost", new {Model.HostSite.Id}, null)
+    }
+    @if (Model.Page != null)
+    {
+        @Html.ActionLink("Back to Page", "Detail", "ManagePage", new {Model.Page.Id}, null)
+    }
+
 </p>

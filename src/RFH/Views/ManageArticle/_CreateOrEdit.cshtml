@@ -4,7 +4,7 @@
     @Html.LabelFor(model => model.Article.HostSiteId)
 </div>
 <div class="editor-field">
-    @Html.DropDownListFor(m => m.Article.HostSiteId, Model.HostSiteItems)
+    @Html.DropDownListFor(m => m.Article.HostSiteId, Model.HostSiteItems, "-- Select One --")
     @Html.ValidationMessageFor(model => model.Article.HostSiteId)
 </div>
 
@@ -12,8 +12,16 @@
     @Html.LabelFor(model => model.Article.CategoryId)
 </div>
 <div class="editor-field">
-    @Html.DropDownListFor(model => model.Article.CategoryId, Model.CategoryItems)
+    @Html.DropDownListFor(model => model.Article.CategoryId, Model.CategoryItems, "-- Select One --")
     @Html.ValidationMessageFor(model => model.Article.CategoryId)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Article.PageId)
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.Article.PageId, Model.PageItems, "-- Select One --")
+    @Html.ValidationMessageFor(model => model.Article.PageId)
 </div>
 
 @Html.EditorFor(model => model.Article.IsPublished)
@@ -21,3 +29,31 @@
 @Html.EditorFor(model => model.Article.ImageFilename)
 @Html.EditorFor(model => model.Article.ShortDescription)
 @Html.EditorFor(m => m.Article.Content)
+
+
+<script>
+    $(function() {
+        // Set default values
+        var pageId = getURLParameter('PageId');
+        if (pageId!='null') {
+            $("#Article_PageId option[value='" + pageId + "']").attr('selected', 'selected');
+        }
+
+        var categoryId = getURLParameter('categoryId');
+        if (categoryId != 'null') {
+            $("#Article_CategoryId option[value='" + categoryId + "']").attr('selected', 'selected');
+        }
+
+        var hostSiteId = getURLParameter('hostSiteId');
+        if (hostSiteId != 'null') {
+            $("#Article_HosteSiteId option[value='" + hostSiteId + "']").attr('selected', 'selected');
+        }
+    });
+
+
+    function getURLParameter(name) {
+        return decodeURI(
+            (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1]
+        );
+    }
+</script>

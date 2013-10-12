@@ -9,5 +9,6 @@ namespace RFH.Models
     {
         public Article Article { get; set; }
         public HostSite HostSite { get; set; }
+        public Page Page { get; set; }
     }
 }

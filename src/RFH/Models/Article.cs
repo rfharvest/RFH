@@ -9,13 +9,15 @@ namespace RFH.Models
         public int Id { get; set; }
 
         [DisplayName("Host Site Name")]
-        public int HostSiteId { get; set; }
+        public int? HostSiteId { get; set; }
 
+        [ForeignKey("HostSiteId")]
         public HostSite HostSite { get; set; }
 
         [DisplayName("Category Name")]
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
 
+        [ForeignKey("CategoryId")]
         public Category Category { get; set; }
 
         [DisplayName("Is Published")]
@@ -39,7 +41,13 @@ namespace RFH.Models
         [UIHint("Image")]
         [MaxLength(100)]
         public string ImageFilename { get; set; }
-        
+
+        [DisplayName("Page Name")]
+        public int? PageId { get; set; }
+
+        [ForeignKey("PageId")]
+        public Page Page { get; set; }
+
         public ICollection<Comment> Comments { get;set; }
     }
 }
