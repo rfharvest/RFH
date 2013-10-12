@@ -1,0 +1,14 @@
+﻿@model RFH.Models.NewsFeed
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) Details</h2>
+
+<div class="formContainer">
+
+    @Html.Partial("_Display", Model)
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.NewsFeedId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+</div>

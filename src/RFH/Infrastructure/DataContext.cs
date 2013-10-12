@@ -48,5 +48,7 @@ namespace RFH.Infrastructure
         public IDbSet<Page> Pages { get; set; }
 
         public IDbSet<NewsFeed> NewsFeedItemValues { get; set; }
+
+        public IDbSet<County> Counties { get; set; }
     }
 }

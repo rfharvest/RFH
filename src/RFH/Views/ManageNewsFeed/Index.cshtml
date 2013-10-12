@@ -1,0 +1,33 @@
+﻿@model IEnumerable<RFH.Models.NewsFeed>
+
+<h2>@Html.Raw(@PageData["SectionTitle"]) List</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="standardTable">
+        <thead>
+            <tr>
+            <th>
+                Description
+            </th>
+            <th></th>
+        </tr>
+
+        </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.Raw(item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.NewsFeedId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.NewsFeedId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.NewsFeedId })
+            </td>
+        </tr>
+    }
+    </tbody>
+    </table>

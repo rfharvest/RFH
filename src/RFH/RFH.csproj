@@ -151,6 +151,7 @@
     <Compile Include="Controllers\ManageHostSiteTagValueController.cs" />
     <Compile Include="Controllers\ManageImageController.cs" />
     <Compile Include="Controllers\ManageImageRotatorController.cs" />
+    <Compile Include="Controllers\ManageNewsFeedController.cs" />
     <Compile Include="Controllers\ManagePageController.cs" />
     <Compile Include="Controllers\ManageStatisticsController.cs" />
     <Compile Include="Controllers\ManageSuperCategoryController.cs" />
@@ -175,6 +176,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\CategoryIndexViewModel.cs" />
+    <Compile Include="Models\County.cs" />
     <Compile Include="Models\HomeNewsFeedViewModel.cs" />
     <Compile Include="Models\ManageCommentDetailViewModel.cs" />
     <Compile Include="Models\ManageCategoryDetailViewModel.cs" />
@@ -1176,6 +1178,14 @@
     <Content Include="Views\Shared\EditorTemplates\Double.cshtml" />
     <Content Include="Views\Home\NewsFeed.cshtml" />
     <Content Include="Views\HarvestDirectory\Index.cshtml" />
+    <Content Include="Views\ManageNewsFeed\Create.cshtml" />
+    <Content Include="Views\ManageNewsFeed\Delete.cshtml" />
+    <Content Include="Views\ManageNewsFeed\Details.cshtml" />
+    <Content Include="Views\ManageNewsFeed\Edit.cshtml" />
+    <Content Include="Views\ManageNewsFeed\Index.cshtml" />
+    <Content Include="Views\ManageNewsFeed\_CreateOrEdit.cshtml" />
+    <Content Include="Views\ManageNewsFeed\_Display.cshtml" />
+    <Content Include="Views\ManageNewsFeed\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
