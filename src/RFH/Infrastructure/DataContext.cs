@@ -45,5 +45,6 @@ namespace RFH.Infrastructure
         
         public IDbSet<Comment> Comments { get; set; }
 
+        public IDbSet<Page> Pages { get; set; } 
     }
 }

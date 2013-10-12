@@ -132,6 +132,7 @@
     <Compile Include="Controllers\ManageSuperCategoryController.cs" />
     <Compile Include="Controllers\NavigationListController.cs" />
     <Compile Include="Controllers\LayoutTestController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\SearchFilterController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Controllers\ViewSitesController.cs" />
@@ -155,6 +156,7 @@
     <Compile Include="Models\ManageCategoryEditViewModel.cs" />
     <Compile Include="Models\ManageDocumentIndexViewModel.cs" />
     <Compile Include="Models\ManageStatisticsViewModel.cs" />
+    <Compile Include="Models\Page.cs" />
     <Compile Include="Models\SuperCategory.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\ContentData.cs">
@@ -1130,6 +1132,7 @@
     <Content Include="Views\ManageImageRotator\Details.cshtml" />
     <Content Include="Views\ManageImageRotator\Index.cshtml" />
     <Content Include="Views\ManageImageRotator\Upload.cshtml" />
+    <Content Include="Views\Page\Details.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

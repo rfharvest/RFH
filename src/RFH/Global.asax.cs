@@ -22,6 +22,11 @@ namespace RFH
 
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+		    routes.MapRoute(
+		        "Page",
+		        "Page/{id}",
+		        new {controller = "Page", action = "Details", id = UrlParameter.Optional});
+
 			routes.MapRoute(
 				"Category", // Route name
 				"Category/{id}", // URL with parameters
