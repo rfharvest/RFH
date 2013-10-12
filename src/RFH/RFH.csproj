@@ -1158,7 +1158,7 @@
     <Content Include="Views\ManageImageRotator\Details.cshtml" />
     <Content Include="Views\ManageImageRotator\Index.cshtml" />
     <Content Include="Views\ManageImageRotator\Upload.cshtml" />
-    <Content Include="Views\Page\Details.cshtml" />
+    <Content Include="Views\Page\Detail.cshtml" />
     <Content Include="Views\ManagePage\Create.cshtml" />
     <Content Include="Views\ManagePage\_ViewStart.cshtml" />
     <Content Include="Views\ManagePage\_CreateOrEdit.cshtml" />

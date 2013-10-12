@@ -15,7 +15,7 @@ namespace RFH.Controllers
         //
         // GET: /Page/
 
-        public ActionResult Details(string id)
+        public ActionResult Detail(string id)
         {
             if (string.IsNullOrWhiteSpace(id))
             {
