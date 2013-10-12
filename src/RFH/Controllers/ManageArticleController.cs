@@ -87,6 +87,7 @@ namespace RFH.Controllers
             var model = _dataContext.Articles
                             .Include(m => m.HostSite)
                             .Include(m => m.Category)
+                            .Include(m => m.Page)
                             .Single(m => m.Id == id);
 
 			return View(model);
@@ -102,12 +103,21 @@ namespace RFH.Controllers
 		        model = _dataContext.Articles
 		            .Include(m => m.HostSite)
 		            .Include(m => m.Category)
+                    .Include(m => m.Page)
 		            .Single(m => m.Id == id);
 
 			    _dataContext.Articles.Remove(model);
 			    _dataContext.SaveChanges();
 
-			    return RedirectToAction("Detail", "ManageHost", new { Id = model.HostSiteId });
+                if (model.PageId.HasValue)
+                {
+                    return RedirectToAction("Detail", "ManagePage", new { Id = model.PageId });
+                }
+                else
+                {
+                    return RedirectToAction("Detail", "ManageHost", new { Id = model.HostSiteId });  
+                }
+
             }
             catch (DbUpdateException)
             {
