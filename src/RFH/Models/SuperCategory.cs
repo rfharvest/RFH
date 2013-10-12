@@ -19,7 +19,12 @@ namespace RFH.Models
         [Required]
         public string UrlFriendlyName { get; set; }
 
-        
+        [DisplayName("Is Active")]
+        public bool IsActive { get; set; }
+
+        [DisplayName("Sort Order")]
+        public byte SortOrder { get; set; }
+
         public ICollection<Category> Categories { get; set; }
 
         public ICollection<Page> Pages { get; set; } 

@@ -16,7 +16,7 @@ namespace RFH.Controllers
 
         public ActionResult ListCategory()
         {
-           return PartialView(_dataContext.SuperCategories.Include("Categories").Include("Pages").OrderBy(c=>c.Name).ToList());
+           return PartialView(_dataContext.SuperCategories.Include("Categories").Include("Pages").Where(sc => sc.IsActive).OrderBy(c=>c.SortOrder).ToList());
         }
 
 
