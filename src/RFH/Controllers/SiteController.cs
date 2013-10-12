@@ -20,6 +20,8 @@ namespace RFH.Controllers
                             .Where(m => m.IsActive)
                             .Single();
 
+            hostSite.Articles = hostSite.Articles.Where(a => a.IsPublished).ToList();
+
             // TODO: Move the following filter execution from C# to the database
 
             var selectedTagValues = _dataContext.HostSiteToHostSiteTagValues

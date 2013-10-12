@@ -24,6 +24,8 @@ namespace RFH.Controllers
 
             var page = _dataContext.Pages.Include(p => p.Articles).Where(a => a.UrlFriendlyName == id).Single();
 
+            page.Articles = page.Articles.Where(a => a.IsPublished).ToList();
+
             return View(page);
         }
     }
