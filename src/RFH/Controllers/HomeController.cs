@@ -90,6 +90,26 @@ namespace RFH.Controllers
         }
 
         [ChildActionOnly]
+        public ActionResult NewsFeed()
+        {
+            var model = new HomeNewsFeedViewModel();
+            model.NewsFeedItems = new List<NewsFeed>();
+
+            var newsFeeds = _dataContext.NewsFeedItemValues.ToList<NewsFeed>();
+
+            foreach (var newsFeedItem in newsFeeds)
+            {
+                model.NewsFeedItems.Add(
+                    new NewsFeed()
+                    {
+                        NewsFeedId = newsFeedItem.NewsFeedId,
+                        Description = newsFeedItem.Description
+                    });
+            }
+            return PartialView(model);
+        }
+
+        [ChildActionOnly]
         public JsonResult WizardJsonData()
         {
             var tagValues = _dataContext.HostSiteToHostSiteTagValues
