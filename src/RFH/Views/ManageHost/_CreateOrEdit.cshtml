@@ -14,3 +14,34 @@
 @Html.EditorFor(model => model.Zip)
 @Html.EditorFor(model => model.Latitude)
 @Html.EditorFor(model => model.Longitude)
+
+<button id="geocodeBtn" type="button" class="standardButton">Geocode Address</button>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+    var geocoder;
+    
+    function initialize() {
+        geocoder = new google.maps.Geocoder();
+    }
+
+    $(function() {
+        initialize();
+        $('#geocodeBtn').click(function () {
+            var street = $('#Address').val();
+            var city = $('#City').val();
+            var state = $('#State').val();
+            var zip = $('#Zip').val();
+
+            var request = { address: street + ' ' + city + ', ' + state + ' ' + zip };
+            geocoder.geocode(request, function(result, status) {
+                if (status != google.maps.GeocoderStatus.OK) {
+                    alert('Unable to geocode address');
+                    return;
+                }
+                
+                $('#Latitude').val(result[0].geometry.location.lb);
+                $('#Longitude').val(result[0].geometry.location.mb);
+            })
+        });
+    })
+</script>
