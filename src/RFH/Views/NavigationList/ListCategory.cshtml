@@ -10,7 +10,10 @@
         }
         @foreach (var page in superCategory.Pages)
         {
-            <li>@Html.ActionLink(page.Name, "Detail", "Page", new { id = page.UrlFriendlyName}, null)</li>
+            if (page.IsActive)
+            {
+                <li>@Html.ActionLink(page.Name, "Detail", "Page", new {id = page.UrlFriendlyName}, null)</li>
+            }
         }
         </ul>
   </li>
