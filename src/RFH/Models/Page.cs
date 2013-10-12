@@ -21,6 +21,7 @@ namespace RFH.Models
         public bool IsActive { get; set; }
 
         [DisplayName("Hero FileName")]
+        [Required]
         public string HeroFileName { get; set; }
 
         public ICollection<Article> Articles { get; set; }

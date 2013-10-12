@@ -68,10 +68,12 @@ footer p {
 /*#region Work Site */
 .sitehero {
   padding: 7px 50px 25px 50px;
+    text-align: left;
 }
 
   .sitehero p {
     font-size: 0.9em;
+      text-align: center;
   }
 
 .siteImage {
