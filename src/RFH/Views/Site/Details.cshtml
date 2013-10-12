@@ -25,7 +25,36 @@
       var articleList = Model.HostSite.Articles.ToList();
       var articleCount = articleList.Count;
       var masterCounter = 0;
+      
+      var bgCounter = 0;
+      var bgList = Model.HostSite.Articles.Where(a => a.Category.SuperCategoryId == 1).ToList();
+      
     }
+      <h3>Produce Recovery</h3>
+      
+      <h3>Background</h3>
+      @for (int i = 0; i <= bgList.Count()/3; i++)
+      {
+          <div class="row-fluid">
+              @for (int j = 0; j < 3; j++)
+              {
+                  if (bgCounter == bgList.Count())
+                  {
+                      break;
+                  }
+                  var bgArticle = bgList[bgCounter];
+                  <div class="span4">
+                      <h4>
+                          @Html.ActionLink(bgArticle.Title, "Index", "Article", new { id = bgArticle.Id}, null)
+                      </h4>
+                      <p>@bgArticle.ShortDescription</p>
+                      <p>@Html.ActionLink("View Details >>", "Index", "Article", new { id = bgArticle.Id }, new {@class = "btn" })</p>
+                  </div>
+                  bgCounter++;
+              }
+          </div>
+      }
+      <h3>OLD STUFF - GET RID OF IT</h3>
     @for (int i = 0; i <= articleCount/3; i++)
     {
       <div class="row-fluid">
