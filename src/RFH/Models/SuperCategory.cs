@@ -21,5 +21,7 @@ namespace RFH.Models
 
         
         public ICollection<Category> Categories { get; set; }
+
+        public ICollection<Page> Pages { get; set; } 
     }
 }

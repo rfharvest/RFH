@@ -33,22 +33,36 @@ namespace RFH.Controllers
         public ActionResult Edit(int id)
         {
             var page = _dataContext.Pages.Where(p => p.Id == id).Single();
-            return View(page);
+
+            var model = GetManagePageEditViewModel(page);
+
+            return View(model);
+        }
+
+        protected virtual ManagePageEditViewModel GetManagePageEditViewModel(Page page)
+        {
+            ManagePageEditViewModel model = new ManagePageEditViewModel
+                {
+                    Page = page,
+                    SuperCategoryItems = GetSuperCategoryListItems(_dataContext.SuperCategories.ToList())
+                };
+            return model;
         }
 
         [HttpPost]
         public ActionResult Edit(int id, FormCollection form)
         {
-            var model = _dataContext.Pages.Single(h => h.Id == id);
+            var page = _dataContext.Pages.Single(h => h.Id == id);
 
-            model.UrlFriendlyName = Regex.Replace(model.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
+            page.UrlFriendlyName = Regex.Replace(page.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
 
-            if (TryUpdateModel(model))
+            if (TryUpdateModel(page, "Page"))
             {
                 _dataContext.SaveChanges();
-                return RedirectToAction("Detail", new { model.Id });
+                return RedirectToAction("Detail", new { page.Id });
             }
 
+            var model = GetManagePageEditViewModel(page);
             return View(model);
             
         }
@@ -98,6 +112,16 @@ namespace RFH.Controllers
                 ModelState.AddModelError("Id", "Unable to delete. Please confirm there are no articles or tags linked to this item.");
                 return View(model);
             }
+        }
+
+
+        protected IEnumerable<SelectListItem> GetSuperCategoryListItems(List<SuperCategory> items)
+        {
+            return items.Select(x => new SelectListItem
+            {
+                Text = x.Name,
+                Value = x.SuperCategoryId.ToString()
+            });
         }
 
     }
