@@ -32,7 +32,15 @@
                       <h4>
                           @Html.ActionLink(article.Title, "Index", "Article", new { id = article.Id}, null)
                       </h4>
-                      <p>@article.ShortDescription</p>
+                        @if (!article.ImageFilename.IsEmpty())
+                        {
+                            <img src="/Content/cmsImages/@article.ImageFilename" class="articleImage" alt="@article.ImageFilename" />
+                        }
+                      @if (!string.IsNullOrWhiteSpace(article.ShortDescription))
+                      {
+                        <p>@article.ShortDescription</p>    
+                      }
+                      
                       <p>@Html.ActionLink("View Details >>", "Index", "Article", new { id = article.Id }, new {@class = "btn" })</p>
                   </div>
                   masterCounter++;
