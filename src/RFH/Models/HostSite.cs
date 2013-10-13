@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
@@ -58,5 +59,10 @@ namespace RFH.Models
         public ICollection<HostSiteMetaData> MetaData { get; set; }
 
         public ICollection<HostSiteTagValue> HostSiteTagValues { get; set; }
+
+        public int? CountyId { get; set; }
+
+        [ForeignKey("CountyId")]
+        public County County { get; set; }
     }
 }

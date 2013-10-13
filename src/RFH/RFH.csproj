@@ -182,6 +182,7 @@
     <Compile Include="Models\ManageCategoryDetailViewModel.cs" />
     <Compile Include="Models\ManageCategoryEditViewModel.cs" />
     <Compile Include="Models\ManageDocumentIndexViewModel.cs" />
+    <Compile Include="Models\ManageHostEditViewModel.cs" />
     <Compile Include="Models\ManagePageEditViewModel.cs" />
     <Compile Include="Models\ManageStatisticsViewModel.cs" />
     <Compile Include="Models\Page.cs" />

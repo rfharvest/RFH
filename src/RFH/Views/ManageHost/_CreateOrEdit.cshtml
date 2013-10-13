@@ -1,19 +1,26 @@
-﻿@model RFH.Models.HostSite
+﻿@model RFH.Models.ManageHostEditViewModel
 
-@Html.EditorFor(model => model.Name)
-@Html.EditorFor(model => model.LogoFileName)
-@Html.EditorFor(model => model.HeroFileName)
-@Html.EditorFor(model => model.Area)
-@Html.EditorFor(model => model.HostSiteUrl)
-@Html.EditorFor(model => model.IsActive)
-@Html.EditorFor(model => model.CommentsEnabled)
-@Html.EditorFor(model => model.Description)
-@Html.EditorFor(model => model.Address)
-@Html.EditorFor(model => model.City)
-@Html.EditorFor(model => model.State)
-@Html.EditorFor(model => model.Zip)
-@Html.EditorFor(model => model.Latitude)
-@Html.EditorFor(model => model.Longitude)
+@Html.EditorFor(model => model.HostSite.Name)
+@Html.EditorFor(model => model.HostSite.LogoFileName)
+@Html.EditorFor(model => model.HostSite.HeroFileName)
+@Html.EditorFor(model => model.HostSite.Area)
+@Html.EditorFor(model => model.HostSite.HostSiteUrl)
+@Html.EditorFor(model => model.HostSite.IsActive)
+@Html.EditorFor(model => model.HostSite.CommentsEnabled)
+@Html.EditorFor(model => model.HostSite.Description)
+@Html.EditorFor(model => model.HostSite.Address)
+@Html.EditorFor(model => model.HostSite.City)
+@Html.EditorFor(model => model.HostSite.State)
+@Html.EditorFor(model => model.HostSite.Zip)
+@Html.EditorFor(model => model.HostSite.Latitude)
+@Html.EditorFor(model => model.HostSite.Longitude)
+<div class="editor-label">
+    @Html.LabelFor(model => model.HostSite.County.Name)
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.HostSite.CountyId, Model.Counties)
+    @Html.ValidationMessageFor(model => model.HostSite.Name)
+</div>
 
 <button id="geocodeBtn" type="button" class="standardButton">Geocode Address</button>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
