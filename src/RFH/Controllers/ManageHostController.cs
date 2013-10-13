@@ -88,20 +88,26 @@ namespace RFH.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var vm = new ManageHostEditViewModel
+            {
+                HostSite = new HostSite(),
+                Counties = GetCountySelectListItem(_dataContext.Counties.OrderBy(c => c.Name))
+            };
+
+            return View(vm);
         }
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Create(HostSite model)
+        public ActionResult Create(ManageHostEditViewModel model)
         {
             if (ModelState.IsValid)
             {
-                model.UrlFriendlyName = Regex.Replace(model.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
-                _dataContext.HostSites.Add(model);
+                model.HostSite.UrlFriendlyName = Regex.Replace(model.HostSite.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
+                _dataContext.HostSites.Add(model.HostSite);
                 _dataContext.SaveChanges();
 
-                return RedirectToAction("Detail", new {model.Id});
+                return RedirectToAction("Detail", new {model.HostSite.Id});
             }
 
             return View(model);
