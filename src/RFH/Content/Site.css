@@ -49,6 +49,24 @@ footer p {
 .tickerDescription {
   font-weight: bold;
 }
+
+#newsfeedticker {
+    height: 200px;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+#newsfeedticker li {
+    height: 200px;
+    display: none;
+}
+
+#newsfeedticker li.visible {
+    display: block;
+}
+
 /*#endregion*/
 
 /*#region Map */

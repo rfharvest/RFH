@@ -1,8 +1,30 @@
 ﻿@model RFH.Models.HomeNewsFeedViewModel
 
-<ul id="newsfeedticker" class="ticker">
+<ul id="newsfeedticker">
     @foreach (var item in Model.NewsFeedItems)
     {
         <li class="tickeritem"><span class="tickerDescription">@Html.Raw(@item.Description)</span></li>
     }
 </ul>
+
+<script>
+
+    $(function () {
+
+        function newsfeedtick() {
+            var existingItem = $('#newsfeedticker li.visible');
+            var nextItem = existingItem.next();
+            if (nextItem.length == 0) {
+                nextItem = $('#newsfeedticker li:first');
+            }
+            existingItem.fadeOut('slow', function () {
+                existingItem.toggleClass('visible');
+                nextItem.fadeIn('slow').toggleClass('visible');
+            });
+        }
+
+        $('#newsfeedticker li:first').addClass('visible');
+        setInterval(function () { newsfeedtick() }, 15000);
+    });
+
+</script>
