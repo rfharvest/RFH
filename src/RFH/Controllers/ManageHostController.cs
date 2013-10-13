@@ -57,7 +57,7 @@ namespace RFH.Controllers
             var vm = new ManageHostEditViewModel
                 {
                     HostSite = host,
-                    Counties = GetCountySelectListItem(_dataContext.Counties)
+                    Counties = GetCountySelectListItem(_dataContext.Counties.OrderBy(c => c.Name))
                 };
 
             return View(vm);
@@ -80,7 +80,7 @@ namespace RFH.Controllers
             var vm = new ManageHostEditViewModel
                 {
                     HostSite = model,
-                    Counties = GetCountySelectListItem(_dataContext.Counties)
+                    Counties = GetCountySelectListItem(_dataContext.Counties.OrderBy(c => c.Name))
                 };
 
             return View(vm);
