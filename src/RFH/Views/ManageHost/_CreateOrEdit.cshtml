@@ -34,10 +34,10 @@
     $(function() {
         initialize();
         $('#geocodeBtn').click(function () {
-            var street = $('#Address').val();
-            var city = $('#City').val();
-            var state = $('#State').val();
-            var zip = $('#Zip').val();
+            var street = $('#HostSite_Address').val();
+            var city = $('#HostSite_City').val();
+            var state = $('#HostSite_State').val();
+            var zip = $('#HostSite_Zip').val();
 
             var request = { address: street + ' ' + city + ', ' + state + ' ' + zip };
             geocoder.geocode(request, function(result, status) {
@@ -46,8 +46,8 @@
                     return;
                 }
                 
-                $('#Latitude').val(result[0].geometry.location.lb);
-                $('#Longitude').val(result[0].geometry.location.mb);
+                $('#HostSite_Latitude').val(result[0].geometry.location.lb);
+                $('#HostSite_Longitude').val(result[0].geometry.location.mb);
             })
         });
     })
