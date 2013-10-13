@@ -3,7 +3,7 @@
 <ul id="newsfeedticker">
     @foreach (var item in Model.NewsFeedItems)
     {
-        <li class="tickeritem"><span class="tickerDescription">@Html.Raw(@item.Description)</span></li>
+        <li class="tickeritem"><span>@Html.Raw(@item.Description)</span></li>
     }
 </ul>
 

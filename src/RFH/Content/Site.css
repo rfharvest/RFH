@@ -51,7 +51,6 @@ footer p {
 }
 
 #newsfeedticker {
-    height: 200px;
     list-style: none;
     margin: 0;
     overflow: hidden;
@@ -59,7 +58,6 @@ footer p {
 
 
 #newsfeedticker li {
-    height: 200px;
     display: none;
 }
 
@@ -69,20 +67,6 @@ footer p {
 
 /*#endregion*/
 
-/* #region newsfeedticker
-    
- */
-#newsfeedticker {
-  height: 200px;
-  list-style: none;
-  margin: 0;
-  overflow: hidden;
-}
-
-  #newsfeedticker li {
-    height: 200px;
-  }
-/*#end region*/
 
 /*#region Map */
 #map_canvas {
