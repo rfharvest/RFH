@@ -4,7 +4,8 @@
 <script>
   var map;
   var previouslyOpenedInfoWindow;
-
+  var previouslyDrawCountyLines;
+  
     $(function () {
       initialize();
       $.get('/api/hostsiteapi', function (data) {
@@ -23,12 +24,35 @@
       map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     }
 
+    function showCountyOutline(countyId) {
+        $.get('/api/countyboundariesapi/' + countyId, function(data) {
+            
+            var points = [];
+
+            data.forEach(function (point) {
+                points.push(new google.maps.LatLng(point.Lat, point.Lng));
+            });
+
+            var county = new google.maps.Polygon({
+                paths: points,
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.8,
+                strokeWeight: 3,
+                fillColor: '#FF0000',
+                fillOpacity: 0.35
+            });
+
+            county.setMap(map);
+            previouslyDrawCountyLines = county;
+        });
+    }
 
     function showMarker(site) {
         var contentString = '<div><h4><a href="/Site/' + site.UrlFriendlyName + '">' + site.Name + '</a></h4><p>' + site.Address + '</p><p>' + site.City + ', ' + site.State + ' ' + site.Zip +
                   '</p></div>';
         var infowindow = new google.maps.InfoWindow({
-            content: contentString
+            content: contentString,
+            countyId: site.CountyId
         });
         
         var marker = new google.maps.Marker({
@@ -39,7 +63,16 @@
         google.maps.event.addListener(marker, 'click', function () {
             if (previouslyOpenedInfoWindow != null) {
                 previouslyOpenedInfoWindow.close();
+                if (previouslyDrawCountyLines != null) {
+                    previouslyDrawCountyLines.setMap(null);
+                    previouslyDrawCountyLines = null;
+                }
             }
+            
+            if (infowindow.countyId != null) {
+                showCountyOutline(infowindow.countyId);
+            }
+
             previouslyOpenedInfoWindow = infowindow;
             infowindow.open(map, marker);
         });
