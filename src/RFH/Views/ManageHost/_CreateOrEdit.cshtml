@@ -18,7 +18,7 @@
     @Html.LabelFor(model => model.HostSite.County.Name)
 </div>
 <div class="editor-field">
-    @Html.DropDownListFor(model => model.HostSite.CountyId, Model.Counties)
+    @Html.DropDownListFor(model => model.HostSite.CountyId, Model.Counties, "-- Select One --")
     @Html.ValidationMessageFor(model => model.HostSite.Name)
 </div>
 

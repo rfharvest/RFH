@@ -66,7 +66,7 @@ namespace RFH.Controllers
 
 
         public ActionResult ListSite() {
-            return PartialView(_dataContext.HostSites.Where(s => s.IsActive == true).OrderBy(s => s.Name).ToList());
+            return PartialView(_dataContext.HostSites.Where(s => s.IsActive).OrderBy(s => s.Name).ToList());
         }
 
 
