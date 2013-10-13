@@ -185,6 +185,7 @@
     <Compile Include="Models\ManageHostEditViewModel.cs" />
     <Compile Include="Models\ManagePageEditViewModel.cs" />
     <Compile Include="Models\ManageStatisticsViewModel.cs" />
+    <Compile Include="Models\CategoryNavigationList.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\SuperCategory.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -229,6 +230,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\SiteDetailsViewModel.cs" />
+    <Compile Include="Models\SuperCategoryNavigationList.cs" />
     <Compile Include="Models\UserCredentials.cs">
       <SubType>Code</SubType>
     </Compile>

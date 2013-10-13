@@ -1,22 +1,13 @@
-﻿@model IEnumerable<RFH.Models.SuperCategory>
+﻿@model IEnumerable<RFH.Models.SuperCategoryNavigationList>
 
 @foreach (var superCategory in Model) {
   <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">@superCategory.Name.ToLowerInvariant()<b class="caret"></b></a>
       <ul class="dropdown-menu">
-        @foreach (var category in superCategory.Categories)
-        {
-        <li>@Html.ActionLink(category.Name, "Index", "Category", new { id = category.UrlFriendlyName}, null)</li>
-        }
-        @foreach (var page in superCategory.Pages)
-        {
-            if (page.IsActive)
-            {
-                <li>@Html.ActionLink(page.Name, "Detail", "Page", new {id = page.UrlFriendlyName}, null)</li>
-            }
-        }
-        </ul>
+          @foreach (var category in superCategory.Categories)
+          {
+              <li><a href="@category.Url">@category.Name</a></li>
+          }
+      </ul>
   </li>
-  //Potentially dead page - need to ask if content is relevant
-  @*<li>@Html.ActionLink("General Resources", "GeneralResource", "Home")</li>*@
 }
