@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
@@ -23,7 +24,7 @@ namespace RFH.Controllers
         {
             var model = new ManageHostDetailViewModel();
 
-            model.HostSite = this._dataContext.HostSites
+            model.HostSite = this._dataContext.HostSites.Include(h => h.County)
                 .Single(h => h.Id == id);
 
             model.Articles = this._dataContext.Articles
@@ -52,7 +53,14 @@ namespace RFH.Controllers
         public ActionResult Edit(int id)
         {
             var host = _dataContext.HostSites.Single(h => h.Id == id);
-            return View(host);
+
+            var vm = new ManageHostEditViewModel
+                {
+                    HostSite = host,
+                    Counties = GetCountySelectListItem(_dataContext.Counties)
+                };
+
+            return View(vm);
         }
 
         [HttpPost]
@@ -63,13 +71,19 @@ namespace RFH.Controllers
 
             model.UrlFriendlyName = Regex.Replace(model.Name, @"[^\w]+", "-", RegexOptions.IgnoreCase);
 
-            if (TryUpdateModel(model))
+            if (TryUpdateModel(model, "HostSite"))
             {
                 _dataContext.SaveChanges();
                 return RedirectToAction("Detail", new { model.Id });
             }
 
-            return View(model);
+            var vm = new ManageHostEditViewModel
+                {
+                    HostSite = model,
+                    Counties = GetCountySelectListItem(_dataContext.Counties)
+                };
+
+            return View(vm);
         }
 
         public ActionResult Create()
@@ -151,5 +165,14 @@ namespace RFH.Controllers
             return string.Format("hostSiteId='{0}', hostSiteTagValueId='{1}', isChecked='{2}'",
                                  hostSiteId, hostSiteTagValueId, isChecked);
         }
+
+        private IEnumerable<SelectListItem> GetCountySelectListItem(IEnumerable<County> items)
+        {
+            return items.Select(x => new SelectListItem
+                {
+                    Text = x.Name,
+                    Value = x.Id.ToString()
+                });
+        } 
     }
 }

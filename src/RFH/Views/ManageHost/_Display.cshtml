@@ -46,6 +46,10 @@
         <td>@Model.Longitude</td>
     </tr>
     <tr>
+        <td>@Html.LabelFor(m => m.County.Name)</td>
+        <td>@(Model.County == null ? "" : Model.County.Name)</td>
+    </tr>
+    <tr>
         <td>@Html.LabelFor(m => m.IsActive)</td>
         <td>@Model.IsActive</td>
     </tr>
