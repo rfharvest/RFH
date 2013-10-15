@@ -100,13 +100,14 @@ namespace RFH.Controllers
 
 		    try
 		    {
-		        int? pageId = model.PageId;
-		        int? hostSiteId = model.HostSiteId;
 		        model = _dataContext.Articles
 		            .Include(m => m.HostSite)
 		            .Include(m => m.Category)
                     .Include(m => m.Page)
 		            .Single(m => m.Id == id);
+
+                int? pageId = model.PageId;
+                int? hostSiteId = model.HostSiteId;
 
 			    _dataContext.Articles.Remove(model);
 			    _dataContext.SaveChanges();
