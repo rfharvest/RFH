@@ -36,3 +36,4 @@ combined_*
 slidy_*
 *.publishsettings
 *.pubxml
+*.publish.xml
